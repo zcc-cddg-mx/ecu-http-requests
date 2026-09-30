@@ -1,0 +1,24 @@
+meta {
+  name: getRatingListAll
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{server}}/agent/api/v1/arizona/rating_lists?code=VH_USER_SUM_INSURED
+  body: none
+  auth: inherit
+}
+
+params:query {
+  code: VH_USER_SUM_INSURED
+  ~code: VH_BLOCKED_VEHICLE_FOR_SALE
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+settings {
+  encodeUrl: true
+}

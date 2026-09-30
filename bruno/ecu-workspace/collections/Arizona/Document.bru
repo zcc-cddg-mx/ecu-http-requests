@@ -1,0 +1,24 @@
+meta {
+  name: Document
+  type: http
+  seq: 81
+}
+
+get {
+  url: https://preprod-oficinavirtual.zurichseguros.com.ec/nuevoportal/document/api/v1/arizona/documents
+  body: none
+  auth: bearer
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_a8bf9d28a70141829cf9a61e4b4c8b03', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'when-expired', 60 %}
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

@@ -1,0 +1,75 @@
+meta {
+  name: Create InsurableObject
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/policy/api/v1/arizona/policies/3003/insurable_objects?=
+  body: json
+  auth: bearer
+}
+
+params:query {
+  : 
+}
+
+headers {
+  x-tenantId-1: ec
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'when-expired', 300 %}
+}
+
+body:json {
+  {
+  	"_type": "LifeMassive",
+  	"insurer": "aaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbbaaaaaaaaaabbbbbbbbbb",
+  	"createdAt": "2022-07-12T00:43:18.000-0500",
+  	"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  	"recordVersion": 0,
+  	"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  	"updatedAt": "2022-07-12T00:43:48.970-0500",
+  	"tenantId": "ec",
+  	"objectNo": 91,
+  	"insurableObjectTypeId": 1043,
+  	"insurableObjectClass": "SIMPLE",
+  	"policyNo": 90,
+  	"effectiveDate": "2022-07-12T00:00:00.000-0500",
+  	"expirationDate": "2023-07-12T00:00:00.000-0500",
+  	"annualEffectiveDate": "2022-07-12T00:00:00.000-0500",
+  	"annualExpirationDate": "2023-07-12T00:00:00.000-0500",
+  	"originalInceptionDate": "2022-07-12T00:00:00.000-0500",
+  	"yearOfObject": 1,
+  	"orderNo": 1,
+  	"informationOnly": "YES",
+  	"groupPlans": [],
+  	"policyAmounts": [],
+  	"policyDeductibles": [],
+  	"policyLimits": [],
+  	"policyCoverageDetails": [],
+  	"partyRoles": [],
+  	"hasActiveCoverages": "YES",
+  	"clauses": [],
+  	"policyPendings": [],
+  	"displayName": "Vida Masivos",
+  	"policyId": 3003,
+  	"folioId": "COT-LFM1000",
+  	"quotationStartDate": "2022-07-12T00:43:18.000-0500",
+  	"status": "WORKING",
+  	"company": "ADRIANA ROCIO SARAVIA QUISHPE",
+  	"commercial": "CARLA EMERITA PEREZ CARRION",
+  	"product": "LFM",
+  	"dataStartValidity": "2022-07-12T00:00:00.000-0500",
+  	"brokerYesNo": "NO",
+  	"tpaYesNo": "NO",
+  	"canalYesNo": "NO"
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

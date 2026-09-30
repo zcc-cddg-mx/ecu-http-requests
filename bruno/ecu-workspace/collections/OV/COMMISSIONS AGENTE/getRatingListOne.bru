@@ -1,0 +1,25 @@
+meta {
+  name: getRatingListOne
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{server}}/rule/api/v1/arizona/rating_lists/7952
+  body: json
+  auth: inherit
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+body:json {
+  {
+      "page": 2
+  }
+}
+
+settings {
+  encodeUrl: true
+}

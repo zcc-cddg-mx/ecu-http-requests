@@ -1,0 +1,178 @@
+meta {
+  name: updateValoresInit
+  type: http
+  seq: 11
+}
+
+post {
+  url: {{server}}/policy/api/v1/arizona/policy_transactions/update
+  body: json
+  auth: bearer
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+      "_type": "PolicyUpdateTransactionRequest",
+      "policy": {
+          "_type": "ECPolicy",
+          "notes": "{}",
+          "originalInceptionDate": "2025-04-15T05:00:00Z",
+          "productId": 1000,
+          "productCode": "PY",
+          "partyRoles": [
+              {
+                  "_type": "AgreementPartyRole",
+                  "tenantId": "ec",
+                  "partyId": 481152,
+                  "partyRole": "POLICY_HOLDER",
+                  "isLeader": "NO"
+              },
+              {
+                  "_type": "AgreementPartyRole",
+                  "tenantId": "ec",
+                  "partyId": 188359,
+                  "partyRole": "POLICY_AGENT",
+                  "share": 100,
+                  "isLeader": "YES"
+              }
+          ],
+          "commissionSplits": [],
+          "policyNo": 459380,
+          "policyNumber": "COT-PY42924",
+          "effectiveDate": "2025-04-15T05:00:00Z",
+          "expirationDate": "2026-04-15T05:00:00Z",
+          "annualEffectiveDate": "2025-04-15T05:00:00Z",
+          "annualExpirationDate": "2026-04-15T05:00:00Z",
+          "status": "WORKING",
+          "customStatus": "WORKING",
+          "productClass": "SIMPLE",
+          "paymentMethod": "1",
+          "currency": "USD",
+          "yearOfPolicy": 1,
+          "proRataMethod": "PR360E",
+          "policyPeriod": "ANNUAL",
+          "renewalMode": "NONE",
+          "policyTransaction": {
+              "_type": "PolicyTransaction",
+              "createdAt": "2025-04-15T18:48:26Z",
+              "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+              "recordVersion": 5,
+              "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+              "id": 788853,
+              "updatedAt": "2025-04-15T18:48:27Z",
+              "tenantId": "ec",
+              "policyNo": 459380,
+              "policyNumber": "COT-PY42924",
+              "transactionType": "Update",
+              "transactionDate": "2025-04-15T18:48:26Z",
+              "transactionStatus": "PENDING",
+              "transactionMode": "INTERACTIVE",
+              "transactionUniqueId": "PaFVtyRWfRjyGnq",
+              "contextName": "RISK-INFORMATION"
+          },
+          "billingType": "STANDARD",
+          "billingBindingEntity": "POLICY",
+          "accountingLevel": "NONE",
+          "insurableObjects": [
+              {
+                  "_type": "Pymes",
+                  "objectNo": 475541,
+                  "insurableObjectTypeId": 1001,
+                  "insurableObjectClass": "SIMPLE",
+                  "policyNo": 459380,
+                  "effectiveDate": "2025-04-15T05:00:00Z",
+                  "expirationDate": "2026-04-15T05:00:00Z",
+                  "annualEffectiveDate": "2025-04-15T05:00:00Z",
+                  "annualExpirationDate": "2026-04-15T05:00:00Z",
+                  "originalInceptionDate": "2025-04-15T00:00:00.000-05:00",
+                  "yearOfObject": 1,
+                  "informationOnly": "NO",
+                  "groupPlans": [],
+                  "policyAmounts": [],
+                  "policyDeductibles": [],
+                  "policyLimits": [],
+                  "policyCoverageDetails": [],
+                  "partyRoles": [],
+                  "clauses": [],
+                  "policyPendings": [],
+                  "status": "ACTIVE",
+                  "productType": "7",
+                  "economicActivity": "13",
+                  "subEconomicActivity": "13_722330",
+                  "province": "2",
+                  "city": "16",
+                  "address": "Calle 2",
+                  "locationDescription": "Bolívar-Chillanes-Calle 2",
+                  "latitude": "-1.9436802",
+                  "longitude": "-79.065917",
+                  "constructionYear": 2020,
+                  "constructionType": "1",
+                  "floors": 1,
+                  "fireExtinguishers": "YES",
+                  "fireSmokeDetector": "NO",
+                  "fireCabinetsFire": "NO",
+                  "fireSprinklers": "NO",
+                  "theftAlarmMonitored": "NO",
+                  "theftEnclosure": "NO",
+                  "theftArmedGuardRobbery": "NO",
+                  "theftSecurityCameras": "NO",
+                  "electrEquipmentVoltageRegulators": "NO",
+                  "earthquakeZone": "2"
+              }
+          ],
+          "policyAmounts": [],
+          "policyDeductibles": [],
+          "policyLimits": [],
+          "policyCoverageParts": [],
+          "policyCoverageDetails": [],
+          "masterPolicies": [],
+          "groupPlans": [],
+          "clauses": [],
+          "policyPendings": [],
+          "policyHolderId": 481152,
+          "agentId": 188359,
+          "previousClaimYears": "NO",
+          "pointOfSale": "188362",
+          "ensurancePolicyIds": [],
+          "ensuranceInvoices": [],
+          "endorsements": [],
+          "lineOfBusiness": [],
+          "complianceStatus": "APPROVED",
+          "complianceIdentification": "1313199067",
+          "policyEnsuranceEndorsements": [],
+          "isRenewal": "NO",
+          "transactionReason": "FORCE_REFERRAL_CHECK"
+      },
+      "transaction": {
+          "_type": "PolicyTransaction",
+          "createdAt": "2025-04-15T18:48:26Z",
+          "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+          "recordVersion": 5,
+          "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+          "id": 788853,
+          "updatedAt": "2025-04-15T18:48:27Z",
+          "tenantId": "ec",
+          "policyNo": 459380,
+          "policyNumber": "COT-PY42924",
+          "transactionType": "Update",
+          "transactionDate": "2025-04-15T18:48:26Z",
+          "transactionStatus": "PENDING",
+          "transactionMode": "INTERACTIVE",
+          "transactionUniqueId": "PaFVtyRWfRjyGnq",
+          "contextName": "RISK-INFORMATION"
+      },
+      "transactionType": "Update"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

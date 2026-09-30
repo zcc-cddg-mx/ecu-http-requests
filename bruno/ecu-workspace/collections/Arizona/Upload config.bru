@@ -1,0 +1,64 @@
+meta {
+  name: Upload config
+  type: http
+  seq: 49
+}
+
+post {
+  url: {{ _.server }}/rule/api/v1/motor/deductible/configurations/upload/json
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_40b110267b764a8f933a0e14bbd536b1', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"parameters": {
+  		"planType": "Basic",
+  		"pointOfSale": "POS1"
+  	},
+  	"dedTotalLoss": "1.0",
+  	"dedLiability": "1.0",
+  	"dedPartialLossMin": "1.0",
+  	"dedPartialLossClaimPct": "1.0",
+  	"dedPartialLossOnSI": "1.0",
+  	"dedTotalLossMax": "1.0",
+  	"dedLiabilityMax": "1.0",
+  	"dedPartialLossMinMax": "1.0",
+  	"dedPartialLossClaimPctMax": "1.0",
+  	"dedPartialLossOnSIMax": "1.0",
+  	"dedTotalLossMin": "1.0",
+  	"dedLiabilityMin": "1.0",
+  	"dedPartialLossMinMin": "1.0",
+  	"dedPartialLossClaimPctMin": "1.0",
+  	"dedPartialLossOnSIMin": "1.0",
+  	"dedTotalLossDevice": "1.0",
+  	"dedTotalLossNoDevice": "1.0",
+  	"dedTotalLossDamage": "1.0",
+  	"dedTotalLossTheft": "1.0",
+  	"dedTotalLossTheftMin": "1.0",
+  	"dedTotalLossTheftMax": "1.0",
+  	"dedPartialLossEquipmentClaimPct": "1.0",
+  	"dedPartialLossEquipmentClaimPctMin": "1.0",
+  	"dedPartialLossEquipmentClaimPctMax": "1.0",
+  	"dedPartialLossEquipmentMin": "1.0",
+  	"dedPartialLossEquipmentMinMin": "1.0",
+  	"dedPartialLossEquipmentMinMax": "1.0",
+  	"dedPartialLossClaimPctAmpPatr": "1.0",
+  	"dedPartialLossOnSIAmpPatr": "1.0",
+  	"dedPartialLossMinAmpPatr": "1.0",
+  	"dedTotalLossAmpPatr": "1.0"
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

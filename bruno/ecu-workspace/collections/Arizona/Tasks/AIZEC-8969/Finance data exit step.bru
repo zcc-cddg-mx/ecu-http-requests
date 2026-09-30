@@ -1,0 +1,44 @@
+meta {
+  name: Finance data exit step
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/claim/api/v1/arizona/fnol_finance_data/exit_step?=
+  body: json
+  auth: bearer
+}
+
+params:query {
+  : 
+}
+
+headers {
+  x-tenantId-1: ec
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'when-expired', 300 %}
+}
+
+body:json {
+  {
+  	"_type": "Fnol",
+  	"claimNo": 150,
+  	"pendingPayments": [],
+  	"fnolFinanceData": {
+  		"_type": "FnolFinanceData",
+  		"isAccountChanged": "YES",
+  		"newBankId": 12,
+  		"newBankAccountNumber": "DE123",
+  		"newBankAccountType": "nie-wiadomo-co1"
+  	}
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

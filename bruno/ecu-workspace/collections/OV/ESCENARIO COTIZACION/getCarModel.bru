@@ -1,0 +1,29 @@
+meta {
+  name: getCarModel
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{server}}/policy/api/v1/arizona/ensurance/policies/motor/getCarModel
+  body: json
+  auth: inherit
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+body:json {
+  {
+      "_type": "CarMakeModelRequest",
+      "carMakeId": "5179",
+      "carModel": "run",
+      "testMode": false
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

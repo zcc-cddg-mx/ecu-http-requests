@@ -1,0 +1,43 @@
+meta {
+  name: get banks (Acc)
+  type: http
+  seq: 20
+}
+
+get {
+  url: {{ server }}:{{ serverPort }}/accounting/api/v1/arizona/banks/1?=
+  body: json
+  auth: bearer
+}
+
+params:query {
+  : 
+}
+
+headers {
+  x-tenantId-1: ec
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "UpdatePaymentRequest",
+  	"searchPaymentId": 19955,
+  	"paymentAction": "PAYMENT_CONFIRMATION",
+  	"updateDate": "2020-11-30",
+  	"approvalAmount": -2000,
+  	"approvalCurrency": "USD",
+  	"setPaymentRefNo": "fengi ref",
+  	"setOcrRefNo": "fengi ocr",
+  	"setTechnicalRef": "fengi tech"
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

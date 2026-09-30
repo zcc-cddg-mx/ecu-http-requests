@@ -1,0 +1,58 @@
+meta {
+  name: getxls-accounting
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/accounting/api/v1/arizona/data/download?=
+  body: json
+  auth: bearer
+}
+
+params:query {
+  : 
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantId-1: no
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "XlsExportOptions",
+  	"outputFileType": "xlsx",
+  	"outputFileName": "data-template.xlsx",
+  	"entityNames": [
+  		"eu.ncdc.arizona.accounting.domain.entity.PaymentMethod",
+  		"eu.ncdc.arizona.accounting.domain.entity.PaymentMethodGuidance",
+  		"eu.ncdc.arizona.accounting.domain.entity.PaymentGuidance",
+  		"eu.ncdc.arizona.accounting.domain.entity.PaymentTerm",
+  		"eu.ncdc.arizona.accounting.domain.entity.Term",
+  		"eu.ncdc.arizona.accounting.domain.entity.PaymentRule",
+  		"eu.ncdc.arizona.accounting.domain.entity.PaymentRuleVersion",
+  "eu.ncdc.arizona.accounting.domain.entity.PaymentRuleTransRestriction",
+  		"eu.ncdc.arizona.accounting.domain.entity.PaymentAction",
+  		"eu.ncdc.arizona.accounting.domain.entity.PaymentActionSetup",
+  		"eu.ncdc.arizona.accounting.domain.entity.PaymentActionTask",
+  		"eu.ncdc.arizona.accounting.domain.entity.PaymentCancelTask",
+  		"eu.ncdc.arizona.accounting.domain.entity.TemplateTransaction",
+  		"eu.ncdc.arizona.accounting.domain.entity.PaymentActionTransition"
+  	],
+  	"filters": {},
+  	"wrapText": "true",
+  	"autoFilter": "true",
+  	"templateOnly": "false",
+  	"locale": "no"
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

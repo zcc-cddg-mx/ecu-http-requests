@@ -1,0 +1,164 @@
+meta {
+  name: 1st step
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/policy/api/v1/arizona/policy_transactions/update
+  body: json
+  auth: bearer
+}
+
+headers {
+  x-tenantid-1: ec
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "PolicyUpdateTransactionRequest",
+  	"policy": {
+  		"_type": "ECPolicy",
+  		"notes": "{}",
+  		"originalInceptionDate": "2022-06-28T05:00:00Z",
+  		"productId": 1041,
+  		"productCode": "LFC",
+  		"variantId": 1021,
+  		"variantCode": "CORPORATIVO_VIDA",
+  		"partyRoles": [
+  			{
+  				"_type": "AgreementPartyRole",
+  				"tenantId": "ec",
+  				"partyRole": "POLICY_AGENT",
+  				"partyId": 2583,
+  				"share": 100,
+  				"isLeader": "YES"
+  			}
+  		],
+  		"commissionSplits": [
+  			{
+  				"_type": "AgreementCommissionSplit",
+  				"agreementAgentRole": "CoBroker",
+  				"isLeader": "YES",
+  				"share": 100,
+  				"commissionPercent": 0,
+  				"structureElementId": 2583,
+  				"effectiveDate": "2022-06-28T06:19:08Z"
+  			}
+  		],
+  		"policyNo": 101,
+  		"policyNumber": "COT-LFC1002",
+  		"effectiveDate": "2022-06-28T05:00:00Z",
+  		"expirationDate": "2023-06-28T05:00:00Z",
+  		"annualEffectiveDate": "2022-06-28T05:00:00Z",
+  		"annualExpirationDate": "2023-06-28T05:00:00Z",
+  		"status": "WORKING",
+  		"productClass": "GROUP",
+  		"paymentMethod": "1",
+  		"currency": "USD",
+  		"yearOfPolicy": 1,
+  		"proRataMethod": "PR360E",
+  		"renewalMode": "NONE",
+  		"policyTransaction": {
+  			"_type": "PolicyTransaction",
+  			"createdAt": "2022-06-28T01:18:45.669-0500",
+  			"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  			"recordVersion": 5,
+  			"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  			"id": 2963,
+  			"updatedAt": "2022-06-28T01:18:45.852-0500",
+  			"tenantId": "ec",
+  			"policyNo": 101,
+  			"policyNumber": "COT-LFC1002",
+  			"transactionType": "Update",
+  			"transactionDate": "2022-06-28T06:18:45Z",
+  			"transactionStatus": "PENDING",
+  			"transactionMode": "INTERACTIVE",
+  			"transactionUniqueId": "YxYTwkwRfbVrcXA",
+  			"contextName": "client-info-id"
+  		},
+  		"billingType": "SUBSCRIPTION",
+  		"billingBindingEntity": "POLICY",
+  		"accountingLevel": "NONE",
+  		"insurableObjects": [
+  			{
+  				"_type": "LifeGeneralData",
+  				"objectNo": 100,
+  				"insurableObjectTypeId": 1041,
+  				"insurableObjectClass": "SIMPLE",
+  				"policyNo": 101,
+  				"effectiveDate": "2022-06-28T00:00:00.000-0500",
+  				"expirationDate": "2023-06-28T00:00:00.000-0500",
+  				"annualEffectiveDate": "2022-06-28T00:00:00.000-0500",
+  				"annualExpirationDate": "2023-06-28T00:00:00.000-0500",
+  				"originalInceptionDate": "2022-06-28T00:00:00.000-0500",
+  				"yearOfObject": 1,
+  				"informationOnly": "YES",
+  				"groupPlans": [],
+  				"policyAmounts": [],
+  				"policyDeductibles": [],
+  				"policyLimits": [],
+  				"policyCoverageDetails": [],
+  				"partyRoles": [],
+  				"clauses": [],
+  				"policyPendings": [],
+  				"previousInsurance": "NO",
+  				"requestComChange": "NO",
+  				"temporaryCoverRequired": "NO",
+  				"spouseYn": "NO",
+  				"childrenYn": "NO",
+  				"individualCertificatesYn": "NO",
+  				"titularYn": "NO",
+  				"percentageOfParticipationYN": "NO"
+  			}
+  		],
+  		"policyAmounts": [],
+  		"policyDeductibles": [],
+  		"policyLimits": [],
+  		"policyCoverageParts": [],
+  		"policyCoverageDetails": [],
+  		"masterPolicies": [],
+  		"groupPlans": [],
+  		"clauses": [],
+  		"policyPendings": [],
+  		"previousClaimYears": "NO",
+  		"ensurancePolicyIds": [],
+  		"ensuranceInvoices": [],
+  		"endorsements": [],
+  		"lineOfBusiness": [],
+  		"policyEnsuranceEndorsements": [],
+  		"isRenewal": "NO",
+  		"pointOfSale": "18959",
+  		"transactionReason": "FORCE_REFERRAL_CHECK"
+  	},
+  	"transaction": {
+  		"_type": "PolicyTransaction",
+  		"createdAt": "2022-06-28T01:18:45.669-0500",
+  		"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  		"recordVersion": 5,
+  		"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  		"id": 2963,
+  		"updatedAt": "2022-06-28T01:18:45.852-0500",
+  		"tenantId": "ec",
+  		"policyNo": 101,
+  		"policyNumber": "COT-LFC1002",
+  		"transactionType": "Update",
+  		"transactionDate": "2022-06-28T06:18:45Z",
+  		"transactionStatus": "PENDING",
+  		"transactionMode": "INTERACTIVE",
+  		"transactionUniqueId": "YxYTwkwRfbVrcXA",
+  		"contextName": "client-info-id"
+  	},
+  	"transactionType": "Update"
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

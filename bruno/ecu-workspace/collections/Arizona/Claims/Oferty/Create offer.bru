@@ -1,0 +1,293 @@
+meta {
+  name: Create offer
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/claim/api/v1/arizona/proxy/handling/settlement_reserve/create_offer
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "CreateOfferHandlingProxy",
+  	"handlingReservesTableProxyDTO": {
+  		"_type": "HandlingReservesTableProxy",
+  		"fieldsInfo": {},
+  		"claimId": 15,
+  		"claimNo": 50,
+  		"claimNumber": "22-87-LFC-50",
+  		"listOfRiskGroups": [
+  			{
+  				"_type": "HandlingReservesRiskGroupProxy",
+  				"id": null,
+  				"groupName": "Death",
+  				"riskList": [
+  					{
+  						"_type": "HandlingRiskProxy",
+  						"id": null,
+  						"coverageGroupCode": null,
+  						"riskName": "Muerte por cualquier causa",
+  						"handlingRiskProxy": [
+  							{
+  								"_type": "HandlingSingleRiskProxy",
+  								"id": null,
+  								"singleRiskName": "Muerte por cualquier causa",
+  								"coverageCode": "101",
+  								"insuranceSum": 16,
+  								"insuranceSumLeft": 16,
+  								"handlingSingleReserveList": [
+  									{
+  										"_type": "HandlingSingleReserveEntryProxy",
+  										"id": null,
+  										"reserveId": 23,
+  										"reserveNo": 72,
+  										"changed": "NO",
+  										"reserveAmount": 2,
+  										"reserveType": "Loss",
+  										"offered": 2,
+  										"paid": 0,
+  										"total": 2,
+  										"selected": "NO"
+  									},
+  									{
+  										"_type": "HandlingSingleReserveEntryProxy",
+  										"id": null,
+  										"reserveId": 24,
+  										"reserveNo": 73,
+  										"changed": "NO",
+  										"reserveAmount": 3,
+  										"reserveType": "Loss",
+  										"offered": 0,
+  										"paid": 0,
+  										"total": 0,
+  										"selected": "YES",
+  										"newOfferValue": 3
+  									},
+  									{
+  										"_type": "HandlingSingleReserveEntryProxy",
+  										"id": null,
+  										"reserveId": 17,
+  										"reserveNo": 50,
+  										"changed": "NO",
+  										"reserveAmount": 10,
+  										"reserveType": "Loss",
+  										"offered": 10,
+  										"paid": 0,
+  										"total": 10,
+  										"selected": "NO"
+  									},
+  									{
+  										"_type": "HandlingSingleReserveEntryProxy",
+  										"id": null,
+  										"reserveId": 20,
+  										"reserveNo": 71,
+  										"changed": "NO",
+  										"reserveAmount": 1,
+  										"reserveType": "Loss",
+  										"offered": 1,
+  										"paid": 0,
+  										"total": 1,
+  										"selected": "NO"
+  									}
+  								]
+  							},
+  							{
+  								"_type": "HandlingSingleRiskProxy",
+  								"id": null,
+  								"singleRiskName": "Muerte por cualquier causa hijos",
+  								"coverageCode": "201",
+  								"insuranceSum": 30,
+  								"insuranceSumLeft": 30,
+  								"handlingSingleReserveList": [
+  									{
+  										"_type": "HandlingSingleReserveEntryProxy",
+  										"id": null,
+  										"reserveId": 14,
+  										"reserveNo": 51,
+  										"changed": "NO",
+  										"reserveAmount": 30,
+  										"reserveType": "Loss",
+  										"offered": 30,
+  										"paid": 0,
+  										"total": 30,
+  										"selected": "NO"
+  									}
+  								]
+  							},
+  							{
+  								"_type": "HandlingSingleRiskProxy",
+  								"id": null,
+  								"singleRiskName": "Gastos de sepelio por muerte",
+  								"coverageCode": "139",
+  								"insuranceSum": 100,
+  								"insuranceSumLeft": 100,
+  								"handlingSingleReserveList": [
+  									{
+  										"_type": "HandlingSingleReserveEntryProxy",
+  										"id": null,
+  										"reserveId": 12,
+  										"reserveNo": 53,
+  										"changed": "NO",
+  										"reserveAmount": 100,
+  										"reserveType": "Loss",
+  										"offered": 100,
+  										"paid": 0,
+  										"total": 100,
+  										"selected": "NO"
+  									}
+  								]
+  							},
+  							{
+  								"_type": "HandlingSingleRiskProxy",
+  								"id": null,
+  								"singleRiskName": "Gastos de sepelio por muerte hijos",
+  								"coverageCode": "239",
+  								"insuranceSum": 1,
+  								"insuranceSumLeft": 1,
+  								"handlingSingleReserveList": [
+  									{
+  										"_type": "HandlingSingleReserveEntryProxy",
+  										"id": null,
+  										"reserveId": 8,
+  										"reserveNo": 54,
+  										"changed": "NO",
+  										"reserveAmount": 1,
+  										"reserveType": "Loss",
+  										"offered": 1,
+  										"paid": 0,
+  										"total": 1,
+  										"selected": "NO"
+  									}
+  								]
+  							},
+  							{
+  								"_type": "HandlingSingleRiskProxy",
+  								"id": null,
+  								"singleRiskName": "Muerte por cualquier causa cónyuge",
+  								"coverageCode": "151",
+  								"insuranceSum": 90,
+  								"insuranceSumLeft": 90,
+  								"handlingSingleReserveList": [
+  									{
+  										"_type": "HandlingSingleReserveEntryProxy",
+  										"id": null,
+  										"reserveId": 9,
+  										"reserveNo": 52,
+  										"changed": "NO",
+  										"reserveAmount": 90,
+  										"reserveType": "Loss",
+  										"offered": 90,
+  										"paid": 0,
+  										"total": 90,
+  										"selected": "NO"
+  									}
+  								]
+  							}
+  						]
+  					}
+  				]
+  			}
+  		],
+  		"coverageGroupList": [
+  			{
+  				"_type": "FnolCoverageGroupList",
+  				"coverageGroupName": "Death",
+  				"fnolCoverageListElements": [
+  					{
+  						"_type": "FnolCoverageListElement",
+  						"coverageCode": "101",
+  						"coverageName": "Muerte por cualquier causa",
+  						"isAccident": "NO",
+  						"insured": {
+  							"_type": "FnolCoverageInfo",
+  							"isOnPolicy": "YES",
+  							"isSelected": "NO",
+  							"coverageName": "Muerte por cualquier causa"
+  						},
+  						"child": {
+  							"_type": "FnolCoverageInfo",
+  							"isOnPolicy": "YES",
+  							"isSelected": "NO",
+  							"coverageName": "Muerte por cualquier causa hijos"
+  						},
+  						"spouse": {
+  							"_type": "FnolCoverageInfo",
+  							"isOnPolicy": "YES",
+  							"isSelected": "NO",
+  							"coverageName": "Muerte por cualquier causa cónyuge"
+  						}
+  					},
+  					{
+  						"_type": "FnolCoverageListElement",
+  						"coverageCode": "139",
+  						"coverageName": "Gastos de sepelio por muerte",
+  						"isAccident": "NO",
+  						"insured": {
+  							"_type": "FnolCoverageInfo",
+  							"isOnPolicy": "YES",
+  							"isSelected": "NO",
+  							"coverageName": "Gastos de sepelio por muerte"
+  						},
+  						"child": {
+  							"_type": "FnolCoverageInfo",
+  							"isOnPolicy": "YES",
+  							"isSelected": "NO",
+  							"coverageName": "Gastos de sepelio por muerte hijos"
+  						},
+  						"spouse": {
+  							"_type": "FnolCoverageInfo",
+  							"isOnPolicy": "NO",
+  							"isSelected": "NO",
+  							"coverageName": "Gastos de sepelio por muerte cónyuge"
+  						}
+  					}
+  				],
+  				"isSelected": "NO"
+  			}
+  		],
+  		"beneficiaries": [
+  			{
+  				"_type": "HandlingSingleInvolvedPartyProxy",
+  				"mainRole": "INSURED",
+  				"partyName": "Lorena Puyol",
+  				"identification": "1701164111",
+  				"partyId": 11954,
+  				"partyRoles": [
+  					{
+  						"_type": "HandlingPartyRole",
+  						"fieldsInfo": {},
+  						"roleName": "CONTACT_PERSON"
+  					}
+  				],
+  				"phoneNumbers": [
+  					"12-34567890",
+  					"12-3456789",
+  					"999999999"
+  				],
+  				"contactEmails": [
+  					"test1@ncdc.pl",
+  					"yanialexacosta@gmail.com"
+  				]
+  			}
+  		]
+  	},
+  	"beneficiaryId": 11954
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

@@ -1,0 +1,32 @@
+meta {
+  name: VOC InvoiceNumberDTOQuery
+  type: http
+  seq: 52
+}
+
+get {
+  url: http://larasrv.ncdc:9011/api/v1/voc/query/InvoiceNumberQuery/InvoiceNumberDTO?page=0&pageSize=20&numeroPoliza=1179905
+  body: none
+  auth: basic
+}
+
+params:query {
+  page: 0
+  pageSize: 20
+  numeroPoliza: 1179905
+}
+
+headers {
+  User-Agent: insomnia/9.1.1
+  Cookie: JSESSIONID=BCA567C4219D678D6A4CC2FCF27EB0BE
+}
+
+auth:basic {
+  username: voclient
+  password: 1!Nc@dc#
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

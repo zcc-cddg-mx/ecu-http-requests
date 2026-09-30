@@ -1,0 +1,25 @@
+meta {
+  name: getVHPlacasTEST
+  type: http
+  seq: 26
+}
+
+get {
+  url: https://serviciosias.zurichseguros.com.ec/zurich/api/motorManagement/v1/vehicles?plate=LBD2969
+  body: json
+  auth: basic
+}
+
+params:query {
+  plate: LBD2969
+}
+
+auth:basic {
+  username: zurich
+  password: password2018
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

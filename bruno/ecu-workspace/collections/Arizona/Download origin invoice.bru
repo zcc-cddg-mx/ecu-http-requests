@@ -1,0 +1,30 @@
+meta {
+  name: Download origin invoice
+  type: http
+  seq: 79
+}
+
+post {
+  url: {{ _.server }}:{{ _.serverPort }}/report/api/v1/arizona/ov/crystal/downloadOrginInvoice/3
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_cc1ef1ec3a964e49afda4f82586a4ec0', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'when-expired', 60 %}
+}
+
+body:json {
+  {
+  	"documentId": 2
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

@@ -1,0 +1,129 @@
+meta {
+  name: JMeter handle policy
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/policy/api/v1/arizona/policy_transactions/update
+  body: json
+  auth: bearer
+}
+
+headers {
+  x-tenantid-1: ec
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_6c9a3a579fa645e78ec2e6f6628c790f', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "PolicyUpdateTransactionRequest",
+  	"policy": {
+  		"_type": "ECPolicy",
+  		"notes": "{}",
+  		"originalInceptionDate": "2022-12-07T05:00:00Z",
+  		"productId": 1041,
+  		"productCode": "LFC",
+  		"variantId": 1021,
+  		"variantCode": "CORPORATIVO_VIDA",
+  		"partyRoles": [
+  			{
+  				"_type": "AgreementPartyRole",
+  				"tenantId": "ec",
+  				"partyRole": "POLICY_AGENT",
+  				"partyId": 2583,
+  				"share": 100,
+  				"isLeader": "YES"
+  			}
+  		],
+  		"commissionSplits": [
+  			{
+  				"_type": "AgreementCommissionSplit",
+  				"agreementAgentRole": "CoBroker",
+  				"isLeader": "YES",
+  				"share": 100,
+  				"commissionPercent": 23,
+  				"structureElementId": 1610,
+  				"effectiveDate": "2022-12-07T12:58:13Z"
+  			}
+  		],
+  		"policyNo": "${policyNo}",
+  		"policyNumber": "${policyNumber}",
+  		"effectiveDate": "2022-12-07T05:00:00Z",
+  		"expirationDate": "2023-12-07T05:00:00Z",
+  		"annualEffectiveDate": "2022-12-07T05:00:00Z",
+  		"annualExpirationDate": "2023-12-07T05:00:00Z",
+  		"status": "WORKING",
+  		"productClass": "GROUP",
+  		"paymentMethod": "1",
+  		"currency": "USD",
+  		"yearOfPolicy": 1,
+  		"proRataMethod": "PR360E",
+  		"renewalMode": "NONE",
+  		"policyTransaction": {
+  			"_type": "PolicyTransaction",
+  			"createdAt": "2022-12-07T07:51:10.833-0500",
+  			"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  			"recordVersion": 5,
+  			"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  			"id": 3952,
+  			"updatedAt": "2022-12-07T07:51:12.833-0500",
+  			"tenantId": "ec",
+  			"policyNo": ${policyNo},
+  			"policyNumber": "${policyNumber}",
+  			"transactionType": "Update",
+  			"transactionDate": "2022-12-07T12:51:10Z",
+  			"transactionStatus": "PENDING",
+  			"transactionMode": "INTERACTIVE",
+  			"transactionUniqueId": "iFpFwPQrmXHbVnz",
+  			"contextName": "GENERAL"
+  		},
+  		"billingType": "SUBSCRIPTION",
+  		"billingBindingEntity": "POLICY",
+  		"accountingLevel": "NONE",
+  		"insurableObjects": "${insurableObjects}",
+  		"policyAmounts": [],
+  		"policyDeductibles": [],
+  		"policyLimits": [],
+  		"policyCoverageParts": [],
+  		"policyCoverageDetails": [],
+  		"masterPolicies": [],
+  		"groupPlans": [],
+  		"clauses": [],
+  		"policyPendings": [],
+  		"policyPeriod": "ANNUAL",
+  		"previousClaimYears": "NO",
+  		"ensurancePolicyIds": [],
+  		"ensuranceInvoices": [],
+  		"endorsements": [],
+  		"lineOfBusiness": [],
+  		"policyEnsuranceEndorsements": [],
+  		"isRenewal": "NO",
+  		"pointOfSale": "18959",
+  		"transactionReason": "FORCE_REFERRAL_CHECK"
+  	},
+  	"transaction": {
+  		"_type": "PolicyTransaction",
+  		"id": ${transaction.id},
+  		"tenantId": "ec",
+  		"policyNo": ${policyNo},
+  		"policyNumber": "${policyNumber}",
+  		"transactionType": "Update",
+  		"transactionDate": "2022-12-07T12:51:10Z",
+  		"transactionStatus": "PENDING",
+  		"transactionMode": "INTERACTIVE",
+  		"transactionUniqueId": "iFpFwPQrmXHbVnz",
+  		"contextName": "GENERAL"
+  	},
+  	"transactionType": "Update"
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

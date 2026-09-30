@@ -1,0 +1,35 @@
+meta {
+  name: 5th step - 2
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/policy/api/v1/arizona/bulk_policy_handle/import/finalized?updatePolicy=true
+  body: multipartForm
+  auth: bearer
+}
+
+params:query {
+  updatePolicy: true
+}
+
+headers {
+  x-tenantid-1: ec
+  Content-Type: multipart/form-data
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:multipart-form {
+  options: { "_type": "File", "fileType": "OWNER"}
+  policyUpdateTransactionRequest: 
+  files: @file(C:\Users\cziken\Desktop\Test data\Person list, 5 people.xlsx)
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

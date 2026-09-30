@@ -1,0 +1,56 @@
+meta {
+  name: ZBox FolderMetadata
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://10.119.74.24:8000/zurich/api/collection/box/v1.0/metadataFolder
+  body: json
+  auth: basic
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:basic {
+  username: zurich
+  password: password2018
+}
+
+body:json {
+  {
+  	"userId": "15268637096",
+  	"folderId": "151742882054",
+  	"appName": "ARIZONA",
+  	"year": 2021,
+  	"moduleName": "string",
+  	"registryId": "string",
+  	"registryNumber": 0,
+  	"registryDescription": "string",
+  	"customerId": "string",
+  	"customerData": "string",
+  	"policyData": "string",
+  	"claimID": "string",
+  	"processId": "string",
+  	"endorsementId": "string",
+  	"fileCreationDate": "2021-11-18",
+  	"fileName": "string",
+  	"fileType": "string",
+  	"beneficiaryId": "string",
+  	"beneficiaryData": "string",
+  	"retentionType": "string",
+  	"vehicleId": "string",
+  	"brokerFullName": "string",
+  	"customerFullName": "string",
+  	"claimBranch": "string",
+  	"lob": "string",
+  	"workflowOpID": "string"
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

@@ -1,0 +1,34 @@
+meta {
+  name: Create Bordereau - step 2
+  type: http
+  seq: 14
+}
+
+put {
+  url: {{ server }}:{{ serverPort }}/reinsurance/api/v1/arizona/bordereaus/update
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "BordereauUpdate",
+  	"bordereauId": 1952,
+  	"bordereauPremiumIds": [4],
+  	"removePremiums": true
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

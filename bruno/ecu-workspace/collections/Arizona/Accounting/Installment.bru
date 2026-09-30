@@ -1,0 +1,68 @@
+meta {
+  name: Installment
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/accounting/api/v1/arizona/transaction_entries?=
+  body: json
+  auth: bearer
+}
+
+params:query {
+  : 
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantId-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "ECTransactionEntryRequest",
+  	"accountPartyId": 9952,
+  	"transAmt": 120,
+  	"exchangeRate": 1,
+  	"transCurrencyCode": "USD",
+  	"invoiceStartDate": "2021-12-15",
+  	"invoiceEndDate": "2022-12-14",
+  	"policyEffectiveYear": "2022-12-14",
+  	"transClass": "INSTALLMENT",
+  	"transSubclass": "POLICY",
+  	"policyNo": 222,
+  	"policyAmountId": 2,
+  	"transactionTypeCode": "P1",
+  	"productType": "LFC",
+  	"billingNumber": "invoice:2021-12-16:31",
+  	"policyNumber": "invoice:2021-12-16:2",
+  	"instalmentPlanId": 333,
+  	"yearAdjustmentNo": "1",
+  	"operationType": "EC0001",
+  	"paymentMethodCode": "KUSHKI",
+  	"paymentInstructionId": 1,
+  	"dueDate": "{% now 'custom', 'YYYY-MM-DD' %}",
+  	"transactionComponents": [
+  		{
+  			"_type": "ECTransactionComponent",
+  			"componentSource": "POLICY",
+  			"componentSourceValue": "GROSS",
+  			"componentCurrencyCode": "USD",
+  			"lineOfBusiness": "E0201",
+  			"distributionChannel": "DC0104",
+  			"basketSegment": "EC_SME_P",
+  			"office": "EC01"
+  		}
+  	]
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

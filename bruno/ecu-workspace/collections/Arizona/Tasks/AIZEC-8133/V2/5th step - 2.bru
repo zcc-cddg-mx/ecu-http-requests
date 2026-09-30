@@ -1,0 +1,145 @@
+meta {
+  name: 5th step - 2
+  type: http
+  seq: 16
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/policy/api/v1/arizona/bulk_policy_handle/import/finalized?updatePolicy=true
+  body: json
+  auth: bearer
+}
+
+params:query {
+  updatePolicy: true
+}
+
+headers {
+  x-tenantid-1: ec
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  updatePolicy=true------
+  
+  WebKitFormBoundaryNcXrnyB2BAqft8LtContent-Disposition: form-data;name="options"{
+  	"_type": "File",
+  	"fileType": "OWNER"
+  }------
+  
+  WebKitFormBoundaryNcXrnyB2BAqft8LtContent-Disposition: form-data;name="policyUpdateTransactionRequest";filename="Person list, 5 people.xlsx"Content-Type: application/json{
+  	"_type": "PolicyUpdateTransactionRequest",
+  	"transactionType": "Update",
+  	"policy": {
+  		"_type": "ECPolicy",
+  		"createdAt": "2022-07-11T09:28:30Z",
+  		"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  		"recordVersion": 3,
+  		"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  		"id": 3045,
+  		"updatedAt": "2022-07-11T09:35:57Z",
+  		"tenantId": "ec",
+  		"notes": "{\"actualInformation\":null}",
+  		"originalInceptionDate": "2022-07-11T05:00:00Z",
+  		"productId": 1041,
+  		"productCode": "LFC",
+  		"variantId": 1021,
+  		"variantCode": "CORPORATIVO_VIDA",
+  		"partyRoles": [
+  			{
+  				"_type": "AgreementPartyRole",
+  				"createdAt": "2022-07-11T04:30:31.350-0500",
+  				"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"recordVersion": 4,
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 4992,
+  				"updatedAt": "2022-07-11T04:35:57.648-0500",
+  				"tenantId": "ec",
+  				"partyId": 9952,
+  				"partyRole": "POLICY_HOLDER",
+  				"isLeader": "NO",
+  				"agreementId": 3045
+  			},
+  			{
+  				"_type": "AgreementPartyRole",
+  				"createdAt": "2022-07-11T04:28:30.724-0500",
+  				"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"recordVersion": 6,
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 4993,
+  				"updatedAt": "2022-07-11T04:35:57.648-0500",
+  				"tenantId": "ec",
+  				"partyId": 2583,
+  				"partyRole": "POLICY_AGENT",
+  				"share": 100,
+  				"isLeader": "YES",
+  				"agreementId": 3045
+  			},
+  			{
+  				"_type": "AgreementPartyRole",
+  				"createdAt": "2022-07-11T04:28:30.724-0500",
+  				"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"recordVersion": 6,
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 4994,
+  				"updatedAt": "2022-07-11T04:35:57.648-0500",
+  				"tenantId": "ec",
+  				"partyId": 1975,
+  				"partyRole": "LIFE_COMMERCIAL_EXECUTIVE",
+  				"isLeader": "NO",
+  				"agreementId": 3045
+  			}
+  		],
+  		"commissionSplits": [
+  			{
+  				"_type": "AgreementCommissionSplit",
+  				"createdAt": "2022-07-11T09:32:08Z",
+  				"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"recordVersion": 3,
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 30,
+  				"updatedAt": "2022-07-11T09:35:57Z",
+  				"agreementAgentRole": "CoBroker",
+  				"structureElementId": 2583,
+  				"share": 100,
+  				"commissionPercent": 0,
+  				"effectiveDate": "2022-07-11T05:00:00Z",
+  				"expirationDate": "2023-07-11T05:00:00Z",
+  				"isLeader": "YES",
+  				"agreementId": 3045
+  			}
+  		],
+  		"displayName": "Vida Corporativo",
+  		"policyNo": 112,
+  		"policyNumber": "COT-LFC1006",
+  		"effectiveDate": "2022-07-11T05:00:00Z",
+  		"expirationDate": "2023-07-11T05:00:00Z",
+  		"annualEffectiveDate": "2022-07-11T05:00:00Z",
+  		"annualExpirationDate": "2023-07-11T05:00:00Z",
+  		"status": "APPROVED",
+  		"customStatus": "WON",
+  		"productClass": "GROUP",
+  		"paymentTerms": "PREMIUM_30",
+  		"paymentMethod": "1",
+  		"currency": "USD",
+  		"yearOfPolicy": 1,
+  		"proRataMethod": "PR360E",
+  		"renewalMode": "NONE",
+  		"policyTransaction": {
+  			"_type": "PolicyTransaction",
+  			"createdAt": "2022-07-11T09:27:32Z",
+  			"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  			"recordVersion": 5,
+  			"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  			"id": 2959,
+  			"updatedAt": "202Show more
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

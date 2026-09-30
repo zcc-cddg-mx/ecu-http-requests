@@ -1,0 +1,42 @@
+meta {
+  name: Download invoice signed
+  type: http
+  seq: 67
+}
+
+post {
+  url: {{ _.server }}:{{ _.serverPort }}/report/api/v1/arizona/ov/signedDocuments/downloadInvoice/352658706
+  body: json
+  auth: bearer
+}
+
+headers {
+  Accept: application/json, text/plain, */*
+  Accept-Language: en-US,en;q=0.9
+  Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJWQ1dzRkVaMHQzMGJxRmpJdmxlblBjWkEwakdHclAtbGNvN2JyMG1KSm5JIn0.eyJqdGkiOiI5NTkwZTE1MS1kZGU0LTQ3MDMtOTkwMC0yNzUzOWFhNWM0MDciLCJleHAiOjE3MDgzMzk3OTksIm5iZiI6MCwiaWF0IjoxNzA4MzM4NTk5LCJpc3MiOiJodHRwczovL3ByZXByb2Qtb2ZpY2luYXZpcnR1YWwuenVyaWNoc2VndXJvcy5jb20uZWMvbnVldm9wb3J0YWwvYXV0aC9yZWFsbXMvbWFzdGVyIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImJhMzA2MzlkLWQ0ZmItNDIwMi1iNTc2LWU3YTMxNDU3YTAxOSIsInR5cCI6IkJlYXJlciIsImF6cCI6InBhc3MiLCJhdXRoX3RpbWUiOjAsInNlc3Npb25fc3RhdGUiOiI5YmYxNmMzNi02ODQ0LTQzZTUtOGIxMy02ZWVmYThjYjE2NzAiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImZyb250X3JvbGVfdXNlciIsImZyb250X3JvbGVfdHJlYXN1cnlfZXhlY3V0aXZlIiwiZnJvbnRfcm9sZV96dXJpY2hfYXNzb2NpYXRlIiwiZG93bmxvYWRfaW5mb2JpcF9maWxlIiwicm9sZV91c2VyIiwicm9sZV9jYXNhX2hhYml0YWNpb25fZl96dXJpY2giLCJmcm9udF9yb2xlX3V3X2xpZmUiLCJyb2xlX2ZhY3R1cmFkb3IiLCJvZmZsaW5lX2FjY2VzcyIsImZyb250X3JvbGVfZmFjdHVyYWRvciIsInJvbGVfdmVoaWN1bG9zX2ZfenVyaWNoIiwiZnJvbnRfcm9sZV9hZG1pbmlzdHJhdG9yIiwidW1hX2F1dGhvcml6YXRpb24iLCJyb2xlX2N1c3RvbWVyIiwicm9sZV9iZWRlb193ZWJob29rX2luc3BlY3RvciIsImZyb250X3JvbGVfc3VwZXJfdXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInRlbmFudHMiOiJlYyIsInByZWZlcnJlZF91c2VybmFtZSI6ImFzYWxhemFyIiwicGFydHlpZCI6IjE2NCIsImxvY2FsZSI6ImVuIn0.TXmVDXcsRe5gfCW8yX8a1W4OsS3ZLF1qzJ2XjEUVFmXhkLTBLqzWUh4acgIF41jN-ZS9qiIr7E0gOB-1hgZHxf090l5fpC7ss8ox6y2wfPe7mEqT3im0USB3HADMrFCkmPzUWYeqL6APL3DbzdudW2m4ios3KX1FYB2eLnR3yF6mOo6OLeGvvqQdSjRsjus1rANXkTr2GBoku9QK7ozLDlhBvwml_jTA2j8Tetg1HabjxRdmho3EK1G3yIz6mFB-l5h8TtgDqd-TsHLNe9uN3zRpv8s10fKAwbDZ1TILvO60QiUta1plunomjeUFJF-hYUM6qkbzBhVRCpWn_Bs0-w
+  Connection: keep-alive
+  Content-Type: application/json
+  Cookie: _fbp=fb.2.1706712952098.1043911978; visid_incap_1917083=dXRTHWJjSTSi7C7m8NMAqpxgumUAAAAAQUIPAAAAAADz8PeCq7oTOkv5ox48YSSg; _hjSessionUser_3411284=eyJpZCI6ImZjOTgzODA1LWIzODgtNWE2ZC05NGY3LTU0OTMyMjAwZTZkZSIsImNyZWF0ZWQiOjE3MDY3MTI5NDExNDYsImV4aXN0aW5nIjp0cnVlfQ==; visid_incap_1917095=5d0aDCeqSCuTx0aiG2kv9wMrwmUAAAAAQUIPAAAAAABQHSqmTm9AXQAXTDY3Gaae; _pk_id.1.86fc=71ad47ca1113b5ef.1707324232.; _hjDonePolls=904120; _hjMinimizedPolls=; _ga_CJX15DYEXV=GS1.1.1707861870.1.1.1707862354.0.0.0; _gid=GA1.3.714264541.1708333215; visid_incap_1769788=aK3HRYlFREq9K56Yd+2gDuUZ02UAAAAAQUIPAAAAAABQljV9MU7rUYPTnxl0Wrzr; incap_ses_1689_1769788=UiddN85UQ2Z/8bqEq4hwF+UZ02UAAAAAPDoBdmYYQuE7wCURI1hWgw==; nlbi_1769788=zSBoZBt4Pwk1N8xu9bAFZAAAAAD5p5a4jCNhYLjdrRdfa2P1; nlbi_1769788_2147483392=AWxvXe/6GAexN0QW9bAFZAAAAABblY9SoXn9TIFRWNVevBRW; _gcl_au=1.1.1390543385.1708333546; _ga360=GA1.3.1219979611.1706712951; _ga360_gid=GA1.3.315162444.1708333547; _hjSessionUser_3399529=eyJpZCI6IjFiZmUzMGVmLTBkMjUtNTllZS04NzE3LTk3N2Y1ZjE2MDI2MSIsImNyZWF0ZWQiOjE3MDgzMzM1NDcwMDksImV4aXN0aW5nIjp0cnVlfQ==; utag_main=v_id:018dc09d36e9001bc771f24e945d0507d004907500bd0$_sn:1$_se:1$_ss:1$_st:1708335345198$ses_id:1708333545198%3Bexp-session$_pn:1%3Bexp-session$dc_visit:1$dc_event:1%3Bexp-session$dc_region:eu-central-1%3Bexp-session; _ga_Q20E7WVB70=GS1.1.1708333547.1.0.1708333549.0.0.0; _ga=GA1.1.1219979611.1706712951; _hjSession_3411284=eyJpZCI6IjcwYzYzZGNmLWZmOGEtNGY1Yy1hNDFmLTJmZjUzM2NmZWQ2OCIsImMiOjE3MDgzMzg1ODk4MjQsInMiOjEsInIiOjEsInNiIjowLCJzciI6MCwic2UiOjAsImZzIjowLCJzcCI6MH0=; _gat_gtag_UA_165531254_1=1; _ga_37NC80P0CW=GS1.1.1708338602.10.1.1708338669.0.0.0; _ga_56X461XV47=GS1.1.1708338602.10.1.1708338669.0.0.0; _ga_HJBQ7BT62M=GS1.1.1708338603.10.1.1708338669.0.0.0
+  Origin: https://preprod-oficinavirtual.zurichseguros.com.ec
+  Sec-Fetch-Dest: empty
+  Sec-Fetch-Mode: cors
+  Sec-Fetch-Site: same-origin
+  User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0
+  sec-ch-ua: "Not A(Brand";v="99", "Microsoft Edge";v="121", "Chromium";v="121"
+  sec-ch-ua-mobile: ?0
+  sec-ch-ua-platform: "Windows"
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_34c63b4a00154ddcbb9e92ab90d5e732', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {"reportName":"FACTURATOTAL"}
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

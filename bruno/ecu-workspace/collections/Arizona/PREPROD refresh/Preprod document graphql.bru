@@ -1,0 +1,29 @@
+meta {
+  name: Preprod document graphql
+  type: http
+  seq: 4
+}
+
+post {
+  url: https://preprod-oficinavirtual.zurichseguros.com.ec/nuevoportal/document/graphql
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  User-Agent: insomnia/2023.5.8
+}
+
+auth:bearer {
+  token: eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJDQXRjYkRJcmR4TU9ua0dKTlFnS2dKM25VYUI0SnA2MWpxcnFneHJuYVdVIn0.eyJqdGkiOiIyM2FmNzFhMy1iYWJiLTQ1Y2UtYWE5Ny1hOGE1OTViMzMyZGIiLCJleHAiOjE2OTkwMTI1MTksIm5iZiI6MCwiaWF0IjoxNjk5MDExMzE5LCJpc3MiOiJodHRwOi8vd3d3LmVjcHJvZC5hcmluZXQvYXV0aC9yZWFsbXMvbWFzdGVyIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjNhMmQ2ZjZjLWQ0ZjUtNGE3My1iZjg0LTVkZTQwMGRiNDBjMSIsInR5cCI6IkJlYXJlciIsImF6cCI6InBhc3MiLCJhdXRoX3RpbWUiOjAsInNlc3Npb25fc3RhdGUiOiJlMzRlOTc5ZC00MDQ2LTRlMDYtYTc3MC0zNWE2MjJjMDRmNDAiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImZyb250X3JvbGVfdXNlciIsImZyb250X3JvbGVfaW5zcGVjdG9yX2ludGVybmFsIiwiZnJvbnRfcm9sZV90cmVhc3VyeV9leGVjdXRpdmUiLCJmcm9udF9yb2xlX3V3X21vdG9yIiwiZnJvbnRfcm9sZV96dXJpY2hfYXNzb2NpYXRlIiwicm9sZV9yZWZlcnJhbF91dyIsImZyb250X3JvbGVfaW5zcGVjdG9yX2V4dGVybmFsIiwicm9sZV91c2VyIiwicm9sZV9jYXNhX2hhYml0YWNpb25fZl96dXJpY2giLCJmcm9udF9yb2xlX3V3X2xpZmUiLCJyb2xlX2ZhY3R1cmFkb3IiLCJvZmZsaW5lX2FjY2VzcyIsImZyb250X3JvbGVfZmFjdHVyYWRvciIsInJvbGVfdmVoaWN1bG9zX2ZfenVyaWNoIiwiZnJvbnRfcm9sZV9hZG1pbmlzdHJhdG9yIiwidW1hX2F1dGhvcml6YXRpb24iLCJyb2xlX2N1c3RvbWVyIiwiZnJvbnRfcm9sZV9zdXBlcl91c2VyIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwidGVuYW50cyI6ImVjIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiYXNhbGF6YXIiLCJwYXJ0eWlkIjoiMjA0MCJ9.HauC8oqI8HMzr0APT7O8SLFWN5u44c18eq3K5jXg-LmGMlZ3uKMxqd3ETQyyrg3BdCebbkh6HhBCEOeSowK-vSlzI2EXGT5KABeJekt5RXgN7Y93_Whs1aua6Hn60oE-zRuydYMQegefgm64fNmKX3OP9GkSevl23YkIn811kH3LfGSw8Ns_wq1VCAiwPkK-suqgu2muyBz1w0qa4iLnf-IGgllgkpv3xnany3uwFVy3svIojpPxXuj76NyCgiBD3kHl36r6sZf-U80SserSO3j2CpHzjr0VZBndGaPfoDhDsuBFkPBFSe5FmO2ekdOI1nGAjBYWCRr8bQxK5iDA3A
+}
+
+body:json {
+  {"query":"query document_list($params: Map_String_ObjectScalar) { document_list(params: $params) { ...MessageResponseEntityFragment } }  fragment MessageResponseEntityFragment on MessageResponseEntity_Page_Document { _type body { ...PageFragment } } fragment PageFragment on Page_Document { totalElements content { ...C } } fragment C on Document { _type id name documentCategory ...on LetterDocument { fileId } }\n","variables":{"params":{"class_eq":"LetterDocument","status_nl":"DELETED","pageSize":"1000","documentCategory_in":["OV_CLAIM","OV_UPLA","OV_COLLECTION"],"sortProperties":"id","sortDirection":"desc"}}}
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

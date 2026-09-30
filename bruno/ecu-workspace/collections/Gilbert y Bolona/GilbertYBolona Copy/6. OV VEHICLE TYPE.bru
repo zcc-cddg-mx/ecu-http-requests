@@ -1,0 +1,29 @@
+meta {
+  name: 6. OV VEHICLE TYPE
+  type: http
+  seq: 9
+}
+
+get {
+  url: https://preprodoficinavirtual.zurichseguros.com.ec/nuevoportal/policy/api/v1/arizona/dictionary/en/VehicleType?date=&category=MOTOR
+  body: none
+  auth: bearer
+}
+
+params:query {
+  date: 
+  category: MOTOR
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantId-1: ec
+}
+
+auth:bearer {
+  token: {{token-autority}}
+}
+
+settings {
+  encodeUrl: true
+}

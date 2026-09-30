@@ -1,0 +1,27 @@
+meta {
+  name: getVehicleColors
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{server}}/policy/api/v1/arizona/ensurance/policies/motor/getVehicleColors
+  body: json
+  auth: inherit
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+body:json {
+  {
+      "_type": "MotorColorDataRequest",
+      "testMode": false
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

@@ -1,0 +1,25 @@
+meta {
+  name: getVHPlacas copy
+  type: http
+  seq: 23
+}
+
+get {
+  url: https://serviciosias.zurichseguros.com.ec/zurich/api/motorManagement/v1/vehicles?plate=IX558XASD
+  body: json
+  auth: basic
+}
+
+params:query {
+  plate: IX558XASD
+}
+
+auth:basic {
+  username: zurich
+  password: password2018
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

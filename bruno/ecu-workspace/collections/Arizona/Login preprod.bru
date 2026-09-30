@@ -1,0 +1,28 @@
+meta {
+  name: Login Preprod
+  type: http
+  seq: 80
+}
+
+post {
+  url: https://preprod-oficinavirtual.zurichseguros.com.ec/nuevoportal/user/api/v1/arizona/auth/login
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantid-1: ec
+}
+
+body:json {
+  {
+  	"username": "api_motor_external",
+  	"password": "arizona2022?"
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

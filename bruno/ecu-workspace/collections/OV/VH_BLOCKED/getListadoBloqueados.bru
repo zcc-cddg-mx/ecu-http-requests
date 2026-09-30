@@ -1,0 +1,25 @@
+meta {
+  name: getListadoBloqueados
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{server}}/policy/api/v1/arizona/rating_lists/111602/ratings?vehicleMake=MG
+  body: none
+  auth: inherit
+}
+
+params:query {
+  vehicleMake: MG
+  ~id: 109852
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

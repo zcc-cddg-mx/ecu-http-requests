@@ -1,0 +1,657 @@
+meta {
+  name: Create offer - response
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/claim/api/v1/arizona/proxy/handling/settlement_reserve/create_offer
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "HandlingPaymentsReservesProxy",
+  	"fieldsInfo": {},
+  	"handlingReservesTableProxy": {
+  		"_type": "HandlingReservesTableProxy",
+  		"fieldsInfo": {},
+  		"claimId": 17,
+  		"claimNo": 50,
+  		"claimNumber": "22-87-LFC-50",
+  		"listOfRiskGroups": [
+  			{
+  				"_type": "HandlingReservesRiskGroupProxy",
+  				"fieldsInfo": {},
+  				"groupName": "Death",
+  				"riskList": [
+  					{
+  						"_type": "HandlingRiskProxy",
+  						"fieldsInfo": {},
+  						"ecRiskGroup": "Death",
+  						"riskName": "Muerte por cualquier causa",
+  						"handlingRiskProxy": [
+  							{
+  								"_type": "HandlingSingleRiskProxy",
+  								"fieldsInfo": {},
+  								"riskId": 0,
+  								"coverageCode": "101",
+  								"ecRiskGroup": "Death",
+  								"riskOwner": "Insured",
+  								"singleRiskName": "Muerte por cualquier causa",
+  								"insuranceSum": 16,
+  								"insuranceSumLeft": 16,
+  								"handlingSingleReserveList": [
+  									{
+  										"_type": "HandlingSingleReserveEntryProxy",
+  										"fieldsInfo": {},
+  										"reserveId": 17,
+  										"reserveNo": 50,
+  										"coverageCode": "101",
+  										"reserveType": "Loss",
+  										"reserveAmount": 10,
+  										"offered": 10,
+  										"paid": 0,
+  										"total": 10,
+  										"changed": "NO"
+  									},
+  									{
+  										"_type": "HandlingSingleReserveEntryProxy",
+  										"fieldsInfo": {},
+  										"reserveId": 20,
+  										"reserveNo": 71,
+  										"coverageCode": "101",
+  										"reserveType": "Loss",
+  										"reserveAmount": 1,
+  										"offered": 1,
+  										"paid": 0,
+  										"total": 1,
+  										"changed": "NO"
+  									},
+  									{
+  										"_type": "HandlingSingleReserveEntryProxy",
+  										"fieldsInfo": {},
+  										"reserveId": 23,
+  										"reserveNo": 72,
+  										"coverageCode": "101",
+  										"reserveType": "Loss",
+  										"reserveAmount": 2,
+  										"offered": 2,
+  										"paid": 0,
+  										"total": 2,
+  										"changed": "NO"
+  									},
+  									{
+  										"_type": "HandlingSingleReserveEntryProxy",
+  										"fieldsInfo": {},
+  										"reserveId": 25,
+  										"reserveNo": 73,
+  										"coverageCode": "101",
+  										"reserveType": "Loss",
+  										"reserveAmount": 3,
+  										"offered": 0,
+  										"paid": 0,
+  										"total": 0,
+  										"changed": "NO"
+  									}
+  								]
+  							},
+  							{
+  								"_type": "HandlingSingleRiskProxy",
+  								"fieldsInfo": {},
+  								"riskId": 0,
+  								"coverageCode": "201",
+  								"parentCoverageCode": "101",
+  								"ecRiskGroup": "Death",
+  								"riskOwner": "Child",
+  								"singleRiskName": "Muerte por cualquier causa hijos",
+  								"insuranceSum": 30,
+  								"insuranceSumLeft": 30,
+  								"handlingSingleReserveList": [
+  									{
+  										"_type": "HandlingSingleReserveEntryProxy",
+  										"fieldsInfo": {},
+  										"reserveId": 14,
+  										"reserveNo": 51,
+  										"coverageCode": "201",
+  										"reserveType": "Loss",
+  										"reserveAmount": 30,
+  										"offered": 30,
+  										"paid": 0,
+  										"total": 30,
+  										"changed": "NO"
+  									}
+  								]
+  							},
+  							{
+  								"_type": "HandlingSingleRiskProxy",
+  								"fieldsInfo": {},
+  								"riskId": 0,
+  								"coverageCode": "139",
+  								"ecRiskGroup": "Death",
+  								"riskOwner": "Insured",
+  								"singleRiskName": "Gastos de sepelio por muerte",
+  								"insuranceSum": 100,
+  								"insuranceSumLeft": 100,
+  								"handlingSingleReserveList": [
+  									{
+  										"_type": "HandlingSingleReserveEntryProxy",
+  										"fieldsInfo": {},
+  										"reserveId": 12,
+  										"reserveNo": 53,
+  										"coverageCode": "139",
+  										"reserveType": "Loss",
+  										"reserveAmount": 100,
+  										"offered": 100,
+  										"paid": 0,
+  										"total": 100,
+  										"changed": "NO"
+  									}
+  								]
+  							},
+  							{
+  								"_type": "HandlingSingleRiskProxy",
+  								"fieldsInfo": {},
+  								"riskId": 0,
+  								"coverageCode": "239",
+  								"parentCoverageCode": "139",
+  								"ecRiskGroup": "Death",
+  								"riskOwner": "Child",
+  								"singleRiskName": "Gastos de sepelio por muerte hijos",
+  								"insuranceSum": 1,
+  								"insuranceSumLeft": 1,
+  								"handlingSingleReserveList": [
+  									{
+  										"_type": "HandlingSingleReserveEntryProxy",
+  										"fieldsInfo": {},
+  										"reserveId": 8,
+  										"reserveNo": 54,
+  										"coverageCode": "239",
+  										"reserveType": "Loss",
+  										"reserveAmount": 1,
+  										"offered": 1,
+  										"paid": 0,
+  										"total": 1,
+  										"changed": "NO"
+  									}
+  								]
+  							},
+  							{
+  								"_type": "HandlingSingleRiskProxy",
+  								"fieldsInfo": {},
+  								"riskId": 0,
+  								"coverageCode": "151",
+  								"parentCoverageCode": "101",
+  								"ecRiskGroup": "Death",
+  								"riskOwner": "Spouse",
+  								"singleRiskName": "Muerte por cualquier causa cónyuge",
+  								"insuranceSum": 90,
+  								"insuranceSumLeft": 90,
+  								"handlingSingleReserveList": [
+  									{
+  										"_type": "HandlingSingleReserveEntryProxy",
+  										"fieldsInfo": {},
+  										"reserveId": 9,
+  										"reserveNo": 52,
+  										"coverageCode": "151",
+  										"reserveType": "Loss",
+  										"reserveAmount": 90,
+  										"offered": 90,
+  										"paid": 0,
+  										"total": 90,
+  										"changed": "NO"
+  									}
+  								]
+  							}
+  						]
+  					}
+  				]
+  			}
+  		],
+  		"beneficiaries": [
+  			{
+  				"_type": "HandlingSingleInvolvedPartyProxy",
+  				"mainRole": "INSURED",
+  				"partyName": "Lorena Puyol",
+  				"identification": "1701164111",
+  				"partyId": 11954,
+  				"partyRoles": [
+  					{
+  						"_type": "HandlingPartyRole",
+  						"fieldsInfo": {},
+  						"roleName": "CONTACT_PERSON"
+  					}
+  				],
+  				"phoneNumbers": [
+  					"12-34567890",
+  					"12-3456789",
+  					"999999999"
+  				],
+  				"contactEmails": [
+  					"test1@ncdc.pl",
+  					"yanialexacosta@gmail.com"
+  				]
+  			}
+  		]
+  	},
+  	"handlingPaymentsTableProxy": {
+  		"_type": "HandlingPaymentsTableProxy",
+  		"fieldsInfo": {},
+  		"claimId": 17,
+  		"claimNo": 50,
+  		"claimNumber": "22-87-LFC-50",
+  		"reserves": [
+  			{
+  				"_type": "HandlingSingleReserveEntryProxy",
+  				"fieldsInfo": {},
+  				"reserveId": 17,
+  				"reserveNo": 50,
+  				"coverageCode": "101",
+  				"reserveType": "Loss",
+  				"reserveAmount": 10,
+  				"offered": 10,
+  				"paid": 0,
+  				"total": 10,
+  				"changed": "NO"
+  			},
+  			{
+  				"_type": "HandlingSingleReserveEntryProxy",
+  				"fieldsInfo": {},
+  				"reserveId": 14,
+  				"reserveNo": 51,
+  				"coverageCode": "201",
+  				"reserveType": "Loss",
+  				"reserveAmount": 30,
+  				"offered": 30,
+  				"paid": 0,
+  				"total": 30,
+  				"changed": "NO"
+  			},
+  			{
+  				"_type": "HandlingSingleReserveEntryProxy",
+  				"fieldsInfo": {},
+  				"reserveId": 9,
+  				"reserveNo": 52,
+  				"coverageCode": "151",
+  				"reserveType": "Loss",
+  				"reserveAmount": 90,
+  				"offered": 90,
+  				"paid": 0,
+  				"total": 90,
+  				"changed": "NO"
+  			},
+  			{
+  				"_type": "HandlingSingleReserveEntryProxy",
+  				"fieldsInfo": {},
+  				"reserveId": 12,
+  				"reserveNo": 53,
+  				"coverageCode": "139",
+  				"reserveType": "Loss",
+  				"reserveAmount": 100,
+  				"offered": 100,
+  				"paid": 0,
+  				"total": 100,
+  				"changed": "NO"
+  			},
+  			{
+  				"_type": "HandlingSingleReserveEntryProxy",
+  				"fieldsInfo": {},
+  				"reserveId": 8,
+  				"reserveNo": 54,
+  				"coverageCode": "239",
+  				"reserveType": "Loss",
+  				"reserveAmount": 1,
+  				"offered": 1,
+  				"paid": 0,
+  				"total": 1,
+  				"changed": "NO"
+  			},
+  			{
+  				"_type": "HandlingSingleReserveEntryProxy",
+  				"fieldsInfo": {},
+  				"reserveId": 20,
+  				"reserveNo": 71,
+  				"coverageCode": "101",
+  				"reserveType": "Loss",
+  				"reserveAmount": 1,
+  				"offered": 1,
+  				"paid": 0,
+  				"total": 1,
+  				"changed": "NO"
+  			},
+  			{
+  				"_type": "HandlingSingleReserveEntryProxy",
+  				"fieldsInfo": {},
+  				"reserveId": 23,
+  				"reserveNo": 72,
+  				"coverageCode": "101",
+  				"reserveType": "Loss",
+  				"reserveAmount": 2,
+  				"offered": 2,
+  				"paid": 0,
+  				"total": 2,
+  				"changed": "NO"
+  			},
+  			{
+  				"_type": "HandlingSingleReserveEntryProxy",
+  				"fieldsInfo": {},
+  				"reserveId": 25,
+  				"reserveNo": 73,
+  				"coverageCode": "101",
+  				"reserveType": "Loss",
+  				"reserveAmount": 3,
+  				"offered": 0,
+  				"paid": 0,
+  				"total": 0,
+  				"changed": "NO"
+  			}
+  		],
+  		"beneficiaryList": [
+  			{
+  				"_type": "HandlingPaymentsBeneficiaryProxy",
+  				"fieldsInfo": {},
+  				"offeredSum": 237.00,
+  				"beneficiaryId": 11954,
+  				"fullName": "ALBERTO  MIÑO CHIRIBOGA",
+  				"paymentOfferList": [
+  					{
+  						"_type": "HandlingPaymentOfferProxy",
+  						"fieldsInfo": {},
+  						"riskGroups": [],
+  						"handlingStatus": {
+  							"_type": "HandlingStatusProxy",
+  							"fieldsInfo": {},
+  							"status": "AWAIT_FOR_ACTA_DE_FINIQUITO"
+  						},
+  						"invoiceList": [],
+  						"receipt": {
+  							"_type": "HandlingFileActaDeFiniquitoProxy",
+  							"fieldsInfo": {}
+  						},
+  						"offerSum": 237.00,
+  						"claimOfferId": 16,
+  						"claimOfferNo": 76
+  					},
+  					{
+  						"_type": "HandlingPaymentOfferProxy",
+  						"fieldsInfo": {},
+  						"riskGroups": [
+  							{
+  								"_type": "HandlingPaymentsRiskGroupProxy",
+  								"fieldsInfo": {},
+  								"groupName": "Death",
+  								"paymentsRiskList": [
+  									{
+  										"_type": "HandlingPaymentsSingleRiskProxy",
+  										"fieldsInfo": {},
+  										"riskId": 12,
+  										"reserveId": 12,
+  										"reserveNo": 53,
+  										"coverageCode": "139",
+  										"ecRiskGroup": "Death",
+  										"riskName": "Gastos de sepelio por muerte",
+  										"amount": 100
+  									}
+  								]
+  							}
+  						],
+  						"handlingStatus": {
+  							"_type": "HandlingStatusProxy",
+  							"fieldsInfo": {},
+  							"status": "AWAIT_FOR_ACTA_DE_FINIQUITO"
+  						},
+  						"invoiceList": [],
+  						"receipt": {
+  							"_type": "HandlingFileActaDeFiniquitoProxy",
+  							"fieldsInfo": {}
+  						},
+  						"offerSum": 237.00,
+  						"claimOfferId": 6,
+  						"claimOfferNo": 71
+  					},
+  					{
+  						"_type": "HandlingPaymentOfferProxy",
+  						"fieldsInfo": {},
+  						"riskGroups": [
+  							{
+  								"_type": "HandlingPaymentsRiskGroupProxy",
+  								"fieldsInfo": {},
+  								"groupName": "Death",
+  								"paymentsRiskList": [
+  									{
+  										"_type": "HandlingPaymentsSingleRiskProxy",
+  										"fieldsInfo": {},
+  										"riskId": 14,
+  										"reserveId": 14,
+  										"reserveNo": 51,
+  										"coverageCode": "201",
+  										"parentCoverageCode": "101",
+  										"ecRiskGroup": "Death",
+  										"riskName": "Muerte por cualquier causa hijos",
+  										"amount": 30
+  									}
+  								]
+  							}
+  						],
+  						"handlingStatus": {
+  							"_type": "HandlingStatusProxy",
+  							"fieldsInfo": {},
+  							"status": "AWAIT_FOR_ACTA_DE_FINIQUITO"
+  						},
+  						"invoiceList": [],
+  						"receipt": {
+  							"_type": "HandlingFileActaDeFiniquitoProxy",
+  							"fieldsInfo": {}
+  						},
+  						"offerSum": 237.00,
+  						"claimOfferId": 8,
+  						"claimOfferNo": 72
+  					},
+  					{
+  						"_type": "HandlingPaymentOfferProxy",
+  						"fieldsInfo": {},
+  						"riskGroups": [
+  							{
+  								"_type": "HandlingPaymentsRiskGroupProxy",
+  								"fieldsInfo": {},
+  								"groupName": "Death",
+  								"paymentsRiskList": [
+  									{
+  										"_type": "HandlingPaymentsSingleRiskProxy",
+  										"fieldsInfo": {},
+  										"riskId": 17,
+  										"reserveId": 17,
+  										"reserveNo": 50,
+  										"coverageCode": "101",
+  										"ecRiskGroup": "Death",
+  										"riskName": "Muerte por cualquier causa",
+  										"amount": 10
+  									}
+  								]
+  							}
+  						],
+  						"handlingStatus": {
+  							"_type": "HandlingStatusProxy",
+  							"fieldsInfo": {},
+  							"status": "AWAIT_FOR_ACTA_DE_FINIQUITO"
+  						},
+  						"invoiceList": [],
+  						"receipt": {
+  							"_type": "HandlingFileActaDeFiniquitoProxy",
+  							"fieldsInfo": {}
+  						},
+  						"offerSum": 237.00,
+  						"claimOfferId": 11,
+  						"claimOfferNo": 73
+  					},
+  					{
+  						"_type": "HandlingPaymentOfferProxy",
+  						"fieldsInfo": {},
+  						"riskGroups": [
+  							{
+  								"_type": "HandlingPaymentsRiskGroupProxy",
+  								"fieldsInfo": {},
+  								"groupName": "Death",
+  								"paymentsRiskList": [
+  									{
+  										"_type": "HandlingPaymentsSingleRiskProxy",
+  										"fieldsInfo": {},
+  										"riskId": 8,
+  										"reserveId": 8,
+  										"reserveNo": 54,
+  										"coverageCode": "239",
+  										"parentCoverageCode": "139",
+  										"ecRiskGroup": "Death",
+  										"riskName": "Gastos de sepelio por muerte hijos",
+  										"amount": 1
+  									}
+  								]
+  							}
+  						],
+  						"handlingStatus": {
+  							"_type": "HandlingStatusProxy",
+  							"fieldsInfo": {},
+  							"status": "AWAIT_FOR_ACTA_DE_FINIQUITO"
+  						},
+  						"invoiceList": [],
+  						"receipt": {
+  							"_type": "HandlingFileActaDeFiniquitoProxy",
+  							"fieldsInfo": {}
+  						},
+  						"offerSum": 237.00,
+  						"claimOfferId": 2,
+  						"claimOfferNo": 50
+  					},
+  					{
+  						"_type": "HandlingPaymentOfferProxy",
+  						"fieldsInfo": {},
+  						"riskGroups": [
+  							{
+  								"_type": "HandlingPaymentsRiskGroupProxy",
+  								"fieldsInfo": {},
+  								"groupName": "Death",
+  								"paymentsRiskList": [
+  									{
+  										"_type": "HandlingPaymentsSingleRiskProxy",
+  										"fieldsInfo": {},
+  										"riskId": 9,
+  										"reserveId": 9,
+  										"reserveNo": 52,
+  										"coverageCode": "151",
+  										"parentCoverageCode": "101",
+  										"ecRiskGroup": "Death",
+  										"riskName": "Muerte por cualquier causa cónyuge",
+  										"amount": 90
+  									}
+  								]
+  							}
+  						],
+  						"handlingStatus": {
+  							"_type": "HandlingStatusProxy",
+  							"fieldsInfo": {},
+  							"status": "AWAIT_FOR_ACTA_DE_FINIQUITO"
+  						},
+  						"invoiceList": [],
+  						"receipt": {
+  							"_type": "HandlingFileActaDeFiniquitoProxy",
+  							"fieldsInfo": {}
+  						},
+  						"offerSum": 237.00,
+  						"claimOfferId": 4,
+  						"claimOfferNo": 70
+  					},
+  					{
+  						"_type": "HandlingPaymentOfferProxy",
+  						"fieldsInfo": {},
+  						"riskGroups": [
+  							{
+  								"_type": "HandlingPaymentsRiskGroupProxy",
+  								"fieldsInfo": {},
+  								"groupName": "Death",
+  								"paymentsRiskList": [
+  									{
+  										"_type": "HandlingPaymentsSingleRiskProxy",
+  										"fieldsInfo": {},
+  										"riskId": 23,
+  										"reserveId": 23,
+  										"reserveNo": 72,
+  										"coverageCode": "101",
+  										"ecRiskGroup": "Death",
+  										"riskName": "Muerte por cualquier causa",
+  										"amount": 2
+  									}
+  								]
+  							}
+  						],
+  						"handlingStatus": {
+  							"_type": "HandlingStatusProxy",
+  							"fieldsInfo": {},
+  							"status": "AWAIT_FOR_ACTA_DE_FINIQUITO"
+  						},
+  						"invoiceList": [],
+  						"receipt": {
+  							"_type": "HandlingFileActaDeFiniquitoProxy",
+  							"fieldsInfo": {}
+  						},
+  						"offerSum": 237.00,
+  						"claimOfferId": 15,
+  						"claimOfferNo": 75
+  					},
+  					{
+  						"_type": "HandlingPaymentOfferProxy",
+  						"fieldsInfo": {},
+  						"riskGroups": [
+  							{
+  								"_type": "HandlingPaymentsRiskGroupProxy",
+  								"fieldsInfo": {},
+  								"groupName": "Death",
+  								"paymentsRiskList": [
+  									{
+  										"_type": "HandlingPaymentsSingleRiskProxy",
+  										"fieldsInfo": {},
+  										"riskId": 20,
+  										"reserveId": 20,
+  										"reserveNo": 71,
+  										"coverageCode": "101",
+  										"ecRiskGroup": "Death",
+  										"riskName": "Muerte por cualquier causa",
+  										"amount": 1
+  									}
+  								]
+  							}
+  						],
+  						"handlingStatus": {
+  							"_type": "HandlingStatusProxy",
+  							"fieldsInfo": {},
+  							"status": "AWAIT_FOR_ACTA_DE_FINIQUITO"
+  						},
+  						"invoiceList": [],
+  						"receipt": {
+  							"_type": "HandlingFileActaDeFiniquitoProxy",
+  							"fieldsInfo": {}
+  						},
+  						"offerSum": 237.00,
+  						"claimOfferId": 13,
+  						"claimOfferNo": 74
+  					}
+  				]
+  			}
+  		]
+  	}
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

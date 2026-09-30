@@ -1,0 +1,24 @@
+meta {
+  name: 4.2 _UPLAS
+  type: http
+  seq: 7
+}
+
+get {
+  url: https://api-uat.zurichseguros.com.ec/upla-management-s0045/v1/uplavalidation/1714809884
+  body: none
+  auth: bearer
+}
+
+headers {
+  x-api-key: DmwGBfgWng9HoLs7CNMyD8Lb1Aj1o1Y9SbKnJ59h
+}
+
+auth:bearer {
+  token: {{token_security_service}}
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

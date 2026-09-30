@@ -1,0 +1,23 @@
+info:
+  name: login
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: https://inspektor.datalaft.com:2196/api/Auth/login
+  body:
+    type: json
+    data: |-
+      {
+        "user": "ZURICH_E_WS",
+        "password": "l40Jd393E5v"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

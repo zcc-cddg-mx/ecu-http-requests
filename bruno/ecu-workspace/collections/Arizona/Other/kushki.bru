@@ -1,0 +1,28 @@
+meta {
+  name: kushki
+  type: http
+  seq: 10
+}
+
+get {
+  url: {{ server }}:{{ serverPort }}/accounting/api/v1/arizona/ec/payment_instructions/kushki/send_file_with_pending_subscriptions3?=
+  body: none
+  auth: bearer
+}
+
+params:query {
+  : 
+}
+
+headers {
+  x-tenantId-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

@@ -1,0 +1,26 @@
+meta {
+  name: getComisionUnique
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{server}}/rule/api/v1/arizona/rating_lists/94910/ratings/PYAgentCommission/218202
+  body: json
+  auth: inherit
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+body:json {
+  {
+      "page": 2
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

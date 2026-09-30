@@ -1,0 +1,29 @@
+meta {
+  name: Login
+  type: http
+  seq: 97
+}
+
+post {
+  url: {{ server }}/user/api/v1/arizona/auth/login
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  ~x-tenantId-1: no
+  ~: 
+}
+
+body:json {
+  {
+  	"username": "{{ _.user }}",
+  	"password": "{{ _.password }}"
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

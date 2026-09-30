@@ -1,0 +1,23 @@
+meta {
+  name: graphql
+  type: http
+  seq: 14
+}
+
+get {
+  url: {{server}}/agent/graphql
+  body: none
+  auth: bearer
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+}

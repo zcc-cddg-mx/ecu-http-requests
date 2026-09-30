@@ -1,0 +1,24 @@
+meta {
+  name: Send email Prod
+  type: http
+  seq: 46
+}
+
+post {
+  url: https://oficinavirtual.zurichseguros.com.ec/nuevoportal/document/api/v1/arizona/test/send-email/test@ncdc.pl
+  body: none
+  auth: bearer
+}
+
+headers {
+  User-Agent: insomnia/10.0.0
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_c925b03abd8f4a9e84e2496b7be56f4d', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

@@ -1,0 +1,22 @@
+info:
+  name: n8napi - qa
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: https://n8n.genai.zurich.com/webhook-test/qa-results-5ad6aff2-02b0-4a75-931f
+  body:
+    type: json
+    data: |-
+      {
+        "ticket": "znrx-1",
+        "status": "error"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

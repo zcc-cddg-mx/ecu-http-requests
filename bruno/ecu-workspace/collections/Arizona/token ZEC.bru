@@ -1,0 +1,26 @@
+meta {
+  name: token ZEC
+  type: http
+  seq: 32
+}
+
+post {
+  url: https://serviciosias.zurichseguros.com.ec/token?grant_type=client_credentials&client_id=ioHUujaIE8gvds_ptt6BQSlC3Rca&client_secret=UkNv8PAJ0PBvcf6SgmxAZn4n_Z8a
+  body: none
+  auth: inherit
+}
+
+params:query {
+  grant_type: client_credentials
+  client_id: ioHUujaIE8gvds_ptt6BQSlC3Rca
+  client_secret: UkNv8PAJ0PBvcf6SgmxAZn4n_Z8a
+}
+
+headers {
+  User-Agent: insomnia/10.1.1
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

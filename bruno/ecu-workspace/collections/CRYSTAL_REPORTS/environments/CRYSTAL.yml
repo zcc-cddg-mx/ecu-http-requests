@@ -1,0 +1,5 @@
+name: CRYSTAL
+variables:
+  - name: COOKIE-PROD
+    value: JSESSIONID=985125F878E5E31D8B43E9136D55CC8D; Path=/crystal; Secure; HttpOnly;
+    description: ""

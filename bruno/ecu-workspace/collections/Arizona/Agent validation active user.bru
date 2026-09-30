@@ -1,0 +1,36 @@
+meta {
+  name: Agent validation active user
+  type: http
+  seq: 53
+}
+
+get {
+  url: {{ _.server }}/report/api/v1/arizona/agent/validation/current-user
+  body: none
+  auth: bearer
+}
+
+headers {
+  Accept: application/json, text/plain, */*
+  Accept-Language: en-US,en;q=0.9
+  Connection: keep-alive
+  Cookie: _ga=GA1.1.1581730658.1707146542; Idea-eb863f24=8ce3fbf1-99f6-47b7-a073-9401a6f12f3c; Idea-eb863b63=26316601-4026-47f7-aef4-5d59d45ef9bd; _ga_37NC80P0CW=GS1.1.1713782024.1.1.1713782213.0.0.0; _ga_56X461XV47=GS1.1.1713782024.1.1.1713782213.0.0.0; _ga_HJBQ7BT62M=GS1.1.1713782024.1.1.1713782213.0.0.0; Idea-eb8642e3=4bd76e5d-b813-4513-b3fb-17fe2a8e9fe1; _gid=GA1.1.1288651752.1721141105; _gat_gtag_UA_203012577_1=1; _ga_RKSGMGNLM6=GS1.1.1721225278.85.1.1721226391.0.0.0
+  Referer: http://localhost:4200/back-office/profile-overview
+  Sec-Fetch-Dest: empty
+  Sec-Fetch-Mode: cors
+  Sec-Fetch-Site: same-origin
+  User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 Edg/126.0.0.0
+  sec-ch-ua: "Not/A)Brand";v="8", "Chromium";v="126", "Microsoft Edge";v="126"
+  sec-ch-ua-mobile: ?0
+  sec-ch-ua-platform: "Windows"
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_40b110267b764a8f933a0e14bbd536b1', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

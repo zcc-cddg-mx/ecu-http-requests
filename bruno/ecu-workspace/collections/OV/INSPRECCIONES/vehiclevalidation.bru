@@ -1,0 +1,29 @@
+meta {
+  name: vehiclevalidation
+  type: http
+  seq: 5
+}
+
+post {
+  url: https://serviciosias.zurichseguros.com.ec/zurich/api/inspection/orchestration/v2.0/vehiclevalidation
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: zurich
+  password: password2018
+}
+
+body:json {
+  {
+    "chassis": [
+      "3N1CC1AD2EK193234"
+    ]
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

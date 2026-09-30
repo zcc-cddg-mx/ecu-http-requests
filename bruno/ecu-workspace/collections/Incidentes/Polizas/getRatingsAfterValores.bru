@@ -1,0 +1,31 @@
+meta {
+  name: getRatingsAfterValores
+  type: http
+  seq: 17
+}
+
+post {
+  url: {{server}}/rule/api/v1/arizona/lookup_ratings/list
+  body: json
+  auth: bearer
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+      "_type": "LookupRatingRequest",
+      "ratingListName": "COVERAGE_STRUCTURE",
+      "params": {}
+  }
+}
+
+settings {
+  encodeUrl: true
+}

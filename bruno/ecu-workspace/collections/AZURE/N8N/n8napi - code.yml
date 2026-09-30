@@ -1,0 +1,31 @@
+info:
+  name: n8napi - code
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: https://n8n.genai.zurich.com/webhook/5ad6aff2-02b0-4a75-931f-da94830d40b0
+  body:
+    type: json
+    data: |-
+      {
+        "ticket":       "ZNRX-68241",
+        "status":       "success",
+        "task_id":      "12c59119",
+        "command":      "ren-data",
+        "branch":       "feature/ZNRX_68241_renov_junio",
+        "aux_branch":   "feature/ZNRX_68241_renov_junio_developer_auxiliar",
+        "commit_id":    "a78b921",
+        "repo":         "ov-arizona-backend-ecuador",
+        "build_status": "success",
+        "summary": "Migration V2026_06_23_11_38_54__ZNRX_68241_VH_ren_data_jun_2026 generated and pushed to feature/ZNRX_68241_renov_junio",
+        "completed_at": "2026-06-23T16:38:58+00:00"
+      } 
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

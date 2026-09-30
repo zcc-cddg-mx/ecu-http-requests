@@ -1,0 +1,133 @@
+meta {
+  name: Issue policy_1
+  type: http
+  seq: 45
+}
+
+post {
+  url: {{ _.server }}/policy/api/v1/arizona/motor/payment-billing-issue
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  User-Agent: insomnia/10.0.0
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_40b110267b764a8f933a0e14bbd536b1', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "MotorGenericosTarificationRequest",
+  	"testMode": false,
+  	"policyNo": 350,
+  	"motorGenericosTarification": {
+  		"_type": "MotorGenericosTarification",
+  		"policyData": {
+  			"_type": "PolicyData",
+  			"entityProperties": {},
+  			"policyNo": 350,
+  			"policyNumber": "COT-VH1418",
+  			"productCode": "VH",
+  			"variant": "MOTOR",
+  			"pointOfSale": "2582",
+  			"status": "WORKING",
+  			"customStatus": "WORKING",
+  			"agentSEId": 2583,
+  			"effectiveDate": "2024-09-25T00:00:00.000-05:00",
+  			"expirationDate": "2025-09-25T00:00:00.000-05:00",
+  			"suggestedPolicyStartDate": "2024-09-25T00:00:00.000-05:00",
+  			"uplaStatus": "APPROVED",
+  			"nextInsurableObjectAllowed": "YES",
+  			"paymentMethod": "1",
+  			"installmentDefinitionCode": "12",
+  			"firstPaymentDate": "2024-09-25T00:00:00.000-05:00",
+  			"ensuranceDocuments": [],
+  			"endorsementIds": [],
+  			"policyEndorsementIds": [],
+  			"paymentMethodAllowed": [
+  				"1",
+  				"2",
+  				"3"
+  			],
+  			"downloadInvoice": true,
+  			"downloadPolicy": true
+  		},
+  		"cars": [
+  			{
+  				"_type": "VehicleData",
+  				"objectNo": 350,
+  				"subProduct": "SENIOR",
+  				"registrationNumber": "UJMYHNTGB123",
+  				"typeOfVehicle": "AUTOMOVIL",
+  				"make": "VOLKSWAGEN",
+  				"makeId": "5186",
+  				"model": "GOLF",
+  				"modelId": "006062",
+  				"colorName": "CAFE DORADO",
+  				"colorId": "125942946271",
+  				"sumInsured": null,
+  				"isNewCar": "NO",
+  				"passengersNumber": 1,
+  				"selectedPlan": "SENIOR",
+  				"totalSumInsured": 46860,
+  				"vehicleDescription": "VOLKSWAGEN-GOLF-2021",
+  				"ensuranceVehicleId": "-1",
+  				"substituteCarType": "SubstituteCarBasico",
+  				"netPremium": 1385.63,
+  				"isBeingProcessed": "NO",
+  				"removable": "YES",
+  				"plans": [],
+  				"inspections": [
+  					{
+  						"_type": "VehicleInspection",
+  						"inspectionId": 956,
+  						"type": "MOTOR_INSPECTION",
+  						"subType": "AUTO",
+  						"contactTelephone": "11-11111111",
+  						"status": "APPROVED",
+  						"description": "1",
+  						"allowedSubType": [
+  							"AUTO",
+  							"VIDEO",
+  							"ONSITE"
+  						]
+  					}
+  				],
+  				"referrals": [],
+  				"vehicleEquipment": [],
+  				"renewalInformation": {
+  					"_type": "RenewalInformation"
+  				},
+  				"referralsRequired": [],
+  				"referralsOptional": []
+  			}
+  		],
+  		"client": {
+  			"_type": "PolicyRole",
+  			"id": 16802,
+  			"identificationType": "ID_CARD",
+  			"identificationNumber": "1704506052",
+  			"firstName": "FALCONI FLORES",
+  			"secondName": "MOLINA MOREIRA",
+  			"name": "FALCONI FLORES MOLINA MOREIRA",
+  			"email": "test@sapiens.com",
+  			"mobilePhone": "99-99999991",
+  			"phone": "99-9999999",
+  			"mainAddress": "Calle Guanguitagua",
+  			"mainAddressNo": "N39-100",
+  			"secondaryAddress": " Tomas Bermur",
+  			"nationalityId": "10345"
+  		}
+  	}
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

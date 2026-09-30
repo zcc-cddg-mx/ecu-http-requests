@@ -1,0 +1,45 @@
+meta {
+  name: job_with_daily_kushki
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/scheduler/api/v1/arizona/job_schedulers/add?=
+  body: json
+  auth: bearer
+}
+
+params:query {
+  : 
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantId-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"jobName": "updateSubscriptionsJob",
+  	"executeDate": "2021-05-26T15:45:00.000Z",
+  	"dateTo": "2021-05-26T15:45:00.000Z",
+  	"repeat": "DAILY",
+  	"jobInputs": [
+  		{
+  			"_type": "JobInputString",
+  			"key": "effectiveDate",
+  			"stringValue": "LAST_DAY_OF_CURRENT_MONTH"
+  		}
+  	]
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

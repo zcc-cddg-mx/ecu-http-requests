@@ -1,0 +1,38 @@
+meta {
+  name: OV Policies
+  type: http
+  seq: 76
+}
+
+post {
+  url: {{ _.server }}:{{ _.serverPort }}/report/api/v1/arizona/ov/policies/
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_cc1ef1ec3a964e49afda4f82586a4ec0', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"pageSize": "20",
+  	"page": "0",
+  	"sortProperties": "validFrom",
+  	"sortDirection": "desc",
+  	"invoiceFrom": "2023-07-01T05:00:00.000Z",
+  	"invoiceTo": "2023-07-24T05:00:00.000Z",
+  	"agentList": [
+  		2583
+  	]
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

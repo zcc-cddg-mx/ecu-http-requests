@@ -1,0 +1,88 @@
+meta {
+  name: Contract update 2
+  type: http
+  seq: 23
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/reinsurance/api/v1/arizona/rei_contract/save
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"reiContract": {
+  		"_type": "ReiContract",
+  		"id": 952,
+  		"status": "DRAFT",
+  		"contractNo": "TEST",
+  		"contractType": "QUOTA",
+  		"contractCategory": "OBLIGATORY",
+  		"name": "TEST",
+  		"lineOfBusiness": "LIFE",
+  		"criteriaGroupId": 952,
+  		"riskClass": "FIRSRCLASS",
+  		"riskType": "FIRSTRISK",
+  		"currency": "USD",
+  		"effectiveDate": "2022-02-16T05:00:00Z",
+  		"expirationDate": "2023-02-16T05:00:00Z",
+  		"ecContractCategory": "CESSION_REINSURANCE",
+  		"transactionGroupId": 1,
+  		"subscriptionYear": "2022",
+  		"accountPeriod": "ANNAUALLY",
+  		"daysToSendAccounts": 61,
+  		"daysToPayBills": 61,
+  		"contractLevel": 1,
+  		"percentRetention": 90,
+  		"percentCession": 10,
+  		"insuredLimitType": "CAPACITY",
+  		"capacity": 2500000,
+  		"contractBrokers": [
+  			{
+  				"_type": "ReiContractBroker",
+  				"reinsurer": {
+  					"_type": "ReiReinsurer",
+  					"id": 1,
+  					"reinsurerName": "Zurich Insurance Company Ltd",
+  					"partyId": 8974,
+  					"tenantId": "ec",
+  					"effectiveDate": "2019-04-01T05:00:00Z"
+  				},
+  				"id": 952,
+  				"percentParticipation": 100,
+  				"commission": 10,
+  				"contractReinsurers": [
+  					{
+  						"_type": "ReiContractReinsurer",
+  						"reinsurer": {
+  							"_type": "ReiReinsurer",
+  							"id": 1,
+  							"reinsurerName": "Zurich Insurance Company Ltd",
+  							"partyId": 8974,
+  							"tenantId": "ec",
+  							"effectiveDate": "2019-04-01T05:00:00Z"
+  						},
+  						"id": 952,
+  						"percentParticipation": 100
+  					}
+  				]
+  			}
+  		]
+  	}
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

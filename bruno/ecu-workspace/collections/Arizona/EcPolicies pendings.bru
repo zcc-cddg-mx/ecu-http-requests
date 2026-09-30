@@ -1,0 +1,26 @@
+meta {
+  name: EcPolicies pendings
+  type: http
+  seq: 78
+}
+
+post {
+  url: {{ _.server }}:{{ _.serverPort }}/policy/api/v1/arizona/ecpolicies/pendings
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+  	"objectNo": 1
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

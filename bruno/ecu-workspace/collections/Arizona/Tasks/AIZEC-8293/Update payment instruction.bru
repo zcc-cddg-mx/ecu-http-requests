@@ -1,0 +1,64 @@
+meta {
+  name: Update payment instruction
+  type: http
+  seq: 8
+}
+
+put {
+  url: {{ server }}:{{ serverPort }}/accounting/api/v1/arizona/payment_instructions/1?=
+  body: json
+  auth: bearer
+}
+
+params:query {
+  : 
+}
+
+headers {
+  x-tenantId-1: ec
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'when-expired', 300 %}
+}
+
+body:json {
+  {
+  		"_type": "ECPaymentInstruction",
+  		"createdAt": "2022-07-21T00:34:46.304-0500",
+  		"updatedBy": "767cf185-ffb5-437d-bc34-5d15fbf6d9ab",
+  		"recordVersion": 5,
+  		"createdBy": "767cf185-ffb5-437d-bc34-5d15fbf6d9ab",
+  		"id": 1,
+  		"updatedAt": "2022-07-21T00:35:42.264-0500",
+  		"tenantId": "ec",
+  		"partyId": 9952,
+  		"paymentInstructionType": "BANK_TRANSFER",
+  		"paymentBankAccount": {
+  			"_type": "PaymentBankAccount",
+  			"createdAt": "2022-07-21T00:34:46.323-0500",
+  			"updatedBy": "767cf185-ffb5-437d-bc34-5d15fbf6d9ab",
+  			"recordVersion": 1,
+  			"createdBy": "767cf185-ffb5-437d-bc34-5d15fbf6d9ab",
+  			"id": 1,
+  			"updatedAt": "2022-07-21T00:34:47.134-0500",
+  			"tenantId": "ec",
+  			"bankAccountOwner": "ADRIANA ROCIO SARAVIA QUISHPE",
+  			"bank": 295,
+  			"bankAccountNumber": "PL1231231241"
+  		},
+  		"paymentBankAccountId": 1,
+  		"currencyCode": "USD",
+  		"paymentMethodType": "BOTH",
+  		"dedicatedPaymentCode": "BANK_TRANSFER",
+  		"defaultInstruction": "NO",
+  		"validFrom": "2022-07-21T00:00:00.000-0500",
+  		"locked": "YES"
+  	}
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

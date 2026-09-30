@@ -1,0 +1,35 @@
+meta {
+  name: Get document definition
+  type: http
+  seq: 18
+}
+
+get {
+  url: {{ server }}:{{ serverPort }}/document/api/v1/arizona/document_definitions/4154
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"testMode": "true",
+  	"_type": "UploadFileRequest",
+  	"id": {
+  		"documentId": "1"
+  	}
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

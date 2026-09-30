@@ -1,0 +1,30 @@
+meta {
+  name: getpartiesLocal
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{server}}/party/api/v1/arizona/parties/477002/consents?category=OV&code_in=TermsAndPrivacy,ReceiveCommercialInfo,DataProcessing&locale=ec&isAccepted=NO
+  body: none
+  auth: bearer
+}
+
+params:query {
+  category: OV
+  code_in: TermsAndPrivacy,ReceiveCommercialInfo,DataProcessing
+  locale: ec
+  isAccepted: NO
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+}

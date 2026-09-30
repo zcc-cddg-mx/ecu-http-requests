@@ -1,0 +1,73 @@
+meta {
+  name: Update payment instruction
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/accounting/api/v1/arizona/payment_instructions
+  body: json
+  auth: bearer
+}
+
+headers {
+  x-tenantid-1: ec
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_6c9a3a579fa645e78ec2e6f6628c790f', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "MessageResponsePageEntity",
+  	"status": "OK",
+  	"body": {
+  		"content": [
+  			{
+  				"_type": "ECPaymentInstruction",
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 1,
+  				"tenantId": "ec",
+  				"partyId": 8952,
+  				"paymentInstructionType": "BANK_TRANSFER",
+  				"paymentBankAccount": {
+  					"_type": "ECPaymentBankAccount",
+  					"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  					"id": 1,
+  					"tenantId": "ec",
+  					"bankAccountOwner": "mielici",
+  					"bank": {
+  						"_type": "Bank",
+  						"id": 1,
+  						"tenantId": "ec",
+  						"name": "ASSOCIATED CREDIT UNION",
+  						"paymentAgreementId": 3300211228672,
+  						"appliesDebit": "NO",
+  						"locked": "NO"
+  					},
+  					"bankAccountNumber": "123"
+  				},
+  				"financialDocuments": [],
+  				"paymentBankAccountId": 1,
+  				"defaultInstruction": "NO",
+  				"locked": "NO"
+  			}
+  		],
+  		"totalElements": 1,
+  		"number": 0,
+  		"size": 1,
+  		"totalPages": 1,
+  		"numberOfElements": 1,
+  		"first": true,
+  		"last": true,
+  		"empty": false
+  	}
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

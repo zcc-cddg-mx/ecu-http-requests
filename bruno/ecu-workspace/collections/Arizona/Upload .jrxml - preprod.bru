@@ -1,0 +1,43 @@
+meta {
+  name: Upload .jrxml - preprod
+  type: http
+  seq: 39
+}
+
+post {
+  url: https://preprod-oficinavirtual.zurichseguros.com.ec/nuevoportal/document/api/v1/arizona/files/upload
+  body: multipartForm
+  auth: bearer
+}
+
+headers {
+  Content-Type: multipart/form-data
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJWQ1dzRkVaMHQzMGJxRmpJdmxlblBjWkEwakdHclAtbGNvN2JyMG1KSm5JIn0.eyJqdGkiOiJjZjIwN2ZjNC05YzZkLTQxMDMtOTRmYy0xZjM1ZWJiYzRlMjciLCJleHAiOjE3MzI2MTkzMzUsIm5iZiI6MCwiaWF0IjoxNzMyNjE4MTM1LCJpc3MiOiJodHRwczovL3ByZXByb2Qtb2ZpY2luYXZpcnR1YWwuenVyaWNoc2VndXJvcy5jb20uZWMvbnVldm9wb3J0YWwvYXV0aC9yZWFsbXMvbWFzdGVyIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImJhMzA2MzlkLWQ0ZmItNDIwMi1iNTc2LWU3YTMxNDU3YTAxOSIsInR5cCI6IkJlYXJlciIsImF6cCI6InBhc3MiLCJhdXRoX3RpbWUiOjAsInNlc3Npb25fc3RhdGUiOiI3ZDJkNGVjZC1lMzAwLTQzN2MtYjk3Ni01NDczNGQ1YmRmYmUiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImZyb250X3JvbGVfdXNlciIsImZyb250X3JvbGVfdHJlYXN1cnlfZXhlY3V0aXZlIiwiZnJvbnRfcm9sZV96dXJpY2hfYXNzb2NpYXRlIiwiZG93bmxvYWRfaW5mb2JpcF9maWxlIiwicm9sZV91c2VyIiwicm9sZV9jYXNhX2hhYml0YWNpb25fZl96dXJpY2giLCJmcm9udF9yb2xlX3V3X2xpZmUiLCJyb2xlX2ZhY3R1cmFkb3IiLCJvZmZsaW5lX2FjY2VzcyIsImZyb250X3JvbGVfZmFjdHVyYWRvciIsImV4dGFwaV90YXJpZmljYXRpb25fZ2VuZXJpY29zIiwicm9sZV92ZWhpY3Vsb3NfZl96dXJpY2giLCJmcm9udF9yb2xlX2FkbWluaXN0cmF0b3IiLCJ1bWFfYXV0aG9yaXphdGlvbiIsInJvbGVfY3VzdG9tZXIiLCJmcm9udF9yb2xlX3N1cGVyX3VzZXIiXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJ0ZW5hbnRzIjoiZWMiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhc2FsYXphciIsInBhcnR5aWQiOiIxNjQiLCJsb2NhbGUiOiJlbiJ9.RLZV9tIwknaXetrAYcS4WpaTlmUDb6A_WRLlYQZlSRE6dSPmmEVmeS4fGFboEIJogDJ0UWrMUmfEC6SAyZ7lcJtJbyCqT61hHG0Qza2qef1pST7tS8a-uRYefePy6KDw1EJsKlmadLyfgcoCs1ITcZVZV6N6rchH6U0diHEGGp-vR3y7_Xm0D3TIw_-7GhAqvbpJ57fqy1Uk9mYbEz2D4LZOc5jQQ77if9EzM-nGcOgiDD_I6hNtz-FkccYJ86fLacJhcVH0-NFe6IGwOoLrSZhIyEAzZ76X5z56160dY5PZgV4Tv6f4kYrPq5OrEgBWDwimE-fpFdE3dQ6yqlhdAw
+}
+
+body:multipart-form {
+  files: @file(C:\Users\Konrad.Byczynski\Documents\repos\arizona-backend\ams-release\flyway\src\main\resources\templates\PYMES\AsistanceTable.jrxml)
+  options: '''
+    {
+    	"_type": "File",
+    	"ownerId": null,
+    	"fileName": "AsistanceTable.jrxml",
+    	"filePath": null,
+    	"fileThumbPath": null,
+    	"originalFileName": "AsistanceTable.jrxml",
+    	"mimeType": "text/plain",
+    	"size": null,
+    	"fileType": "TEMPLATE",
+    	"fileSubType": null
+    }
+  '''
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

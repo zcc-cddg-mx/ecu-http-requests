@@ -1,0 +1,150 @@
+meta {
+  name: test 1 step
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/policy/api/v1/arizona/policy_transactions/update
+  body: json
+  auth: bearer
+}
+
+headers {
+  x-tenantid-1: ec
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "PolicyUpdateTransactionRequest",
+  	"policy": {
+  		"_type": "ECPolicy",
+  		"pointOfSale": "18959",
+  		"transactionReason": "FORCE_REFERRAL_CHECK",
+  		"notes": "{}",
+  		"originalInceptionDate": "2022-07-12T00:00:00.000-0500",
+  		"productId": 1041,
+  		"productCode": "LFC",
+  		"variantId": 1021,
+  		"variantCode": "CORPORATIVO_VIDA",
+  		"partyRoles": [],
+  		"commissionSplits": [],
+  		"policyNo": 99,
+  		"policyNumber": "COT-LFC1004",
+  		"effectiveDate": "2022-07-12T00:00:00.000-0500",
+  		"expirationDate": "2023-07-12T00:00:00.000-0500",
+  		"annualEffectiveDate": "2022-07-12T00:00:00.000-0500",
+  		"annualExpirationDate": "2023-07-12T00:00:00.000-0500",
+  		"status": "WORKING",
+  		"productClass": "GROUP",
+  		"paymentMethod": "1",
+  		"currency": "USD",
+  		"yearOfPolicy": 1,
+  		"proRataMethod": "PR360E",
+  		"renewalMode": "NONE",
+  		"policyTransaction": {
+  			"_type": "PolicyTransaction",
+  			"createdAt": "2022-07-12T01:36:29.901-0500",
+  			"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  			"recordVersion": 5,
+  			"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  			"id": 2961,
+  			"updatedAt": "2022-07-12T01:36:29.979-0500",
+  			"tenantId": "ec",
+  			"policyNo": 99,
+  			"policyNumber": "COT-LFC1004",
+  			"transactionType": "Update",
+  			"transactionDate": "2022-07-12T01:36:29.898-0500",
+  			"transactionStatus": "PENDING",
+  			"transactionMode": "INTERACTIVE",
+  			"transactionUniqueId": "qZxrIaQzOcWaxWy",
+  			"contextName": "CLIENT-INFO-ID"
+  		},
+  		"billingType": "SUBSCRIPTION",
+  		"billingBindingEntity": "POLICY",
+  		"accountingLevel": "NONE",
+  		"insurableObjects": [
+  			{
+  				"_type": "LifeGeneralData",
+  				"objectNo": 110,
+  				"insurableObjectTypeId": 1041,
+  				"insurableObjectClass": "SIMPLE",
+  				"policyNo": 99,
+  				"effectiveDate": "2022-07-12T00:00:00.000-0500",
+  				"expirationDate": "2023-07-12T00:00:00.000-0500",
+  				"annualEffectiveDate": "2022-07-12T00:00:00.000-0500",
+  				"annualExpirationDate": "2023-07-12T00:00:00.000-0500",
+  				"originalInceptionDate": "2022-07-12T00:00:00.000-0500",
+  				"yearOfObject": 1,
+  				"informationOnly": "YES",
+  				"groupPlans": [],
+  				"policyAmounts": [],
+  				"policyDeductibles": [],
+  				"policyLimits": [],
+  				"policyCoverageDetails": [],
+  				"partyRoles": [],
+  				"clauses": [],
+  				"policyPendings": [],
+  				"previousInsurance": "NO",
+  				"requestComChange": "NO",
+  				"temporaryCoverRequired": "NO",
+  				"spouseYn": "NO",
+  				"childrenYn": "NO",
+  				"individualCertificatesYn": "NO",
+  				"titularYn": "NO"
+  			}
+  		],
+  		"policyAmounts": [],
+  		"policyDeductibles": [],
+  		"policyLimits": [],
+  		"policyCoverageParts": [],
+  		"policyCoverageDetails": [],
+  		"masterPolicies": [],
+  		"groupPlans": [],
+  		"clauses": [],
+  		"policyPendings": [],
+  		"previousClaimYears": "NO",
+  		"ensurancePolicyIds": [],
+  		"ensuranceInvoices": [],
+  		"endorsements": [],
+  		"lineOfBusiness": [],
+  		"policyEnsuranceEndorsements": [],
+  		"isRenewal": "NO"
+  	},
+  	"transaction": {
+  		"_type": "PolicyTransaction",
+  		"createdAt": "2022-07-12T01:36:29.901-0500",
+  		"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  		"recordVersion": 5,
+  		"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  		"id": 2961,
+  		"updatedAt": "2022-07-12T01:36:29.979-0500",
+  		"tenantId": "ec",
+  		"policyNo": 99,
+  		"policyNumber": "COT-LFC1004",
+  		"transactionType": "Update",
+  		"transactionDate": "2022-07-12T01:36:29.898-0500",
+  		"transactionStatus": "PENDING",
+  		"transactionMode": "INTERACTIVE",
+  		"transactionUniqueId": "qZxrIaQzOcWaxWy",
+  		"contextName": "CLIENT-INFO-ID"
+  	},
+  	"transactionTypes": [
+  		"IssuePolicy",
+  		"IssueQuote",
+  		"NewBusiness",
+  		"Update"
+  	],
+  	"documents": []
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

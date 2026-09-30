@@ -1,0 +1,40 @@
+meta {
+  name: Update claim
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/claim/api/v1/arizona/claims/?=
+  body: json
+  auth: bearer
+}
+
+params:query {
+  : 
+}
+
+headers {
+  x-tenantId-1: ec
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'when-expired', 300 %}
+}
+
+body:json {
+  {
+    "_type": "ECClaimActionProxy",
+    "claimNumber": "22-87-LFC-50",
+  	"transactionType": "ReopenClaim",
+  	"claimStatus": "OPEN",
+  	"note": "some note",
+  	"reason": "Paid"
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

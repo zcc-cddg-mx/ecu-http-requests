@@ -1,0 +1,34 @@
+meta {
+  name: Search for party by name
+  type: graphql
+  seq: 3
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/party/graphql
+  body: graphql
+  auth: bearer
+}
+
+headers {
+  x-tenantid-1: ec
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:graphql {
+  query party_list($params: Map_String_ObjectScalar) { party_list(params: $params) { ...MessageResponseEntityFragment } }  fragment MessageResponseEntityFragment on MessageResponseEntity_Page_Party { _type body { ...PageFragment } } fragment PageFragment on Page_Party { totalElements content { ...C } } fragment C on Party { _type id identificationType ... on Person { _type firstName lastName fullLegalName } ... on ECPerson { _type firstName lastName fullLegalName nationality idCard passport personalNumber } ... on ECOrganization { _type name organizationNumber } ... on Organization { _type name } communications { ... on Email { id _type email } ... on Phone { id _type phoneNo description } } }
+  
+}
+
+body:graphql:vars {
+  {"params":{"firstName":"Adriana"}}
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

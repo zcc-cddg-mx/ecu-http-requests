@@ -1,0 +1,31 @@
+meta {
+  name: VOC clientes details
+  type: http
+  seq: 35
+}
+
+get {
+  url: http://larasrv.ncdc:9011/api/v1/voc/query/ActiveTramitesNumberQuery/ActiveTramitesNumberDTO?page=0&amp;pageSize=20&amp;brokerruc=1891811592001&amp;identificacion=1301850143&amp;sortProperties=tramitesEnCurso?page=0&pageSize=20
+  body: none
+  auth: basic
+}
+
+params:query {
+  page: 0
+  pageSize: 20
+}
+
+headers {
+  User-Agent: insomnia/9.1.1
+  Cookie: JSESSIONID=BCA567C4219D678D6A4CC2FCF27EB0BE
+}
+
+auth:basic {
+  username: voclient
+  password: 1!Nc@dc#
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

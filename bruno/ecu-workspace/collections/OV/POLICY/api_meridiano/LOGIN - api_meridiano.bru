@@ -1,0 +1,35 @@
+meta {
+  name: LOGIN - api_meridiano
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{server}}/user/api/v1/arizona/auth/ec/login
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantid-1: ec
+}
+
+body:json {
+  /* LOGIN */
+  {
+      "username": "nzambrano",
+      "password": "arizona2022?"
+  }
+}
+
+script:post-response {
+  var json = res.getBody();
+  bru.setGlobalEnvVar("token", json.body.accessToken);
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+}

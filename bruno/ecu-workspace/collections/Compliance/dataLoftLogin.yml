@@ -1,0 +1,25 @@
+info:
+  name: dataLoftLogin
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: https://ambientetest.datalaft.com:2121/api/Auth/login
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "user": "Soporte_RCC",
+          "password": "Listas.2024*"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

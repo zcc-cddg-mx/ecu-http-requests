@@ -1,0 +1,34 @@
+info:
+  name: validateAgente
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: http://localhost:5000/validate
+  body:
+    type: multipart-form
+    data:
+      - name: file
+        type: file
+        value:
+          - C:\Users\CARLOS.DUARTE2\Downloads\baseticketJulio2026 (2).xlsx
+      - name: command
+        type: text
+        value: ren-data
+      - name: ticket
+        type: text
+        value: INC23703493
+      - name: year
+        type: text
+        value: "2026"
+      - name: month
+        type: text
+        value: "7"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

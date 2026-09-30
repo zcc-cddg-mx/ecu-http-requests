@@ -1,0 +1,23 @@
+meta {
+  name: getRatingListAll
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{server}}/rule/api/v1/arizona/rating_lists
+  body: none
+  auth: inherit
+}
+
+params:query {
+  ~code: VH_AGENT_POS_COMMISSION
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+settings {
+  encodeUrl: true
+}

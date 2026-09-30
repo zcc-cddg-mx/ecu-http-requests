@@ -1,0 +1,32 @@
+meta {
+  name: Prepare email
+  type: http
+  seq: 69
+}
+
+post {
+  url: {{ _.server }}:{{ _.serverPort }}/document/api/v1/arizona/email
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  User-Agent: insomnia/8.6.1
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_34c63b4a00154ddcbb9e92ab90d5e732', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'never', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "TemplateProcessorRequest",
+  	"outputFormat": "pdf"
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

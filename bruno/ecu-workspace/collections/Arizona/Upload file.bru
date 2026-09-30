@@ -1,0 +1,39 @@
+meta {
+  name: Upload file
+  type: http
+  seq: 43
+}
+
+post {
+  url: {{ _.server }}/repo/api/v1/arizona/files/upload
+  body: multipartForm
+  auth: bearer
+}
+
+headers {
+  Content-Type: multipart/form-data
+  User-Agent: insomnia/10.0.0
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_40b110267b764a8f933a0e14bbd536b1', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:multipart-form {
+  file: @file()
+  document: '''
+    {
+    	"_type": "IODocument",
+    	"document": {
+    		"_type": "Document",
+    		
+    	}
+    }
+  '''
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

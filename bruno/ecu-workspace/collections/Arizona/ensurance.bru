@@ -1,0 +1,26 @@
+meta {
+  name: ensurance
+  type: http
+  seq: 102
+}
+
+get {
+  url: http://192.168.3.176:9010/api/v1/voc/query/UsuariosInternalUsersQuery/UsuariosInternalUsersDTO?idEntidad=700688985874
+  body: none
+  auth: inherit
+}
+
+params:query {
+  idEntidad: 700688985874
+}
+
+headers {
+  Content-Type: application/json
+  ~x-tenantId-1: no
+  ~: 
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

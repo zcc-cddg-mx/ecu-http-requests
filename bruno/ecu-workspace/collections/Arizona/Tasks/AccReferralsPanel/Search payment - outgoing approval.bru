@@ -1,0 +1,40 @@
+meta {
+  name: Search payment - outgoing approval
+  type: http
+  seq: 10
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/accounting/api/v1/arizona/ec/payments/outgoing_payment_approval?=
+  body: json
+  auth: bearer
+}
+
+params:query {
+  : 
+}
+
+headers {
+  x-tenantId-1: ec
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "PaymentSearch",
+  	"paymentId": 9,
+  	"params": {
+  		"page": "0",
+  		"pageSize": "20"
+  	}
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

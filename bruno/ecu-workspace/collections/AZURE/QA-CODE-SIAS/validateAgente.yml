@@ -1,0 +1,38 @@
+info:
+  name: validateAgente
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: https://serviciosias.zurichseguros.com.ec/zurich/api/hackaton/qa/validate
+  body:
+    type: multipart-form
+    data:
+      - name: file
+        type: file
+        value:
+          - C:\Users\CARLOS.DUARTE2\Downloads\baseticketAgosto2026.xlsx
+        contentType: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+      - name: command
+        type: text
+        value: ren-data
+      - name: ticket
+        type: text
+        value: ZNRX-67126
+      - name: year
+        type: text
+        value: "2026"
+      - name: month
+        type: text
+        value: "8"
+      - name: sample_size
+        type: text
+        value: "1"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

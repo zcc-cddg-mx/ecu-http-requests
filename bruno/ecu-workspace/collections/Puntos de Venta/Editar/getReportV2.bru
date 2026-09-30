@@ -1,0 +1,28 @@
+meta {
+  name: getReportV2
+  type: http
+  seq: 15
+}
+
+get {
+  url: {{server}}/report/api/v1/arizona/overview?query=requestByUserId:c9a68ed8-14a5-4672-befd-eb15ca45ebf9%20AND%20status:%20(APPROVED%20OR%20REJECTED)&index=DB_INSPECTION_NOTIFICATION_VIEW
+  body: none
+  auth: bearer
+}
+
+params:query {
+  query: requestByUserId:c9a68ed8-14a5-4672-befd-eb15ca45ebf9%20AND%20status:%20(APPROVED%20OR%20REJECTED)
+  index: DB_INSPECTION_NOTIFICATION_VIEW
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+}

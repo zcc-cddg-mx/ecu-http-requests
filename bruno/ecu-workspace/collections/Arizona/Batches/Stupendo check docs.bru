@@ -1,0 +1,34 @@
+meta {
+  name: Stupendo check docs
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{ _.server }}:{{ _.serverPort }}/automation/api/v1/arizona/stupendo/business/checkDocuments
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  User-Agent: insomnia/2023.5.8
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_40b110267b764a8f933a0e14bbd536b1', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'when-expired', 60 %}
+}
+
+body:json {
+  {
+  	    "_type": "CheckDocumentRequest",
+  	    "id": 1,
+  	    "updateBilling": "true",
+  	    "batchId": 9999999
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

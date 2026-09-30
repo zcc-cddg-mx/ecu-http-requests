@@ -1,0 +1,171 @@
+meta {
+  name: TranslatedExc
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{ server }}:{{ serverPort }}/document/api/v1/arizona/some-business-process?=
+  body: json
+  auth: bearer
+}
+
+params:query {
+  : 
+}
+
+headers {
+  x-tenantId-1: ec
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'when-expired', 300 %}
+}
+
+body:json {
+  {
+  	"_type": "Fnol",
+  	"fieldsInfo": {},
+  	"claimNo": 210,
+  	"fnolAccidentInformation": {
+  		"_type": "FnolAccidentInformation",
+  		"fieldsInfo": {
+  			"lineOfBusiness": [
+  				{
+  					"_type": "FormProxyFieldConstraint",
+  					"constraintName": "maxValue",
+  					"fullDescription": "maxValue",
+  					"constraint": {
+  						"_type": "ProxyFormSize",
+  						"maxSize": 255
+  					}
+  				}
+  			],
+  			"insured": [
+  				{
+  					"_type": "FormProxyFieldConstraint",
+  					"constraintName": "maxValue",
+  					"fullDescription": "maxValue",
+  					"constraint": {
+  						"_type": "ProxyFormSize",
+  						"maxSize": 255
+  					}
+  				}
+  			],
+  			"broker": [
+  				{
+  					"_type": "FormProxyFieldConstraint",
+  					"constraintName": "maxValue",
+  					"fullDescription": "maxValue",
+  					"constraint": {
+  						"_type": "ProxyFormSize",
+  						"maxSize": 255
+  					}
+  				}
+  			]
+  		},
+  		"affectedPeople": [
+  			{
+  				"_type": "FnolParty",
+  				"fieldsInfo": {
+  					"firstName": [
+  						{
+  							"_type": "FormProxyFieldConstraint",
+  							"constraintName": "maxValue",
+  							"fullDescription": "maxValue",
+  							"constraint": {
+  								"_type": "ProxyFormSize",
+  								"maxSize": 255
+  							}
+  						}
+  					]
+  				},
+  				"claimPartyRoleType": "CO_OWNER"
+  			},
+  			{
+  				"_type": "FnolParty",
+  				"fieldsInfo": {
+  					"firstName": [
+  						{
+  							"_type": "FormProxyFieldConstraint",
+  							"constraintName": "maxValue",
+  							"fullDescription": "maxValue",
+  							"constraint": {
+  								"_type": "ProxyFormSize",
+  								"maxSize": 255
+  							}
+  						}
+  					]
+  				},
+  				"claimPartyRoleType": "SPOUSE"
+  			},
+  			{
+  				"_type": "FnolParty",
+  				"fieldsInfo": {
+  					"firstName": [
+  						{
+  							"_type": "FormProxyFieldConstraint",
+  							"constraintName": "maxValue",
+  							"fullDescription": "maxValue",
+  							"constraint": {
+  								"_type": "ProxyFormSize",
+  								"maxSize": 255
+  							}
+  						}
+  					]
+  				},
+  				"claimPartyRoleType": "CHILD"
+  			},
+  			{
+  				"_type": "FnolParty",
+  				"fieldsInfo": {
+  					"firstName": [
+  						{
+  							"_type": "FormProxyFieldConstraint",
+  							"constraintName": "maxValue",
+  							"fullDescription": "maxValue",
+  							"constraint": {
+  								"_type": "ProxyFormSize",
+  								"maxSize": 255
+  							}
+  						}
+  					]
+  				},
+  				"claimPartyRoleType": "CHILD"
+  			}
+  		],
+  		"contactPerson": {
+  			"fieldsInfo": {
+  				"firstName": [
+  					{
+  						"_type": "FormProxyFieldConstraint",
+  						"constraintName": "maxValue",
+  						"fullDescription": "maxValue",
+  						"constraint": {
+  							"_type": "ProxyFormSize",
+  							"maxSize": 255
+  						}
+  					}
+  				],
+  				"lastName": [
+  					{
+  						"_type": "FormProxyFieldConstraint",
+  						"constraintName": "maxValue",
+  						"fullDescription": "maxValue",
+  						"constraint": {
+  							"_type": "ProxyFormSize",
+  							"maxSize": 255
+  						}
+  					}
+  				]
+  			}
+  		}
+  	}
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

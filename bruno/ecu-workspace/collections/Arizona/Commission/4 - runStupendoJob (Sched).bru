@@ -1,0 +1,28 @@
+meta {
+  name: 4 - runStupendoJob (Sched)
+  type: http
+  seq: 17
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/scheduler/api/v1/arizona/schedulers/stupendo/launch?=
+  body: none
+  auth: bearer
+}
+
+params:query {
+  : 
+}
+
+headers {
+  x-tenantId-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_525b94c4be87496999dc6053f519009c', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

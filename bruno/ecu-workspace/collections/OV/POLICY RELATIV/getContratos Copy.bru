@@ -1,0 +1,25 @@
+meta {
+  name: getContratos Copy
+  type: http
+  seq: 12
+}
+
+get {
+  url: {{server}}/rule/api/v1/arizona/ec/commissions
+  body: json
+  auth: inherit
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+body:json {
+  {
+      "page": 2
+  }
+}
+
+settings {
+  encodeUrl: true
+}

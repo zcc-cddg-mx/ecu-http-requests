@@ -1,0 +1,37 @@
+meta {
+  name: ZBox UpdateFolder
+  type: http
+  seq: 6
+}
+
+put {
+  url: http://10.119.74.24:8000/zurich/api/collection/box/v1.0/updateFolder/150358077183
+  body: json
+  auth: basic
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantid-1: ec
+}
+
+auth:basic {
+  username: zurich
+  password: password2018
+}
+
+body:json {
+  {
+  	"userId": "15268637096",
+  	"name": "namechange5",
+  	"description": "test",
+  	"parent": {
+  		"id": "0"
+  	}
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

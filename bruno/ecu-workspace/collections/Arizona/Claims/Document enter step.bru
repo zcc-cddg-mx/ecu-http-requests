@@ -1,0 +1,32 @@
+meta {
+  name: Document enter step
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/claim/api/v1/arizona/proxy/handling/documents/enter_step
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "HandlingDocumentsProxy",
+  	"claimNumber": "22-87-LFC-50"
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

@@ -1,0 +1,51 @@
+meta {
+  name: referral define (Ref)
+  type: http
+  seq: 19
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/referral/api/v1/arizona/referral_definitions?=
+  body: json
+  auth: bearer
+}
+
+params:query {
+  : 
+}
+
+headers {
+  x-tenantId-1: ec
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "ReferralDefinition",
+  	"code": "COMMISSION",
+  	"name": "Agency commission",
+  	"description": "Agency commission (description)",
+  	"processName": "ACCOUNTING_COMMISSION",
+  	"createAutomatically": "YES",
+  	"clearAutomatically": "YES",
+  	"mandatoryCommentApprove": "NO",
+  	"mandatoryCommentReject": "NO",
+  	"mandatoryCommentAssign": "NO",
+  	"mandatoryCommentReopen": "NO",
+  	"state": "DRAFT",
+  	"validFrom": "2020-01-01",
+  	"versionNo": 1,
+  	"finalizeProcessName": "bean:EcNotifyAccounting",
+  	"canSelfAccept": "NO",
+  	"referredAttribute": "AMOUNT"
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

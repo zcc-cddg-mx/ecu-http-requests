@@ -1,0 +1,31 @@
+meta {
+  name: 5th step - 2
+  type: http
+  seq: 12
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/policy/api/v1/arizona/bulk_policy_handle/status/{policyId}{"_type":"PolicyUpdateTransactionRequest","policy":{"_type":"ECPolicy","createdAt":"2022-06-28T01:19:09.057-0500","updatedBy":"819df9e5-330a-4125-b781-c94f12501061","recordVersion":3,"createdBy":"819df9e5-330a-4125-b781-c94f12501061","id":3009,"updatedAt":"2022-06-28T06:28:18Z","tenantId":"ec","notes":"{\"actualInformation\":null}","originalInceptionDate":"2022-06-28T05:00:00Z","productId":1041,"productCode":"LFC","variantId":1021,"variantCode":"CORPORATIVO_VIDA","partyRoles":[{"_type":"AgreementPartyRole","createdAt":"2022-06-28T01:20:39.389-0500","updatedBy":"819df9e5-330a-4125-b781-c94f12501061","recordVersion":3,"createdBy":"819df9e5-330a-4125-b781-c94f12501061","id":2968,"updatedAt":"2022-06-28T01:28:19.266-0500","tenantId":"ec","partyId":9952,"partyRole":"POLICY_HOLDER","isLeader":"NO","agreementId":3009},{"_type":"AgreementPartyRole","createdAt":"2022-06-28T01:19:09.158-0500","updatedBy":"819df9e5-330a-4125-b781-c94f12501061","recordVersion":5,"createdBy":"819df9e5-330a-4125-b781-c94f12501061","id":2969,"updatedAt":"2022-06-28T01:28:19.266-0500","tenantId":"ec","partyId":2583,"partyRole":"POLICY_AGENT","share":100,"isLeader":"YES","agreementId":3009},{"_type":"AgreementPartyRole","createdAt":"2022-06-28T01:19:09.160-0500","updatedBy":"819df9e5-330a-4125-b781-c94f12501061","recordVersion":5,"createdBy":"819df9e5-330a-4125-b781-c94f12501061","id":2970,"updatedAt":"2022-06-28T01:28:19.266-0500","tenantId":"ec","partyId":1975,"partyRole":"LIFE_COMMERCIAL_EXECUTIVE","isLeader":"NO","agreementId":3009}],"commissionSplits":[{"_type":"AgreementCommissionSplit","createdAt":"2022-06-28T01:21:37.409-0500","updatedBy":"819df9e5-330a-4125-b781-c94f12501061","recordVersion":2,"createdBy":"819df9e5-330a-4125-b781-c94f12501061","id":9,"updatedAt":"2022-06-28T01:28:19.266-0500","agreementAgentRole":"CoBroker","structureElementId":2583,"share":100,"commissionPercent":0,"effectiveDate":"2022-06-28T05:00:00Z","expirationDate":"2023-06-28T05:00:00Z","isLeader":"YES","agreementId":3009}],"displayName":"Vida Corporativo","policyNo":101,"policyNumber":"COT-LFC1002","effectiveDate":"2022-06-28T05:00:00Z","expirationDate":"2023-06-28T05:00:00Z","annualEffectiveDate":"2022-06-28T05:00:00Z","annualExpirationDate":"2023-06-28T05:00:00Z","status":"APPROVED","customStatus":"AUTHORIZED","productClass":"GROUP","paymentTerms":"PREMIUM_30","paymentMethod":"1","currency":"USD","yearOfPolicy":1,"proRataMethod":"PR360E","renewalMode":"NONE","policyTransaction":{"_type":"PolicyTransaction","createdAt":"2022-06-28T01:18:45.669-0500","updatedBy":"819df9e5-330a-4125-b781-c94f12501061","recordVersion":5,"createdBy":"819df9e5-330a-4125-b781-c94f12501061","id":2963,"updatedAt":"2022-06-28T01:18:45.852-0500","tenantId":"ec","policyNo":101,"policyNumber":"COT-LFC1002","transactionType":"Update","transactionDate":"2022-06-28T06:18:45Z","transactionStatus":"PENDING","transactionMode":"INTERACTIVE","transactionUniqueId":"YxYTwkwRfbVrcXA","contextName":"QUOTATION
+  body: multipartForm
+  auth: bearer
+}
+
+headers {
+  x-tenantid-1: ec
+  Content-Type: multipart/form-data
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:multipart-form {
+  options: { "_type": "File", "fileType": "OWNER"}
+  policyUpdateTransactionRequest: 
+  files: @file(C:\Users\cziken\Desktop\Test data\Person list, 5 people.xlsx)
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

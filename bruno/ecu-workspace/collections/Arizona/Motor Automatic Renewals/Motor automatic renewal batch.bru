@@ -1,0 +1,24 @@
+meta {
+  name: Motor automatic renewal batch
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{ _.server }}:{{ _.serverPort }}/scheduler/api/v1/arizona/schedulers/motorAutomaticRenewal/launch
+  body: none
+  auth: bearer
+}
+
+headers {
+  User-Agent: insomnia/9.2.0
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_40b110267b764a8f933a0e14bbd536b1', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

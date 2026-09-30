@@ -1,0 +1,38 @@
+meta {
+  name: contract
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/reinsurance/api/v1/arizona/active_contracts/find?=
+  body: json
+  auth: bearer
+}
+
+params:query {
+  : 
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantId-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "ContractRequest",
+  	"contractType": "QUOTA",
+  	"effectiveDate" : "2020-04-01T18:45:00.000Z",
+  	"productName" : "LFP"
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

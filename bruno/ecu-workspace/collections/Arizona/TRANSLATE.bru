@@ -1,0 +1,20 @@
+meta {
+  name: TRANSLATE
+  type: http
+  seq: 88
+}
+
+post {
+  url: {{ _.server }}:{{ _.serverPort }}/api/v1/arizona/translations/ProductName/VH
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_6c9a3a579fa645e78ec2e6f6628c790f', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

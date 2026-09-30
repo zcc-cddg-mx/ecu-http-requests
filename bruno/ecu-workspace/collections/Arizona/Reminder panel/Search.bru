@@ -1,0 +1,51 @@
+meta {
+  name: Search
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/accounting/api/v1/arizona/transaction_entries/search
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "TransactionSearch",
+  	"partyId": null,
+  	"accountId": null,
+  	"product": null,
+  	"balanceFrom": 0.01,
+  	"balanceTo": null,
+  	"amountFrom": null,
+  	"amountTo": null,
+  	"paymentMethodCode": null,
+  	"policyNo": null,
+  	"policyNumber": null,
+  	"billingNumber": null,
+  	"transClass" : "INSTALLMENT",
+  	"dueDateFrom": "2021-09-27",
+  	"dueDateTo": "2021-09-31",
+  	"params": {
+  		"page": "0",
+  		"pageSize": "100",
+  		"sortDirection": "ASC",
+  		"sortProperties": "id"
+  	}
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

@@ -1,0 +1,45 @@
+meta {
+  name: getxls-rule
+  type: http
+  seq: 10
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/rule/api/v1/arizona/data/download?=
+  body: json
+  auth: bearer
+}
+
+params:query {
+  : 
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantId-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_525b94c4be87496999dc6053f519009c', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "XlsExportOptions",
+  	"outputFileType": "xlsx",
+  	"outputFileName": "data-template.xlsx",
+  	"entityNames": [
+  		"eu.ncdc.arizona.rule.domain.entity.custom.CHCoverageDetail"
+  	],
+  	"filters": {},
+  	"wrapText": "true",
+  	"autoFilter": "true",
+  	"templateOnly": "false",
+  	"locale": "ec" 
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

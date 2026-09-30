@@ -1,0 +1,87 @@
+meta {
+  name: Create quote Copy
+  type: http
+  seq: 11
+}
+
+post {
+  url: https://preprodoficinavirtual.zurichseguros.com.ec/nuevoportal/policy/api/v1/arizona/motor/genericos/createQuote
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {{token_login_external}}
+}
+
+body:json {
+  {
+  	"_type": "MotorGenericosTarificationRequest",
+  	"motorGenericosTarification": {
+  		"_type": "MotorGenericosTarification",
+  		"policyData": {
+  			"_type": "PolicyData",
+  			 "agentExternalId":"11130682230956", 
+              "pointOfSaleName":"GUAYAQUIL GILBERT & BOLOÑA S. A. AGENCIA ASESORA PRODUCTORA DE SEGUROS SEGUGILBO"
+  		},
+  		"car": {
+  			"_type": "VehicleData",
+  			"sumInsured" : 12700,
+  			"extraEquipmentSumInsured" : 0,
+  			"ensuranceVehicleId": "null",
+  			"registrationNumber" : "IX558X",
+  			"chassisNumber": "LXYPCNL06L0203881",
+  			"engineNumber": "169FMMLA014061",
+  			"productionYear": 2020,
+  			"make": "NISSAN",
+  			"makeId": "5134",
+  			"model": "PATHFINDER ADVANCE AC 3.5 5P 4X4 TA",
+  			"modelId": "11606677980985",
+  			"colorName": "NEGRO",
+  			"colorId": "12852592650",
+  			"typeOfVehicle" : "JEEP",
+  			"typeOfVehicleId" : "73502",
+  			"passengersNumber" : "5",
+  			"isNewCar" : "NO"	
+  		},
+  		"owner": {
+  			"_type": "VehicleOwner",
+  			"partyType" : "PERSON",
+  			"identificationNumber": "1313199067",
+  			"name": "Cristian Holguin",
+  			"age": 45,
+  			"civilStatus": "Divorciado",
+  			"gender": "M"	
+  		},
+  		"clientExternal": {
+  			"_type": "ClientExternal",
+  			"clientId": "352690061",
+  			"entityId": "352690060",
+  			"identificationType": "c",
+  			"identificationNumber": "1751639970",
+  			"name": "SEBASTIAN",
+  			"lastName": "RODRIGUEZ",
+  			"fullName": "RODRIGUEZ SEBASTIAN",
+  			"companyName": null,
+  			"phoneNumber": "099999999",
+  			"cellphoneNumber": "0999999999",
+  			"email": "sebastian.rodriguez2@zurich.com",
+  			"nationality": "ECUADOR",
+  			"nationalityId": "10345",
+  			"mainStreet": "CALLE PRINCIPAL TEST 4",
+  			"number": "N42-115",
+  			"secondaryStreet": "CALLE SECUNDARAI TEST 5"
+  		}
+  	}
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

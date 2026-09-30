@@ -1,0 +1,25 @@
+meta {
+  name: Partner Upla status VOC
+  type: http
+  seq: 60
+}
+
+get {
+  url: localhost:8080/api/v1/voc/query/PartnersAgenteListQuery/PartnersAgenteListDTO
+  body: none
+  auth: basic
+}
+
+headers {
+  User-Agent: insomnia/9.1.1
+}
+
+auth:basic {
+  username: voclient
+  password: 1!Nc@dc#
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

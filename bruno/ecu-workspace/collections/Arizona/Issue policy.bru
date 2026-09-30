@@ -1,0 +1,139 @@
+meta {
+  name: Issue policy
+  type: http
+  seq: 44
+}
+
+post {
+  url: {{ _.server }}/policy/api/v1/arizona/motor/payment-billing-issue
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  User-Agent: insomnia/10.0.0
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_40b110267b764a8f933a0e14bbd536b1', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "MotorGenericosTarificationRequest",
+  	"testMode": false,
+  	"policyNo": 457933,
+  	"motorGenericosTarification": {
+  		"_type": "MotorGenericosTarification",
+  		"policyData": {
+  			"_type": "PolicyData",
+  			"entityProperties": {},
+  			"policyNo": 457933,
+  			"policyNumber": "COT-VH777876",
+  			"productCode": "VH",
+  			"variant": "MOTOR",
+  			"pointOfSale": "139402",
+  			"status": "WORKING",
+  			"customStatus": "WORKING",
+  			"agentSEId": 1294,
+  			"effectiveDate": "2024-09-02T09:43:24",
+  			"expirationDate": "2025-09-02T09:43:24",
+  			"suggestedPolicyStartDate": "2024-09-02T09:43:24",
+  			"uplaStatus": "APPROVED",
+  			"nextInsurableObjectAllowed": "YES",
+  			"paymentMethod": "1",
+  			"installmentDefinitionCode": "12",
+  			"firstPaymentDate": "2024-09-02",
+  			"ensuranceDocuments": [],
+  			"endorsementIds": [],
+  			"policyEndorsementIds": [],
+  			"paymentMethodAllowed": [
+  				"1",
+  				"2",
+  				"3"
+  			],
+  			"downloadInvoice": true,
+  			"downloadPolicy": true,
+  			"consents": [],
+  			"uplaUpdate": "NO",
+  			"policyAgencies": []
+  		},
+  		"cars": [
+  			{
+  				"_type": "VehicleData",
+  				"objectNo": 473996,
+  				"subProduct": "SENIOR",
+  				"registrationNumber": "PDPE7806",
+  				"chassisNumber": "wewreerewrerewr",
+  				"engineNumber": "SDFDSFDSF44",
+  				"typeOfVehicleId": "73502",
+  				"productionYear": 2024,
+  				"typeOfVehicle": "JEEP",
+  				"make": "KIA",
+  				"makeId": "5099",
+  				"model": "SORENTO 2.4L GSL 6MT 4X2",
+  				"modelId": "74204093",
+  				"colorName": "NEGRO",
+  				"colorId": "12852592650",
+  				"sumInsured": 26000,
+  				"isNewCar": "NO",
+  				"passengersNumber": 5,
+  				"selectedPlan": "SENIOR",
+  				"vehicleDescription": "KIA-SORENTO 2.4L GSL 6MT 4X2-2024",
+  				"ensuranceVehicleId": "-1",
+  				"substituteCarType": "SubstituteCarBasico",
+  				"plans": [],
+  				"inspections": [
+  					{
+  						"_type": "VehicleInspection",
+  						"inspectionId": 713621,
+  						"type": "MOTOR_NEW_CAR",
+  						"status": "APPROVED",
+  						"allowedSubType": [
+  							"AUTO",
+  							"VIDEO",
+  							"ONSITE"
+  						]
+  					}
+  				],
+  				"referrals": [],
+  				"vehicleEquipment": [],
+  				"referralsRequired": [],
+  				"referralsOptional": [],
+  				"isBeingProcessed": "NO",
+  				"isVehicleAddedManually": "NO",
+  				"removable": "NO",
+  				"fieldsInfo": {},
+  				"entityProperties": {}
+  			}
+  		],
+  		"beneficiaries": [],
+  		"planInformation": [],
+  		"client": {
+  			"_type": "PolicyRole",
+  			"id": 463104,
+  			"identificationType": "ID_CARD",
+  			"identificationNumber": "1751639970",
+  			"firstName": "SEBASTIAN",
+  			"secondName": "RODRIGUEZ",
+  			"name": "RODRIGUEZ SEBASTIAN",
+  			"email": "sebastian.rodriguez2@zurich.com",
+  			"mobilePhone": "0999999999",
+  			"phone": "0999999999",
+  			"mainAddress": "TETE",
+  			"mainAddressNo": "TERT",
+  			"secondaryAddress": "GARCIA MORENO",
+  			"nationalityId": "10345",
+  			"fieldsInfo": {},
+  			"entityProperties": {}
+  		}
+  	}
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

@@ -1,0 +1,42 @@
+meta {
+  name: entityManagementService - SIAS1
+  type: http
+  seq: 3
+}
+
+post {
+  url: https://serviciosias.zurichseguros.com.ec/zurich/api/entityManagement/v1/client
+  body: json
+  auth: none
+}
+
+headers {
+  x-api-key: df7vYXqzZG1UCjygCsQOb7KSmYIqEGaF3Q23D39u
+}
+
+body:json {
+  {
+      "entityId": null,
+      "clientId": null,
+      "identificationType": "c",
+      "identificationNumber": "1704449949",
+      "name": "EDWIN",
+      "lastName": "ROMERO",
+      "fullName": null,
+      "companyName": null,
+      "phoneNumber": "99-8032116",
+      "cellphoneNumber": "09-98032116",
+      "email": "ingrid.romero@zurich.com",
+      "nationality": null,
+      "nationalityId": "10345",
+      "mainStreet": null,
+      "number": null,
+      "secondaryStreet": null,
+      "userId": "iromero"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

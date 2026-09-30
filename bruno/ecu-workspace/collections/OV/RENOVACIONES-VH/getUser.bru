@@ -1,0 +1,32 @@
+meta {
+  name: getUser
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{server}}/report/api/v1/arizona/ensurance/users/10832678163148?=
+  body: json
+  auth: inherit
+}
+
+params:query {
+  : 
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+body:json {
+  {
+      "ano": "2025",
+      "mes": "9",
+      "page": 0,
+      "pageSize": 1000
+  }
+}
+
+settings {
+  encodeUrl: true
+}

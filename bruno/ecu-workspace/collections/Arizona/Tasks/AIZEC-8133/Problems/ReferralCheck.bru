@@ -1,0 +1,307 @@
+meta {
+  name: ReferralCheck
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/referral/api/v1/arizona/business/referral/check
+  body: json
+  auth: bearer
+}
+
+headers {
+  x-tenantid-1: ec
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "ReferralCheckRequest",
+  	"businessProcessName": "POLICY",
+  	"businessProcessId": "COT-LFC1012",
+  	"currentContextData": {
+  		"policy": {
+  			"_type": "ECPolicy",
+  			"createdAt": "2022-07-11T09:23:44.830-0500",
+  			"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  			"recordVersion": 0,
+  			"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  			"id": 3029,
+  			"updatedAt": "2022-07-11T09:23:44.830-0500",
+  			"tenantId": "ec",
+  			"originalInceptionDate": "2022-07-11T00:00:00.000-0500",
+  			"productId": 1041,
+  			"productCode": "LFC",
+  			"variantId": 1021,
+  			"variantCode": "CORPORATIVO_VIDA",
+  			"partyRoles": [
+  				{
+  					"_type": "AgreementPartyRole",
+  					"createdAt": "2022-07-11T09:23:44.841-0500",
+  					"recordVersion": 0,
+  					"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  					"id": 3025,
+  					"tenantId": "ec",
+  					"partyId": 1975,
+  					"partyRole": "LIFE_COMMERCIAL_EXECUTIVE",
+  					"agreementId": 3029
+  				}
+  			],
+  			"commissionSplits": [],
+  			"displayName": "Vida Corporativo",
+  			"policyNo": 96,
+  			"policyNumber": "COT-LFC1012",
+  			"effectiveDate": "2022-07-11T00:00:00.000-0500",
+  			"expirationDate": "2023-07-11T00:00:00.000-0500",
+  			"annualEffectiveDate": "2022-07-11T00:00:00.000-0500",
+  			"annualExpirationDate": "2023-07-11T00:00:00.000-0500",
+  			"status": "WORKING",
+  			"customStatus": "WORKING",
+  			"productClass": "GROUP",
+  			"paymentMethod": "1",
+  			"currency": "USD",
+  			"yearOfPolicy": 1,
+  			"proRataMethod": "PR360E",
+  			"renewalMode": "NONE",
+  			"policyTransaction": {
+  				"_type": "PolicyTransaction",
+  				"createdAt": "2022-07-11T09:22:31.619-0500",
+  				"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"recordVersion": 5,
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 2958,
+  				"updatedAt": "2022-07-11T09:22:32.060-0500",
+  				"tenantId": "ec",
+  				"policyNo": 96,
+  				"policyNumber": "COT-LFC1012",
+  				"transactionType": "Update",
+  				"transactionDate": "2022-07-11T09:22:31.613-0500",
+  				"transactionStatus": "PENDING",
+  				"transactionMode": "INTERACTIVE",
+  				"transactionUniqueId": "zShaMBxTVzNcQSA",
+  				"contextName": "CLIENT-INFO-ID",
+  				"policyId": 3029
+  			},
+  			"transactionReason": "FORCE_REFERRAL_CHECK",
+  			"billingType": "SUBSCRIPTION",
+  			"billingBindingEntity": "POLICY",
+  			"accountingLevel": "NONE",
+  			"insurableObjects": [
+  				{
+  					"_type": "LifeGeneralData",
+  					"createdAt": "2022-07-11T09:23:44.831-0500",
+  					"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  					"recordVersion": 0,
+  					"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  					"id": 3000,
+  					"updatedAt": "2022-07-11T09:23:44.831-0500",
+  					"tenantId": "ec",
+  					"objectNo": 116,
+  					"insurableObjectTypeId": 1041,
+  					"insurableObjectClass": "SIMPLE",
+  					"policyNo": 96,
+  					"effectiveDate": "2022-07-11T00:00:00.000-0500",
+  					"expirationDate": "2023-07-11T00:00:00.000-0500",
+  					"annualEffectiveDate": "2022-07-11T00:00:00.000-0500",
+  					"annualExpirationDate": "2023-07-11T00:00:00.000-0500",
+  					"originalInceptionDate": "2022-07-11T00:00:00.000-0500",
+  					"yearOfObject": 1,
+  					"orderNo": 1,
+  					"informationOnly": "YES",
+  					"groupPlans": [],
+  					"policyAmounts": [],
+  					"policyDeductibles": [],
+  					"policyLimits": [],
+  					"policyCoverageDetails": [],
+  					"partyRoles": [],
+  					"hasActiveCoverages": "YES",
+  					"clauses": [],
+  					"policyPendings": [],
+  					"displayName": "Vida Corporativo",
+  					"policyId": 3029,
+  					"percentageOfParticipation": 0,
+  					"typeSumInsured": "UNIFORM",
+  					"uwDiscount": 0,
+  					"credibilityRate": 0,
+  					"currentUserProfile": "LIFE_COMMERCIAL_EXECUTIVE"
+  				}
+  			],
+  			"policyAmounts": [
+  				{
+  					"_type": "PolicyAmount",
+  					"createdAt": "2022-07-11T09:23:44.831-0500",
+  					"recordVersion": 0,
+  					"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  					"id": 11049,
+  					"tenantId": "ec",
+  					"amount": 0,
+  					"amountType": "TP"
+  				},
+  				{
+  					"_type": "PolicyAmount",
+  					"createdAt": "2022-07-11T09:23:44.832-0500",
+  					"recordVersion": 0,
+  					"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  					"id": 11050,
+  					"tenantId": "ec",
+  					"amount": 0,
+  					"amountType": "AP",
+  					"factor": 1.00000000
+  				},
+  				{
+  					"_type": "PolicyAmount",
+  					"createdAt": "2022-07-11T09:23:44.832-0500",
+  					"recordVersion": 0,
+  					"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  					"id": 11051,
+  					"tenantId": "ec",
+  					"amount": 0.00,
+  					"amountType": "INSTALMENT_COUNT_1"
+  				},
+  				{
+  					"_type": "PolicyAmount",
+  					"createdAt": "2022-07-11T09:23:44.834-0500",
+  					"recordVersion": 0,
+  					"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  					"id": 11052,
+  					"tenantId": "ec",
+  					"amount": 0.00,
+  					"amountType": "INSTALMENT_COUNT_2"
+  				},
+  				{
+  					"_type": "PolicyAmount",
+  					"createdAt": "2022-07-11T09:23:44.835-0500",
+  					"recordVersion": 0,
+  					"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  					"id": 11053,
+  					"tenantId": "ec",
+  					"amount": 0.00,
+  					"amountType": "INSTALMENT_COUNT_3"
+  				},
+  				{
+  					"_type": "PolicyAmount",
+  					"createdAt": "2022-07-11T09:23:44.835-0500",
+  					"recordVersion": 0,
+  					"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  					"id": 11054,
+  					"tenantId": "ec",
+  					"amount": 0.00,
+  					"amountType": "INSTALMENT_COUNT_4"
+  				},
+  				{
+  					"_type": "PolicyAmount",
+  					"createdAt": "2022-07-11T09:23:44.836-0500",
+  					"recordVersion": 0,
+  					"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  					"id": 11055,
+  					"tenantId": "ec",
+  					"amount": 0.00,
+  					"amountType": "INSTALMENT_COUNT_5"
+  				},
+  				{
+  					"_type": "PolicyAmount",
+  					"createdAt": "2022-07-11T09:23:44.837-0500",
+  					"recordVersion": 0,
+  					"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  					"id": 11056,
+  					"tenantId": "ec",
+  					"amount": 0.00,
+  					"amountType": "INSTALMENT_COUNT_6"
+  				},
+  				{
+  					"_type": "PolicyAmount",
+  					"createdAt": "2022-07-11T09:23:44.837-0500",
+  					"recordVersion": 0,
+  					"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  					"id": 11057,
+  					"tenantId": "ec",
+  					"amount": 0.00,
+  					"amountType": "INSTALMENT_COUNT_7"
+  				},
+  				{
+  					"_type": "PolicyAmount",
+  					"createdAt": "2022-07-11T09:23:44.838-0500",
+  					"recordVersion": 0,
+  					"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  					"id": 11058,
+  					"tenantId": "ec",
+  					"amount": 0.00,
+  					"amountType": "INSTALMENT_COUNT_8"
+  				},
+  				{
+  					"_type": "PolicyAmount",
+  					"createdAt": "2022-07-11T09:23:44.839-0500",
+  					"recordVersion": 0,
+  					"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  					"id": 11059,
+  					"tenantId": "ec",
+  					"amount": 0.00,
+  					"amountType": "INSTALMENT_COUNT_9"
+  				},
+  				{
+  					"_type": "PolicyAmount",
+  					"createdAt": "2022-07-11T09:23:44.839-0500",
+  					"recordVersion": 0,
+  					"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  					"id": 11060,
+  					"tenantId": "ec",
+  					"amount": 0.00,
+  					"amountType": "INSTALMENT_COUNT_10"
+  				},
+  				{
+  					"_type": "PolicyAmount",
+  					"createdAt": "2022-07-11T09:23:44.840-0500",
+  					"recordVersion": 0,
+  					"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  					"id": 11061,
+  					"tenantId": "ec",
+  					"amount": 0.00,
+  					"amountType": "INSTALMENT_COUNT_11"
+  				},
+  				{
+  					"_type": "PolicyAmount",
+  					"createdAt": "2022-07-11T09:23:44.840-0500",
+  					"recordVersion": 0,
+  					"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  					"id": 11062,
+  					"tenantId": "ec",
+  					"amount": 0.00,
+  					"amountType": "INSTALMENT_COUNT_12"
+  				}
+  			],
+  			"policyDeductibles": [],
+  			"policyLimits": [],
+  			"policyCoverageParts": [],
+  			"policyCoverageDetails": [],
+  			"masterPolicies": [],
+  			"groupPlans": [],
+  			"clauses": [],
+  			"policyPendings": [],
+  			"previousClaimYears": "NO",
+  			"pointOfSale": "18959",
+  			"ensurancePolicyIds": [],
+  			"ensuranceInvoices": [],
+  			"endorsements": [],
+  			"lineOfBusiness": [
+  				"LIFE"
+  			],
+  			"policyEnsuranceEndorsements": [],
+  			"isRenewal": "NO"
+  		}
+  	},
+  	"referralContextParameters": {
+  		"policyId": "3029",
+  		"policyNo": "96"
+  	}
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

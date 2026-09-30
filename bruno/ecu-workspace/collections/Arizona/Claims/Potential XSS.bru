@@ -1,0 +1,29 @@
+meta {
+  name: Potential XSS
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{ server }}:{{ serverPort }}/document/api/v1/arizona/documents?documentContexts.parameterName=<script>alert("test!")</script>&documentContexts.parameterValue=70
+  body: none
+  auth: bearer
+}
+
+params:query {
+  documentContexts.parameterName: <script>alert("test!")</script>
+  documentContexts.parameterValue: 70
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_cc1ef1ec3a964e49afda4f82586a4ec0', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

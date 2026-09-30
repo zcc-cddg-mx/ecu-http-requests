@@ -1,0 +1,29 @@
+meta {
+  name: New Request_8
+  type: http
+  seq: 72
+}
+
+get {
+  url: http://larasrv.ncdc:9011/api/v1/voc/query/EndososQuery/EndososDTO?page=0&pageSize=20&sortDirection=desc&idPoliza=323337983&sortProperties=fechaElaboracion
+  body: none
+  auth: basic
+}
+
+params:query {
+  page: 0
+  pageSize: 20
+  sortDirection: desc
+  idPoliza: 323337983
+  sortProperties: fechaElaboracion
+}
+
+auth:basic {
+  username: voclient
+  password: 1!Nc@dc#
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

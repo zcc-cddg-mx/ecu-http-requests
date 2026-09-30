@@ -1,0 +1,27 @@
+meta {
+  name: filtroBussinesUnits
+  type: http
+  seq: 11
+}
+
+get {
+  url: {{server}}/agent/api/v1/arizona/structures?structureElement.id=7
+  body: none
+  auth: bearer
+}
+
+params:query {
+  structureElement.id: 7
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+}

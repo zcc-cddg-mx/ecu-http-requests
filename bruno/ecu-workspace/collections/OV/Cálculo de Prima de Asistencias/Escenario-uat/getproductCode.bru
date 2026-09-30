@@ -1,0 +1,24 @@
+meta {
+  name: getproductCode
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{server}}/agent/api/v1/arizona/ecstructureelements/getParents/1294?productCode=VH
+  body: json
+  auth: inherit
+}
+
+params:query {
+  productCode: VH
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

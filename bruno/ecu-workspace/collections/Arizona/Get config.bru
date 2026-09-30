@@ -1,0 +1,32 @@
+meta {
+  name: Get config
+  type: http
+  seq: 50
+}
+
+get {
+  url: {{ _.server }}/rule/api/v1/motor/deductible/configurations
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_40b110267b764a8f933a0e14bbd536b1', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"planType": "Basic",
+  	"pointOfSale": "POS1"
+  }
+  
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

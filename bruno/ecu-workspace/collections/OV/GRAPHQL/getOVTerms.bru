@@ -1,0 +1,32 @@
+meta {
+  name: getOVTerms
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{server}}/dictionary/graphql
+  body: json
+  auth: inherit
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+body:json {
+  {
+    "query": "query dictionary_list($params: Map_String_ObjectScalar, $locale: String) { dictionary_list(params: $params) { ...MessageResponseEntityFragment } }  fragment MessageResponseEntityFragment on MessageResponseEntity_Page_Dictionary { _type body { ...PageFragment } } fragment PageFragment on Page_Dictionary { totalElements content { ...C } } fragment C on Dictionary { _type id name module items (params: {locale: $locale }) { _type code category name locale id description orderNumber } }\n",
+    "variables": {
+      "locale": "ec",
+      "params": {
+        "name_in": "OVTerms"
+      }
+    }
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

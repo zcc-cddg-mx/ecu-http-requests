@@ -1,0 +1,25 @@
+meta {
+  name: Download document template
+  type: http
+  seq: 51
+}
+
+get {
+  url: {{ _.server }}/report/api/v1/arizona/files/download/22705
+  body: none
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_40b110267b764a8f933a0e14bbd536b1', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

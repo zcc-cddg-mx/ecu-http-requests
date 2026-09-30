@@ -1,0 +1,33 @@
+meta {
+  name: PartyList
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/rule/api/v1/arizona/lookup_ratings/list
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  "params": {},
+  "ratingListName": "COVERAGE_STRUCTURE",
+  "_type": "LookupRatingRequest"
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

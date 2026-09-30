@@ -1,0 +1,67 @@
+meta {
+  name: commission TRE
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{ server }}:{{ serverPort }}/accounting/api/v1/arizona/transaction_reserve_entries?=
+  body: json
+  auth: bearer
+}
+
+params:query {
+  : 
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantId-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "ECTransactionReserveEntryRequest",
+  	"accountPartyId": 1,
+  	"transAmt": 240,
+  	"exchangeRate": 1,
+  	"transCurrencyCode": "USD",
+  	"reserveStartDate": "2021-05-01",
+  	"reserveEndDate": "2021-12-31",
+  	"policyEffectiveYear": "2021-05-01",
+  	"policyIssueDate": "2021-02-01",
+  	"reserveClass": "COMMISSION_RESERVE",
+  	"transSubclass": "COMMISSION",
+  	"policyNo": 32343423,
+  	"policyNumber": "N1001",
+  	"policyAmountId": 1234,
+  	"commissionItemId": 12345,
+  	"transactionTypeCode": "P1",
+  	"productType": "LF",
+  	"instalmentPlanId": 333,
+  	"yearAdjustmentNo": "1",
+  	"operationType": "EC0001",
+  	"transactionComponents": [
+  		{
+  			"_type": "ECTransactionComponent",
+  			"componentSource": "AGENT",
+  			"componentSourceValue": "COMPN",
+  			"distributionChannel": "DC0104",
+  			"lineOfBusiness": "LIFE",
+  			"basketSegment": "EC_SME_P",
+  			"office": "EC01",
+  			"agentType": "PN",
+  			"counterparty": "PN"
+  		}
+  	]
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

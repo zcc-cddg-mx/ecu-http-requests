@@ -1,0 +1,24 @@
+meta {
+  name: New Request_9
+  type: http
+  seq: 75
+}
+
+post {
+  url: {{ _.server }}:{{ _.serverPort }}/policy/api/v1/arizona/bulk_policy_handle/template
+  body: none
+  auth: bearer
+}
+
+headers {
+  User-Agent: insomnia/2023.5.8
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_1ff9991444834bf4903021a21efa3b05', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

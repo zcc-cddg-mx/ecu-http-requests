@@ -1,0 +1,55 @@
+meta {
+  name: Register Invoice 2
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/accounting/api/v1/arizona/ec/payments/commissionInvoices/register?=
+  body: json
+  auth: bearer
+}
+
+params:query {
+  : 
+}
+
+headers {
+  x-tenantId-1: ec
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "Invoices",
+  	"invoices": [
+  		{
+  			"_type": "Invoice",
+  			"settlementIds": [
+  				2
+  			],
+  			"invoiceNumber": "111-333-000001003",
+  			"issueDate": "2022-02-01",
+  			"issuerIdentifierType": "3",
+  			"issuerIdentifier": "1708107634001",
+  			"transactionType": 1,
+  			"authorizationCode": "0000000000000000000000000",
+  			"authorizationDate": "2022-02-08",
+  			"net": 1000,
+  			"vat": 0,
+  			"gross": 1000,
+  			"vatExempt": "YES",
+  			"formType": "ELECTRONIC"
+  		}
+  	]
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

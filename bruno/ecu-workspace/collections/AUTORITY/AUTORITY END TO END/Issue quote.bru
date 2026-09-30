@@ -1,0 +1,156 @@
+meta {
+  name: Issue quote
+  type: http
+  seq: 17
+}
+
+post {
+  url: https://preprod-oficinavirtual.zurichseguros.com.ec/nuevoportal/policy/api/v1/arizona/motor/payment-billing-issue
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  User-Agent: insomnia/9.3.3
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {{token-autority}}
+}
+
+body:json {
+  {
+      "_type": "MotorGenericosTarificationRequest",
+      "testMode": false,
+      "policyNo": 460384,
+      "motorGenericosTarification": {
+          "_type": "MotorGenericosTarification",
+          "policyData": {
+              "_type": "PolicyData",
+              "pointOfSale": "35207",
+              "agentSEId": 482,
+              "paymentMethod": "1"
+          },
+          "cars": [
+              {
+                  "_type": "VehicleData"
+              }
+          ],
+          "client": {
+              "_type": "PolicyRole",
+              "identificationType": "ID_CARD",
+              "identificationNumber": "1751639970"
+          }
+      }
+  } 
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}
+
+docs {
+  {
+  "_type": "MotorGenericosTarificationRequest",
+  "testMode": false,
+  "policyNo": 458198,
+  "motorGenericosTarification": {
+  "_type": "MotorGenericosTarification",
+  "policyData": {
+  "_type": "PolicyData",
+  "entityProperties": {},
+  "policyNo": 458198,
+  "policyNumber": "COT-VH778180",
+  "productCode": "VH",
+  "variant": "MOTOR",
+  "pointOfSale": "139402",
+  "status": "WORKING",
+  "customStatus": "WORKING",
+  "agentSEId": 1294,
+  "effectiveDate": "2024-09-26T09:43:24",
+  "expirationDate": "2025-09-26T09:43:24",
+  "suggestedPolicyStartDate": "2024-09-26T09:43:24",
+  "uplaStatus": "APPROVED",
+  "nextInsurableObjectAllowed": "YES",
+  "paymentMethod": "1",
+  "installmentDefinitionCode": "12",
+  "firstPaymentDate": "2024-09-26",
+  "ensuranceDocuments": [],
+  "endorsementIds": [],
+  "policyEndorsementIds": [],
+  "paymentMethodAllowed": [
+  "1",
+  "2",
+  "3"
+  ],
+  "downloadInvoice": true,
+  "downloadPolicy": true,
+  "consents": [],
+  "uplaUpdate": "NO",
+  "policyAgencies": []
+  },
+  "cars": [
+  {
+  "_type": "VehicleData",
+  "objectNo": 474268,
+  "subProduct": "SENIOR",
+  "registrationNumber": "TEST0000200",
+  "chassisNumber": "LJ12E5P565654545200",
+  "engineNumber": "M3373756H5300",
+  "typeOfVehicleId": "73502",
+  "productionYear": 2018,
+  "typeOfVehicle": "JEEP",
+  "make": "CHEVROLET",
+  "makeId": "5036",
+  "model": "TRAILBLAZER AC 2.8 5P 4X4 TA DIESEL",
+  "modelId": "9983405806",
+  "colorName": "NEGRO",
+  "colorId": "12852592650",
+  "sumInsured": 20000,
+  "isNewCar": "NO",
+  "passengersNumber": 5,
+  "selectedPlan": "SENIOR",
+  "vehicleDescription": "TRAILBLAZER AC 2.8 5P 4X4 TA DIESEL",
+  "ensuranceVehicleId": "-1",
+  "substituteCarType": "SubstituteCarBasico",
+  "plans": [],
+  "inspections": [
+  
+  { "_type": "VehicleInspection", "inspectionId": 715606, "type": "MOTOR_NEW_CAR", "status": "APPROVED", "allowedSubType": [ "AUTO", "VIDEO", "ONSITE" ] }
+  ],
+  "referrals": [],
+  "vehicleEquipment": [],
+  "referralsRequired": [],
+  "referralsOptional": [],
+  "isBeingProcessed": "NO",
+  "isVehicleAddedManually": "NO",
+  "removable": "NO",
+  "fieldsInfo": {},
+  "entityProperties": {}
+  }
+  ],
+  "beneficiaries": [],
+  "planInformation": [],
+  "client": {
+  "_type": "PolicyRole",
+  "id": 463104,
+  "identificationType": "ID_CARD",
+  "identificationNumber": "1751639970",
+  "firstName": "SEBASTIAN",
+  "secondName": "RODRIGUEZ",
+  "name": "RODRIGUEZ SEBASTIAN",
+  "email": "sebastian.rodriguez2@zurich.com",
+  "mobilePhone": "0999999999",
+  "phone": "0999999999",
+  "mainAddress": "TETE",
+  "mainAddressNo": "TERT",
+  "secondaryAddress": "GARCIA MORENO",
+  "nationalityId": "10345",
+  "fieldsInfo": {},
+  "entityProperties": {}
+  }
+  }}
+}

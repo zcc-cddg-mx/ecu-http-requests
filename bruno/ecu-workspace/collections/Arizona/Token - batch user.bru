@@ -1,0 +1,29 @@
+meta {
+  name: Token - batch user
+  type: http
+  seq: 100
+}
+
+post {
+  url: {{ server }}/user/api/v1/arizona/auth/login
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  ~x-tenantId-1: no
+  ~: 
+}
+
+body:json {
+  {
+  	"username": "BATCH_USER",
+  	"password": "BATCH_7=JdFduq&(_QPXF=zAc$f7gS6_"
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

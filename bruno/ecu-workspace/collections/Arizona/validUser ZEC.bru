@@ -1,0 +1,32 @@
+meta {
+  name: validUser ZEC
+  type: http
+  seq: 33
+}
+
+post {
+  url: https://integracionpagoenlinea.zurichseguros.com.ec/zurich/api/tokenvalidation/1.0.0/token/validuser
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  User-Agent: insomnia/10.0.0
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_d967dfef8bd94760b657b1bd88415694', 'b64::JC5hY2Nlc3NfdG9rZW4=::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"ensuranceKey": "gmp55H8wxRjEXZfeWd0R2RAWdU2B30gV4XfPKDlqzA4xy2CzDsiZG513ingqaOcK%21Gn%2BLazCXXVO5NynT%2FtJS7mikx7rZ6zqSveBrXGtNfA9R7BTrqTSM3SUF4QyAeNBL",
+  	"identification": "1704506052"
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

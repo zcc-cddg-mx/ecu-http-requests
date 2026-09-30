@@ -1,0 +1,40 @@
+meta {
+  name: clientValidation - SIAS
+  type: http
+  seq: 7
+}
+
+post {
+  url: https://serviciosias.zurichseguros.com.ec/zurich/api/client/clientcontrol/v1.0/clientvalidation
+  body: json
+  auth: none
+}
+
+headers {
+  x-api-key: df7vYXqzZG1UCjygCsQOb7KSmYIqEGaF3Q23D39u
+}
+
+body:json {
+  {
+      "identificationNumber":"1330364991",
+      "productType":"Motor",
+      "createAuthorization": false
+  }
+  
+  /* sebastian NO ESTA EN CORE
+    pero si existen en OV
+    
+    1724261167
+    
+    /* VANESSA SI ESTA EN CORE Y EN OV
+    
+    
+    
+    
+    
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

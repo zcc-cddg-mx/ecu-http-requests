@@ -1,0 +1,24 @@
+meta {
+  name: Get payment instruction
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{ server }}:{{ serverPort }}/accounting/api/v1/arizona/payment_instructions
+  body: none
+  auth: bearer
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_6c9a3a579fa645e78ec2e6f6628c790f', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

@@ -1,0 +1,33 @@
+meta {
+  name: vehicleintervention
+  type: http
+  seq: 7
+}
+
+post {
+  url: https://serviciosias.zurichseguros.com.ec/zurich/api/inspection/orchestration/v2.0/vehicleintervention
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: zurich
+  password: password2018
+}
+
+body:json {
+  {
+    "insuredName": "Pedro Castro",
+    "insuredEmail": "ppp@ttt.com",
+    "phone": "+593111111111",
+    "plate": "PDJ6666",
+    "quotationNumber": "COT-MO1111",
+    "scheduledDate": "2021-05-08T13:00:00.369Z",
+    "agentId": "4cb2b3cf0ecb9970d9d144aace99ae418a89fc8b"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

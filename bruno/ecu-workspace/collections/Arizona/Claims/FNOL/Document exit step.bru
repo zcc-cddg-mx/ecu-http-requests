@@ -1,0 +1,88 @@
+meta {
+  name: Document exit step
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{ _.server }}:{{ _.serverPort }}/claim/api/v1/arizona/fnol_accident_information/exit_step
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantid-1: ec
+}
+
+body:json {
+  {
+      "_type": "Fnol",
+      "fieldsInfo": {},
+      "claimId": 1,
+      "claimNo": 92,
+      "claimNumber": "23-87-LFC-92",
+      "cipheredId": "4yqh7%2FPS1%2FHyrDGA9iPKj9E3wNBZsyoncjMZm4QKy%2BWI4DEdU5E4qwwFVXgNEsXh%21uIDIfDzVIWoNuloRyzeH%2FBfJnpWQLkzGsWn0plQ00Lw1s702vR6I9a0DJ2Rybz19",
+      "policyId": 3019,
+      "insurableObjectId": 2983,
+      "productCode": "LFC",
+      "pendingPayments": [],
+      "fnolAccidentInformation": {
+          "_type": "FnolAccidentInformation",
+          "fieldsInfo": {},
+          "identifier": "1710462886",
+          "policyNo": 91,
+          "policyNumber": "POL-LFC1002",
+          "insured": "SANDRA-ELIZABETH SEGOVIA-MOGOLLON",
+          "broker": "ZURICH SEGUROS ECUADOR S.A.",
+          "affectedPeople": [
+              {
+                  "_type": "FnolParty",
+                  "fieldsInfo": {},
+                  "id": 1,
+                  "partyId": 14206,
+                  "claimPartyNo": 50,
+                  "firstName": "SANDRA-ELIZABETH",
+                  "lastName": "SEGOVIA-MOGOLLON",
+                  "fullName": "SANDRA-ELIZABETH SEGOVIA-MOGOLLON",
+                  "identification": "1710462886",
+                  "claimPartyRoleType": "INSURED",
+                  "localId": "3a548d88-30e1-4e51-8c09-f41243a9ea5c",
+                  "isAddedManually": "NO"
+              },
+              {
+                  "_type": "FnolParty",
+                  "fieldsInfo": {},
+                  "id": 2,
+                  "partyId": 8964,
+                  "claimPartyNo": 51,
+                  "fullName": "ZURICH SEGUROS ECUADOR S.A.",
+                  "claimPartyRoleType": "BROKER",
+                  "localId": "d8c22a11-1e76-447c-8801-afb94d9e659b",
+                  "isAddedManually": "NO"
+              }
+          ],
+          "contactPerson": {
+              "_type": "FnolParty",
+              "fieldsInfo": {},
+              "partyId": 14206,
+              "firstName": "SANDRA ELIZABETH",
+              "lastName": "SEGOVIA MOGOLLON",
+              "fullName": "SANDRA ELIZABETH SEGOVIA MOGOLLON",
+              "identification": "1710462886",
+              "localId": "ec0412a7-933a-47e2-9484-b6a75d31ea9a",
+              "isAddedManually": "NO",
+              "phoneNumber": "11-1222333",
+              "email": "konrad.byczynski@ncdc.pl"
+          },
+          "privacyTermsAccepted": "YES",
+          "fnolSecurityNotice": "YES",
+          "lineOfBusiness": "LIFE"
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

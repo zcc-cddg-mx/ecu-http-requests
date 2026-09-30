@@ -1,0 +1,118 @@
+meta {
+  name: Login
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{server}}/user/api/v1/arizona/auth/ec/login
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantid-1: ec
+}
+
+body:json {
+  
+  /**********************************************************************
+  PROD
+  **********************************************************************
+  **/
+  /*
+  {
+    "username": "admin",
+    "password": "arizona2022?"
+  }
+  */
+  /*
+  {
+      "username": "batch_user",
+      "password": "WaizopieK0ahsijeaSohtheeghohtohg!"
+  }
+  */
+  /*
+  {
+      "username": "api_external_clickseguros",
+      "password": "!api123Seguros123api!"
+  }
+  */
+  
+  
+  
+  /**********************************************************************
+  DEV
+  /**********************************************************************
+  */
+  /*
+  {
+      "username": "admin",
+    "password": "arizona2022?"
+  }
+  */
+  
+  /*
+  {
+      "username": "batch_user",
+    "password": "arizona2022?"
+  }
+  */
+  
+  
+  /*
+  
+  {
+      "username": "batch_user",
+    "password": "BATCH_7=JdFduq&(_QPXF=zAc$f7gS6_"
+  }
+  */
+  
+  {
+      "username": "cduarte",
+    "password": "arizonA2022?11"
+  }
+  
+  
+  
+  
+  
+  
+  
+  /*
+  
+  {
+      "username": "api_external_quintanaypacheco",
+      "password": "arizona2022?"
+   
+  }
+  */
+  
+  
+  
+  /**********************************************************************
+  TEST
+  /**********************************************************************
+  */
+  
+  /*
+  {
+      "username": "api_external_quintanaypacheco",
+      "password": "arizona2022?"
+   
+  }
+  
+  */
+}
+
+script:post-response {
+  var json = res.getBody();
+  bru.setGlobalEnvVar("token", json.body.accessToken);
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+}

@@ -1,0 +1,38 @@
+meta {
+  name: CreateFolder
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/automation/api/v1/arizona/zbox/createFolder
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantid-1: ec
+  : 
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_03353d6432884bfc92a2f08bd58853b7', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "CreateFolderRequest",
+  	"userId": "15268637096",
+  	"name": "testFolderName13Jan3",
+  	"parent": {
+  		"id": "153360658272"
+  	},
+  	"testMode": false
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

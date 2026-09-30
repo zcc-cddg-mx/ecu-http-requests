@@ -1,0 +1,24 @@
+meta {
+  name: ReporteDeRenovacionClient
+  type: http
+  seq: 6
+}
+
+get {
+  url: http://192.168.3.176:9010/api/v1/voc/query/ReporteDeRenovacionQuery/ReporteDeRenovacionDTO
+  body: none
+  auth: basic
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+auth:basic {
+  username: voclient
+  password: 1!Nc@dc#
+}
+
+settings {
+  encodeUrl: true
+}

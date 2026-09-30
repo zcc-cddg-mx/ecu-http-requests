@@ -1,0 +1,50 @@
+meta {
+  name: Update user
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{ server }}:{{ serverPort }}/user/api/v1/arizona/ecusers/register?=
+  body: json
+  auth: bearer
+}
+
+params:query {
+  : 
+}
+
+headers {
+  x-tenantId-1: ec
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'when-expired', 300 %}
+}
+
+body:json {
+  {
+  	"_type": "UserRegistrationRequest",
+  	"user": {
+  		"_type": "ECUser",
+  		"id": "317a3038-ce65-4642-b49a-e603c2792413",
+  		"username": "gaosejos",
+  		"email": ".ncdc",
+  		"emailConstraint"
+  		"partyId": 0,
+  		"tenants": [],
+  		"roles": [],
+  		"userRoles": [],
+  		"enabled": true,
+  		"name": "UserDTO",
+  		"children": []
+  	},
+  	"partyId": 0
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

@@ -1,0 +1,35 @@
+meta {
+  name: getDiscountRange
+  type: http
+  seq: 21
+}
+
+post {
+  url: {{server}}/dictionary/graphql
+  body: json
+  auth: bearer
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+      "query": "query dictionary_list($params: Map_String_ObjectScalar, $locale: String) { dictionary_list(params: $params) { ...MessageResponseEntityFragment } }  fragment MessageResponseEntityFragment on MessageResponseEntity_Page_Dictionary { _type body { ...PageFragment } } fragment PageFragment on Page_Dictionary { totalElements content { ...C } } fragment C on Dictionary { _type id name module items (params: {locale: $locale }) { _type code category name locale id description orderNumber } }\n",
+      "variables": {
+          "params": {
+              "name_in": "DiscountRange,DiscountReason"
+          },
+          "locale": "ec"
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

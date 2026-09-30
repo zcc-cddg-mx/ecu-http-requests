@@ -1,0 +1,62 @@
+meta {
+  name: Subscription
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/accounting/api/v1/arizona/ec/kushki?=
+  body: json
+  auth: bearer
+}
+
+params:query {
+  : 
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantId-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "ECPaymentInstruction",
+  	"partyId": 9952,
+  	"identificationNumber": "1010208654",
+  	"paymentInstructionType": "SUBSCRIPTION",
+  	"billingNumber": "cziken:2021-12-16:31",
+  	"policyNumber": "po_no:12-06:31",
+  	"policyNo": 555,
+  	"paymentGatewaySubscription": {
+  		"_type": "ECPaymentGatewaySubscription",
+  		"subscriptionOwner": "Piotr Panawas",
+  		"email": "piotr.panawas@ncdc.pl",
+  		"lineOfBusiness": "VCL",
+  		"totalAmount": 1200,
+  		"quotaValue": 0,
+  		"quotaValueNoIva": 100,
+  		"iva": 20,
+  		"numberOfQuotas": 10,
+  		"emitterSystem": "ensurance",
+  		"sendLinkDate": "2020-04-26",
+  		"paymentDayOfMonth": 15
+  	},
+  	"paymentBankAccountId": null,
+  	"memo": "subscription for installment",
+  	"currencyCode": "USD",
+  	"paymentMethodType": "COLLECTION",
+  	"firstChoice": "NO",
+  	"validFrom": "2020-01-01",
+  	"locked": "NO"
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

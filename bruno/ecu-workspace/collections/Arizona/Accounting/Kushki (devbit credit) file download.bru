@@ -1,0 +1,34 @@
+meta {
+  name: Kushki (devbit credit) file download
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/accounting/api/v1/arizona/ec/kushki/input_payments_file
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantId-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  "_type" : "InterfaceRegistry",
+  "fileName" : "i_1_paid.json"
+  }
+  
+  // Strzelamy do naszego accountingu, która strzela do ich SFTP, pobiera plik, parsuje go i robi rzeczy
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

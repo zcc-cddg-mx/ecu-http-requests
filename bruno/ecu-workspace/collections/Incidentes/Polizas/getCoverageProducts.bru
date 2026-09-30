@@ -1,0 +1,34 @@
+meta {
+  name: getCoverageProducts
+  type: http
+  seq: 18
+}
+
+post {
+  url: {{server}}/product/graphql
+  body: json
+  auth: bearer
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+      "query": "query product_list($params: Map_String_ObjectScalar) { product_list(params: $params) { ...MessageResponseEntityFragment } }  fragment MessageResponseEntityFragment on MessageResponseEntity_Page_Product { _type body { ...PageFragment } } fragment PageFragment on Page_Product { totalElements content { ...A } } fragment A on Product { _type code coverages { _type coverage { _type code name coverageGroup } } variants { _type name coverages { _type coverage { _type code name coverageGroup } } } }\n",
+      "variables": {
+          "params": {
+              "code": "PY"
+          }
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

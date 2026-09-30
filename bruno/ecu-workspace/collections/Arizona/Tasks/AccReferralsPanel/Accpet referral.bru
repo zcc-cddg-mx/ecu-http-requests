@@ -1,0 +1,61 @@
+meta {
+  name: Accpet referral
+  type: http
+  seq: 12
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/referral/api/v1/arizona/business/referral/handle?=
+  body: json
+  auth: bearer
+}
+
+params:query {
+  : 
+}
+
+headers {
+  x-tenantId-1: ec
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+      "_type": "ReferralHandleRequest",
+      "decisions": [
+          {
+              "_type": "ReferralHandleResponse",
+              "referral": {
+                  "assignedUserName": " ",
+                  "createdAt": "1641283791588",
+                  "createdBy": "cd588acc-09d7-478e-bd15-3818bb7f7d07",
+                  "createdByName": "admin admin",
+                  "id": "1",
+                  "paymentNumber": "1",
+                  "policyCreatedByName": " ",
+                  "policyHolderName": " ",
+                  "processId": "1",
+                  "processName": "COMMISSION_CM",
+                  "processType": "OutgoingPaymentCommissionCM",
+                  "productCodeAndProductTypeTranslation": "-",
+                  "referralCode": "COMMISSION_CM",
+                  "referralNo": "50",
+                  "status": "OPEN",
+                  "updatedAt": "1641283791588",
+                  "updatedBy": "cd588acc-09d7-478e-bd15-3818bb7f7d07"
+              },
+              "status": "REJECTED",
+              "comment": "Referral handled via accounting referrals panel"
+          }
+      ]
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

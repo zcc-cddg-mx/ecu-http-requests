@@ -1,0 +1,24 @@
+meta {
+  name: Party my
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{ _.server }}:{{ _.serverPort }}/party/api/v1/arizona/party-information/my
+  body: none
+  auth: bearer
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_cc1ef1ec3a964e49afda4f82586a4ec0', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'when-expired', 60 %}
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

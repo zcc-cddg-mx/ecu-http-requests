@@ -1,0 +1,21 @@
+meta {
+  name: Token - anonymous
+  type: http
+  seq: 98
+}
+
+get {
+  url: {{ server }}:{{ serverPort }}/user/api/v1/arizona/anonymous_token
+  body: none
+  auth: inherit
+}
+
+headers {
+  x-tenantId-1: ec
+  ~: 
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

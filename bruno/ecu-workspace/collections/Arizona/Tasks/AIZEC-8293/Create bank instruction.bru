@@ -1,0 +1,36 @@
+meta {
+  name: Create bank instruction
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/accounting/api/v1/arizona/trans_payment_instructions/bank
+  body: json
+  auth: bearer
+}
+
+headers {
+  x-tenantid-1: ec
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "CreateBankPaymentInstruction",
+  	"bankId": 1,
+  	"bankAccountNumber": "testAccNumber123",
+  	"paymentMethodCode": "BANK_TRANSFER",
+  	"isDefault": "YES",
+  	"paymentMethodType": "COLLECTION"
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

@@ -1,0 +1,434 @@
+meta {
+  name: vehicleData
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{server}}/policy/api/v1/arizona/motorGenericos/vehicle/vehicleData
+  body: json
+  auth: inherit
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+body:json {
+  {
+      "_type": "MotorGenericosTarificationRequest",
+      "testMode": false,
+      "policyNo": 459409,
+      "motorGenericosTarification": {
+          "_type": "MotorGenericosTarification",
+          "policyData": {
+              "_type": "PolicyData",
+              "entityProperties": {},
+              "policyNo": 459409,
+              "policyNumber": "COT-VH779386",
+              "productCode": "VH",
+              "variant": "MOTOR",
+              "pointOfSale": "27358",
+              "status": "AWAITING",
+              "customStatus": "PENDING_INSPECTION",
+              "agentSEId": 1177,
+              "effectiveDate": "2025-04-25T05:00:00Z",
+              "expirationDate": "2026-04-25T05:00:00Z",
+              "suggestedPolicyStartDate": "2025-04-25T05:00:00Z",
+              "uplaStatus": "APPROVED",
+              "nextInsurableObjectAllowed": "YES",
+              "paymentMethod": "1",
+              "ensuranceDocuments": [],
+              "endorsementIds": [],
+              "policyEndorsementIds": [],
+              "paymentMethodAllowed": [
+                  "1",
+                  "2",
+                  "3"
+              ],
+              "downloadInvoice": true,
+              "downloadPolicy": true,
+              "consents": [],
+              "uplaUpdate": "NO",
+              "policyAgencies": []
+          },
+          "car": {
+              "_type": "VehicleData",
+              "entityProperties": {
+                  "makeId": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "Missing"
+                      }
+                  ],
+                  "colorName": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "Missing"
+                      }
+                  ],
+                  "modelId": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "Missing"
+                      }
+                  ],
+                  "colorId": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "Missing"
+                      }
+                  ],
+                  "model": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "Missing"
+                      }
+                  ],
+                  "productionYear": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "Missing"
+                      }
+                  ],
+                  "typeOfVehicle": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "Missing"
+                      }
+                  ],
+                  "make": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "Missing"
+                      }
+                  ]
+              },
+              "objectNo": 475572,
+              "registrationNumber": "ER5410",
+              "isNewCar": "YES",
+              "isVehicleAddedManually": "YES",
+              "ensuranceVehicleId": "-1",
+              "plans": [],
+              "inspections": [],
+              "referrals": [],
+              "vehicleEquipment": [],
+              "renewalInformation": {
+                  "_type": "RenewalInformation",
+                  "entityProperties": {}
+              },
+              "referralsRequired": [],
+              "referralsOptional": [],
+              "isBeingProcessed": "NO",
+              "removable": "NO",
+              "fieldsInfo": {
+                  "makeId": [
+                      null
+                  ],
+                  "colorName": [
+                      null
+                  ],
+                  "modelId": [
+                      null
+                  ],
+                  "colorId": [
+                      null
+                  ],
+                  "model": [
+                      null
+                  ],
+                  "productionYear": [
+                      null
+                  ],
+                  "typeOfVehicle": [
+                      null
+                  ],
+                  "make": [
+                      null
+                  ]
+              },
+              "typeOfVehicle": "AUTOMOVIL",
+              "makeId": "5089",
+              "make": "JEEP",
+              "modelId": "011055",
+              "model": "CHEROKEE 2.4 SPORT",
+              "productionYear": "2021",
+              "colorId": "7649786087450",
+              "colorName": "BLANCO / ROJO",
+              "sumInsured": null,
+              "extraEquipmentSumInsured": null,
+              "extraEquipmentSumInsuredMaxPct": null,
+              "totalInsureMinValue": null,
+              "totalInsureMaxValue": null
+          },
+          "owner": {
+              "_type": "VehicleOwner",
+              "entityProperties": {
+                  "gender": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "Missing"
+                      }
+                  ],
+                  "name": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "Disabled"
+                      }
+                  ],
+                  "identificationNumber": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "Disabled"
+                      }
+                  ],
+                  "age": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "Missing"
+                      }
+                  ],
+                  "civilStatus": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "Missing"
+                      }
+                  ]
+              },
+              "partyType": "PERSON",
+              "name": "CRISTHIAN VICENTE HOLGUIN",
+              "identificationNumber": "1313199067",
+              "gender": "M",
+              "civilStatus": "SOLTERO",
+              "age": 35,
+              "fieldsInfo": {
+                  "gender": [
+                      null
+                  ],
+                  "name": [
+                      {
+                          "_type": "FormProxyFieldConstraint",
+                          "constraintName": "ProxyDisabled",
+                          "constraint": {
+                              "_type": "ProxyFieldDisabled",
+                              "proxyDisabled": true
+                          },
+                          "localId": "b6d76f49-d3f7-4c05-8224-8d716b8b5f1c"
+                      }
+                  ],
+                  "identificationNumber": [
+                      {
+                          "_type": "FormProxyFieldConstraint",
+                          "constraintName": "ProxyDisabled",
+                          "constraint": {
+                              "_type": "ProxyFieldDisabled",
+                              "proxyDisabled": true
+                          },
+                          "localId": "2fbd054e-80fa-4f29-8355-4268cf5e204f"
+                      }
+                  ],
+                  "age": [
+                      null
+                  ],
+                  "civilStatus": [
+                      null
+                  ]
+              }
+          },
+          "cars": [
+              {
+                  "_type": "VehicleData",
+                  "objectNo": 475570,
+                  "subProduct": "SENIOR",
+                  "isNewCar": "YES",
+                  "totalSumInsured": 54990,
+                  "vehicleDescription": "JEEP-CHEROKEE-2020",
+                  "netPremium": 1864.79,
+                  "isBeingProcessed": "NO",
+                  "removable": "YES",
+                  "plans": [],
+                  "inspections": [
+                      {
+                          "_type": "VehicleInspection",
+                          "inspectionId": 723753,
+                          "type": "MOTOR_NEW_CAR",
+                          "status": "CREATED",
+                          "allowedSubType": [
+                              "ONSITE"
+                          ]
+                      }
+                  ],
+                  "referrals": [],
+                  "vehicleEquipment": [],
+                  "renewalInformation": {
+                      "_type": "RenewalInformation",
+                      "entityProperties": {}
+                  },
+                  "referralsRequired": [],
+                  "referralsOptional": [
+                      {
+                          "_type": "ReferralDefinition",
+                          "id": 5953,
+                          "code": "VH_N_CAR_PRODUCT_CONDITIONS",
+                          "name": "Condiciones Producto",
+                          "description": "La póliza anterior adjunta tenía amparo patrimonial",
+                          "processName": "POLICY",
+                          "createAutomatically": "NO",
+                          "clearAutomatically": "NO",
+                          "mandatoryCommentApprove": "NO",
+                          "mandatoryCommentReject": "NO",
+                          "mandatoryCommentAssign": "YES",
+                          "mandatoryCommentReopen": "NO",
+                          "validFrom": "2021-03-01T05:00:00Z",
+                          "versionNo": "1",
+                          "state": "DRAFT",
+                          "canSelfAccept": "NO",
+                          "finalizeProcessName": "bean:EcVHProductConditionsReferral",
+                          "referralConditions": [
+                              {
+                                  "_type": "ReferralCondition"
+                              }
+                          ],
+                          "referralLimits": [],
+                          "approvalRules": [
+                              {
+                                  "_type": "ApprovalRule",
+                                  "id": 4953,
+                                  "name": "VH_N_CAR_PRODUCT_CONDITIONS"
+                              }
+                          ]
+                      },
+                      {
+                          "_type": "ReferralDefinition",
+                          "id": 5954,
+                          "code": "VH_N_CAR_RATE_REVIEW",
+                          "name": "Revisión de Tasa",
+                          "description": "La póliza anterior adjunta tenía amparo patrimonial",
+                          "processName": "POLICY",
+                          "createAutomatically": "NO",
+                          "clearAutomatically": "NO",
+                          "mandatoryCommentApprove": "NO",
+                          "mandatoryCommentReject": "NO",
+                          "mandatoryCommentAssign": "YES",
+                          "mandatoryCommentReopen": "NO",
+                          "validFrom": "2021-03-01T05:00:00Z",
+                          "versionNo": "1",
+                          "state": "DRAFT",
+                          "canSelfAccept": "NO",
+                          "finalizeProcessName": "bean:EcVHRateReviewReferral",
+                          "referralConditions": [
+                              {
+                                  "_type": "ReferralCondition"
+                              }
+                          ],
+                          "referralLimits": [],
+                          "approvalRules": [
+                              {
+                                  "_type": "ApprovalRule",
+                                  "id": 4954,
+                                  "name": "VH_N_CAR_RATE_REVIEW"
+                              }
+                          ]
+                      },
+                      {
+                          "_type": "ReferralDefinition",
+                          "id": 5955,
+                          "code": "VH_N_CAR_RETROACTIVE_VALIDITY",
+                          "name": "Vigencia Retroactiva",
+                          "description": "La póliza anterior adjunta tenía amparo patrimonial",
+                          "processName": "POLICY",
+                          "createAutomatically": "NO",
+                          "clearAutomatically": "NO",
+                          "mandatoryCommentApprove": "NO",
+                          "mandatoryCommentReject": "NO",
+                          "mandatoryCommentAssign": "YES",
+                          "mandatoryCommentReopen": "NO",
+                          "validFrom": "2021-03-01T05:00:00Z",
+                          "versionNo": "1",
+                          "state": "DRAFT",
+                          "canSelfAccept": "NO",
+                          "finalizeProcessName": "bean:EcVHRetroactiveValidityReferral",
+                          "referralConditions": [
+                              {
+                                  "_type": "ReferralCondition"
+                              }
+                          ],
+                          "referralLimits": [],
+                          "approvalRules": [
+                              {
+                                  "_type": "ApprovalRule",
+                                  "id": 4955,
+                                  "name": "VH_N_CAR_RETROACTIVE_VALIDITY"
+                              }
+                          ]
+                      },
+                      {
+                          "_type": "ReferralDefinition",
+                          "id": 5952,
+                          "code": "VH_N_CAR_ADD_FREE_OF_CHARGE",
+                          "name": "Adicionales sin costo",
+                          "description": "La póliza anterior adjunta tenía amparo patrimonial",
+                          "processName": "POLICY",
+                          "createAutomatically": "NO",
+                          "clearAutomatically": "NO",
+                          "mandatoryCommentApprove": "NO",
+                          "mandatoryCommentReject": "NO",
+                          "mandatoryCommentAssign": "YES",
+                          "mandatoryCommentReopen": "NO",
+                          "validFrom": "2021-03-01T05:00:00Z",
+                          "versionNo": "1",
+                          "state": "DRAFT",
+                          "canSelfAccept": "NO",
+                          "finalizeProcessName": "bean:EcVHAddFreeOfChargeReferral",
+                          "referralConditions": [
+                              {
+                                  "_type": "ReferralCondition"
+                              }
+                          ],
+                          "referralLimits": [],
+                          "approvalRules": [
+                              {
+                                  "_type": "ApprovalRule",
+                                  "id": 4952,
+                                  "name": "VH_N_CAR_ADD_FREE_OF_CHARGE"
+                              }
+                          ]
+                      }
+                  ],
+                  "isVehicleAddedManually": "NO",
+                  "fieldsInfo": {},
+                  "entityProperties": {}
+              },
+              {
+                  "_type": "VehicleData",
+                  "objectNo": 475572,
+                  "isNewCar": "NO",
+                  "totalSumInsured": 0,
+                  "factor": 0,
+                  "netPremium": 0,
+                  "isBeingProcessed": "NO",
+                  "removable": "YES",
+                  "plans": [],
+                  "inspections": [],
+                  "referrals": [],
+                  "vehicleEquipment": [],
+                  "renewalInformation": {
+                      "_type": "RenewalInformation",
+                      "entityProperties": {}
+                  },
+                  "referralsRequired": [],
+                  "referralsOptional": [],
+                  "isVehicleAddedManually": "NO",
+                  "fieldsInfo": {},
+                  "entityProperties": {}
+              }
+          ],
+          "beneficiaries": [],
+          "planInformation": []
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

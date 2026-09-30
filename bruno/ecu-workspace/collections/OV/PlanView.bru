@@ -1,0 +1,261 @@
+meta {
+  name: PlanView
+  type: http
+  seq: 22
+}
+
+post {
+  url: {{server}}/policy/api/v1/arizona/motorGenericos/vehicle/plansView
+  body: json
+  auth: inherit
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+body:json {
+  {
+      "_type": "MotorGenericosTarificationRequest",
+      "testMode": false,
+      "policyNo": 459105,
+      "motorGenericosTarification": {
+          "_type": "MotorGenericosTarification",
+          "policyData": {
+              "_type": "PolicyData",
+              "entityProperties": {},
+              "policyNo": 459105,
+              "policyNumber": "COT-VH779254",
+              "productCode": "VH",
+              "variant": "MOTOS",
+              "pointOfSale": "201377",
+              "status": "WORKING",
+              "customStatus": "WORKING",
+              "agentSEId": 201373,
+              "effectiveDate": "2020-02-20T05:00:00Z",
+              "expirationDate": "2026-02-20T05:00:00Z",
+              "nextInsurableObjectAllowed": "YES",
+              "paymentMethod": "1",
+              "ensuranceDocuments": [],
+              "endorsementIds": [],
+              "policyEndorsementIds": [],
+              "paymentMethodAllowed": [
+                  "1",
+                  "2",
+                  "3"
+              ],
+              "downloadInvoice": true,
+              "downloadPolicy": true,
+              "consents": [],
+              "uplaUpdate": "NO",
+              "policyAgencies": []
+          },
+          "car": {
+              "_type": "VehicleData",
+              "entityProperties": {
+                  "makeId": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "Missing"
+                      }
+                  ],
+                  "colorName": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "Missing"
+                      }
+                  ],
+                  "modelId": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "Missing"
+                      }
+                  ],
+                  "colorId": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "Missing"
+                      }
+                  ],
+                  "model": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "Missing"
+                      }
+                  ],
+                  "productionYear": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "Missing"
+                      }
+                  ],
+                  "typeOfVehicle": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "Missing"
+                      }
+                  ],
+                  "make": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "Missing"
+                      }
+                  ]
+              },
+              "objectNo": 475257,
+              "registrationNumber": "KG274R",
+              "isNewCar": "NO",
+              "isVehicleAddedManually": "YES",
+              "ensuranceVehicleId": "-1",
+              "plans": [],
+              "inspections": [],
+              "referrals": [],
+              "vehicleEquipment": [],
+              "renewalInformation": {
+                  "_type": "RenewalInformation",
+                  "entityProperties": {}
+              },
+              "referralsRequired": [],
+              "referralsOptional": [],
+              "isBeingProcessed": "NO",
+              "removable": "NO",
+              "fieldsInfo": {
+                  "makeId": [
+                      null
+                  ],
+                  "colorName": [
+                      null
+                  ],
+                  "modelId": [
+                      null
+                  ],
+                  "colorId": [
+                      null
+                  ],
+                  "model": [
+                      null
+                  ],
+                  "productionYear": [
+                      null
+                  ],
+                  "typeOfVehicle": [
+                      null
+                  ],
+                  "make": [
+                      null
+                  ]
+              },
+              "typeOfVehicle": "MOTOCICLETA",
+              "makeId": "13569923347527",
+              "make": "SHM",
+              "modelId": "21050997262168",
+              "model": "ARMY 150",
+              "productionYear": "2025",
+              "colorId": "12852592650",
+              "colorName": "NEGRO",
+              "sumInsured": null,
+              "extraEquipmentSumInsured": null,
+              "extraEquipmentSumInsuredMaxPct": null,
+              "totalInsureMinValue": null,
+              "totalInsureMaxValue": null
+          },
+          "owner": {
+              "_type": "VehicleOwner",
+              "entityProperties": {
+                  "name": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "Disabled"
+                      }
+                  ],
+                  "identificationNumber": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "Enabled"
+                      }
+                  ],
+                  "age": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "Missing"
+                      }
+                  ],
+                  "civilStatus": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "Missing"
+                      }
+                  ]
+              },
+              "partyType": "PERSON",
+              "name": "Jonathan Joel Tutillo Fonseca",
+              "identificationNumber": "1751508746",
+              "gender": "M",
+              "fieldsInfo": {
+                  "name": [
+                      {
+                          "_type": "FormProxyFieldConstraint",
+                          "constraintName": "ProxyDisabled",
+                          "constraint": {
+                              "_type": "ProxyFieldDisabled",
+                              "proxyDisabled": true
+                          },
+                          "localId": "d66429a9-3df5-4986-9ae7-4164385edc5d"
+                      }
+                  ],
+                  "identificationNumber": [
+                      {
+                          "_type": "FormProxyFieldConstraint",
+                          "constraintName": "ProxyDisabled",
+                          "constraint": {
+                              "_type": "ProxyFieldDisabled",
+                              "proxyDisabled": false
+                          },
+                          "localId": "baefd4e6-ca5e-4f1c-bef8-cab07d9442e1"
+                      }
+                  ],
+                  "age": [
+                      null
+                  ],
+                  "civilStatus": [
+                      null
+                  ]
+              },
+              "civilStatus": "CASADO",
+              "age": "35"
+          },
+          "cars": [
+              {
+                  "_type": "VehicleData",
+                  "objectNo": 475257,
+                  "isNewCar": "NO",
+                  "totalSumInsured": 0,
+                  "factor": 0,
+                  "netPremium": 0,
+                  "isBeingProcessed": "NO",
+                  "removable": "YES",
+                  "plans": [],
+                  "inspections": [],
+                  "referrals": [],
+                  "vehicleEquipment": [],
+                  "renewalInformation": {
+                      "_type": "RenewalInformation",
+                      "entityProperties": {}
+                  },
+                  "referralsRequired": [],
+                  "referralsOptional": [],
+                  "isVehicleAddedManually": "NO",
+                  "fieldsInfo": {},
+                  "entityProperties": {}
+              }
+          ],
+          "beneficiaries": [],
+          "planInformation": []
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

@@ -1,0 +1,829 @@
+meta {
+  name: 3rd step - 2
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/policy/api/v1/arizona/policy_transactions/update
+  body: json
+  auth: bearer
+}
+
+headers {
+  x-tenantid-1: ec
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "PolicyUpdateTransactionRequest",
+  	"policy": {
+  		"_type": "ECPolicy",
+  		"createdAt": "2022-06-28T01:19:09.057-0500",
+  		"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  		"recordVersion": 2,
+  		"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  		"id": 3007,
+  		"updatedAt": "2022-06-28T06:20:40Z",
+  		"tenantId": "ec",
+  		"notes": "{\"actualInformation\":null}",
+  		"originalInceptionDate": "2022-06-28T05:00:00Z",
+  		"productId": 1041,
+  		"productCode": "LFC",
+  		"variantId": 1021,
+  		"variantCode": "CORPORATIVO_VIDA",
+  		"partyRoles": [
+  			{
+  				"_type": "AgreementPartyRole",
+  				"createdAt": "2022-06-28T01:20:39.389-0500",
+  				"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"recordVersion": 1,
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 2962,
+  				"updatedAt": "2022-06-28T01:20:40.059-0500",
+  				"tenantId": "ec",
+  				"partyId": 9952,
+  				"partyRole": "POLICY_HOLDER",
+  				"isLeader": "NO",
+  				"agreementId": 3007
+  			},
+  			{
+  				"_type": "AgreementPartyRole",
+  				"createdAt": "2022-06-28T01:19:09.158-0500",
+  				"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"recordVersion": 3,
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 2963,
+  				"updatedAt": "2022-06-28T01:20:40.059-0500",
+  				"tenantId": "ec",
+  				"partyId": 2583,
+  				"partyRole": "POLICY_AGENT",
+  				"share": 100,
+  				"isLeader": "YES",
+  				"agreementId": 3007
+  			},
+  			{
+  				"_type": "AgreementPartyRole",
+  				"createdAt": "2022-06-28T01:19:09.160-0500",
+  				"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"recordVersion": 3,
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 2964,
+  				"updatedAt": "2022-06-28T01:20:40.060-0500",
+  				"tenantId": "ec",
+  				"partyId": 1975,
+  				"partyRole": "LIFE_COMMERCIAL_EXECUTIVE",
+  				"isLeader": "NO",
+  				"agreementId": 3007
+  			}
+  		],
+  		"commissionSplits": [
+  			{
+  				"_type": "AgreementCommissionSplit",
+  				"id": 7,
+  				"structureElementId": 2583,
+  				"agreementAgentRole": "CoBroker",
+  				"isLeader": "YES",
+  				"commissionPercent": 0,
+  				"share": 100,
+  				"effectiveDate": "2022-06-28T05:00:00Z",
+  				"expirationDate": "2023-06-28T05:00:00Z",
+  				"requestComChange": false
+  			}
+  		],
+  		"displayName": "Vida Corporativo",
+  		"policyNo": 101,
+  		"policyNumber": "COT-LFC1002",
+  		"effectiveDate": "2022-06-28T05:00:00Z",
+  		"expirationDate": "2023-06-28T05:00:00Z",
+  		"annualEffectiveDate": "2022-06-28T05:00:00Z",
+  		"annualExpirationDate": "2023-06-28T05:00:00Z",
+  		"status": "WORKING",
+  		"customStatus": "WORKING",
+  		"productClass": "GROUP",
+  		"paymentTerms": "PREMIUM_30",
+  		"paymentMethod": "1",
+  		"currency": "USD",
+  		"yearOfPolicy": 1,
+  		"proRataMethod": "PR360E",
+  		"renewalMode": "NONE",
+  		"policyTransaction": {
+  			"_type": "PolicyTransaction",
+  			"createdAt": "2022-06-28T01:18:45.669-0500",
+  			"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  			"recordVersion": 5,
+  			"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  			"id": 2963,
+  			"updatedAt": "2022-06-28T01:18:45.852-0500",
+  			"tenantId": "ec",
+  			"policyNo": 101,
+  			"policyNumber": "COT-LFC1002",
+  			"transactionType": "Update",
+  			"transactionDate": "2022-06-28T06:18:45Z",
+  			"transactionStatus": "PENDING",
+  			"transactionMode": "INTERACTIVE",
+  			"transactionUniqueId": "YxYTwkwRfbVrcXA",
+  			"contextName": "PLAN-DATA",
+  			"policyId": 3007
+  		},
+  		"transactionReason": "FORCE_REFERRAL_CHECK",
+  		"billingType": "SUBSCRIPTION",
+  		"billingBindingEntity": "POLICY",
+  		"accountingLevel": "NONE",
+  		"insurableObjects": [
+  			{
+  				"_type": "LifeGeneralData",
+  				"createdAt": "2022-06-28T01:19:09.060-0500",
+  				"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"recordVersion": 0,
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 2958,
+  				"updatedAt": "2022-06-28T01:20:39.215-0500",
+  				"tenantId": "ec",
+  				"objectNo": 100,
+  				"insurableObjectTypeId": 1041,
+  				"insurableObjectClass": "SIMPLE",
+  				"policyNo": 101,
+  				"effectiveDate": "2022-06-28T00:00:00.000-0500",
+  				"expirationDate": "2023-06-28T00:00:00.000-0500",
+  				"annualEffectiveDate": "2022-06-28T00:00:00.000-0500",
+  				"annualExpirationDate": "2023-06-28T00:00:00.000-0500",
+  				"originalInceptionDate": "2022-06-28T00:00:00.000-0500",
+  				"yearOfObject": 1,
+  				"orderNo": 1,
+  				"informationOnly": "YES",
+  				"groupPlans": [],
+  				"policyAmounts": [],
+  				"policyDeductibles": [],
+  				"policyLimits": [],
+  				"policyCoverageDetails": [],
+  				"partyRoles": [],
+  				"hasActiveCoverages": "YES",
+  				"clauses": [],
+  				"policyPendings": [],
+  				"displayName": "Vida Corporativo",
+  				"policyId": 3007,
+  				"numberOfEmployees": 5,
+  				"clientSegment": "1",
+  				"economicActivity": "1",
+  				"percentageOfParticipation": 0,
+  				"previousInsurance": "NO",
+  				"typeSumInsured": "UNIFORM",
+  				"activityRiskClass": 1,
+  				"requestComChange": "NO",
+  				"temporaryCoverRequired": "NO",
+  				"uwDiscount": 0,
+  				"credibilityRate": 0,
+  				"spouseYn": "NO",
+  				"childrenYn": "NO",
+  				"individualCertificatesYn": "NO",
+  				"titularYn": "NO",
+  				"currentUserProfile": "LIFE_COMMERCIAL_EXECUTIVE",
+  				"percentageOfParticipationYN": "NO",
+  				"adhesionType": "1",
+  				"billingType": "CORPORATE",
+  				"billingFrequency": "YEARLY",
+  				"premiumExpected": null,
+  				"rateExpected": null,
+  				"dateOfFileUpload": "2022-06-28T05:00:00Z",
+  				"billingDate": "2022-06-28T05:00:00Z",
+  				"policyPeriod": "YEARLY",
+  				"healthStatementAgeLimit": 12,
+  				"healthStatementSumLimit": 12,
+  				"proposedCommission": null
+  			}
+  		],
+  		"policyAmounts": [
+  			{
+  				"_type": "PolicyAmount",
+  				"createdAt": "2022-06-28T01:19:09.061-0500",
+  				"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"recordVersion": 3,
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 10310,
+  				"updatedAt": "2022-06-28T01:20:40.057-0500",
+  				"tenantId": "ec",
+  				"amount": 0,
+  				"amountType": "TP"
+  			},
+  			{
+  				"_type": "PolicyAmount",
+  				"createdAt": "2022-06-28T01:20:39.219-0500",
+  				"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"recordVersion": 1,
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 10311,
+  				"updatedAt": "2022-06-28T01:20:40.057-0500",
+  				"tenantId": "ec",
+  				"amount": 0,
+  				"amountType": "AP",
+  				"factor": 1
+  			},
+  			{
+  				"_type": "PolicyAmount",
+  				"createdAt": "2022-06-28T01:20:39.220-0500",
+  				"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"recordVersion": 1,
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 10312,
+  				"updatedAt": "2022-06-28T01:20:40.057-0500",
+  				"tenantId": "ec",
+  				"amount": 0,
+  				"amountType": "INSTALMENT_COUNT_1"
+  			},
+  			{
+  				"_type": "PolicyAmount",
+  				"createdAt": "2022-06-28T01:20:39.221-0500",
+  				"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"recordVersion": 1,
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 10313,
+  				"updatedAt": "2022-06-28T01:20:40.057-0500",
+  				"tenantId": "ec",
+  				"amount": 0,
+  				"amountType": "INSTALMENT_COUNT_2"
+  			},
+  			{
+  				"_type": "PolicyAmount",
+  				"createdAt": "2022-06-28T01:20:39.222-0500",
+  				"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"recordVersion": 1,
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 10314,
+  				"updatedAt": "2022-06-28T01:20:40.057-0500",
+  				"tenantId": "ec",
+  				"amount": 0,
+  				"amountType": "INSTALMENT_COUNT_3"
+  			},
+  			{
+  				"_type": "PolicyAmount",
+  				"createdAt": "2022-06-28T01:20:39.226-0500",
+  				"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"recordVersion": 1,
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 10315,
+  				"updatedAt": "2022-06-28T01:20:40.057-0500",
+  				"tenantId": "ec",
+  				"amount": 0,
+  				"amountType": "INSTALMENT_COUNT_4"
+  			},
+  			{
+  				"_type": "PolicyAmount",
+  				"createdAt": "2022-06-28T01:20:39.227-0500",
+  				"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"recordVersion": 1,
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 10316,
+  				"updatedAt": "2022-06-28T01:20:40.057-0500",
+  				"tenantId": "ec",
+  				"amount": 0,
+  				"amountType": "INSTALMENT_COUNT_5"
+  			},
+  			{
+  				"_type": "PolicyAmount",
+  				"createdAt": "2022-06-28T01:20:39.229-0500",
+  				"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"recordVersion": 1,
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 10317,
+  				"updatedAt": "2022-06-28T01:20:40.057-0500",
+  				"tenantId": "ec",
+  				"amount": 0,
+  				"amountType": "INSTALMENT_COUNT_6"
+  			},
+  			{
+  				"_type": "PolicyAmount",
+  				"createdAt": "2022-06-28T01:20:39.230-0500",
+  				"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"recordVersion": 1,
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 10318,
+  				"updatedAt": "2022-06-28T01:20:40.057-0500",
+  				"tenantId": "ec",
+  				"amount": 0,
+  				"amountType": "INSTALMENT_COUNT_7"
+  			},
+  			{
+  				"_type": "PolicyAmount",
+  				"createdAt": "2022-06-28T01:20:39.230-0500",
+  				"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"recordVersion": 1,
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 10319,
+  				"updatedAt": "2022-06-28T01:20:40.058-0500",
+  				"tenantId": "ec",
+  				"amount": 0,
+  				"amountType": "INSTALMENT_COUNT_8"
+  			},
+  			{
+  				"_type": "PolicyAmount",
+  				"createdAt": "2022-06-28T01:20:39.231-0500",
+  				"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"recordVersion": 1,
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 10320,
+  				"updatedAt": "2022-06-28T01:20:40.058-0500",
+  				"tenantId": "ec",
+  				"amount": 0,
+  				"amountType": "INSTALMENT_COUNT_9"
+  			},
+  			{
+  				"_type": "PolicyAmount",
+  				"createdAt": "2022-06-28T01:20:39.232-0500",
+  				"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"recordVersion": 1,
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 10321,
+  				"updatedAt": "2022-06-28T01:20:40.058-0500",
+  				"tenantId": "ec",
+  				"amount": 0,
+  				"amountType": "INSTALMENT_COUNT_10"
+  			},
+  			{
+  				"_type": "PolicyAmount",
+  				"createdAt": "2022-06-28T01:20:39.233-0500",
+  				"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"recordVersion": 1,
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 10322,
+  				"updatedAt": "2022-06-28T01:20:40.058-0500",
+  				"tenantId": "ec",
+  				"amount": 0,
+  				"amountType": "INSTALMENT_COUNT_11"
+  			},
+  			{
+  				"_type": "PolicyAmount",
+  				"createdAt": "2022-06-28T01:20:39.234-0500",
+  				"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"recordVersion": 1,
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 10323,
+  				"updatedAt": "2022-06-28T01:20:40.058-0500",
+  				"tenantId": "ec",
+  				"amount": 0,
+  				"amountType": "INSTALMENT_COUNT_12"
+  			}
+  		],
+  		"policyDeductibles": [],
+  		"policyLimits": [],
+  		"policyCoverageParts": [],
+  		"policyCoverageDetails": [],
+  		"masterPolicies": [],
+  		"groupPlans": [
+  			{
+  				"_type": "LifeGroupPlan",
+  				"seriousDiseasesPlan": null,
+  				"policyCoverageDetails": [
+  					{
+  						"_type": "PolicyCoverageDetail",
+  						"inclusionExclusion": "YES",
+  						"coverageCode": "101",
+  						"coverGroup": "10",
+  						"description": "Basic",
+  						"policyLimits": [
+  							{
+  								"_type": "PolicyLimit",
+  								"limitType": "Annual",
+  								"limitBasis": "Amount",
+  								"limitValue": 12
+  							}
+  						],
+  						"policyDeductibles": []
+  					},
+  					{
+  						"_type": "PolicyCoverageDetail",
+  						"inclusionExclusion": "NO",
+  						"coverageCode": "102",
+  						"coverGroup": "10",
+  						"description": null,
+  						"policyLimits": [],
+  						"policyDeductibles": []
+  					},
+  					{
+  						"_type": "PolicyCoverageDetail",
+  						"inclusionExclusion": "NO",
+  						"coverageCode": "106",
+  						"coverGroup": "10",
+  						"description": null,
+  						"policyLimits": [],
+  						"policyDeductibles": []
+  					},
+  					{
+  						"_type": "PolicyCoverageDetail",
+  						"inclusionExclusion": "NO",
+  						"coverageCode": "107",
+  						"coverGroup": "10",
+  						"description": null,
+  						"policyLimits": [],
+  						"policyDeductibles": []
+  					},
+  					{
+  						"_type": "PolicyCoverageDetail",
+  						"inclusionExclusion": "NO",
+  						"coverageCode": "108",
+  						"coverGroup": "10",
+  						"description": null,
+  						"policyLimits": [],
+  						"policyDeductibles": []
+  					},
+  					{
+  						"_type": "PolicyCoverageDetail",
+  						"inclusionExclusion": "NO",
+  						"coverageCode": "109",
+  						"coverGroup": "10",
+  						"description": null,
+  						"policyLimits": [],
+  						"policyDeductibles": []
+  					},
+  					{
+  						"_type": "PolicyCoverageDetail",
+  						"inclusionExclusion": "NO",
+  						"coverageCode": "110",
+  						"coverGroup": "10",
+  						"description": null,
+  						"policyLimits": [],
+  						"policyDeductibles": []
+  					},
+  					{
+  						"_type": "PolicyCoverageDetail",
+  						"inclusionExclusion": "NO",
+  						"coverageCode": "111",
+  						"coverGroup": "10",
+  						"description": null,
+  						"policyLimits": [],
+  						"policyDeductibles": []
+  					},
+  					{
+  						"_type": "PolicyCoverageDetail",
+  						"inclusionExclusion": "NO",
+  						"coverageCode": "112",
+  						"coverGroup": "10",
+  						"description": null,
+  						"policyLimits": [],
+  						"policyDeductibles": []
+  					},
+  					{
+  						"_type": "PolicyCoverageDetail",
+  						"inclusionExclusion": "NO",
+  						"coverageCode": "113",
+  						"coverGroup": "10",
+  						"description": null,
+  						"policyLimits": [],
+  						"policyDeductibles": [
+  							{
+  								"_type": "PolicyDeductible",
+  								"deductibleBasis": "Days",
+  								"deductibleType": "Annual",
+  								"deductibleValue": null
+  							}
+  						]
+  					},
+  					{
+  						"_type": "PolicyCoverageDetail",
+  						"inclusionExclusion": "NO",
+  						"coverageCode": "114",
+  						"coverGroup": "10",
+  						"description": null,
+  						"policyLimits": [],
+  						"policyDeductibles": [
+  							{
+  								"_type": "PolicyDeductible",
+  								"deductibleBasis": "Days",
+  								"deductibleType": "Annual",
+  								"deductibleValue": null
+  							}
+  						]
+  					},
+  					{
+  						"_type": "PolicyCoverageDetail",
+  						"inclusionExclusion": "NO",
+  						"coverageCode": "115",
+  						"coverGroup": "10",
+  						"description": null,
+  						"policyLimits": [],
+  						"policyDeductibles": []
+  					},
+  					{
+  						"_type": "PolicyCoverageDetail",
+  						"inclusionExclusion": "NO",
+  						"coverageCode": "118",
+  						"coverGroup": "10",
+  						"description": null,
+  						"policyLimits": [],
+  						"policyDeductibles": [
+  							{
+  								"_type": "PolicyDeductible",
+  								"deductibleBasis": "Days",
+  								"deductibleType": "Annual",
+  								"deductibleValue": null
+  							}
+  						]
+  					},
+  					{
+  						"_type": "PolicyCoverageDetail",
+  						"inclusionExclusion": "NO",
+  						"coverageCode": "120",
+  						"coverGroup": "10",
+  						"description": null,
+  						"policyLimits": [],
+  						"policyDeductibles": [
+  							{
+  								"_type": "PolicyDeductible",
+  								"deductibleBasis": "Days",
+  								"deductibleType": "Annual",
+  								"deductibleValue": null
+  							}
+  						]
+  					},
+  					{
+  						"_type": "PolicyCoverageDetail",
+  						"inclusionExclusion": "NO",
+  						"coverageCode": "129",
+  						"coverGroup": "10",
+  						"description": null,
+  						"policyLimits": [],
+  						"policyDeductibles": []
+  					},
+  					{
+  						"_type": "PolicyCoverageDetail",
+  						"inclusionExclusion": "NO",
+  						"coverageCode": "130",
+  						"coverGroup": "10",
+  						"description": null,
+  						"policyLimits": [],
+  						"policyDeductibles": []
+  					},
+  					{
+  						"_type": "PolicyCoverageDetail",
+  						"inclusionExclusion": "NO",
+  						"coverageCode": "131",
+  						"coverGroup": "10",
+  						"description": null,
+  						"policyLimits": [],
+  						"policyDeductibles": []
+  					},
+  					{
+  						"_type": "PolicyCoverageDetail",
+  						"inclusionExclusion": "NO",
+  						"coverageCode": "134",
+  						"coverGroup": "10",
+  						"description": null,
+  						"policyLimits": [],
+  						"policyDeductibles": []
+  					},
+  					{
+  						"_type": "PolicyCoverageDetail",
+  						"inclusionExclusion": "NO",
+  						"coverageCode": "135",
+  						"coverGroup": "10",
+  						"description": null,
+  						"policyLimits": [],
+  						"policyDeductibles": []
+  					},
+  					{
+  						"_type": "PolicyCoverageDetail",
+  						"inclusionExclusion": "NO",
+  						"coverageCode": "136",
+  						"coverGroup": "10",
+  						"description": null,
+  						"policyLimits": [],
+  						"policyDeductibles": []
+  					},
+  					{
+  						"_type": "PolicyCoverageDetail",
+  						"inclusionExclusion": "NO",
+  						"coverageCode": "137",
+  						"coverGroup": "10",
+  						"description": null,
+  						"policyLimits": [],
+  						"policyDeductibles": []
+  					},
+  					{
+  						"_type": "PolicyCoverageDetail",
+  						"inclusionExclusion": "NO",
+  						"coverageCode": "138",
+  						"coverGroup": "10",
+  						"description": null,
+  						"policyLimits": [],
+  						"policyDeductibles": []
+  					},
+  					{
+  						"_type": "PolicyCoverageDetail",
+  						"inclusionExclusion": "NO",
+  						"coverageCode": "139",
+  						"coverGroup": "10",
+  						"description": null,
+  						"policyLimits": [],
+  						"policyDeductibles": []
+  					},
+  					{
+  						"_type": "PolicyCoverageDetail",
+  						"inclusionExclusion": "NO",
+  						"coverageCode": "151",
+  						"coverGroup": "11",
+  						"description": "Basic",
+  						"policyLimits": [],
+  						"policyDeductibles": []
+  					},
+  					{
+  						"_type": "PolicyCoverageDetail",
+  						"inclusionExclusion": "NO",
+  						"coverageCode": "152",
+  						"coverGroup": "11",
+  						"description": null,
+  						"policyLimits": [],
+  						"policyDeductibles": []
+  					},
+  					{
+  						"_type": "PolicyCoverageDetail",
+  						"inclusionExclusion": "NO",
+  						"coverageCode": "158",
+  						"coverGroup": "11",
+  						"description": null,
+  						"policyLimits": [],
+  						"policyDeductibles": []
+  					},
+  					{
+  						"_type": "PolicyCoverageDetail",
+  						"inclusionExclusion": "NO",
+  						"coverageCode": "188",
+  						"coverGroup": "11",
+  						"description": null,
+  						"policyLimits": [],
+  						"policyDeductibles": []
+  					},
+  					{
+  						"_type": "PolicyCoverageDetail",
+  						"inclusionExclusion": "NO",
+  						"coverageCode": "189",
+  						"coverGroup": "11",
+  						"description": null,
+  						"policyLimits": [],
+  						"policyDeductibles": []
+  					},
+  					{
+  						"_type": "PolicyCoverageDetail",
+  						"inclusionExclusion": "NO",
+  						"coverageCode": "201",
+  						"coverGroup": "12",
+  						"description": "Basic",
+  						"policyLimits": [],
+  						"policyDeductibles": []
+  					},
+  					{
+  						"_type": "PolicyCoverageDetail",
+  						"inclusionExclusion": "NO",
+  						"coverageCode": "238",
+  						"coverGroup": "12",
+  						"description": null,
+  						"policyLimits": [],
+  						"policyDeductibles": []
+  					},
+  					{
+  						"_type": "PolicyCoverageDetail",
+  						"inclusionExclusion": "NO",
+  						"coverageCode": "239",
+  						"coverGroup": "12",
+  						"description": null,
+  						"policyLimits": [],
+  						"policyDeductibles": []
+  					},
+  					{
+  						"_type": "PolicyCoverageDetail",
+  						"inclusionExclusion": "NO",
+  						"coverageCode": "301",
+  						"coverGroup": "13",
+  						"description": null,
+  						"policyLimits": [],
+  						"policyDeductibles": []
+  					},
+  					{
+  						"_type": "PolicyCoverageDetail",
+  						"inclusionExclusion": "NO",
+  						"coverageCode": "302",
+  						"coverGroup": "13",
+  						"description": null,
+  						"policyLimits": [],
+  						"policyDeductibles": []
+  					},
+  					{
+  						"_type": "PolicyCoverageDetail",
+  						"inclusionExclusion": "NO",
+  						"coverageCode": "303",
+  						"coverGroup": "13",
+  						"description": null,
+  						"policyLimits": [],
+  						"policyDeductibles": []
+  					},
+  					{
+  						"_type": "PolicyCoverageDetail",
+  						"inclusionExclusion": "NO",
+  						"coverageCode": "304",
+  						"coverGroup": "13",
+  						"description": null,
+  						"policyLimits": [],
+  						"policyDeductibles": []
+  					},
+  					{
+  						"_type": "PolicyCoverageDetail",
+  						"inclusionExclusion": "NO",
+  						"coverageCode": "305",
+  						"coverGroup": "13",
+  						"description": null,
+  						"policyLimits": [],
+  						"policyDeductibles": []
+  					},
+  					{
+  						"_type": "PolicyCoverageDetail",
+  						"inclusionExclusion": "NO",
+  						"coverageCode": "306",
+  						"coverGroup": "13",
+  						"description": null,
+  						"policyLimits": [],
+  						"policyDeductibles": []
+  					},
+  					{
+  						"_type": "PolicyCoverageDetail",
+  						"inclusionExclusion": "NO",
+  						"coverageCode": "307",
+  						"coverGroup": "13",
+  						"description": null,
+  						"policyLimits": [],
+  						"policyDeductibles": []
+  					},
+  					{
+  						"_type": "PolicyCoverageDetail",
+  						"inclusionExclusion": "NO",
+  						"coverageCode": "308",
+  						"coverGroup": "13",
+  						"description": null,
+  						"policyLimits": [],
+  						"policyDeductibles": []
+  					},
+  					{
+  						"_type": "PolicyCoverageDetail",
+  						"inclusionExclusion": "NO",
+  						"coverageCode": "309",
+  						"coverGroup": "13",
+  						"description": null,
+  						"policyLimits": [],
+  						"policyDeductibles": []
+  					}
+  				],
+  				"policyAmounts": [],
+  				"groupProfiles": []
+  			}
+  		],
+  		"clauses": [],
+  		"policyPendings": [],
+  		"prevPolicyId": 3006,
+  		"policyHolderId": 9952,
+  		"agentId": 2583,
+  		"previousClaimYears": "NO",
+  		"pointOfSale": "18959",
+  		"ensurancePolicyIds": [],
+  		"ensuranceInvoices": [],
+  		"endorsements": [],
+  		"lineOfBusiness": [
+  			"LIFE"
+  		],
+  		"complianceStatus": "APPROVED",
+  		"complianceIdentification": "1720728557",
+  		"agentSEId": 2583,
+  		"branchSEId": 9,
+  		"distributionChannel": "2",
+  		"policyEnsuranceEndorsements": [],
+  		"isRenewal": "NO"
+  	},
+  	"transaction": {
+  		"_type": "PolicyTransaction",
+  		"createdAt": "2022-06-28T01:18:45.669-0500",
+  		"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  		"recordVersion": 5,
+  		"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  		"id": 2963,
+  		"updatedAt": "2022-06-28T01:18:45.852-0500",
+  		"tenantId": "ec",
+  		"policyNo": 101,
+  		"policyNumber": "COT-LFC1002",
+  		"transactionType": "Update",
+  		"transactionDate": "2022-06-28T06:18:45Z",
+  		"transactionStatus": "PENDING",
+  		"transactionMode": "INTERACTIVE",
+  		"transactionUniqueId": "YxYTwkwRfbVrcXA",
+  		"contextName": "PLAN-DATA",
+  		"policyId": 3007
+  	},
+  	"transactionType": "Update"
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

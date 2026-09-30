@@ -1,0 +1,42 @@
+meta {
+  name: Download dictionary
+  type: http
+  seq: 28
+}
+
+post {
+  url: {{ _.server }}/dictionary/api/v1/arizona/data/download
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  User-Agent: insomnia/10.1.1
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_40b110267b764a8f933a0e14bbd536b1', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "XlsExportOptions",
+  	"outputFileType": "xlsx",
+  	"outputFileName": "data-template.xlsx",
+  	"entityNames": [
+  		"eu.ncdc.arizona.dictionary.domain.entity.DictionaryItem",
+  		"eu.ncdc.arizona.dictionary.domain.entity.Dictionary"
+  			],
+  	"filters": {},
+  	"wrapText": "true",
+  	"autoFilter": "true",
+  	"templateOnly": "false",
+  	"locale": "ec" 
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

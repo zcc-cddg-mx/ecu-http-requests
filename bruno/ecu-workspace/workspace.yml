@@ -1,0 +1,34 @@
+opencollection: 1.0.0
+info:
+  name: "ecu-workspace"
+  type: workspace
+
+collections:
+  - name: "CRYSTAL_REPORTS"
+    path: "collections/CRYSTAL_REPORTS"
+  - name: "Arizona"
+    path: "collections/Arizona"
+  - name: "AUTORITY"
+    path: "collections/AUTORITY"
+  - name: "Ensurance"
+    path: "collections/Ensurance"
+  - name: "Gilbert y Bolona"
+    path: "collections/Gilbert y Bolona"
+  - name: "Incidentes"
+    path: "collections/Incidentes"
+  - name: "OV"
+    path: "collections/OV"
+  - name: "Puntos de Venta"
+    path: "collections/Puntos de Venta"
+  - name: "HACKATON"
+    path: "collections/AZURE"
+  - name: "Compliance"
+    path: "collections/Compliance"
+  - name: "INSPEKTOR"
+    path: "collections/INSPEKTOR"
+  - name: "VOC"
+    path: "collections/VOC"
+
+specs:
+
+docs: ''

@@ -1,0 +1,25 @@
+meta {
+  name: test
+  type: http
+  seq: 6
+}
+
+get {
+  url: http://10.119.74.10:8000/zurich/api/common/commonconfiguration/v1.0/monthlyclosing
+  body: none
+  auth: basic
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+auth:basic {
+  username: zurich
+  password: password2018
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

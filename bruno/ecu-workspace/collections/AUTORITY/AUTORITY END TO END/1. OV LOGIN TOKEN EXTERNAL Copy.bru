@@ -1,0 +1,34 @@
+meta {
+  name: 1. OV LOGIN TOKEN EXTERNAL Copy
+  type: http
+  seq: 7
+}
+
+post {
+  url: https://preprodoficinavirtual.zurichseguros.com.ec/nuevoportal/user/api/v1/arizona/auth/login
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+  	"username": "api_external_gilbertybolona",
+  	"password": "arizona2022?"
+  }
+}
+
+script:post-response {
+  let jsonData = res.getBody();
+  bru.setVar("token-autority", jsonData.body.accessToken);
+  //console.log("Token set to: " + jsonData.body.accessToken);
+  
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

@@ -1,0 +1,25 @@
+meta {
+  name: getPolicy
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{server}}/policy/api/v1/arizona/motorGenericos/policies/motorGenericos?policyNumber=COT-VH783594
+  body: json
+  auth: inherit
+}
+
+params:query {
+  policyNumber: COT-VH783594
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+}

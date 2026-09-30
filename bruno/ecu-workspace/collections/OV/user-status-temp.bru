@@ -1,0 +1,24 @@
+meta {
+  name: user-status-temp
+  type: http
+  seq: 24
+}
+
+get {
+  url: {{server}}/policy/api/v1/arizona/motorGenericos/policies/motorGenericos?policyNumber=COT-VH779270
+  body: json
+  auth: inherit
+}
+
+params:query {
+  policyNumber: COT-VH779270
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

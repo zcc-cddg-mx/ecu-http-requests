@@ -1,0 +1,36 @@
+info:
+  name: VOC ReporteDeRenovacionChDTO
+  type: http
+  seq: 19
+
+http:
+  method: GET
+  url: http://localhost:9000/api/v1/voc/query/ReporteDeRenovacionChQuery/ReporteDeRenovacionChDTO
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: x-tenantid-1
+      value: ec
+  body:
+    type: json
+    data: |-
+      {
+          "_type": "OvChRenewalReportSearchDTO",
+          "quoteNumber": null,
+          "customerId": null,
+          "agent": null,
+          "policyStartDate": null,
+          "policyEndDate": null,
+          "page": 0,
+          "pageSize": 1000
+      }
+  auth:
+    type: basic
+    username: voclient
+    password: 1!Nc@dc#
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

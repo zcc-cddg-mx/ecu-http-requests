@@ -1,0 +1,38 @@
+meta {
+  name: Overview
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{ server }}:{{ serverPort }}/data-view/api/v1/arizona/ov/overview?pageSize=20&page=0&index=DB_CLAIM_VIEW
+  body: json
+  auth: bearer
+}
+
+params:query {
+  pageSize: 20
+  page: 0
+  index: DB_CLAIM_VIEW
+}
+
+headers {
+  x-tenantid-1: ec
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_525b94c4be87496999dc6053f519009c', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  "(idCard:1710462886 AND partyRoleCode:INSURED_PERSON) AND lineOfBusiness:LFC AND effectiveDate:[* TO 1664786527000] AND expirationDate:[1664786527000 TO *]"
+  
+  
+  "(idCard:1710462886 AND partyRoleCode:INSURED_PERSON) AND lineOfBusiness:LIFE"
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

@@ -1,0 +1,56 @@
+meta {
+  name: ZBox FolderMetadata 2
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://10.119.74.24:8000/zurich/api/collection/box/v1.0/metadataFolder
+  body: json
+  auth: basic
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:basic {
+  username: zurich
+  password: password2018
+}
+
+body:json {
+  {
+  	"userId": "15268637096",
+  	"appName": "ARIZONA",
+  	"moduleName": "Post-emisión",
+  	"year": 0,
+  	"registryId": "",
+  	"registryNumber": 1,
+  	"registryDescription": "",
+  	"customerId": "1713693552",
+  	"customerData": "ANGEL BENJAMIN RAMIREZ RIVERA",
+  	"policyData": "POL-LFC1000",
+  	"claimID": "",
+  	"processId": "",
+  	"endorsementId": "1",
+  	"fileCreationDate": "",
+  	"fileName": "",
+  	"fileType": "",
+  	"beneficiaryId": "",
+  	"beneficiaryData": "",
+  	"retentionType": "",
+  	"vehicleId": "",
+  	"brokerFullName": "CARLA EMERITA PEREZ CARRION",
+  	"customerFullName": "ANGEL BENJAMIN RAMIREZ RIVERA",
+  	"claimBranch": "",
+  	"lob": "",
+  	"workflowOpID": "",
+  	"folderId": "150812623617"
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

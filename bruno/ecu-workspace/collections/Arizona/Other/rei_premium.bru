@@ -1,0 +1,38 @@
+meta {
+  name: rei_premium
+  type: http
+  seq: 13
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/reinsurance/api/v1/arizona/gross_premiums/create?=
+  body: json
+  auth: bearer
+}
+
+params:query {
+  : 
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantId-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  "_type": "GrossPremium",
+  "policyNo": 333,
+  "amount": 54321,
+  "grossPolicyId": 52
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

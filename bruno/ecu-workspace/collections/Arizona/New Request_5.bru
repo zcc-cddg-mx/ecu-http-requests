@@ -1,0 +1,21 @@
+meta {
+  name: New Request_5
+  type: http
+  seq: 65
+}
+
+get {
+  url: {{ _.server }}:{{ _.serverPort }}/user/api/v1/arizona/anonymous_token
+  body: none
+  auth: inherit
+}
+
+headers {
+  User-Agent: insomnia/8.6.1
+  x-tenantid-1: ec
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

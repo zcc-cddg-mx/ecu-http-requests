@@ -1,0 +1,42 @@
+meta {
+  name: Create draft payment instruction
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/accounting/api/v1/arizona/draft-payment-instruction/bank/create?=
+  body: multipartForm
+  auth: bearer
+}
+
+params:query {
+  : 
+}
+
+headers {
+  x-tenantId-1: ec
+  Content-Type: multipart/form-data
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'when-expired', 300 %}
+}
+
+body:multipart-form {
+  request: '''
+    {
+    	"_type": "CreateBankPaymentInstructionRequest",
+    	"partyId": 12,
+    	"bankId": 1,
+    	"bankAccountNumber": "SOME DRAFT NUMBER 123",
+    	"isDefault": "YES"
+    }
+  '''
+  file: @file(C:\Users\cziken\Desktop\Test data\test.pdf)
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

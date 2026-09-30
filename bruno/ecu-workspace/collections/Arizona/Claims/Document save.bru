@@ -1,0 +1,254 @@
+meta {
+  name: Document save
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/claim/api/v1/arizona/proxy/handling/documents/save
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_6c9a3a579fa645e78ec2e6f6628c790f', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "HandlingDocumentsProxy",
+  	"claimNumber": "22-87-LFC-50",
+  	"incomingDocuments": [
+  		{
+  			"_type": "HandlingSingleExpectedDocumentProxy",
+  			"fieldsInfo": {},
+  			"id": 64,
+  			"documentNo": 50,
+  			"documentTypeCaption": "ED01",
+  			"fileName": "Person list, 5 people.xlsx",
+  			"documentStatus": {
+  				"_type": "HandlingStatusProxy",
+  				"fieldsInfo": {},
+  				"status": "Delivered",
+  				"color": "blue",
+  				"inStatus": "YES"
+  			},
+  			"fileId": 15048,
+  			"isVisibleForExternalProviders": "NO",
+  			"isMandatory": "YES"
+  		},
+  		{
+  			"_type": "HandlingSingleExpectedDocumentProxy",
+  			"fieldsInfo": {},
+  			"id": 65,
+  			"documentNo": 51,
+  			"documentTypeCaption": "ED02",
+  			"fileName": "Insured persons, 10 people.xlsx",
+  			"documentStatus": {
+  				"_type": "HandlingStatusProxy",
+  				"fieldsInfo": {},
+  				"status": "Delivered",
+  				"color": "blue",
+  				"inStatus": "YES"
+  			},
+  			"fileId": 15049,
+  			"isVisibleForExternalProviders": "NO",
+  			"isMandatory": "YES"
+  		},
+  		{
+  			"_type": "HandlingSingleExpectedDocumentProxy",
+  			"fieldsInfo": {},
+  			"id": 54,
+  			"documentNo": 52,
+  			"documentTypeCaption": "ED03",
+  			"fileName": "2 Days Ago.csv",
+  			"receivedDate": "2022-03-21T09:59:13.707-05:00",
+  			"documentStatus": {
+  				"_type": "HandlingStatusProxy",
+  				"fieldsInfo": {},
+  				"status": "Rejected",
+  				"color": "grey",
+  				"inStatus": "YES"
+  			},
+  			"documentReviewDate": "2022-03-21T10:02:19.554-05:00",
+  			"fileId": 16002,
+  			"isVisibleForExternalProviders": "NO",
+  			"isMandatory": "YES"
+  		},
+  		{
+  			"_type": "HandlingSingleExpectedDocumentProxy",
+  			"fieldsInfo": {},
+  			"id": 55,
+  			"documentNo": 53,
+  			"documentTypeCaption": "ED04",
+  			"documentStatus": {
+  				"_type": "HandlingStatusProxy",
+  				"fieldsInfo": {},
+  				"status": "Await",
+  				"color": "yellow",
+  				"inStatus": "YES"
+  			},
+  			"isVisibleForExternalProviders": "NO",
+  			"isMandatory": "YES"
+  		},
+  		{
+  			"_type": "HandlingSingleExpectedDocumentProxy",
+  			"fieldsInfo": {},
+  			"id": 56,
+  			"documentNo": 54,
+  			"documentTypeCaption": "ED05",
+  			"documentStatus": {
+  				"_type": "HandlingStatusProxy",
+  				"fieldsInfo": {},
+  				"status": "Await",
+  				"color": "yellow",
+  				"inStatus": "YES"
+  			},
+  			"isVisibleForExternalProviders": "NO",
+  			"isMandatory": "YES"
+  		},
+  		{
+  			"_type": "HandlingSingleExpectedDocumentProxy",
+  			"fieldsInfo": {},
+  			"id": 57,
+  			"documentNo": 55,
+  			"documentTypeCaption": "ED06",
+  			"documentStatus": {
+  				"_type": "HandlingStatusProxy",
+  				"fieldsInfo": {},
+  				"status": "Await",
+  				"color": "yellow",
+  				"inStatus": "YES"
+  			},
+  			"isVisibleForExternalProviders": "NO",
+  			"isMandatory": "YES"
+  		},
+  		{
+  			"_type": "HandlingSingleExpectedDocumentProxy",
+  			"fieldsInfo": {},
+  			"id": 58,
+  			"documentNo": 56,
+  			"documentTypeCaption": "ED07",
+  			"documentStatus": {
+  				"_type": "HandlingStatusProxy",
+  				"fieldsInfo": {},
+  				"status": "Await",
+  				"color": "yellow",
+  				"inStatus": "YES"
+  			},
+  			"isVisibleForExternalProviders": "NO",
+  			"isMandatory": "YES"
+  		},
+  		{
+  			"_type": "HandlingSingleExpectedDocumentProxy",
+  			"fieldsInfo": {},
+  			"id": 59,
+  			"documentNo": 57,
+  			"documentTypeCaption": "ED08",
+  			"documentStatus": {
+  				"_type": "HandlingStatusProxy",
+  				"fieldsInfo": {},
+  				"status": "Await",
+  				"color": "yellow",
+  				"inStatus": "YES"
+  			},
+  			"isVisibleForExternalProviders": "NO",
+  			"isMandatory": "YES"
+  		},
+  		{
+  			"_type": "HandlingSingleExpectedDocumentProxy",
+  			"fieldsInfo": {},
+  			"id": 60,
+  			"documentNo": 58,
+  			"documentTypeCaption": "ED09",
+  			"documentStatus": {
+  				"_type": "HandlingStatusProxy",
+  				"fieldsInfo": {},
+  				"status": "Await",
+  				"color": "yellow",
+  				"inStatus": "YES"
+  			},
+  			"isVisibleForExternalProviders": "NO",
+  			"isMandatory": "YES"
+  		},
+  		{
+  			"_type": "HandlingSingleExpectedDocumentProxy",
+  			"fieldsInfo": {},
+  			"id": 61,
+  			"documentNo": 59,
+  			"documentTypeCaption": "ED21",
+  			"documentStatus": {
+  				"_type": "HandlingStatusProxy",
+  				"fieldsInfo": {},
+  				"status": "Await",
+  				"color": "yellow",
+  				"inStatus": "YES"
+  			},
+  			"isVisibleForExternalProviders": "NO",
+  			"isMandatory": "YES"
+  		},
+  		{
+  			"_type": "HandlingSingleExpectedDocumentProxy",
+  			"fieldsInfo": {},
+  			"id": 62,
+  			"documentNo": 60,
+  			"documentTypeCaption": "ED10",
+  			"documentStatus": {
+  				"_type": "HandlingStatusProxy",
+  				"fieldsInfo": {},
+  				"status": "Await",
+  				"color": "yellow",
+  				"inStatus": "YES"
+  			},
+  			"isVisibleForExternalProviders": "NO",
+  			"isMandatory": "YES"
+  		},
+  		{
+  			"_type": "HandlingSingleExpectedDocumentProxy",
+  			"fieldsInfo": {},
+  			"id": 63,
+  			"documentNo": 61,
+  			"documentTypeCaption": "ED11",
+  			"documentStatus": {
+  				"_type": "HandlingStatusProxy",
+  				"fieldsInfo": {},
+  				"status": "Await",
+  				"color": "yellow",
+  				"inStatus": "YES"
+  			},
+  			"isVisibleForExternalProviders": "NO",
+  			"isMandatory": "YES"
+  		},
+  		{
+  			"_type": "HandlingSingleExpectedDocumentProxy",
+  			"fieldsInfo": {},
+  			"id": 53,
+  			"documentNo": 62,
+  			"documentTypeCaption": "ED03",
+  			"fileName": "2 Days Ago.csv",
+  			"receivedDate": "2022-03-21T10:04:36.532-05:00",
+  			"documentStatus": {
+  				"_type": "HandlingStatusProxy",
+  				"fieldsInfo": {},
+  				"status": "Delivered",
+  				"color": "blue",
+  				"inStatus": "YES"
+  			},
+  			"documentReviewDate": "2022-03-21T10:02:19.554-05:00",
+  			"fileId": 16003,
+  			"isVisibleForExternalProviders": "NO",
+  			"isMandatory": "YES"
+  		}
+  	]
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

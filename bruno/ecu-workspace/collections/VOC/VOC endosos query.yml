@@ -1,0 +1,36 @@
+info:
+  name: VOC endosos query
+  type: http
+  seq: 12
+
+http:
+  method: GET
+  url: http://localhost:9000/api/v1/voc/query/EndososQuery/EndososDTO?page=0&pageSize=20&sortProperties=fechaElaboracion&sortDirection=asc
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: x-tenantid-1
+      value: ec
+  params:
+    - name: page
+      value: "0"
+      type: query
+    - name: pageSize
+      value: "20"
+      type: query
+    - name: sortProperties
+      value: fechaElaboracion
+      type: query
+    - name: sortDirection
+      value: asc
+      type: query
+  auth:
+    type: basic
+    username: voclient
+    password: 1!Nc@dc#
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

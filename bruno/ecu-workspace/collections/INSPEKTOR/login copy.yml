@@ -1,0 +1,31 @@
+info:
+  name: login copy
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: https://inspektor.datalaft.com:2196/api/ConsultaPrincipal
+  body:
+    type: json
+    data: |-
+      {
+        "nombre": "ROMERO MONTALVO",
+        "tipoDocumento": 0,
+        "identificacion": "1710250836",
+        "cantidadPalabras": "1",
+        "tienePrioridad_4": true,
+        "procuraduria": false,
+        "ramaJudicial": false,
+        "ramaJEPMS": false
+      }
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiWlVSSUNIX0VfV1MiLCJuYW1laWQiOiI3MjY1NCIsIkNvbXBhbnlJZCI6IjM4NTUiLCJyb2xlIjoiT25seUNvbnN1bHRhTGlzdGFzIiwibmJmIjoxNzkwNjEyMjkzLCJleHAiOjE3OTA2MTU4OTMsImlhdCI6MTc5MDYxMjI5MywiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzOTgvIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzOTgvIn0.EEQZDd1OLSVFr-0_ZZMnLdsqVBHMjsmCh6jnxvTG8Vg
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

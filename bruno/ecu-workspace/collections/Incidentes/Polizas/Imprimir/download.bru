@@ -1,0 +1,23 @@
+meta {
+  name: download
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{server}}/document/api/v1/arizona/documents/download/646713
+  body: none
+  auth: bearer
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+}

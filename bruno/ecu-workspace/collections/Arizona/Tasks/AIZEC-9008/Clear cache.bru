@@ -1,0 +1,28 @@
+meta {
+  name: Clear cache
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/claim/api/v1/arizona/common/cache/clear?=
+  body: none
+  auth: bearer
+}
+
+params:query {
+  : 
+}
+
+headers {
+  x-tenantId-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_525b94c4be87496999dc6053f519009c', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'when-expired', 300 %}
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

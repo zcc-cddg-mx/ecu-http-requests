@@ -1,0 +1,33 @@
+meta {
+  name: VOC upla
+  type: http
+  seq: 31
+}
+
+get {
+  url: http://localhost:5071/api/v1/voc/query/BrokerUplaEffectiveDateDTOQuery/BrokerUplaEffectiveDateDTO?page=0&pageSize=20&idAgente=11016068012211
+  body: none
+  auth: basic
+}
+
+params:query {
+  page: 0
+  pageSize: 20
+  idAgente: 11016068012211
+}
+
+headers {
+  User-Agent: insomnia/9.1.1
+  Cookie: JSESSIONID=BCA567C4219D678D6A4CC2FCF27EB0BE
+}
+
+auth:basic {
+  username: voclient
+  password: pass
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+}

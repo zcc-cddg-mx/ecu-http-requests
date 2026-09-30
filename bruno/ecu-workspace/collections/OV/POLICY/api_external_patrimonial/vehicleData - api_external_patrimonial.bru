@@ -1,0 +1,44 @@
+meta {
+  name: vehicleData - api_external_patrimonial
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{server}}/policy/api/v1/arizona/motor/genericos/vehicleData
+  body: json
+  auth: inherit
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+body:json {
+  {
+    "_type": "MotorGenericosTarificationRequest",
+    "motorGenericosTarification": {
+      "_type": "MotorGenericosTarification",
+      "policyData": {
+        "_type": "PolicyData",
+           "agentExternalId":"11387618600319", 
+           "pointOfSaleName":"QUITO PATRIMONIAL AGENCIA ASESORA PRODUCTORA DE SEGUROS S.A"
+        },
+      "car": {
+        "_type": "VehicleData",
+        "registrationNumber": "PDZ8526"
+      },
+      "owner": {
+        "_type": "VehicleOwner",
+        "partyType": "PERSON",
+        "identificationNumber": "null"
+      }
+    },
+    "testMode": false
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

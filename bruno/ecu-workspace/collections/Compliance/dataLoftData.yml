@@ -1,0 +1,27 @@
+info:
+  name: dataLoftData
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: https://ambientetest.datalaft.com:2121/api/ConsultaPrincipal
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+
+          "nombre": "KOUPERMANN SALOMON JONATHAN",
+          "identificacion": "0102348455",
+          "tienePrioridad_4": false
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

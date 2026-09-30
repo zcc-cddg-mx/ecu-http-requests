@@ -1,0 +1,38 @@
+meta {
+  name: Kushki check
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://10.119.74.24:8000/zurich/api/collection/debitCollection/v1.0/generateSmartlink
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+  "identificationNumber": "1010208654",
+  "names": "piotrpanawas",
+  "email": "piotr.panawas@ncdc.pl",
+  "invoice": "bill:25.01.22:31",
+  "policy": "20-545642",
+  "lineOfBusiness": "VCL",
+  "totalValue": 1200,
+  "quotaValue": 0,
+  "quotaValueNoIva": 100,
+  "iva": 20,
+  "numberOfQuotas": 10,
+  "emitterSystem": "aizona",
+  "paymentDate": "20-08-2021"
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

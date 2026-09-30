@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Gilbert y Bolona",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

@@ -1,0 +1,114 @@
+meta {
+  name: reserve_entry
+  type: http
+  seq: 14
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/accounting/api/v1/arizona/transaction_reserve_entries?=
+  body: json
+  auth: bearer
+}
+
+params:query {
+  : 
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantId-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  "_type" : "ECTransactionReserveEntryRequest",
+  "accountPartyId" : 1,
+  "transAmt": 1230,
+  "exchangeRate": 1,
+  "transCurrencyCode": "USD",
+  "reserveStartDate": "2021-05-01",
+  "reserveEndDate": "2021-12-31",
+  "policyEffectiveYear": "2021-05-01",
+  "transDate": "2021-02-01",
+  "policyIssueDate": "2021-02-01",
+  "reserveClass" : "WRITTEN_PREMIUM",
+  "transSubclass": "POLICY",
+  "policyNo": 32343423,
+  "policyNumber" : "N1001",
+  "policyAmountId": 1234,
+  "transactionTypeCode": "P1",
+  "productType": "LF",
+  "instalmentPlanId": 333,
+  "yearAdjustmentNo": "1",
+  "operationType": "EC0001",
+  "billingId" : 123,
+  "transactionComponents":[
+  {
+  "_type" : "ECTransactionComponent",
+  "componentSource": "POLICY",
+  "componentSourceValue": "GROSS",
+  "componentTransAmt": 1230,
+  "componentCurrencyCode":"USD",
+  "lineOfBusiness": "LIFE",
+  "distributionChannel": "DC0104",
+  "basketSegment": "EC_SME_P",
+  "office": "EC01"
+  },
+  {
+  "_type" : "ECTransactionComponent",
+  "componentSource": "POLICY",
+  "componentSourceValue": "NET",
+  "componentTransAmt": 1000,
+  "componentCurrencyCode":"USD",
+  "lineOfBusiness": "LIFE",
+  "distributionChannel": "DC0104",
+  "basketSegment": "EC_SME_P",
+  "office": "EC01"
+  },
+  {
+  "_type" : "ECTransactionComponent",
+  "componentSource": "POLICY",
+  "componentSourceValue": "RIGHTFEES",
+  "componentTransAmt": 150,
+  "componentCurrencyCode":"USD",
+  "lineOfBusiness": "LIFE",
+  "distributionChannel": "DC0104",
+  "basketSegment": "EC_SME_P",
+  "office": "EC01"
+  },
+  {
+  "_type" : "ECTransactionComponent",
+  "componentSource": "POLICY",
+  "componentSourceValue": "SS CONTR",
+  "componentTransAmt": 50,
+  "componentCurrencyCode":"USD",
+  "lineOfBusiness": "LIFE",
+  "distributionChannel": "DC0104",
+  "basketSegment": "EC_SME_P",
+  "office": "EC01"
+  },
+  {
+  "_type" : "ECTransactionComponent",
+  "componentSource": "POLICY",
+  "componentSourceValue": "SCVS CONTR",
+  "componentTransAmt": 30,
+  "componentCurrencyCode":"USD",
+  "lineOfBusiness": "LIFE",
+  "distributionChannel": "DC0104",
+  "basketSegment": "EC_SME_P",
+  "office": "EC01"
+  }
+  ]
+  
+  
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

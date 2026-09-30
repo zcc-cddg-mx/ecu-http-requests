@@ -1,0 +1,33 @@
+meta {
+  name: 5th step - 3
+  type: http
+  seq: 10
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/policy/api/v1/arizona/ensurance/upla/validation
+  body: json
+  auth: bearer
+}
+
+headers {
+  x-tenantid-1: ec
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "ClientUplaValidationRequest",
+  	"clientId": "11630921978893",
+  	"testMode": false
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

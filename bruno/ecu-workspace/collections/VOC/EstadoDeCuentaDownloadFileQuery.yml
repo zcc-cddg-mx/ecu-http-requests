@@ -1,0 +1,31 @@
+info:
+  name: EstadoDeCuentaDownloadFileQuery
+  type: http
+  seq: 21
+
+http:
+  method: get
+  url: http://localhost:9050/api/v1/voc/query/EstadoDeCuentaDownloadFileQuery/EstadoDeCuentaDownloadFileDTO?page=0&pageSize=5&numeroPoliza_eq=1092500
+  headers:
+    - name: Authorization
+      value: Basic dm9jbGllbnQ6MSFOY0BkYyM=
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: page
+      value: "0"
+      type: query
+    - name: pageSize
+      value: "5"
+      type: query
+    - name: numeroPoliza_eq
+      value: "1092500"
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: false
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

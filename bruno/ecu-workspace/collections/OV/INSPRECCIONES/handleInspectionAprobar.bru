@@ -1,0 +1,74 @@
+meta {
+  name: handleInspectionAprobar
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{server}}/policy/api/v1/arizona/business/inspection/handle
+  body: json
+  auth: inherit
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+body:json {
+  {
+  	"_type": "InspectionHandleRequest",
+  	"inspection": {
+  		"_type": "Inspection",
+  		"assignedRole": "FRONT_ROLE_INSPECTOR_EXTERNAL",
+  		"assignedUserId": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+  		"beginDate": "2026-01-16T23:05:26Z",
+  		"comments": [],
+  		"contact": "99-99999999",
+  		"createdAt": "2026-01-16T23:05:26Z",
+  		"createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+  		"description": "ok ok ",
+  		"finishDate": "2026-01-01T05:00:00Z",
+  		"id": 293756,
+  		"inspectionContext": {
+  			"_type": "ECInspectionContextPolicy",
+  			"createdAt": "2026-01-16T18:05:26.474-05:00",
+  			"createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+  			"id": 284106,
+  			"objectId": 3010717,
+  			"objectNo": 477400,
+  			"plateNumber": "TEST0101G",
+  			"policyHolderId": 481152,
+  			"policyId": 3056916,
+  			"policyNo": 461040,
+  			"policyNumber": "COT-VH780394",
+  			"policyPendingType": "MOTOR_INSPECTION",
+  			"recordVersion": 2,
+  			"tenantId": "ec",
+  			"updatedAt": "2026-01-16T18:05:26.618-05:00",
+  			"updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+  			"vehicleMake": "NISSAN",
+  			"vehicleModel": "SENTRA",
+  			"vehicleYear": 2020
+  		},
+  		"inspectionNo": 38891,
+  		"inspectionNumber": "38891",
+  		"note": "super",
+  		"prevId": 293755,
+  		"recordVersion": 1,
+  		"referralDefinitionId": 2,
+  		"requestByUserId": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+  		"requestDate": "2026-01-16T22:59:41Z",
+  		"scheduledDate": "2026-01-17T00:59:00Z",
+  		"status": "ASSIGNED",
+  		"tenantId": "ec",
+  		"type": "MOTOR_ONSITE",
+  		"updatedAt": "2026-01-16T23:05:26Z",
+  		"updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9"
+  	},
+  	"status": "APPROVED"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

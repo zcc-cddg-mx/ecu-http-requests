@@ -1,0 +1,31 @@
+meta {
+  name: ReinsurerList
+  type: http
+  seq: 10
+}
+
+get {
+  url: {{ server }}:{{ serverPort }}/reinsurance/api/v1/arizona/reinsurer/list?page=0&pageSize=20&partyId_in=2040,2030&reinsurerName_li=caseInsensitiveName
+  body: none
+  auth: bearer
+}
+
+params:query {
+  page: 0
+  pageSize: 20
+  partyId_in: 2040,2030
+  reinsurerName_li: caseInsensitiveName
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

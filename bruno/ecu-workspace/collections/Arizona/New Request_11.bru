@@ -1,0 +1,21 @@
+meta {
+  name: New Request_11
+  type: http
+  seq: 91
+}
+
+get {
+  url: http://10.187.0.208:34731/api/v1/arizona/preference_values?name=renewalLinkEncryptionKey&defaultValue
+  body: none
+  auth: inherit
+}
+
+params:query {
+  name: renewalLinkEncryptionKey
+  defaultValue: 
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

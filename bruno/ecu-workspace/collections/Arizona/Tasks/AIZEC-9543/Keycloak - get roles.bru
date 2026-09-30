@@ -1,0 +1,43 @@
+meta {
+  name: Keycloak - get roles
+  type: http
+  seq: 9
+}
+
+put {
+  url: {{ server }}:{{ serverPort }}/auth/realms/master/ecroles/cziken_test
+  body: json
+  auth: bearer
+}
+
+headers {
+  x-tenantid-1: ec
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_525b94c4be87496999dc6053f519009c', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"name": "NAME",
+  	"displayName": "DISPLAY_NAME",
+  	"composites": [
+  		{
+  			"name": "NAME1",
+  			"displayName": "DISPLAY_NAME1"
+  		},
+  		
+  		{
+  			"name": "NAME2",
+  			"displayName": "DISPLAY_NAME2"
+  		}
+  	]
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

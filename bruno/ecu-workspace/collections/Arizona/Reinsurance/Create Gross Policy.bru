@@ -1,0 +1,81 @@
+meta {
+  name: Create Gross Policy
+  type: http
+  seq: 29
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/reinsurance/api/v1/arizona/gross_policies/create
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "GrossPolicy",
+  	"productName": "LFC",
+  	"partyId": 2040,
+  	"policyNo": 70,
+  	"policyNumber": "COT-MO1000",
+  	"policyPmlPercent": null,
+  	"policyTransactionId": 1953,
+  	"billingNumber": null,
+  	"billingId": 2016,
+  	"billingDate": "2021-06-17",
+  	"processId": null,
+  	"insurableObjectId": null,
+  	"transactionCode": "P1",
+  	"policyInsuranceSum": 1000,
+  	"transactionDate": "2021-06-16",
+  	"policyEffectiveYear": 1,
+  	"effectiveDate": "2021-06-17",
+  	"expirationDate": "2022-06-16",
+  	"grossPremiums": [
+  		{
+  			"_type": "GrossPremium",
+  			"grossPolicyId": null,		
+  			"premiumBasisType": null,
+  			"customPremiumBasisType": "PURE",
+  			"billingAmountId": 2963,
+  			"lineOfBusiness": 1,
+  			"coverageId": 1424,
+  			"coverageCode": 101,
+  			"coverageGroup": 10,
+  			"splitInsuranceSum": 400,
+  			"amount": 501,
+  			"currency": "USD",
+  			"processIdentification": null
+  		},
+  		{
+  			"_type": "GrossPremium",
+  			"grossPolicyId": null,
+  			"premiumBasisType": null,
+  			"customPremiumBasisType": "PURE",
+  			"billingAmountId": 2963,
+  			"lineOfBusiness": 1,
+  			"coverageId": 1424,
+  			"coverageCode": 101,
+  			"coverageGroup": 10,
+  			"splitInsuranceSum": 401,
+  			"amount": 502,
+  			"currency": "USD",
+  			"processIdentification": null
+  		}
+  	],
+  	"processIdentification": null
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

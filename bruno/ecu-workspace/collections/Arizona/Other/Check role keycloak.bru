@@ -1,0 +1,35 @@
+meta {
+  name: Check role keycloak
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{ server }}:{{ serverPort }}/auth/realms/master/arizonaroles/effective/solicitudes_descuentos%7Cpymes%20
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "UploadFileRequest",
+  	"testMode": "true",
+  	"id": {
+  		"documentId": "9977"
+  	}
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

@@ -1,0 +1,180 @@
+meta {
+  name: Vehicle view data
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{ _.server }}:{{ _.serverPort }}/policy/api/v1/arizona/motorGenericos/vehicle/view
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantId-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_6c9a3a579fa645e78ec2e6f6628c790f', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'never', 60 %}
+}
+
+body:json {
+  {
+      "_type": "MotorGenericosTarificationRequest",
+      "testMode": false,
+      "policyNo": 90,
+      "motorGenericosTarification": {
+          "_type": "MotorGenericosTarification",
+          "policyData": {
+              "_type": "PolicyData",
+              "entityProperties": {},
+              "policyNo": 90,
+              "policyNumber": "COT-VH1000",
+              "productCode": "VH",
+              "variant": "MOTOS",
+              "pointOfSale": "10",
+              "status": "WORKING",
+              "customStatus": "WORKING",
+              "agentSEId": 11,
+              "effectiveDate": "2023-01-12T05:00:00Z",
+              "expirationDate": "2024-01-12T05:00:00Z",
+              "nextInsurableObjectAllowed": "YES",
+              "paymentMethod": "1",
+              "ensuranceDocuments": [],
+              "endorsementIds": [],
+              "policyEndorsementIds": [],
+              "paymentMethodAllowed": [
+                  "1",
+                  "2",
+                  "3"
+              ],
+              "downloadInvoice": true,
+              "downloadPolicy": true,
+              "consents": [],
+              "uplaUpdate": "NO",
+              "policyAgencies": []
+          },
+          "client": {
+              "_type": "PolicyRole",
+              "entityProperties": {},
+              "id": 14171,
+              "identificationType": "ID_CARD",
+              "identificationNumber": "1710462886",
+              "firstName": "SANDRA ELIZABETH",
+              "secondName": "SEGOVIA MOGOLLON",
+              "name": "SANDRA ELIZABETH SEGOVIA MOGOLLON",
+              "email": "addoppakez-2334@yopmail.com",
+              "mobilePhone": "99-99999999",
+              "phone": "99-9999999",
+              "mainAddress": "Calle Guanguitagua",
+              "mainAddressNo": "N39-100",
+              "nationalityId": "10345"
+          },
+          "cars": [
+              {
+                  "_type": "VehicleData",
+                  "objectNo": 90,
+                  "isNewCar": "NO",
+                  "totalSumInsured": 0,
+                  "factor": 0,
+                  "netPremium": 0,
+                  "isBeingProcessed": "NO",
+                  "removable": "YES",
+                  "plans": [],
+                  "inspections": [],
+                  "referrals": [],
+                  "vehicleEquipment": [],
+                  "renewalInformation": {
+                      "_type": "RenewalInformation",
+                      "entityProperties": {}
+                  },
+                  "referralsRequired": [],
+                  "referralsOptional": [],
+                  "isVehicleAddedManually": "NO",
+                  "fieldsInfo": {},
+                  "entityProperties": {}
+              }
+          ],
+          "beneficiaries": [],
+          "car": {
+              "_type": "VehicleData",
+              "entityProperties": {
+                  "extraEquipmentSumInsured": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "MaxValuePct",
+                          "value": 0.15
+                      }
+                  ],
+                  "sumInsured": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "MaxValue",
+                          "value": 50000
+                      },
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "MinValue",
+                          "value": 8000
+                      }
+                  ]
+              },
+              "objectNo": 90,
+              "registrationNumber": "1710462886",
+              "productionYear": 2023,
+              "typeOfVehicle": "MOTO",
+              "make": "ACADIAN",
+              "makeId": "97325831",
+              "model": "CUSTON BEAUMONTE",
+              "modelId": "97325526",
+              "colorName": "BLANCO / ROJO",
+              "colorId": "7649786087450",
+              "isNewCar": "NO",
+              "isVehicleAddedManually": "YES",
+              "ensuranceVehicleId": "-1",
+              "plans": [],
+              "inspections": [],
+              "referrals": [],
+              "vehicleEquipment": [],
+              "renewalInformation": {
+                  "_type": "RenewalInformation",
+                  "entityProperties": {}
+              },
+              "referralsRequired": [],
+              "referralsOptional": [],
+              "isBeingProcessed": "NO",
+              "removable": "NO",
+              "fieldsInfo": {
+                  "extraEquipmentSumInsured": [
+                      null
+                  ],
+                  "sumInsured": [
+                      null,
+                      null
+                  ]
+              },
+              "sumInsured": 8000,
+              "extraEquipmentSumInsured": 1200,
+              "extraEquipmentSumInsuredMaxPct": 0.15,
+              "totalInsureMinValue": 8000,
+              "totalInsureMaxValue": 50000
+          },
+          "owner": {
+              "_type": "VehicleOwner",
+              "entityProperties": {},
+              "partyType": "PERSON",
+              "name": "Konrad Byczynski",
+              "identificationNumber": "1710462886",
+              "gender": "F",
+              "civilStatus": "CASADO",
+              "age": 53
+          }
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

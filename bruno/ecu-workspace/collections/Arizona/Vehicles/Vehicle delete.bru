@@ -1,0 +1,43 @@
+meta {
+  name: Vehicle delete
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{ _.server }}:{{ _.serverPort }}/policy/api/v1/arizona/motorGenericos/vehicle/removeAll
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantId-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_525b94c4be87496999dc6053f519009c', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'never', 60 %}
+}
+
+body:json {
+  {
+  "_type": "MotorGenericosTarificationRequest",
+  "policyNo": 90,
+  "motorGenericosTarification": {
+  "_type": "MotorGenericosTarification",
+  "policyData": {
+  "_type": "PolicyData",
+  "pointOfSale": "10",
+  "agentSEId": 11
+  }
+  },
+  "testMode": false
+  
+  }
+  
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

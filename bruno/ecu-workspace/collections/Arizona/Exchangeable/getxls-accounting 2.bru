@@ -1,0 +1,45 @@
+meta {
+  name: getxls-accounting 2
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/accounting/api/v1/arizona/data/download?=
+  body: json
+  auth: bearer
+}
+
+params:query {
+  : 
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantId-1: no
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "XlsExportOptions",
+  	"outputFileType": "xlsx",
+  	"outputFileName": "data-template.xlsx",
+  	"entityNames": [
+  		"eu.ncdc.arizona.accounting.domain.entity.PaymentActionTask"
+  	],
+  	"filters": {},
+  	"wrapText": "true",
+  	"autoFilter": "true",
+  	"templateOnly": "false",
+  	"locale": "no"
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

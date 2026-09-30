@@ -1,0 +1,43 @@
+info:
+  name: runAgente
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: http://localhost:8105/run
+  body:
+    type: multipart-form
+    data:
+      - name: file
+        type: text
+        value: ""
+      - name: command
+        type: text
+        value: ren-data
+      - name: ticket
+        type: text
+        value: RITM2699090
+      - name: year
+        type: text
+        value: "2026"
+      - name: month
+        type: text
+        value: "11"
+      - name: commit
+        type: text
+        value: "true"
+      - name: auxiliar
+        type: text
+        value: "false"
+      - name: compile
+        type: text
+        value: "false"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

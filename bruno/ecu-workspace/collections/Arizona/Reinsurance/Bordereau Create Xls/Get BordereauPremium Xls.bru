@@ -1,0 +1,40 @@
+meta {
+  name: Get BordereauPremium Xls
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/reinsurance/api/v1/arizona/ec-bordereau-premiums/export-search?=
+  body: json
+  auth: bearer
+}
+
+params:query {
+  : 
+}
+
+headers {
+  x-tenantId-1: ec
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+      "_type": "BordereauPremiumSearch",
+  		"bordereauId": "1952",
+      "params": {
+  				"sortDirection": "desc",
+  				"sortProperties": "billingDate"
+      }
+  }	
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

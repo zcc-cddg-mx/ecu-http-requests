@@ -1,0 +1,31 @@
+meta {
+  name: Upla status VOC
+  type: http
+  seq: 57
+}
+
+get {
+  url: larasrv.ncdc:9011/api/v1/voc/query/BrokerUplaStatusQuery/BrokerUplaStatusDTO?idAgente_eq=23312474095865&page=0&pageSize=1
+  body: none
+  auth: basic
+}
+
+params:query {
+  idAgente_eq: 23312474095865
+  page: 0
+  pageSize: 1
+}
+
+headers {
+  User-Agent: insomnia/9.1.1
+}
+
+auth:basic {
+  username: voclient
+  password: 1!Nc@dc#
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

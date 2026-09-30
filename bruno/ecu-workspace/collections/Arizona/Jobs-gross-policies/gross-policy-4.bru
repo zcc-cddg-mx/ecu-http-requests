@@ -1,0 +1,62 @@
+meta {
+  name: gross-policy-4
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/reinsurance/api/v1/arizona/gross_policies/create
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantId-1: ec
+  ~: 
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "ECGrossPolicy",
+  	"policyNo": 104,
+  	"billingId": 104,
+  	"policyNumber": "P/4/2021",
+  	"policyEffectiveYear": "2021-01-01",
+  	"effectiveDate": "2021-01-01",
+  	"expirationDate": "2021-12-01",
+  	"productName": "LFM",
+  	"distributionChannel": "DC0104",
+  	"basketSegment": "EC_SME_P",
+  	"office": "EC01",
+  	"grossPremiums": [
+  		{
+  			"_type": "GrossPremium",
+  			"amount": 2000,
+  			"customPremiumBasisType": "PURE",
+  			"splitInsuranceSum": 100000,
+  			"coverageCode": "102",
+  			"coverageGroup": "10",
+  			"lineOfBusiness": "1"
+  		},
+  		{
+  			"_type": "GrossPremium",
+  			"amount": 400,
+  			"customPremiumBasisType": "PURE",
+  			"splitInsuranceSum": 200000,
+  			"coverageCode": "57",
+  			"coverageGroup": "10",
+  			"lineOfBusiness": "1"
+  		}
+  	]
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

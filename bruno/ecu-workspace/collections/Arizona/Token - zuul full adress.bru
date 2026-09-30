@@ -1,0 +1,31 @@
+meta {
+  name: Token - zuul full adress
+  type: http
+  seq: 101
+}
+
+post {
+  url: http://zuul-1.ams.cziken.arinet:8080/user/api/v1/arizona/auth/login
+  body: json
+  auth: inherit
+}
+
+headers {
+  ~Content-Type: application/json
+  ~x-tenantId-1: no
+  ~: 
+}
+
+body:json {
+  {
+    "username" : "asalazar",
+    "password" : "arizona2020!",
+    "name" : "AuthenticationUsernamePasswordBasedRequestDTO",
+    "children" : [ ]
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

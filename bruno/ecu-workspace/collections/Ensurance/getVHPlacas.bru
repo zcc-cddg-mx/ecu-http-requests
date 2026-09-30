@@ -1,0 +1,25 @@
+meta {
+  name: getVHPlacas
+  type: http
+  seq: 25
+}
+
+get {
+  url: https://balanceador.zurichseguros.com.ec/zurich/api/motorManagement/v1/vehicles?plate=PCK3117
+  body: json
+  auth: basic
+}
+
+params:query {
+  plate: PCK3117
+}
+
+auth:basic {
+  username: zurich
+  password: password2018
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

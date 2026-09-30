@@ -1,0 +1,34 @@
+meta {
+  name: Party
+  type: http
+  seq: 11
+}
+
+get {
+  url: {{ server }}:{{ serverPort }}/party/api/v1/arizona/parties/14152
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_525b94c4be87496999dc6053f519009c', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "Person",
+  	"id": 14152,
+  	"firstName": "Cziken",
+  	"lastName": "Panawas"
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

@@ -1,0 +1,25 @@
+meta {
+  name: lookup_ratingsCommissions
+  type: http
+  seq: 10
+}
+
+post {
+  url: {{server}}/rule/api/v1/arizona/lookup_ratings/list
+  body: json
+  auth: inherit
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+body:json {
+  {
+      "ratingListName": "VH_AGENT_COMMISSION"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

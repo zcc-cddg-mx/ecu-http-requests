@@ -1,0 +1,33 @@
+meta {
+  name: Make release
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/release/api/v1/arizona/releases/make_release?version=jakis_nowy_rel_1
+  body: json
+  auth: bearer
+}
+
+params:query {
+  version: jakis_nowy_rel_1
+}
+
+headers {
+  x-tenantid-1: ec
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {}
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

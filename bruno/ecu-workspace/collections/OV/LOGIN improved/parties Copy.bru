@@ -1,0 +1,23 @@
+meta {
+  name: parties Copy
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{server}}/party/api/v1/arizona/parties?id=227302
+  body: json
+  auth: inherit
+}
+
+params:query {
+  id: 227302
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+settings {
+  encodeUrl: true
+}

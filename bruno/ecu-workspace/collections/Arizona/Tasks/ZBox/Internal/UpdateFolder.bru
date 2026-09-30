@@ -1,0 +1,36 @@
+meta {
+  name: UpdateFolder
+  type: http
+  seq: 10
+}
+
+put {
+  url: {{ server }}:{{ serverPort }}/automation/api/v1/arizona/zbox/updateFolder/150299712895
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "CreateFolderRequest",
+  	"name": "testFolderName 17 nameChange",
+  	"description": "sampleDesc",
+  	"parent": {
+  		"id": "0"
+  	}
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

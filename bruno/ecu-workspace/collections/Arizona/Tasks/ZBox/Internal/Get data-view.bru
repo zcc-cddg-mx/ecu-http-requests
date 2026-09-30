@@ -1,0 +1,29 @@
+meta {
+  name: Get data-view
+  type: http
+  seq: 22
+}
+
+get {
+  url: {{ server }}:{{ serverPort }}/report/api/v1/arizona/ov/overview?query=zbox_document_id IS NULL AND document_type != 'Email' AND (zbox_definition_code_type != 'NO_UPLOAD' OR (zbox_definition_code_type IS NULL AND zbox_category_type != 'NO_UPLOAD'))&index=ZBOX_METADATA_VIEW
+  body: none
+  auth: bearer
+}
+
+params:query {
+  query: zbox_document_id IS NULL AND document_type != 'Email' AND (zbox_definition_code_type != 'NO_UPLOAD' OR (zbox_definition_code_type IS NULL AND zbox_category_type != 'NO_UPLOAD'))
+  index: ZBOX_METADATA_VIEW
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

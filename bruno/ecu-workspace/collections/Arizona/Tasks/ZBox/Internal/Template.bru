@@ -1,0 +1,33 @@
+meta {
+  name: Template
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://10.119.74.10:8000/zurich/api/collection/box/v1.0/downloadFileUrl/1
+  body: json
+  auth: basic
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantid-1: ec
+}
+
+auth:basic {
+  username: zurich
+  password: password2018
+}
+
+body:json {
+  {
+  	"username": "zurich",
+  	"password": "password2018"
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

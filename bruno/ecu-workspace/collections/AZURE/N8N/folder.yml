@@ -1,0 +1,7 @@
+info:
+  name: N8N
+  type: folder
+  seq: 3
+
+request:
+  auth: inherit

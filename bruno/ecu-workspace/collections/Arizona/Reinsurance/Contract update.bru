@@ -1,0 +1,80 @@
+meta {
+  name: Contract update
+  type: http
+  seq: 22
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/reinsurance/api/v1/arizona/rei_contract/save
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_6c9a3a579fa645e78ec2e6f6628c790f', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"reiContract": {
+  		"_type": "ReiContract",
+  		"id": 1,
+  		"contractCategory": "OBLIGATORY",
+  		"contractType": "QUOTA",
+  		"contractLevel": 1,
+  		"contractNo": "VIDA19",
+  		"name": "ILI56104A ",
+  		"currency": "USD",
+  		"capacity": 2500000,
+  		"effectiveDate": "2019-04-01T00:00:00.000-05:00",
+  		"expirationDate": "2020-03-31T00:00:00.000-05:00",
+  		"status": "ACTIVE",
+  		"subscriptionYear": "2019",
+  		"accountPeriod": "<script>alert('kekw')</script>",
+  		"daysToSendAccounts": 31,
+  		"daysToPayBills": 31,
+  		"insuredValueLimit": 2500000,
+  		"insuredLimitType": "CAPACITY",
+  		"percentCession": 11,
+  		"percentCommission": 25,
+  		"contractBrokers": [
+  			{
+  				"_type": "ReiContractBroker",
+  				"id": 1,
+  				"contractId": 1,
+  				"reinsurer": {
+  					"_type": "ReiReinsurer",
+  					"id": 1
+  				},
+  				"participationOnPercentCession": 10,
+  				"percentParticipation": 100,
+  				"commission": 31,
+  				"contractReinsurers": [
+  					{
+  						"_type": "ReiContractReinsurer",
+  						"id": 1,
+  						"contractBrokerId": 1,
+  						"reinsurer": {
+  							"_type": "ReiReinsurer",
+  							"id": 1
+  						},
+  						"participationOnPercentCession": 10,
+  						"percentParticipation": 100,
+  						"commission": 30
+  					}
+  				]
+  			}
+  		]
+  	}
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

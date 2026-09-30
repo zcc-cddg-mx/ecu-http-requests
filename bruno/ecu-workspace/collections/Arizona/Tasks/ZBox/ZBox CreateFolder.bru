@@ -1,0 +1,35 @@
+meta {
+  name: ZBox CreateFolder
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://10.119.74.24:8000/zurich/api/collection/box/v1.0/createFolder
+  body: json
+  auth: basic
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:basic {
+  username: zurich
+  password: password2018
+}
+
+body:json {
+  {
+  	"userId": "15268637096",
+  	"name": "POL-LFC1038test",
+  	"parent": {
+  		"id": "151708579869"
+  	}
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

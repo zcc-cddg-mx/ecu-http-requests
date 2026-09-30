@@ -1,0 +1,31 @@
+meta {
+  name: renewOnePolicy
+  type: http
+  seq: 10
+}
+
+post {
+  url: {{server}}/policy/api/v1/arizona/ov/renewal/onePolicy
+  body: json
+  auth: inherit
+}
+
+headers {
+  x-tenantid-1: ec
+  x-create-tx: true
+}
+
+body:json {
+  {
+      "_type": "OVPolicyRenwalSearchDTO",
+      "year": "2025",
+      "month": "10",
+      "idAgente": [],
+      "page": 0,
+      "pageSize": 1000
+  }
+}
+
+settings {
+  encodeUrl: true
+}

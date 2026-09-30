@@ -1,0 +1,21 @@
+meta {
+  name: Token - anonymous AWS UAT
+  type: http
+  seq: 99
+}
+
+get {
+  url: https://preprod-oficinavirtual.zurichseguros.com.ec/nuevoportal/user/api/v1/arizona/anonymous_token
+  body: none
+  auth: inherit
+}
+
+headers {
+  x-tenantId-1: ec
+  ~: 
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

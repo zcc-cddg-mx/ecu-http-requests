@@ -1,0 +1,168 @@
+meta {
+  name: Correct vehicle data
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{ _.server }}:{{ _.serverPort }}/policy/api/v1/arizona/motorGenericos/vehicle/vehicleData
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  User-Agent: insomnia/9.2.0
+  x-tenantId-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_40b110267b764a8f933a0e14bbd536b1', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+    "_type": "MotorGenericosTarificationRequest",
+    "testMode": false,
+    "policyNo": 459,
+    "motorGenericosTarification": {
+      "_type": "MotorGenericosTarification",
+      "policyData": {
+        "_type": "PolicyData",
+        "entityProperties": {},
+        "policyNo": 459,
+        "policyNumber": "COT-VH1692",
+        "productCode": "VH",
+        "variant": "MOTOR",
+        "pointOfSale": "2582",
+        "status": "WORKING",
+        "customStatus": "WORKING",
+        "agentSEId": 2583,
+        "effectiveDate": "2024-06-21T21:00:00Z",
+        "expirationDate": "2025-06-21T21:00:00Z",
+        "suggestedPolicyStartDate": "2024-06-21T21:00:00Z",
+        "uplaStatus": "APPROVED",
+        "nextInsurableObjectAllowed": "YES",
+        "paymentMethod": "1",
+        "ensuranceDocuments": [],
+        "endorsementIds": [],
+        "policyEndorsementIds": [],
+        "paymentMethodAllowed": [
+          "1",
+          "2",
+          "3"
+        ],
+        "downloadInvoice": true,
+        "downloadPolicy": true,
+        "consents": [],
+        "uplaUpdate": "NO",
+        "policyAgencies": []
+      },
+      "client": {
+        "_type": "PolicyRole",
+        "entityProperties": {},
+        "id": 16802,
+        "identificationType": "ID_CARD",
+        "identificationNumber": "1707334122",
+        "firstName": "KERRY XAVIER",
+        "secondName": "MARCILLO DIAZ",
+        "name": "KERRY XAVIER MARCILLO DIAZ",
+        "email": "doktor@ncdc.pl",
+        "mobilePhone": "12-34567890",
+        "phone": "12-3456789",
+        "mainAddress": "Test",
+        "mainAddressNo": "21",
+        "secondaryAddress": "22",
+        "nationalityId": "10345",
+        "fieldsInfo": {}
+      },
+      "car": {
+  			"_type": "VehicleData",
+  			"entityProperties": {
+  				"sumInsured": [
+  					{
+  						"_type": "FieldProperty",
+  						"propertyType": "MaxValue",
+  						"value": 200000
+  					}
+  				]
+  			},
+  			"objectNo": 460,
+  			"registrationNumber": "IBF2727",
+  			"chassisNumber": "LGWCBF197PJ613932",
+  			"engineNumber": "GW4D20M215A6064044",
+  			"productionYear": 2023,
+  			"typeOfVehicle": "CAMIONETA",
+  			"typeOfVehicleId": "73511",
+  			"make": "GREAT WALL",
+  			"makeId": "5067",
+  			"model": "POER AC 2.0 CD 4X2 TM DIESEL",
+  			"modelId": "14266601234479",
+  			"colorName": "BLANCO",
+  			"colorId": "12852592642",
+  			"isNewCar": "NO",
+  			"passengersNumber": "5",
+  			"isVehicleAddedManually": "NO",
+  			"ensuranceVehicleId": "318573755",
+  			"plans": [],
+  			"inspections": [],
+  			"referrals": [],
+  			"vehicleEquipment": [],
+  			"renewalInformation": {
+  				"_type": "RenewalInformation",
+  				"collectionInformation": {
+  					"_type": "CollectionInformation",
+  					"entityProperties": {}
+  				},
+  				"previousInformation": {
+  					"_type": "PreviousAndCurrentInformation",
+  					"previousPremiumValue": 1140.79,
+  					"previousInsuredValue": 37900,
+  					"previousRate": 3.01,
+  					"previousCommission": 0,
+  					"entityProperties": {}
+  				},
+  				"claimsInformation": {
+  					"_type": "ClaimsInformation",
+  					"annualLossRatio": 0,
+  					"level": "GREEN",
+  					"entityProperties": {}
+  				},
+  				"entityProperties": {}
+  			},
+  			"referralsRequired": [],
+  			"referralsOptional": [],
+  			"isBeingProcessed": "NO",
+  			"removable": "NO",
+  			"fieldsInfo": {
+  				"sumInsured": [
+  					null
+  				]
+  			},
+  			"sumInsured": null,
+  			"extraEquipmentSumInsured": null,
+  			"extraEquipmentSumInsuredMaxPct": null,
+  			"totalInsureMinValue": null,
+  			"totalInsureMaxValue": 200000
+  		},
+      "owner": {
+        "_type": "VehicleOwner",
+        "fieldsInfo": {},
+        "entityProperties": {},
+        "identificationNumber": null,
+        "name": null,
+        "gender": null,
+        "civilStatus": null,
+        "age": null
+      },
+      "cars": [],
+      "beneficiaries": [],
+      "planInformation": []
+    }
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

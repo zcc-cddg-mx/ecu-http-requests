@@ -1,0 +1,35 @@
+meta {
+  name: Upload File
+  type: http
+  seq: 11
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/automation/api/v1/arizona/zbox/file/upload
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "UploadZboxFileRequest",
+  	"testMode": "false",
+  	"id": {
+  		"documentId": "9024"
+  	}
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

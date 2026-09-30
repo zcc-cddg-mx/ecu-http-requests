@@ -1,0 +1,405 @@
+meta {
+  name: 2nd step - 1
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/policy/api/v1/arizona/policy_transactions/update
+  body: json
+  auth: bearer
+}
+
+headers {
+  x-tenantid-1: ec
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "PolicyUpdateTransactionRequest",
+  	"policy": {
+  		"_type": "ECPolicy",
+  		"createdAt": "2022-06-28T01:19:09.057-0500",
+  		"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  		"recordVersion": 0,
+  		"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  		"id": 3005,
+  		"updatedAt": "2022-06-28T06:19:09Z",
+  		"tenantId": "ec",
+  		"notes": "{}",
+  		"originalInceptionDate": "2022-06-28T05:00:00Z",
+  		"productId": 1041,
+  		"productCode": "LFC",
+  		"variantId": 1021,
+  		"variantCode": "CORPORATIVO_VIDA",
+  		"partyRoles": [
+  			{
+  				"_type": "AgreementPartyRole",
+  				"tenantId": "ec",
+  				"partyRole": "POLICY_HOLDER",
+  				"partyId": 9952,
+  				"isLeader": "NO"
+  			},
+  			{
+  				"_type": "AgreementPartyRole",
+  				"createdAt": "2022-06-28T01:19:09.158-0500",
+  				"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"recordVersion": 1,
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 2957,
+  				"updatedAt": "2022-06-28T01:19:09.342-0500",
+  				"tenantId": "ec",
+  				"partyId": 2583,
+  				"partyRole": "POLICY_AGENT",
+  				"share": 100,
+  				"isLeader": "YES",
+  				"agreementId": 3005
+  			},
+  			{
+  				"_type": "AgreementPartyRole",
+  				"createdAt": "2022-06-28T01:19:09.160-0500",
+  				"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"recordVersion": 1,
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 2958,
+  				"updatedAt": "2022-06-28T01:19:09.342-0500",
+  				"tenantId": "ec",
+  				"partyId": 1975,
+  				"partyRole": "LIFE_COMMERCIAL_EXECUTIVE",
+  				"agreementId": 3005,
+  				"isLeader": "NO"
+  			}
+  		],
+  		"commissionSplits": [
+  			{
+  				"_type": "AgreementCommissionSplit",
+  				"createdAt": "2022-06-28T01:19:09.161-0500",
+  				"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"recordVersion": 1,
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 5,
+  				"updatedAt": "2022-06-28T01:19:09.342-0500",
+  				"agreementAgentRole": "CoBroker",
+  				"structureElementId": 2583,
+  				"share": 100,
+  				"commissionPercent": 0,
+  				"effectiveDate": "2022-06-28T06:19:08Z",
+  				"isLeader": "YES",
+  				"agreementId": 3005
+  			}
+  		],
+  		"displayName": "Vida Corporativo",
+  		"policyNo": 101,
+  		"policyNumber": "COT-LFC1002",
+  		"effectiveDate": "2022-06-28T05:00:00Z",
+  		"expirationDate": "2023-06-28T05:00:00Z",
+  		"annualEffectiveDate": "2022-06-28T05:00:00Z",
+  		"annualExpirationDate": "2023-06-28T05:00:00Z",
+  		"status": "WORKING",
+  		"customStatus": "WORKING",
+  		"productClass": "GROUP",
+  		"paymentTerms": "PREMIUM_30",
+  		"paymentMethod": "1",
+  		"currency": "USD",
+  		"yearOfPolicy": 1,
+  		"proRataMethod": "PR360E",
+  		"renewalMode": "NONE",
+  		"policyTransaction": {
+  			"_type": "PolicyTransaction",
+  			"createdAt": "2022-06-28T01:18:45.669-0500",
+  			"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  			"recordVersion": 5,
+  			"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  			"id": 2963,
+  			"updatedAt": "2022-06-28T01:18:45.852-0500",
+  			"tenantId": "ec",
+  			"policyNo": 101,
+  			"policyNumber": "COT-LFC1002",
+  			"transactionType": "Update",
+  			"transactionDate": "2022-06-28T06:18:45Z",
+  			"transactionStatus": "PENDING",
+  			"transactionMode": "INTERACTIVE",
+  			"transactionUniqueId": "YxYTwkwRfbVrcXA",
+  			"contextName": "CLIENT-INFO-ID",
+  			"policyId": 3005
+  		},
+  		"transactionReason": "FORCE_REFERRAL_CHECK",
+  		"billingType": "SUBSCRIPTION",
+  		"billingBindingEntity": "POLICY",
+  		"accountingLevel": "NONE",
+  		"insurableObjects": [
+  			{
+  				"_type": "LifeGeneralData",
+  				"createdAt": "2022-06-28T01:19:09.060-0500",
+  				"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"recordVersion": 0,
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 2956,
+  				"updatedAt": "2022-06-28T01:19:09.060-0500",
+  				"tenantId": "ec",
+  				"objectNo": 100,
+  				"insurableObjectTypeId": 1041,
+  				"insurableObjectClass": "SIMPLE",
+  				"policyNo": 101,
+  				"effectiveDate": "2022-06-28T00:00:00.000-0500",
+  				"expirationDate": "2023-06-28T00:00:00.000-0500",
+  				"annualEffectiveDate": "2022-06-28T00:00:00.000-0500",
+  				"annualExpirationDate": "2023-06-28T00:00:00.000-0500",
+  				"originalInceptionDate": "2022-06-28T00:00:00.000-0500",
+  				"yearOfObject": 1,
+  				"orderNo": 1,
+  				"informationOnly": "YES",
+  				"groupPlans": [],
+  				"policyAmounts": [],
+  				"policyDeductibles": [],
+  				"policyLimits": [],
+  				"policyCoverageDetails": [],
+  				"partyRoles": [],
+  				"hasActiveCoverages": "YES",
+  				"clauses": [],
+  				"policyPendings": [],
+  				"displayName": "Vida Corporativo",
+  				"policyId": 3005,
+  				"percentageOfParticipation": 0,
+  				"previousInsurance": "NO",
+  				"typeSumInsured": "UNIFORM",
+  				"requestComChange": "NO",
+  				"temporaryCoverRequired": "NO",
+  				"uwDiscount": 0,
+  				"credibilityRate": 0,
+  				"spouseYn": "NO",
+  				"childrenYn": "NO",
+  				"individualCertificatesYn": "NO",
+  				"titularYn": "NO",
+  				"currentUserProfile": "LIFE_COMMERCIAL_EXECUTIVE",
+  				"percentageOfParticipationYN": "NO"
+  			}
+  		],
+  		"policyAmounts": [
+  			{
+  				"_type": "PolicyAmount",
+  				"createdAt": "2022-06-28T01:19:09.061-0500",
+  				"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"recordVersion": 1,
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 10282,
+  				"updatedAt": "2022-06-28T01:19:09.341-0500",
+  				"tenantId": "ec",
+  				"amount": 0,
+  				"amountType": "TP"
+  			},
+  			{
+  				"_type": "PolicyAmount",
+  				"createdAt": "2022-06-28T01:19:09.063-0500",
+  				"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"recordVersion": 1,
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 10283,
+  				"updatedAt": "2022-06-28T01:19:09.341-0500",
+  				"tenantId": "ec",
+  				"amount": 0,
+  				"amountType": "AP",
+  				"factor": 1
+  			},
+  			{
+  				"_type": "PolicyAmount",
+  				"createdAt": "2022-06-28T01:19:09.064-0500",
+  				"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"recordVersion": 1,
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 10284,
+  				"updatedAt": "2022-06-28T01:19:09.341-0500",
+  				"tenantId": "ec",
+  				"amount": 0,
+  				"amountType": "INSTALMENT_COUNT_1"
+  			},
+  			{
+  				"_type": "PolicyAmount",
+  				"createdAt": "2022-06-28T01:19:09.065-0500",
+  				"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"recordVersion": 1,
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 10285,
+  				"updatedAt": "2022-06-28T01:19:09.341-0500",
+  				"tenantId": "ec",
+  				"amount": 0,
+  				"amountType": "INSTALMENT_COUNT_2"
+  			},
+  			{
+  				"_type": "PolicyAmount",
+  				"createdAt": "2022-06-28T01:19:09.070-0500",
+  				"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"recordVersion": 1,
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 10286,
+  				"updatedAt": "2022-06-28T01:19:09.341-0500",
+  				"tenantId": "ec",
+  				"amount": 0,
+  				"amountType": "INSTALMENT_COUNT_3"
+  			},
+  			{
+  				"_type": "PolicyAmount",
+  				"createdAt": "2022-06-28T01:19:09.071-0500",
+  				"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"recordVersion": 1,
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 10287,
+  				"updatedAt": "2022-06-28T01:19:09.341-0500",
+  				"tenantId": "ec",
+  				"amount": 0,
+  				"amountType": "INSTALMENT_COUNT_4"
+  			},
+  			{
+  				"_type": "PolicyAmount",
+  				"createdAt": "2022-06-28T01:19:09.074-0500",
+  				"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"recordVersion": 1,
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 10288,
+  				"updatedAt": "2022-06-28T01:19:09.342-0500",
+  				"tenantId": "ec",
+  				"amount": 0,
+  				"amountType": "INSTALMENT_COUNT_5"
+  			},
+  			{
+  				"_type": "PolicyAmount",
+  				"createdAt": "2022-06-28T01:19:09.076-0500",
+  				"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"recordVersion": 1,
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 10289,
+  				"updatedAt": "2022-06-28T01:19:09.342-0500",
+  				"tenantId": "ec",
+  				"amount": 0,
+  				"amountType": "INSTALMENT_COUNT_6"
+  			},
+  			{
+  				"_type": "PolicyAmount",
+  				"createdAt": "2022-06-28T01:19:09.077-0500",
+  				"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"recordVersion": 1,
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 10290,
+  				"updatedAt": "2022-06-28T01:19:09.342-0500",
+  				"tenantId": "ec",
+  				"amount": 0,
+  				"amountType": "INSTALMENT_COUNT_7"
+  			},
+  			{
+  				"_type": "PolicyAmount",
+  				"createdAt": "2022-06-28T01:19:09.078-0500",
+  				"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"recordVersion": 1,
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 10291,
+  				"updatedAt": "2022-06-28T01:19:09.342-0500",
+  				"tenantId": "ec",
+  				"amount": 0,
+  				"amountType": "INSTALMENT_COUNT_8"
+  			},
+  			{
+  				"_type": "PolicyAmount",
+  				"createdAt": "2022-06-28T01:19:09.079-0500",
+  				"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"recordVersion": 1,
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 10292,
+  				"updatedAt": "2022-06-28T01:19:09.342-0500",
+  				"tenantId": "ec",
+  				"amount": 0,
+  				"amountType": "INSTALMENT_COUNT_9"
+  			},
+  			{
+  				"_type": "PolicyAmount",
+  				"createdAt": "2022-06-28T01:19:09.079-0500",
+  				"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"recordVersion": 1,
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 10293,
+  				"updatedAt": "2022-06-28T01:19:09.342-0500",
+  				"tenantId": "ec",
+  				"amount": 0,
+  				"amountType": "INSTALMENT_COUNT_10"
+  			},
+  			{
+  				"_type": "PolicyAmount",
+  				"createdAt": "2022-06-28T01:19:09.080-0500",
+  				"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"recordVersion": 1,
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 10294,
+  				"updatedAt": "2022-06-28T01:19:09.342-0500",
+  				"tenantId": "ec",
+  				"amount": 0,
+  				"amountType": "INSTALMENT_COUNT_11"
+  			},
+  			{
+  				"_type": "PolicyAmount",
+  				"createdAt": "2022-06-28T01:19:09.081-0500",
+  				"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"recordVersion": 1,
+  				"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  				"id": 10295,
+  				"updatedAt": "2022-06-28T01:19:09.342-0500",
+  				"tenantId": "ec",
+  				"amount": 0,
+  				"amountType": "INSTALMENT_COUNT_12"
+  			}
+  		],
+  		"policyDeductibles": [],
+  		"policyLimits": [],
+  		"policyCoverageParts": [],
+  		"policyCoverageDetails": [],
+  		"masterPolicies": [],
+  		"groupPlans": [],
+  		"clauses": [],
+  		"policyPendings": [],
+  		"agentId": 2583,
+  		"previousClaimYears": "NO",
+  		"pointOfSale": "18959",
+  		"ensurancePolicyIds": [],
+  		"ensuranceInvoices": [],
+  		"endorsements": [],
+  		"lineOfBusiness": [
+  			"LIFE"
+  		],
+  		"agentSEId": 2583,
+  		"branchSEId": 9,
+  		"distributionChannel": "2",
+  		"policyEnsuranceEndorsements": [],
+  		"isRenewal": "NO",
+  		"complianceStatus": "APPROVED",
+  		"complianceIdentification": "1720728557"
+  	},
+  	"transaction": {
+  		"_type": "PolicyTransaction",
+  		"createdAt": "2022-06-28T01:18:45.669-0500",
+  		"updatedBy": "819df9e5-330a-4125-b781-c94f12501061",
+  		"recordVersion": 5,
+  		"createdBy": "819df9e5-330a-4125-b781-c94f12501061",
+  		"id": 2963,
+  		"updatedAt": "2022-06-28T01:18:45.852-0500",
+  		"tenantId": "ec",
+  		"policyNo": 101,
+  		"policyNumber": "COT-LFC1002",
+  		"transactionType": "Update",
+  		"transactionDate": "2022-06-28T06:18:45Z",
+  		"transactionStatus": "PENDING",
+  		"transactionMode": "INTERACTIVE",
+  		"transactionUniqueId": "YxYTwkwRfbVrcXA",
+  		"contextName": "CLIENT-INFO-ID",
+  		"policyId": 3005
+  	},
+  	"transactionType": "Update"
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

@@ -1,0 +1,29 @@
+meta {
+  name: 3. CORE MODELO- MOTOR MANAGEMENT SERVICE
+  type: http
+  seq: 4
+}
+
+get {
+  url: https://api-uat.zurichseguros.com.ec/motor-management-s0056/v1/model?name=TRAIL&brandId=5036
+  body: none
+  auth: bearer
+}
+
+params:query {
+  name: TRAIL
+  brandId: 5036
+}
+
+headers {
+  x-api-key: DmwGBfgWng9HoLs7CNMyD8Lb1Aj1o1Y9SbKnJ59h
+}
+
+auth:bearer {
+  token: {{token_security_service}}
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

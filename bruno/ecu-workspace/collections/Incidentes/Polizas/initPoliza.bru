@@ -1,0 +1,96 @@
+meta {
+  name: initPoliza
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{server}}/policy/api/v1/arizona/policy_transactions/init
+  body: json
+  auth: bearer
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+      "_type": "PolicyInitTransactionRequest",
+      "transactionType": "Update",
+      "savePolicyVersion": false,
+      "policy": {
+          "_type": "ECPolicy",
+          "paymentMethod": "1",
+          "currency": "USD",
+          "productCode": "PY",
+          "partyRoles": [
+              {
+                  "_type": "AgreementPartyRole",
+                  "tenantId": "ec",
+                  "partyRole": "POLICY_HOLDER",
+                  "partyId": 481152,
+                  "isLeader": "NO"
+              },
+              {
+                  "_type": "AgreementPartyRole",
+                  "tenantId": "ec",
+                  "partyRole": "POLICY_AGENT",
+                  "partyId": 188359,
+                  "share": 100,
+                  "isLeader": "YES"
+              }
+          ],
+          "policyTransaction": {
+              "_type": "PolicyTransaction",
+              "contextName": "client-data"
+          },
+          "isRenewal": "NO",
+          "commissionSplits": [],
+          "endorsements": [],
+          "ensuranceInvoices": [],
+          "insurableObjects": [
+              {
+                  "_type": "Pymes",
+                  "fireExtinguishers": "NO",
+                  "fireSmokeDetector": "NO",
+                  "fireCabinetsFire": "NO",
+                  "fireSprinklers": "NO",
+                  "theftAlarmMonitored": "NO",
+                  "theftArmedGuardRobbery": "NO",
+                  "theftSecurityCameras": "NO",
+                  "theftEnclosure": "NO",
+                  "electrEquipmentVoltageRegulators": "NO",
+                  "policyCoverageDetails": [],
+                  "policyAmounts": [],
+                  "policyLimits": [],
+                  "policyPendings": [],
+                  "policyDeductibles": [],
+                  "productType": "7",
+                  "economicActivity": "13",
+                  "subEconomicActivity": "13_722330"
+              }
+          ],
+          "policyAmounts": [],
+          "policyLimits": [],
+          "policyPendings": [],
+          "clauses": [],
+          "previousClaimYears": "NO",
+          "groupPlans": [],
+          "notes": "{}",
+          "pointOfSale": "188362",
+          "complianceStatus": "APPROVED",
+          "complianceIdentification": "1313199067",
+          "claimReason": null,
+          "claimValue": null
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

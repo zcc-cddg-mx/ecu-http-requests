@@ -1,0 +1,27 @@
+meta {
+  name: documentRequestId
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{server}}/document/api/v1/arizona/documents?documentRequestId=994854
+  body: none
+  auth: bearer
+}
+
+params:query {
+  documentRequestId: 994854
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+}

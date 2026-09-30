@@ -1,0 +1,38 @@
+meta {
+  name: Swap document for payment instruction
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{ server }}:{{ serverPort }}/accounting/api/v1/arizona/draft-payment-instruction/swap-document?=
+  body: json
+  auth: bearer
+}
+
+params:query {
+  : 
+}
+
+headers {
+  x-tenantId-1: ec
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'when-expired', 300 %}
+}
+
+body:json {
+  {
+  	"_type": "ModifyPaymentInstructionDocument",
+  	"paymentInstructionId": 502,
+  	"documentId": 11,
+  	"documentName": "docName"
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

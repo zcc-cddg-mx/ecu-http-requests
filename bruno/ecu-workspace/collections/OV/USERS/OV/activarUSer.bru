@@ -1,0 +1,19 @@
+meta {
+  name: activarUSer
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{server}}/user/api/v1/arizona/userStatus/operation/enable/3db7e76b-eef4-4447-b7a9-3b330cdd9804
+  body: json
+  auth: inherit
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+settings {
+  encodeUrl: true
+}

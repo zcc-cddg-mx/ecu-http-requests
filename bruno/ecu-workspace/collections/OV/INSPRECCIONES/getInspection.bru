@@ -1,0 +1,19 @@
+meta {
+  name: getInspection
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{server}}/policy/api/v1/arizona/inspections/293757
+  body: json
+  auth: inherit
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+settings {
+  encodeUrl: true
+}

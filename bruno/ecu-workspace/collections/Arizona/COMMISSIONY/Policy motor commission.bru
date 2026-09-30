@@ -1,0 +1,28 @@
+meta {
+  name: Policy motor commission
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{ _.server }}/policy/api/v1/arizona/motorGenericos/policies/motorGenericos?policyNumber=COT-VH1414
+  body: none
+  auth: bearer
+}
+
+params:query {
+  policyNumber: COT-VH1414
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_40b110267b764a8f933a0e14bbd536b1', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

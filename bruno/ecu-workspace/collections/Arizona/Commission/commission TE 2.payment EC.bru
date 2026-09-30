@@ -1,0 +1,60 @@
+meta {
+  name: commission TE 2.payment EC
+  type: http
+  seq: 11
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/accounting/api/v1/arizona/payments?=
+  body: json
+  auth: bearer
+}
+
+params:query {
+  : 
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantId-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "ECGeneratePaymentRequest",
+  	"action": "CREATE",
+  	"generateDate": "2021-07-06",
+  	"paymentRuleName": "COMM_PAYMENT",
+  	"commVatWithholdings": 0,
+  	"commContribution": -21,
+  	"commWithholdings": -34,
+  	"interfaceName": "AGENT",
+  	"commComponentSource": "AGENT",
+  	"commComponentValue": "COMPN",
+  	"dimAgentType": "PN",
+  	"dimBasketSegment": "EC_SME_P",
+  	"dimCounterparty": "PN",
+  	"dimLineOfBusiness": "E0201",
+  	"dimOffice": "EC01",
+  	
+  	"paymentRuleRangeRestrictions": [
+  		{
+  			"_type": "PaymentRuleRangeRestriction",
+  			"rangeType": "TRANSACTION_ID",
+  			"rangeValueNum": [
+  				21952, 21953
+  			],
+  			"action": "I"
+  		}
+  	]
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

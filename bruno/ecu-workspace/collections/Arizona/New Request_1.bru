@@ -1,0 +1,199 @@
+meta {
+  name: New Request_1
+  type: http
+  seq: 27
+}
+
+post {
+  url: http://10.113.84.20:8000/zurich/api/policy/policyissue/v1.0/pymes
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  User-Agent: insomnia/10.2.0
+}
+
+body:json {
+  {
+  	"user": {
+  		"issuanceUser": {
+  			"userName": "asalazar",
+  			"name": "ADRIANA BELEN SALAZAR VENEGAS",
+  			"application": "AIZONA"
+  		},
+  		"brokerId": "1"
+  	},
+  	"client": {
+  		"clientId": "352690061",
+  		"entityId": "352690060",
+  		"identificationType": "c",
+  		"identificationNumber": "1751639970",
+  		"name": "SEBASTIAN",
+  		"lastName": "RODRIGUEZ",
+  		"fullName": "SEBASTIAN RODRIGUEZ",
+  		"phoneNumber": "02-2409319",
+  		"cellphoneNumber": "09-87635423",
+  		"email": "sebastian.rodriguez2@zurich.com",
+  		"nationality": "INDIA",
+  		"nationalityId": "10358",
+  		"mainStreet": "STREET TEST1",
+  		"number": "STREET TEST2 ",
+  		"secondaryStreet": "STREET TEST3",
+  		"city": "La Concordia"
+  	},
+  	"container": {
+  		"creationDate": "2025-01-07T11:29:38.000Z",
+  		"businessUnitId": "2723086336",
+  		"pointOfSaleId": "100049551361",
+  		"branchOfficeId": "91",
+  		"productionUnitId": "1646696470404",
+  		"validSince": "2025-01-07T00:00:00.001Z",
+  		"validUntil": "2026-01-07T00:00:00.001Z",
+  		"quotationNumber": "COT-PY42826",
+  		"businessAreaId": "3",
+  		"distributionChannelId": "2",
+  		"marketSegmentId": "6",
+  		"agents": [
+  			{
+  				"agentsId": "1",
+  				"isLeader": true,
+  				"percent": 100
+  			}
+  		],
+  		"product": [
+  			{
+  				"constructionYear": 2012,
+  				"floorsNumber": 1,
+  				"insuredValue": 3,
+  				"buildingMaterialId": "121",
+  				"riskZone": "Santo domingo de los tsáchilas",
+  				"location": {
+  					"address": "laspalmas",
+  					"cityId": "2876309522",
+  					"latitude": "-0.2521882",
+  					"longitude": "-79.187938"
+  				},
+  				"totalInsuredValue": 3,
+  				"insuredEdificios": [
+  					{
+  						"itemInsured": "Estructuras",
+  						"itemInsuredValue": 1
+  					}
+  				],
+  				"insuredContenido": [
+  					{
+  						"itemInsured": "Muebles y enseres",
+  						"itemInsuredValue": 1
+  					},
+  					{
+  						"itemInsured": "Maquinaria",
+  						"itemInsuredValue": 1
+  					}
+  				],
+  				"insuredEFlotante": [],
+  				"coverages": [
+  					{
+  						"lobId": "7208961",
+  						"economicActivity": "Casa Habitación",
+  						"templateId": "12339733269062",
+  						"subcoverages": [
+  							{
+  								"coverageId": "2686582784",
+  								"premium": 0,
+  								"cost": 3
+  							},
+  							{
+  								"coverageId": "1315962898",
+  								"rate": 0.042,
+  								"premium": 0,
+  								"cost": 3
+  							},
+  							{
+  								"coverageId": "1315962899",
+  								"rate": 0.098,
+  								"premium": 0,
+  								"cost": 3
+  							},
+  							{
+  								"coverageId": "13374356127748",
+  								"premium": 0,
+  								"cost": 0
+  							}
+  						],
+  						"deductibles": [
+  							{
+  								"text": "OtrosEventos",
+  								"subdeductibles": [
+  									{
+  										"value": "10%",
+  										"type": "1"
+  									},
+  									{
+  										"value": "500",
+  										"type": "3"
+  									}
+  								]
+  							},
+  							{
+  								"text": "Motin,huelgaydañomalicioso",
+  								"subdeductibles": [
+  									{
+  										"value": "10%",
+  										"type": "1"
+  									},
+  									{
+  										"value": "250",
+  										"type": "3"
+  									}
+  								]
+  							},
+  							{
+  								"text": "Terremoto,Temblory/oErupciónVolcánica,LluviaeInundaciónyColapso",
+  								"subdeductibles": [
+  									{
+  										"value": "2%",
+  										"type": "2"
+  									},
+  									{
+  										"value": "500",
+  										"type": "3"
+  									}
+  								]
+  							},
+  							{
+  								"text": "ErupciónvolcánicaparariesgosubicadosenzonadelaharesdelVolcánCotopaxiconunadistanciadesde0hasta5km",
+  								"subdeductibles": [
+  									{
+  										"value": "3%",
+  										"type": "2"
+  									},
+  									{
+  										"value": "500",
+  										"type": "3"
+  									}
+  								]
+  							}
+  						]
+  					}
+  				],
+  				"renewal": false,
+  				"isRenewal": false,
+  				"NAICSCatalogId": "814110"
+  			}
+  		],
+  		"paymentType": {
+  			"creditCardPayment": true,
+  			"bankTransfer": false,
+  			"bankDebit": false,
+  			"directCredit": false
+  		}
+  	}
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

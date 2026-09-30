@@ -1,0 +1,56 @@
+meta {
+  name: ZBox UpdateMetadata
+  type: http
+  seq: 10
+}
+
+post {
+  url: http://10.119.74.24:8000/zurich/api/collection/box/v1.0/updateMetadata
+  body: json
+  auth: basic
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:basic {
+  username: zurich
+  password: password2018
+}
+
+body:json {
+  {
+  	"userId": "15268637096",
+  	"appName": "ARIZONA",
+  	"moduleName": "Pre-emisión",
+  	"year": 2022,
+  	"registryId": "",
+  	"registryNumber": 1,
+  	"registryDescription": "Person list, 5 people 2022-01-13T13:18:55.105 7954",
+  	"customerId": "1707334122",
+  	"customerData": "ANGEL ALFREDO GOMEZ MOLINA",
+  	"policyData": "COT-LFC1000",
+  	"claimID": "",
+  	"processId": "",
+  	"endorsementId": "",
+  	"fileCreationDate": "2022-01-13T09:46:03.984",
+  	"fileName": "Person list, 5 people 2022-01-13T13:18:55.105",
+  	"fileType": "xlsx",
+  	"beneficiaryId": "",
+  	"beneficiaryData": "",
+  	"retentionType": "",
+  	"vehicleId": "",
+  	"brokerFullName": "CARLOS ESTEBAN PICO FLORES",
+  	"customerFullName": "ANGEL ALFREDO GOMEZ MOLINA",
+  	"claimBranch": "",
+  	"lob": "",
+  	"workflowOpID": "",
+  	"fileId": "905683288699"
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

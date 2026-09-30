@@ -1,0 +1,69 @@
+meta {
+  name: Create credit note
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/accounting/api/v1/arizona/transaction_entries?=
+  body: json
+  auth: bearer
+}
+
+params:query {
+  : 
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantId-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "ECTransactionEntryRequest",
+  	"accountPartyId": 10956,
+  	"transAmt": -130000,
+  	"exchangeRate": 1,
+  	"transCurrencyCode": "USD",
+  	"invoiceStartDate": "2021-03-01",
+  	"invoiceEndDate": "2021-06-30",
+  	"policyEffectiveYear": "2021-03-01",
+  	"transClass": "INSTALLMENT",
+  	"transSubclass": "POLICY",
+  	"policyNo": 888,
+  	"policyNumber": "POL-LFC1000",
+  	"policyAmountId": 1234,
+  	"transactionTypeCode": "P1",
+  	"productType": "LFC",
+  	"billingNumber": "{% now 'millis', '' %}",
+  	"instalmentPlanId": 333,
+  	"yearAdjustmentNo": "1",
+  	"operationType": "EC0001",
+  	"paymentMethodCode": "BANK_TRANSFER",
+  	"dueDate": "2021-11-22",
+  	"paymentInstructionId": 1,
+  	"transactionComponents": [
+  		{
+  			"_type": "ECTransactionComponent",
+  			"componentSource": "POLICY",
+  			"componentSourceValue": "GROSS",
+  			"componentAccAmt": 130000,
+  			"componentCurrencyCode": "USD",
+  			"lineOfBusiness": "E0201",
+  			"distributionChannel": "DC0104",
+  			"basketSegment": "EC_SME_P",
+  			"office": "EC01"
+  		}
+  	]
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

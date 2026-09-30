@@ -1,0 +1,29 @@
+meta {
+  name: Search
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{ _.server }}:{{ _.serverPort }}/reinsurance/api/v1/arizona/ec/bordereaus/search
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantId-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_525b94c4be87496999dc6053f519009c', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {"_type":"BordereauSearch","params":{"page":"0","pageSize":"20"}}
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

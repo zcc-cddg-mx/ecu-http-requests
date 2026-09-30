@@ -1,0 +1,20 @@
+meta {
+  name: version copy
+  type: http
+  seq: 17
+}
+
+get {
+  url: https://10.225.196.20/release/api/v1/arizona/version
+  body: json
+  auth: inherit
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

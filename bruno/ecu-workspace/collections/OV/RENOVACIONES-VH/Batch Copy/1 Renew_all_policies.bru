@@ -1,0 +1,25 @@
+meta {
+  name: 1 Renew_all_policies
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{server}}/scheduler/api/v1/arizona/schedulers/motorAutomaticRenewal/launch
+  body: none
+  auth: bearer
+}
+
+headers {
+  x-tenantid-1: ec
+  x-create-tx: true
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

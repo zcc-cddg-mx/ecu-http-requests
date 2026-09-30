@@ -1,0 +1,36 @@
+meta {
+  name: CH renew manual
+  type: http
+  seq: 56
+}
+
+post {
+  url: https://preprod-oficinavirtual.zurichseguros.com.ec/nuevoportal/policy/api/v1/arizona/ch/renewal/manual
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  User-Agent: insomnia/9.2.0
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_40b110267b764a8f933a0e14bbd536b1', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"quoteNumber": "COT-CH1002",
+  	"agentId": "77288048344",
+  	"customerId": "1205932211",
+  	"structureInsuredValue": 30000,
+  	"contentInsuredValue": 10000,
+  	"policyEndDate": "2023-10-01T00:00:00"
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

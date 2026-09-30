@@ -1,0 +1,43 @@
+meta {
+  name: Create final payment instruction
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/accounting/api/v1/arizona/ec/payment_instructions/bank/create?=
+  body: multipartForm
+  auth: bearer
+}
+
+params:query {
+  : 
+}
+
+headers {
+  x-tenantId-1: ec
+  Content-Type: multipart/form-data
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_525b94c4be87496999dc6053f519009c', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'when-expired', 300 %}
+}
+
+body:multipart-form {
+  request: '''
+    {
+    	"_type": "CreateFinalBankPaymentInstructionRequest",
+    	"partyId": 9952,
+    	"bankId": 292,
+    	"bankAccountNumber": "PL12312321312",
+    	"bankAccountOwner": "ANA RODRIGUEZ JARAMILLO",
+    	"isDefault": "YES"
+    }
+  '''
+  file: @file(C:\Users\cziken\Desktop\Test data\test.pdf)
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

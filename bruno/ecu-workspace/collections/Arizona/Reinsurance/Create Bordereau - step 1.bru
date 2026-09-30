@@ -1,0 +1,40 @@
+meta {
+  name: Create Bordereau - step 1
+  type: http
+  seq: 13
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/reinsurance/api/v1/arizona/bordereaus/create
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "BordereauRequest",
+  	"programNo": "programNo",
+  	"contractNo": "contractNo",
+  	"reinsurerId": "1",
+  	"startDate": "2021-01-01",
+  	"endDate": "2021-06-31",
+  	
+  	"bordereauPremiumIds": [1],
+  	"bordereauClaimIds": [1],
+  	"bordereauStatus": "OPEN"
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

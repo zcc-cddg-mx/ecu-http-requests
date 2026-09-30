@@ -1,0 +1,27 @@
+meta {
+  name: DOESNT WORK
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://www.cziken.arinet/report/api/v1/arizona/ov/overview?query=NOT%20customStatus:(ACCEPTED%20OR%20AWAITING%20OR%20DECLINED%20OR%20EXPIRED%20OR%20PENDING_FORM_AUTH%20OR%20TERMINATED)%20AND%20policyNumber:*CH*%20AND%20agentSeId:7&pageSize=20&page=0&index=DB_POLICY_VIEW
+  body: none
+  auth: bearer
+}
+
+params:query {
+  query: NOT%20customStatus:(ACCEPTED%20OR%20AWAITING%20OR%20DECLINED%20OR%20EXPIRED%20OR%20PENDING_FORM_AUTH%20OR%20TERMINATED)%20AND%20policyNumber:*CH*%20AND%20agentSeId:7
+  pageSize: 20
+  page: 0
+  index: DB_POLICY_VIEW
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

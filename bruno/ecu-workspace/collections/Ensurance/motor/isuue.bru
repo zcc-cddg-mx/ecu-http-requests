@@ -1,0 +1,245 @@
+meta {
+  name: isuue
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://10.113.84.20:8000/zurich/api/policy/policyissue/v1.0/motor
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: zurich
+  password: password2018
+}
+
+body:json {
+  {
+    "user": {
+      "issuanceUser": {
+        "userName": "asalazar",
+        "name": "ADRIANA BELEN SALAZAR VENEGAS",
+        "application": "AIZONA"
+      },
+      "brokerId": "1"
+    },
+    "client": {
+      "clientId": "352690061",
+      "entityId": "352690060",
+      "identificationType": "c",
+      "identificationNumber": "1751639970",
+      "name": "SEBASTIAN",
+      "lastName": "RODRIGUEZ",
+      "fullName": "SEBASTIAN RODRIGUEZ",
+      "phoneNumber": "09-9999999",
+      "cellphoneNumber": "09-99999999",
+      "email": "sebastian.rodriguez2@zurich.com",
+      "nationality": "ECUADOR",
+      "nationalityId": "10345",
+      "mainStreet": "CALLE PRINCIPAL TEST 4",
+      "number": "N42-115",
+      "secondaryStreet": "CALLE SECUNDARAI TEST 5",
+      "city": ""
+    },
+    "container": {
+      "renewal": false,
+      "creditScore": "AA",
+      "pendingPayment": true,
+      "product": [
+        {
+          "containerId": "13362306879087",
+          "lobId": "61491839606",
+          "productId": "13348376127975",
+          "vehicle": {
+            "plate": "SFVSE23",
+            "chassis": "STBS33",
+            "motorSku": "vsdf77",
+            "modelId": "10227316968043",
+            "vehicleTypeId": "13865582593",
+            "useTypeId": "14942208",
+            "year": 2023,
+            "passengersNumber": "5",
+            "ownerIdentification": "1751639970",
+            "owner": "SEBASTIAN RODRIGUEZ",
+            "colorId": "59571847"
+          },
+          "planId": "1",
+          "colorId": "59571847",
+          "riskZone": "PICHINCHA",
+          "insuredValue": 54000,
+          "rateValue": 4.5,
+          "netPremium": 2480.12,
+          "extras": [],
+          "coverages": [
+            {
+              "coverageId": "40010",
+              "rate": 4.5,
+              "premium": 2430,
+              "cost": 54000
+            },
+            {
+              "coverageId": "13354831264718",
+              "premium": 0
+            },
+            {
+              "coverageId": "40018",
+              "premium": 20.8
+            },
+            {
+              "coverageId": "13358841919820",
+              "premium": 0,
+              "cost": 15
+            },
+            {
+              "coverageId": "12471363599450",
+              "rate": 0.14,
+              "premium": 0,
+              "cost": 15000
+            },
+            {
+              "coverageId": "40031",
+              "rate": 0.35,
+              "premium": 0,
+              "cost": 40000
+            },
+            {
+              "coverageId": "40025",
+              "rate": 0.67,
+              "premium": 0,
+              "cost": 10000
+            },
+            {
+              "coverageId": "40014",
+              "premium": 0,
+              "cost": 300
+            },
+            {
+              "coverageId": "40026",
+              "premium": 0,
+              "cost": 4000
+            },
+            {
+              "coverageId": "40044",
+              "premium": 0,
+              "cost": 1000
+            },
+            {
+              "coverageId": "5995137401526",
+              "premium": 0
+            },
+            {
+              "coverageId": "13358841919807",
+              "premium": 0
+            },
+            {
+              "coverageId": "13358841919832",
+              "premium": 0
+            },
+            {
+              "coverageId": "5350909941499",
+              "premium": 0,
+              "cost": 300
+            },
+            {
+              "coverageId": "5350909941500",
+              "premium": 0,
+              "cost": 1000
+            },
+            {
+              "coverageId": "15203618306797",
+              "premium": 29.32
+            }
+          ],
+          "deductibles": [
+            {
+              "text": "DEDUCIBLES PERDIDA TOTAL CUALQUIER CAUSA",
+              "subdeductibles": [
+                {
+                  "value": "15%",
+                  "type": "2"
+                }
+              ]
+            },
+            {
+              "text": "DEDUCIBLES PERDIDA PARCIAL",
+              "subdeductibles": [
+                {
+                  "value": "300",
+                  "type": "3"
+                }
+              ]
+            },
+            {
+              "text": "DEDUCIBLES PERDIDA PARCIAL",
+              "subdeductibles": [
+                {
+                  "value": "10%",
+                  "type": "1"
+                }
+              ]
+            },
+            {
+              "text": "DEDUCIBLES PERDIDA PARCIAL",
+              "subdeductibles": [
+                {
+                  "value": "1%",
+                  "type": "2"
+                }
+              ]
+            },
+            {
+              "text": "Pérdida total por robo:",
+              "subdeductibles": [
+                {
+                  "value": "20%",
+                  "type": "2"
+                }
+              ]
+            },
+            {
+              "text": "DEDUCIBLE AMPARO PATRIMONIAL",
+              "subdeductibles": [
+                {
+                  "value": "0",
+                  "type": "3"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "creationDate": "2024-09-10T06:59:38.184Z",
+      "businessUnitId": "65537",
+      "pointOfSaleId": "100049551361",
+      "branchOfficeId": "91",
+      "productionUnitId": "1646696470406",
+      "validSince": "2024-09-10T06:59:38.184Z",
+      "validUntil": "2025-09-10T06:59:38.184Z",
+      "quotationNumber": "COT-VH1850",
+      "businessAreaId": "3",
+      "distributionChannelId": "7",
+      "marketSegmentId": "5",
+      "agents": [
+        {
+          "agentsId": "1",
+          "isLeader": true,
+          "percent": 100,
+          "commission": 0
+        }
+      ],
+      "paymentType": {
+        "creditCardPayment": true,
+        "bankTransfer": false,
+        "bankDebit": false,
+        "directCredit": false
+      }
+    }
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

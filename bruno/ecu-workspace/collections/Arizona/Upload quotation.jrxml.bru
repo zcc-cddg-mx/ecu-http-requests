@@ -1,0 +1,43 @@
+meta {
+  name: Upload quotation.jrxml
+  type: http
+  seq: 42
+}
+
+post {
+  url: {{ _.server }}/document/api/v1/arizona/files/upload
+  body: multipartForm
+  auth: bearer
+}
+
+headers {
+  Content-Type: multipart/form-data
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_40b110267b764a8f933a0e14bbd536b1', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:multipart-form {
+  files: @file(C:\Users\Konrad.Byczynski\Documents\repos\arizona-backend\ams-release\flyway\src\main\resources\templates\PYMES\quotation.jrxml)
+  options: '''
+    {
+    	"_type": "File",
+    	"ownerId": null,
+    	"fileName": "quotation.jrxml",
+    	"filePath": null,
+    	"fileThumbPath": null,
+    	"originalFileName": "quotation.jrxml",
+    	"mimeType": "text/plain",
+    	"size": null,
+    	"fileType": "TEMPLATE",
+    	"fileSubType": null
+    }
+  '''
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

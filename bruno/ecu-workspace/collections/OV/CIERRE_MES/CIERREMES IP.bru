@@ -1,0 +1,16 @@
+meta {
+  name: CIERREMES IP
+  type: http
+  seq: 3
+}
+
+get {
+  url: http://10.113.84.20:8000/zurich/api/common/commonconfiguration/v1.0/monthlyclosing
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

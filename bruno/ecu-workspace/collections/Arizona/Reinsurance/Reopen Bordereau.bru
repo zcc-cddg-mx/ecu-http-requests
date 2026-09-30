@@ -1,0 +1,39 @@
+meta {
+  name: Reopen Bordereau
+  type: http
+  seq: 18
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/reinsurance/api/v1/arizona/bordereaus/reopen
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "BordereauRequest",
+  	"id": 202,
+  	"programNo": "programNo1",
+  	"contractNo": "contractNo1",
+  	"reinsurerId": "1",
+  	"startDate": "2021-06-01",
+  	"endDate": "2021-12-31",
+  	
+  	"bordereauStatus": "OPEN"
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

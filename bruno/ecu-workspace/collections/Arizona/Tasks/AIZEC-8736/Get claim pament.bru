@@ -1,0 +1,28 @@
+meta {
+  name: Get claim pament
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{ server }}:{{ serverPort }}/claim/api/v1/arizona/claims/1025/claim_amounts?class=ClaimPayment&accountId=14051?=
+  body: none
+  auth: bearer
+}
+
+params:query {
+  : 
+}
+
+headers {
+  x-tenantId-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'when-expired', 300 %}
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

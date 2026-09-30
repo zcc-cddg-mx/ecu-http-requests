@@ -1,0 +1,41 @@
+meta {
+  name: newComision
+  type: http
+  seq: 8
+}
+
+put {
+  url: {{server}}/rule/api/v1/arizona/rating_lists/87052/ratings
+  body: json
+  auth: inherit
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+body:json {
+  [
+      {
+                  "_type": "VHAgentCommission",
+                  "createdAt": "2025-11-07T18:14:47.972-05:00",
+                  "updatedBy": "carlos",
+                  "recordVersion": 1,
+                  "createdBy": "carlos david",
+                  "updatedAt": "2025-11-07T18:14:47.972-05:00",
+                  "agentId": "20104924414360",
+                  "commissionBaseValue": 18.51,
+                  "sumInsured": 0,
+                  "pointOfSale": "QUITO",
+                  "newCarOrInspectionNeeded": "NO",
+                  "isInRenewalProcess": "NO",
+                  "productionUnit": "a",
+                  "commissionValue2": 18.52,
+                  "commissionValue3": 18.53
+              }
+  ]
+}
+
+settings {
+  encodeUrl: true
+}

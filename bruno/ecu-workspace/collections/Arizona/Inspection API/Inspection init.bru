@@ -1,0 +1,33 @@
+meta {
+  name: Inspection init
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{ _.server }}/policy/api/v1/arizona/motor/inspection/init
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  User-Agent: insomnia/9.3.3
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_94527b5ca89c4b419bcf800d776c24ea', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+      "_type": "MotorGenericosTarificationRequest",
+      "policyNo": {{ _.policyNo }}
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

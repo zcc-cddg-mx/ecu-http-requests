@@ -1,0 +1,20 @@
+meta {
+  name: AnonToken 5 params_1
+  type: http
+  seq: 95
+}
+
+get {
+  url: {{ server }}:{{ serverPort }}/user/api/v1/arizona/anonymous_token/quote/params/tmp/POL-LFC1020/LIFE/1710462886/132/
+  body: none
+  auth: inherit
+}
+
+headers {
+  x-tenantId-1: ec
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

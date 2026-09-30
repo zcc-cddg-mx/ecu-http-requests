@@ -1,0 +1,59 @@
+meta {
+  name: Deploy on byku.arinet
+  type: http
+  seq: 70
+}
+
+post {
+  url: http://status.byku.arinet/run_scenario/ScenarioDeployEnvironment
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json, text/plain, */*
+  Accept-Language: en-US,en;q=0.9
+  Connection: keep-alive
+  Cookie: _gid=GA1.2.1295921124.1707124291; _ga=GA1.2.673874744.1706627162; _ga_RKSGMGNLM6=GS1.1.1707223480.11.1.1707224138.0.0.0
+  Origin: http://status.byku.arinet
+  Referer: http://status.byku.arinet/
+  User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0
+}
+
+body:json {
+  {
+  	"customer_overlay": "ecuador",
+  	"jar_layout": "fat",
+  	"timezone": "America/Guayaquil",
+  	"environment_type": "local",
+  	"npm_build_types": "www=build-local,ch=build-house-insurance,fnol=build-fnol,renovar=build-autorenew,vh-sale=build-motor-direct",
+  	"db_multi": false,
+  	"db_debug": false,
+  	"db_vendor": "oracle",
+  	"jdk_vendor": "adoptopenjdk_jdk8_j9",
+  	"gradle_version": "6.9.2",
+  	"backend_build_jvm_options": "",
+  	"backend_start_jvm_options": "",
+  	"backend_revision": "42eaaf977fca1b7f71e812c22cdb2da9ee191ce0",
+  	"core_revision": null,
+  	"frontend_revision": "55d3a0143f5d7eac563b2cc27455c9ef85446743",
+  	"manager_revision": "e5d78f4c4be7aa30ac1beed692e93292e3f5b984",
+  	"init_databases": true,
+  	"application_context_path": "",
+  	"restore_name": "ec_current",
+  	"health_check_enabled": false,
+  	"spring_boot_admin_enabled": false,
+  	"sleuth_zipkin_enabled": false,
+  	"sleuth_zipkin_sampling": "10",
+  	"sleuth_zipkin_send_all_data": false,
+  	"run_tests_type": "",
+  	"robot_jvm_options": "",
+  	"node_version": "14.x"
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

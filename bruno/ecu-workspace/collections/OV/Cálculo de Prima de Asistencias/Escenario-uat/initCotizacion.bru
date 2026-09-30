@@ -1,0 +1,45 @@
+meta {
+  name: initCotizacion
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{server}}/policy/api/v1/arizona/motorGenericos/step/client/init
+  body: json
+  auth: inherit
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+body:json {
+  {
+      "_type": "MotorGenericosTarificationRequest",
+      "testMode": false,
+      "motorGenericosTarification": {
+          "_type": "MotorGenericosTarification",
+          "policyData": {
+              "_type": "PolicyData",
+              "variant": "MOTOR",
+              "consents": [],
+              "ensuranceDocuments": [],
+              "endorsementIds": [],
+              "uplaUpdate": "NO",
+              "paymentMethodAllowed": [],
+              "policyEndorsementIds": [],
+              "policyAgencies": [],
+              "nextInsurableObjectAllowed": "NO",
+              "entityProperties": {}
+          },
+          "beneficiaries": [],
+          "cars": [],
+          "planInformation": []
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

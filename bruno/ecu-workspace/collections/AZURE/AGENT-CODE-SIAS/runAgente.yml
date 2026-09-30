@@ -1,0 +1,40 @@
+info:
+  name: runAgente
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: https://serviciosias.zurichseguros.com.ec/zurich/api/hackaton/code/run
+  body:
+    type: multipart-form
+    data:
+      - name: file
+        type: file
+        value:
+          - C:\Users\CARLOS.DUARTE2\Downloads\baseticketJulio2026.xlsx
+      - name: command
+        type: text
+        value: ren-data
+      - name: ticket
+        type: text
+        value: ZNRX-68243
+      - name: year
+        type: text
+        value: "2026"
+      - name: month
+        type: text
+        value: "7"
+      - name: compile
+        type: text
+        value: "false"
+      - name: commit
+        type: text
+        value: "true"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

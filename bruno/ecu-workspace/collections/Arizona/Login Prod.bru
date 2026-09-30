@@ -1,0 +1,40 @@
+meta {
+  name: Login Prod
+  type: http
+  seq: 48
+}
+
+post {
+  url: https://oficinavirtual.zurichseguros.com.ec/nuevoportal/user/api/v1/arizona/auth/ec/login
+  body: json
+  auth: inherit
+}
+
+headers {
+  Accept: application/json, text/plain, */*
+  Accept-Language: en-US,en;q=0.9
+  Connection: keep-alive
+  Content-Type: application/json
+  Cookie: _fbp=fb.2.1706712952098.1043911978; visid_incap_1917083=dXRTHWJjSTSi7C7m8NMAqpxgumUAAAAAQUIPAAAAAADz8PeCq7oTOkv5ox48YSSg; _hjSessionUser_3411284=eyJpZCI6ImZjOTgzODA1LWIzODgtNWE2ZC05NGY3LTU0OTMyMjAwZTZkZSIsImNyZWF0ZWQiOjE3MDY3MTI5NDExNDYsImV4aXN0aW5nIjp0cnVlfQ==; visid_incap_1917095=5d0aDCeqSCuTx0aiG2kv9wMrwmUAAAAAQUIPAAAAAABQHSqmTm9AXQAXTDY3Gaae; _hjDonePolls=904120; _hjMinimizedPolls=; _ga_CJX15DYEXV=GS1.1.1707861870.1.1.1707862354.0.0.0; visid_incap_1769788=aK3HRYlFREq9K56Yd+2gDuUZ02UAAAAAQUIPAAAAAABQljV9MU7rUYPTnxl0Wrzr; _ga360=GA1.3.1219979611.1706712951; _hjSessionUser_3399529=eyJpZCI6IjFiZmUzMGVmLTBkMjUtNTllZS04NzE3LTk3N2Y1ZjE2MDI2MSIsImNyZWF0ZWQiOjE3MDgzMzM1NDcwMDksImV4aXN0aW5nIjp0cnVlfQ==; visid_incap_2350592=fGcM5JEURg2qXvzkvTcFkEdW+WUAAAAAQUIPAAAAAACX32Lemi2acQCQF2Gfu8Xq; visid_incap_2328800=qWPkpRY/TguL+X8prc4yB5ca+2UAAAAAQUIPAAAAAACvOxSrZWZpvKst3pd7t6dJ; visid_incap_2381114=WPEAgM5mSiWUWjrITG3nCg0X/GUAAAAAQUIPAAAAAABPWkORLBFniMx37HJDIPku; _gcl_au=1.1.857060965.1720538926; sc_5dAijixfKYA3QFx2o9YADv=44ad99ba-c7ba-42e6-83c4-ef95d9d881d6; utag_main=v_id:018dc09d36e9001bc771f24e945d0507d004907500bd0$_sn:3$_se:1$_ss:1$_st:1721222076283$dc_visit:1$ses_id:1721220276283%3Bexp-session$_pn:1%3Bexp-session; visid_incap_2284145=lPXxq2ihRcOJBO65eyz32bO8l2YAAAAAQUIPAAAAAAA/uqrarre0KVncKlA+Uc9k; visid_incap_3058127=uLp3lfzAS8aKWwHsifAZiML2zmYAAAAAQUIPAAAAAAD86FXPN8rBFvGzpT7GyCDG; _ga=GA1.1.1219979611.1706712951; _ga_37NC80P0CW=GS1.1.1726517542.166.1.1726518813.0.0.0; _ga_HJBQ7BT62M=GS1.1.1726517545.164.1.1726518813.0.0.0; _ga_Q20E7WVB70=GS1.1.1726517545.67.1.1726518813.0.0.0; _ga_56X461XV47=GS1.1.1726517544.162.1.1726518815.0.0.0; dtCookie=v_4_srv_33_sn_70E7DEC4F3331606AFAAA42B5FEEE2E0_perc_100000_ol_0_mul_1_app-3A5bf29286ac8ecc2f_1; nlbi_1917083=MFh8HcvzfDuOVOFUPLw5iwAAAAAg723I2jZc/Rz1TWjpNHf5; incap_ses_325_1917083=ItD5aT1oxnE0pnQa8aGCBF9y8mYAAAAANJ/yR+P2UOEsnXj14CTw+A==; reese84=3:QYTzqgK1nULSVeta8JcLjw==:ETNiR/BAUhe+8MAD881iq4ZjafMBZYCs/65DLimeEiBZoOKuK7nzyf1AlnFHL3QmOG55OjGcjmyWv4lBif4x8WEzWA2uqLdtFf7mxMMJixy48BUPTW4jp38JkRNYpGBHBoBPU4mZV/ptQL3Q6pTSPmkelcK1LCa2UOtITNXssb3fbnv9PpRDPcif5d0QTFN23FDCsL8VMn1LEya2Hn1vMIyycdXbK1IbunfnJWIY4OV1vme2hzQgdxycS3qQhS+yY9NiObwuYOBjf5JugsNAOWkOA8tN2Vx2N19SEhk4wywmddFfL6nirnVRqZAagDLkEvU9V2SSN3MfAkZU9aWLAXg/wLezxbWxcjfrNsBCLMfncyk6zbSXAxEX2dv0pafPoRtoX32t7eDqrBxNs4OWPu0p9Yb8KX03Ibbmk0HmJNPi4YYQG4lmFtDtoMlayHzrR9IIyawjkoxmPVr7/0hAfA==:jjQsqz8ZVMLtXhxcpkAXjt61KkP9YnPbjOpo065MRBo=; nlbi_1917083_2147483392=IUlGf1JiIF7ObleUPLw5iwAAAAD4i++rDPFIJZyQsbgIIdaq
+  Origin: https://oficinavirtual.zurichseguros.com.ec
+  Referer: https://oficinavirtual.zurichseguros.com.ec/nuevoportal/permit/login
+  Sec-Fetch-Dest: empty
+  Sec-Fetch-Mode: cors
+  Sec-Fetch-Site: same-origin
+  User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0
+  sec-ch-ua: "Microsoft Edge";v="129", "Not=A?Brand";v="8", "Chromium";v="129"
+  sec-ch-ua-mobile: ?0
+  sec-ch-ua-platform: "Windows"
+}
+
+body:json {
+  {
+  	"username": "ncdc_admin1",
+  	"password": "arizona2020!!@"
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

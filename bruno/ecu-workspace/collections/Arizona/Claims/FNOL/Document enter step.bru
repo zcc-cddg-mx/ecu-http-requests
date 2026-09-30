@@ -1,0 +1,35 @@
+meta {
+  name: Document enter step
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/claim/api/v1/arizona/fnol_expected_documents/enter_step
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJDQXRjYkRJcmR4TU9ua0dKTlFnS2dKM25VYUI0SnA2MWpxcnFneHJuYVdVIn0.eyJleHAiOjE2NzM4Nzk1MTYsIm5iZiI6MTY3MzI3NDY1NiwiaWF0IjoxNjczMjc0NzE2LCJpc3MiOiJodHRwOi8vd3d3LmJ5a3UuYXJpbmV0L2F1dGgvcmVhbG1zL21hc3RlciIsInN1YiI6ImM2YTg0NTA5LWM5MjQtNGZiMC04MDc4LTgxNmY5YmRlYWExMSIsInR5cCI6IkJlYXJlciIsImF1dGhfdGltZSI6MTY3MzI3NDcxNiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbInJvbGVfYW5vbnltb3VzIiwicm9sZV9hbm9ueW1vdXNfcmVzdG9yZWQiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwicm9sZV9jdXN0b21lciJdfSwidGVuYW50cyI6ImVjIiwidjEiOiIxMjMiLCJ2MiI6IjEyMyIsInYzIjoiMTIzIiwidjQiOiIxMjMiLCJ2NSI6IjEyMyJ9.YdZ8UyUciOIV4UdIIVsavBCVJJLdBAmjglyQX7meGv0AAyw_yA8Z53Zzd5d5PEQjY3pREU2vzOgVd3UFcFuSdUnjKE_L2cn89UqLv6hJaL5SqKET4g4TWTDK0eC3b1SMJYIsZNs_8NRs2Gygn5dMCRHmVErAjkmMxC9plKmnHUOhPesYNEXW79cGGW6BmGqc4afnd-AAnMazG2zBlZQPpv2iN7RsCsN-Aoiemrw8vYvrvMSgt243_eljXBZPn-RAk6Swmlllk_vOlqiPQqO_HuXKMf4-hNSFENQbmUBXPsgqIs4JjcHe6O2R9uOXESCVhPSQHlHaJWnajjtL3YNIJg
+}
+
+body:json {
+  {
+      "_type": "Fnol",
+      "claimNo": 67,
+      "claimId": 9,
+      "pendingPayments": [],
+      "fieldsInfo": {}
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

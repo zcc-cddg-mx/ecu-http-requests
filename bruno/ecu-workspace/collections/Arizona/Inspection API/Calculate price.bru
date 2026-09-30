@@ -1,0 +1,46 @@
+meta {
+  name: Calculate price
+  type: http
+  seq: 10
+}
+
+post {
+  url: {{ _.server }}/policy/api/v1/arizona/motor/genericos/calculatePrice
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  User-Agent: insomnia/9.3.3
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_94527b5ca89c4b419bcf800d776c24ea', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "MotorGenericosTarificationRequest",
+  	"motorGenericosTarification": {
+  		"_type": "MotorGenericosTarification",
+  		"policyData": {
+  			"_type": "PolicyData",
+  			"agentExternalId": "102080258093",
+  			"pointOfSaleName": "QUITO ASESORES GARANTECSEGUROS AGENCIA ASESORA PRODUCTORA DE SEGUROS CIA. LTDA."
+  		},
+  		"car": {
+  			"_type": "VehicleData",
+  			"productionYear": 2020,
+  			"make": "FORD",
+  			"model": "RANGER"
+  		}
+  	}
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

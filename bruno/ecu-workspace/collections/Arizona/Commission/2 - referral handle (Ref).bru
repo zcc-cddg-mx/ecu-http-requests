@@ -1,0 +1,53 @@
+meta {
+  name: 2 - referral handle (Ref)
+  type: http
+  seq: 13
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/referral/api/v1/arizona/business/referral/handle?=
+  body: json
+  auth: bearer
+}
+
+params:query {
+  : 
+}
+
+headers {
+  x-tenantId-1: ec
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "ReferralHandleRequest",
+  	"decisions": [
+  		{
+  			"_type": "ReferralHandleDecision",
+  			"referral": {
+  				"_type": "Referral",
+  				"id": 1,
+  				"referralNo": 50,
+  				"referralDefinitionId": 1952,
+  				"processName": "COMMISSION",
+  				"processType": "OutgoingPaymentCommission",
+  				"processId": 1,
+  				"status": "APPROVED",
+  				"referredNumericValue": -1
+  			},
+  			"status": "APPROVED",
+  			"comment": "komentarz 15.09.1"
+  		}
+  	]
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

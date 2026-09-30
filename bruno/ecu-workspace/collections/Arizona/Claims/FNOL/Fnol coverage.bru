@@ -1,0 +1,98 @@
+meta {
+  name: Fnol coverage
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{ _.server }}:{{ _.serverPort }}/claim/api/v1/arizona/fnol_coverage/enter_step
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJDQXRjYkRJcmR4TU9ua0dKTlFnS2dKM25VYUI0SnA2MWpxcnFneHJuYVdVIn0.eyJleHAiOjE2NzQxMjA2NDIsIm5iZiI6MTY3MzUxNTc4MiwiaWF0IjoxNjczNTE1ODQyLCJpc3MiOiJodHRwOi8vd3d3LmJ5a3UuYXJpbmV0L2F1dGgvcmVhbG1zL21hc3RlciIsInN1YiI6ImNlYmRiYmY2LWYwZjEtNGVjZS04NDliLTkyZjJkYjVmZjJiNiIsInR5cCI6IkJlYXJlciIsImF1dGhfdGltZSI6MTY3MzUxNTg0MiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbInJvbGVfYW5vbnltb3VzIiwicm9sZV9hbm9ueW1vdXNfcmVzdG9yZWQiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwicm9sZV9jdXN0b21lciJdfSwidGVuYW50cyI6ImVjIiwidjEiOiJQT0wtTEZDMTAyMCIsInYyIjoiTElGRSIsInYzIjoiMTcxMDQ2Mjg4NiIsInY0IjoiMTMyIn0.D4nuN3tbGy-qRku6peA0JNxjhS8FZekNdBqJsMEwMMlLjL6PO2lC6hHCc4u2MfQwVGM6RiWd_So4HFrFUCpt1VSrNV-mzlsWv0gld6VEOenMrXVCeeTVpdVZcu_6poKiMTCbeL8TQ4bSYNGUSUyPlQfDWYsuoQUsaCoP1nCfgYMSq2FE4of9T1nImn3Zexk18_esosbqFvAzi7hSJdc3GTPliw_mo_T76WuolZ3qCAomI-nEac1vikum1e6-gmtPA3VNiRceogdT2lIn4QnZadkiCgmfHW87V_LGytXmR2VQsl2PT43H5G8ZrgC5Tdi_aZXzicdDHbhiGMISN9JhdA
+}
+
+body:json {
+  {
+      "_type": "Fnol",
+      "fieldsInfo": {},
+      "claimId": 53,
+      "claimNo": 132,
+      "claimNumber": "23-87-LFC-132",
+      "cipheredId": "jxoJp4DgQ4IFyK%2FHFzSa1sh%2FJctEMq%2BsifD4g6DyF3OoHaJ%2BAqihWVhKcxZ%2B0u1Q%21Mg5oRoy1FcvIp0iR42SKB9BhH%2BZmyEBlH480pvgYioK25Wjyc0ECFk6EkfQr4zt9",
+      "policyId": 4010,
+      "insurableObjectId": 3964,
+      "productCode": "LFC",
+      "pendingPayments": [],
+      "fnolAccidentInformation": {
+          "_type": "FnolAccidentInformation",
+          "fieldsInfo": {},
+          "identifier": "1710462886",
+          "policyNo": 110,
+          "policyNumber": "POL-LFC1020",
+          "insured": "SANDRA-ELIZABETH SEGOVIA-MOGOLLON",
+          "broker": "ZURICH SEGUROS ECUADOR S.A.",
+          "affectedPeople": [
+              {
+                  "_type": "FnolParty",
+                  "fieldsInfo": {},
+                  "id": 54,
+                  "partyId": 14171,
+                  "claimPartyNo": 70,
+                  "firstName": "SANDRA-ELIZABETH",
+                  "lastName": "SEGOVIA-MOGOLLON",
+                  "fullName": "SANDRA-ELIZABETH SEGOVIA-MOGOLLON",
+                  "identification": "1710462886",
+                  "claimPartyRoleType": "INSURED",
+                  "isAddedManually": "NO",
+                  "localId": "3ecf873e-ccaa-406e-b5c9-9e2477e81748"
+              },
+              {
+                  "_type": "FnolParty",
+                  "fieldsInfo": {},
+                  "id": 53,
+                  "partyId": 8964,
+                  "claimPartyNo": 71,
+                  "fullName": "ZURICH SEGUROS ECUADOR S.A.",
+                  "claimPartyRoleType": "BROKER",
+                  "localId": "e0726d71-9971-41fe-9b77-91a2685a5cd6"
+              }
+          ],
+          "contactPerson": {
+              "_type": "FnolParty",
+              "fieldsInfo": {},
+              "id": 55,
+              "partyId": 14171,
+              "claimPartyNo": 72,
+              "firstName": "SANDRA ELIZABETH",
+              "lastName": "SEGOVIA MOGOLLON",
+              "fullName": "SANDRA ELIZABETH SEGOVIA MOGOLLON",
+              "identification": "1710462886",
+              "claimPartyRoleType": "CONTACT_PERSON",
+              "phoneNumber": "11-1222333",
+              "email": "konrad.byczynski@ncdc.pl",
+              "isAddedManually": "NO",
+              "localId": "01ca2628-8e6d-4b2a-9670-8ba1c295bbf2"
+          },
+          "privacyTermsAccepted": "YES",
+          "fnolSecurityNotice": "YES",
+          "lineOfBusiness": "LIFE"
+      },
+      "authenticationResponse": {
+          "_type": "AuthenticationResponse",
+          "accessToken": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJDQXRjYkRJcmR4TU9ua0dKTlFnS2dKM25VYUI0SnA2MWpxcnFneHJuYVdVIn0.eyJleHAiOjE2NzQxMjA2NDIsIm5iZiI6MTY3MzUxNTc4MiwiaWF0IjoxNjczNTE1ODQyLCJpc3MiOiJodHRwOi8vd3d3LmJ5a3UuYXJpbmV0L2F1dGgvcmVhbG1zL21hc3RlciIsInN1YiI6ImNlYmRiYmY2LWYwZjEtNGVjZS04NDliLTkyZjJkYjVmZjJiNiIsInR5cCI6IkJlYXJlciIsImF1dGhfdGltZSI6MTY3MzUxNTg0MiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbInJvbGVfYW5vbnltb3VzIiwicm9sZV9hbm9ueW1vdXNfcmVzdG9yZWQiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwicm9sZV9jdXN0b21lciJdfSwidGVuYW50cyI6ImVjIiwidjEiOiJQT0wtTEZDMTAyMCIsInYyIjoiTElGRSIsInYzIjoiMTcxMDQ2Mjg4NiIsInY0IjoiMTMyIn0.D4nuN3tbGy-qRku6peA0JNxjhS8FZekNdBqJsMEwMMlLjL6PO2lC6hHCc4u2MfQwVGM6RiWd_So4HFrFUCpt1VSrNV-mzlsWv0gld6VEOenMrXVCeeTVpdVZcu_6poKiMTCbeL8TQ4bSYNGUSUyPlQfDWYsuoQUsaCoP1nCfgYMSq2FE4of9T1nImn3Zexk18_esosbqFvAzi7hSJdc3GTPliw_mo_T76WuolZ3qCAomI-nEac1vikum1e6-gmtPA3VNiRceogdT2lIn4QnZadkiCgmfHW87V_LGytXmR2VQsl2PT43H5G8ZrgC5Tdi_aZXzicdDHbhiGMISN9JhdA"
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

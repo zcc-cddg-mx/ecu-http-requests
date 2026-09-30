@@ -1,0 +1,70 @@
+meta {
+  name: JMeter init policy
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/accounting/api/v1/arizona/payment_bank_accounts/{% hash 'sha1', 'hex', '' %}{{ server }}:{{ serverPort }}/accounting/api/v1/arizona/ec/payment-instructions/test-pba
+  body: json
+  auth: bearer
+}
+
+headers {
+  x-tenantid-1: ec
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_6c9a3a579fa645e78ec2e6f6628c790f', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "PolicyInitTransactionRequest",
+  	"transactionType": "Update",
+  	"savePolicyVersion": false,
+  	"policy": {
+  		"_type": "ECPolicy",
+  		"paymentMethod": "1",
+  		"currency": "USD",
+  		"productCode": "LFC",
+  		"insurableObjects": [
+  			{
+  				"_type": "LifeGeneralData",
+  				"requestComChange": "NO",
+  				"temporaryCoverRequired": "NO",
+  				"percentageOfParticipationYN": "NO",
+  				"previousInsurance": "NO",
+  				"childrenYn": "NO",
+  				"spouseYn": "NO",
+  				"titularYn": "NO",
+  				"individualCertificatesYn": "NO",
+  				"policyCoverageDetails": [],
+  				"policyAmounts": [],
+  				"policyLimits": [],
+  				"policyPendings": [],
+  				"policyDeductibles": []
+  			}
+  		],
+  		"variantCode": "CORPORATIVO_VIDA",
+  		"isRenewal": "NO",
+  		"commissionSplits": [],
+  		"endorsements": [],
+  		"ensuranceInvoices": [],
+  		"partyRoles": [],
+  		"policyAmounts": [],
+  		"policyLimits": [],
+  		"policyPendings": [],
+  		"clauses": [],
+  		"previousClaimYears": "NO",
+  		"groupPlans": [],
+  		"notes": "{}"
+  	}
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

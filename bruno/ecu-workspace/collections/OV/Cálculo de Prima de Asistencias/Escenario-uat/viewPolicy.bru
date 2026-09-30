@@ -1,0 +1,137 @@
+meta {
+  name: viewPolicy
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{server}}/policy/api/v1/arizona/motorGenericos/vehicle/view
+  body: json
+  auth: inherit
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+body:json {
+  {
+      "_type": "MotorGenericosTarificationRequest",
+      "testMode": false,
+      "policyNo": 464914,
+      "motorGenericosTarification": {
+        "_type": "MotorGenericosTarification",
+        "policyData": {
+          "_type": "PolicyData",
+          "entityProperties": {},
+          "policyNo": 464914,
+          "policyNumber": "COT-VH785078",
+          "productCode": "VH",
+          "variant": "MOTOR",
+          "pointOfSale": "1299",
+          "status": "WORKING",
+          "customStatus": "WORKING",
+          "agentSEId": 1294,
+          "effectiveDate": "2026-06-16T00:00:00.000-05:00",
+          "expirationDate": "2027-06-16T00:00:00.000-05:00",
+          "uplaUpdate": "NO",
+          "nextInsurableObjectAllowed": "NO",
+          "paymentMethod": "1",
+          "ensuranceDocuments": [],
+          "endorsementIds": [],
+          "policyEndorsementIds": [],
+          "policyAgencies": [],
+          "consents": [],
+          "paymentMethodAllowed": [
+            "1",
+            "2",
+            "3"
+          ],
+          "downloadInvoice": true,
+          "downloadPolicy": true
+        },
+        "client": {
+          "_type": "PolicyRole",
+          "entityProperties": {
+            "firstName": [
+              {
+                "_type": "FieldProperty",
+                "propertyType": "Disabled",
+                "message": "true"
+              }
+            ],
+            "secondName": [
+              {
+                "_type": "FieldProperty",
+                "propertyType": "Disabled",
+                "message": "true"
+              }
+            ],
+            "nationality": [
+              {
+                "_type": "FieldProperty",
+                "propertyType": "Hidden",
+                "message": "true"
+              }
+            ],
+            "nationalityId": [
+              {
+                "_type": "FieldProperty",
+                "propertyType": "Hidden",
+                "message": "true"
+              }
+            ],
+            "isEcuadorian": [
+              {
+                "_type": "FieldProperty",
+                "propertyType": "Hidden",
+                "message": "true"
+              }
+            ],
+            "phone": [
+              {
+                "_type": "FieldProperty",
+                "propertyType": "Missing",
+                "message": "true"
+              }
+            ],
+            "mobilePhone": [
+              {
+                "_type": "FieldProperty",
+                "propertyType": "Missing",
+                "message": "true"
+              }
+            ],
+            "email": [
+              {
+                "_type": "FieldProperty",
+                "propertyType": "Missing",
+                "message": "true"
+              }
+            ]
+          },
+          "id": 474102,
+          "identificationType": "ID_CARD",
+          "identificationNumber": "1726534207",
+          "firstName": "Francisco",
+          "secondName": "Chungaro",
+          "name": "Francisco Chungaro",
+          "email": "yainery.dominguez@zurich.com",
+          "mobilePhone": "09-99999999",
+          "phone": "09-9999999",
+          "mainAddress": "primera",
+          "mainAddressNo": "45",
+          "secondaryAddress": "segunda",
+          "nationalityId": "10345"
+        },
+        "cars": [],
+        "beneficiaries": [],
+        "planInformation": []
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

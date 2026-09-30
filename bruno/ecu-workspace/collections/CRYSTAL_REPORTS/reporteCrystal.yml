@@ -1,0 +1,56 @@
+info:
+  name: reporteCrystal
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: https://reportes1.zurichseguros.com.ec/crystal/RepTandicorp?report=file%3A%2Fusr%2Freportes%2Fensurance%2Fcom%2Ftandi%2Fcartera%2Freportes%2Frpts%2FESTADOCUENTACLIENTEFINAL.xml.rpt&prompt0=21247474416897&prompt1=(93,89,94,92,91,88,87,90)&prompt2=Date(2026,04,09)&prompt3=['RECIBO CAJA RECUPERO','NOTA DE DEBITO REFINANCIACION','NOTA DE DEBITO POR CHEQUES PROTESTADOS','NOTA DE DEBITO  ORDEN E PAGO INDEMNIZACIONES','NOTA DE DEBITO ANULACION ORDEN DE PAGO INDEMNIZACIONES','NOTA DE CREDITO REEMPLAZO','NOTA DE CREDITO ORDEN DE PAGO INDEMNIZACIONES','NOTA DE CREDITO FINANCIACION FACTURA','NOTA DE CREDITO ENDOSO NEGATIVO','NOTA DE CREDITO CLIENTE ZONA FRANCA','NOTA DE CREDITO CLIENTES SALDOS A FAVOR','NOTA DE CREDITO CLIENTES SALDO A FAVOR RETENCIONES','NOTA DE CREDITO ANULACION DEDUCIBLE INDEMNIZACION','LETRA DE CAMBIO','FACTURA SALVAMENTO','CUOTA INICIAL','CUOTA']&prompt4=TRUE&prompt5=COMPLETO&prompt6=fvillota&prompt7=FALSE&init=pdf
+  headers:
+    - name: Accept-Language
+      value: es
+    - name: Cookie
+      value: JSESSIONID=985125F878E5E31D8B43E9136D55CC8D; Path=/crystal; Secure; HttpOnly;
+    - name: Cache-Control
+      value: no-cache
+    - name: Content-Length
+      value: "0"
+  params:
+    - name: report
+      value: file%3A%2Fusr%2Freportes%2Fensurance%2Fcom%2Ftandi%2Fcartera%2Freportes%2Frpts%2FESTADOCUENTACLIENTEFINAL.xml.rpt
+      type: query
+    - name: prompt0
+      value: "21247474416897"
+      type: query
+    - name: prompt1
+      value: (93,89,94,92,91,88,87,90)
+      type: query
+    - name: prompt2
+      value: Date(2026,04,09)
+      type: query
+    - name: prompt3
+      value: "['RECIBO CAJA RECUPERO','NOTA DE DEBITO REFINANCIACION','NOTA DE DEBITO POR CHEQUES PROTESTADOS','NOTA DE DEBITO  ORDEN E PAGO INDEMNIZACIONES','NOTA DE DEBITO ANULACION ORDEN DE PAGO INDEMNIZACIONES','NOTA DE CREDITO REEMPLAZO','NOTA DE CREDITO ORDEN DE PAGO INDEMNIZACIONES','NOTA DE CREDITO FINANCIACION FACTURA','NOTA DE CREDITO ENDOSO NEGATIVO','NOTA DE CREDITO CLIENTE ZONA FRANCA','NOTA DE CREDITO CLIENTES SALDOS A FAVOR','NOTA DE CREDITO CLIENTES SALDO A FAVOR RETENCIONES','NOTA DE CREDITO ANULACION DEDUCIBLE INDEMNIZACION','LETRA DE CAMBIO','FACTURA SALVAMENTO','CUOTA INICIAL','CUOTA']"
+      type: query
+    - name: prompt4
+      value: "TRUE"
+      type: query
+    - name: prompt5
+      value: COMPLETO
+      type: query
+    - name: prompt6
+      value: fvillota
+      type: query
+    - name: prompt7
+      value: "FALSE"
+      type: query
+    - name: init
+      value: pdf
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

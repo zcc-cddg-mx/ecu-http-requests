@@ -1,0 +1,30 @@
+meta {
+  name: Overview - DB_BORDEREAU_ITEMS
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{ server }}:{{ serverPort }}/report/api/v1/arizona/ov/overview?query=bordereauId:1&index=DB_BORDEREAU_ITEMS_VIEW
+  body: none
+  auth: bearer
+}
+
+params:query {
+  query: bordereauId:1
+  index: DB_BORDEREAU_ITEMS_VIEW
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

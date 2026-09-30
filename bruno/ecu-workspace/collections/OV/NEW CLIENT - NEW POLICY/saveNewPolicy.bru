@@ -1,0 +1,73 @@
+meta {
+  name: saveNewPolicy
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{server}}/policy/api/v1/arizona/motorGenericos/step/client/save
+  body: json
+  auth: inherit
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+body:json {
+  {
+  	"_type": "MotorGenericosTarificationRequest",
+  	"motorGenericosTarification": {
+  		"_type": "MotorGenericosTarification",
+  		"beneficiaries": [],
+  		"cars": [],
+  		"client": {
+  			"_type": "PolicyRole",
+  			"email": "ee@ee.com",
+  			"entityProperties": {
+  				"ComplianceStatus": [
+  					{
+  						"_type": "FieldProperty",
+  						"message": "ENS-CLIENT-NOT-FOUND",
+  						"propertyType": "MessageCode"
+  					}
+  				]
+  			},
+  			"fieldsInfo": {
+  				"ComplianceStatus": [
+  					null
+  				]
+  			},
+  			"firstName": "EFRAIN",
+  			"identificationNumber": "0603502428",
+  			"identificationType": "ID_CARD",
+  			"mobilePhone": "22-22222222",
+  			"name": null,
+  			"nationalityId": "10345",
+  			"phone": "22-2222222",
+  			"secondName": "AREVALO"
+  		},
+  		"planInformation": [],
+  		"policyData": {
+  			"_type": "PolicyData",
+  			"agentSEId": 1294,
+  			"consents": [],
+  			"endorsementIds": [],
+  			"ensuranceDocuments": [],
+  			"entityProperties": {},
+  			"nextInsurableObjectAllowed": "NO",
+  			"paymentMethodAllowed": [],
+  			"pointOfSale": "1293",
+  			"policyAgencies": [],
+  			"policyEndorsementIds": [],
+  			"uplaUpdate": "NO",
+  			"variant": "MOTOR"
+  		}
+  	},
+  	"testMode": false
+  }
+}
+
+settings {
+  encodeUrl: true
+}

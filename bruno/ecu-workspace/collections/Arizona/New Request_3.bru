@@ -1,0 +1,42 @@
+meta {
+  name: New Request_3
+  type: http
+  seq: 61
+}
+
+post {
+  url: {{ _.server }}:{{ _.serverPort }}/report/api/v1/arizona/ov/signedDocuments/downloadMTADocument/352710492
+  body: json
+  auth: bearer
+}
+
+headers {
+  Accept: application/json, text/plain, */*
+  Accept-Language: en-US,en;q=0.9
+  Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJWQ1dzRkVaMHQzMGJxRmpJdmxlblBjWkEwakdHclAtbGNvN2JyMG1KSm5JIn0.eyJqdGkiOiIxZDZkNDc1ZC1jYWQxLTQxYjAtYjc1Ni1hZmM0YTY1NDE3MmEiLCJleHAiOjE3MTE0NjYwMDYsIm5iZiI6MCwiaWF0IjoxNzExNDY0ODA2LCJpc3MiOiJodHRwczovL3ByZXByb2Qtb2ZpY2luYXZpcnR1YWwuenVyaWNoc2VndXJvcy5jb20uZWMvbnVldm9wb3J0YWwvYXV0aC9yZWFsbXMvbWFzdGVyIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImJhMzA2MzlkLWQ0ZmItNDIwMi1iNTc2LWU3YTMxNDU3YTAxOSIsInR5cCI6IkJlYXJlciIsImF6cCI6InBhc3MiLCJhdXRoX3RpbWUiOjAsInNlc3Npb25fc3RhdGUiOiJhOTkxYzljOC1kNDVhLTQzMmItODBmMC1hMDBjMTQxOWVmYWYiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImZyb250X3JvbGVfdXNlciIsImZyb250X3JvbGVfdHJlYXN1cnlfZXhlY3V0aXZlIiwiZnJvbnRfcm9sZV96dXJpY2hfYXNzb2NpYXRlIiwiZG93bmxvYWRfaW5mb2JpcF9maWxlIiwicm9sZV91c2VyIiwicm9sZV9jYXNhX2hhYml0YWNpb25fZl96dXJpY2giLCJmcm9udF9yb2xlX3V3X2xpZmUiLCJyb2xlX2ZhY3R1cmFkb3IiLCJvZmZsaW5lX2FjY2VzcyIsImZyb250X3JvbGVfZmFjdHVyYWRvciIsInJvbGVfdmVoaWN1bG9zX2ZfenVyaWNoIiwiZnJvbnRfcm9sZV9hZG1pbmlzdHJhdG9yIiwidW1hX2F1dGhvcml6YXRpb24iLCJyb2xlX2N1c3RvbWVyIiwiZnJvbnRfcm9sZV9zdXBlcl91c2VyIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwidGVuYW50cyI6ImVjIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiYXNhbGF6YXIiLCJwYXJ0eWlkIjoiMTY0IiwibG9jYWxlIjoiZW4ifQ.QNo7zcRcfxbNlJvAIsfefV6fbGs-wY01nglSOqndOJHFI21KnjliLtTEtj7CQaWMIYAty71dVZgCJhv4gi_yQz_3A8YNYxTbWG8T-GWRpnher3PwoPEGkxvLr1_W_EnjfDmeV94ROyo1SUx0Jki3uOhGrXlkMLOcecopGkpf4VX34N1Vx5-tR7Uv4To2x54eeNthCblP2DMFQnOyOZJgc69BAt74dmzC3GHVu2cQR2FYMcGUOidBLfzb4AKqrZIUkQ_EXrJ_vQED29rQO59uFynXfGVZ6fHwEtqxO3XDjlU95ypDbIOnGtFIffkJrKNk5cdm95s58uu7J5EJXYBWxA
+  Connection: keep-alive
+  Content-Type: application/json
+  Origin: https://preprod-oficinavirtual.zurichseguros.com.ec
+  Sec-Fetch-Dest: empty
+  Sec-Fetch-Mode: cors
+  Sec-Fetch-Site: same-origin
+  User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36 Edg/122.0.0.0
+  ^Cookie: _fbp=fb.2.1706712952098.1043911978; visid_incap_1917083=dXRTHWJjSTSi7C7m8NMAqpxgumUAAAAAQUIPAAAAAADz8PeCq7oTOkv5ox48YSSg; _hjSessionUser_3411284=eyJpZCI6ImZjOTgzODA1LWIzODgtNWE2ZC05NGY3LTU0OTMyMjAwZTZkZSIsImNyZWF0ZWQiOjE3MDY3MTI5NDExNDYsImV4aXN0aW5nIjp0cnVlfQ==; visid_incap_1917095=5d0aDCeqSCuTx0aiG2kv9wMrwmUAAAAAQUIPAAAAAABQHSqmTm9AXQAXTDY3Gaae; _pk_id.1.86fc=71ad47ca1113b5ef.1707324232.; _hjDonePolls=904120; _hjMinimizedPolls=; _ga_CJX15DYEXV=GS1.1.1707861870.1.1.1707862354.0.0.0; visid_incap_1769788=aK3HRYlFREq9K56Yd+2gDuUZ02UAAAAAQUIPAAAAAABQljV9MU7rUYPTnxl0Wrzr; _gcl_au=1.1.1390543385.1708333546; _ga360=GA1.3.1219979611.1706712951; _hjSessionUser_3399529=eyJpZCI6IjFiZmUzMGVmLTBkMjUtNTllZS04NzE3LTk3N2Y1ZjE2MDI2MSIsImNyZWF0ZWQiOjE3MDgzMzM1NDcwMDksImV4aXN0aW5nIjp0cnVlfQ==; utag_main=v_id:018dc09d36e9001bc771f24e945d0507d004907500bd0^n:1^e:1^s:1^t:1708335345198^:1708333545198^%^3Bexp-session^n:1^%^3Bexp-session^:1^:1^%^3Bexp-session^:eu-central-1^%^3Bexp-session; _ga_Q20E7WVB70=GS1.1.1708333547.1.0.1708333549.0.0.0; visid_incap_2350592=fGcM5JEURg2qXvzkvTcFkEdW+WUAAAAAQUIPAAAAAACX32Lemi2acQCQF2Gfu8Xq; visid_incap_2328800=qWPkpRY/TguL+X8prc4yB5ca+2UAAAAAQUIPAAAAAACvOxSrZWZpvKst3pd7t6dJ; visid_incap_2381114=WPEAgM5mSiWUWjrITG3nCg0X/GUAAAAAQUIPAAAAAABPWkORLBFniMx37HJDIPku; _hjSession_3411284=eyJpZCI6ImMzZTAzMDE3LWY0ODAtNDM3MS1hZWY1LTZhMjc4OTM1MWI0YiIsImMiOjE3MTE0NjQ3ODQzNDcsInMiOjAsInIiOjAsInNiIjowLCJzciI6MCwic2UiOjAsImZzIjowLCJzcCI6MH0=; _gid=GA1.3.444023237.1711464796; _ga=GA1.1.1219979611.1706712951; _ga_37NC80P0CW=GS1.1.1711464795.26.1.1711465073.0.0.0; _ga_56X461XV47=GS1.1.1711464795.26.1.1711465073.0.0.0; _ga_HJBQ7BT62M=GS1.1.1711464796.26.1.1711465073.0.0.0^
+  ^sec-ch-ua: ^\^Chromium^^;v=^\^122^^, ^\^Not
+  ^sec-ch-ua-platform: ^\^Windows^^^
+  sec-ch-ua-mobile: ?0
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_40b110267b764a8f933a0e14bbd536b1', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {"endorsementType":"CBN","industryName":"VEHICULOS"}
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

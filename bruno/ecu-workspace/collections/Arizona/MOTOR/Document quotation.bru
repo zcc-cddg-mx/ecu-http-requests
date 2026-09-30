@@ -1,0 +1,40 @@
+meta {
+  name: Document quotation
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{ _.server }}:{{ _.serverPort }}/policy/api/v1/arizona/motor/genericos/document/quotation
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantId-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_525b94c4be87496999dc6053f519009c', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+   "_type": "MotorGenericosTarificationRequest",
+  "motorGenericosTarification": {
+   "_type": "MotorGenericosTarification",
+  "policyData": {
+   "_type": "PolicyData",
+   "agentExternalId": "104036",
+   "pointOfSaleName": "QUITO PROTECSEGUROS CIA. LTDA. AGENCIA ASESORA PRODUCTORA DE SEGUROS",
+   "policyNumber": "COT-VH1000"
+   }
+   } 
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

@@ -1,0 +1,36 @@
+meta {
+  name: Reinsurer_1
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/reinsurance/api/v1/arizona/reinsurers
+  body: json
+  auth: bearer
+}
+
+headers {
+  x-tenantid-1: ec
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "Reinsurer",
+  	"reinsurerName": "Reinsurer name (e.g. organization name)",
+  	"reinsurerType": "REINSURER",
+  	"partyId": 8920,
+  	"effectiveDate": "2021-04-01T00:00:00.000+02:00",
+  	"expirationDate": "2025-04-01T00:00:00.000+02:00"
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

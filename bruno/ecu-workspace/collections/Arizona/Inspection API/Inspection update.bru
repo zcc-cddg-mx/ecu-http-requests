@@ -1,0 +1,49 @@
+meta {
+  name: Inspection update
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{ _.server }}/policy/api/v1/arizona/motor/inspection/update
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  User-Agent: insomnia/9.3.3
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_94527b5ca89c4b419bcf800d776c24ea', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "MotorGenericosTarificationRequest",
+  	"testMode": false,
+  	"policyNo": {{ _.policyNo }},
+  	"motorGenericosTarification": {
+  		"_type": "MotorGenericosTarification",
+  		"car": {
+  			"_type": "VehicleData",
+  			"objectNo": {{ _.objectNo }},
+  			"inspection": {
+  				"_type": "VehicleInspection",
+  				"inspectionId": {{ _.inspectionId }},
+  				"type": "MOTOR_INSPECTION",
+  				"subType": "AUTO",
+  				"contactTelephone": "12-34567890",
+  				"date": "2024-08-28T00:00:00.00"
+  			}
+  		}
+  	}
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

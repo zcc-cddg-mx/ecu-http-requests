@@ -1,0 +1,35 @@
+meta {
+  name: ZBox UploadMetadata test
+  type: http
+  seq: 8
+}
+
+post {
+  url: http://10.119.74.24:8000/zurich/api/collection/box/v1.0/createMetadata
+  body: json
+  auth: basic
+}
+
+headers {
+  Accept: */*
+  Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJDQXRjYkRJcmR4TU9ua0dKTlFnS2dKM25VYUI0SnA2MWpxcnFneHJuYVdVIn0.eyJqdGkiOiI5ZjNiODI4Zi1hNDQwLTRjZjUtOTI4Zi00ZWUxZDNmYzkwZWEiLCJleHAiOjE2NDk5Mzg0MzQsIm5iZiI6MCwiaWF0IjoxNjQ5OTM3MjM0LCJpc3MiOiJodHRwOi8vd3d3LmN6aWtlbi5hcmluZXQvYXV0aC9yZWFsbXMvbWFzdGVyIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjNhMmQ2ZjZjLWQ0ZjUtNGE3My1iZjg0LTVkZTQwMGRiNDBjMSIsInR5cCI6IkJlYXJlciIsImF6cCI6InBhc3MiLCJhdXRoX3RpbWUiOjAsInNlc3Npb25fc3RhdGUiOiJlOTM3ZTdiNy1iNzAwLTRhNDEtOTkxNS1kMDA1YmI5YjkxMGEiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImZyb250X3JvbGVfdXNlciIsImZyb250X3JvbGVfY29tbWVyY2lhbF92cCIsImZyb250X3JvbGVfaW5zcGVjdG9yX2ludGVybmFsIiwiZnJvbnRfcm9sZV90cmVhc3VyeV9leGVjdXRpdmUiLCJmcm9udF9yb2xlX3V3X21vdG9yIiwiZnJvbnRfcm9sZV96dXJpY2hfYXNzb2NpYXRlIiwiZnJvbnRfcm9sZV9pbnNwZWN0b3JfZXh0ZXJuYWwiLCJyb2xlX3VzZXIiLCJyb2xlX2Nhc2FfaGFiaXRhY2lvbl9mX3p1cmljaCIsImZyb250X3JvbGVfdXdfbGlmZSIsImZyb250X3JvbGVfYWNjb3VudGluZ19tYW5hZ2VyIiwicm9sZV9mYWN0dXJhZG9yIiwib2ZmbGluZV9hY2Nlc3MiLCJmcm9udF9yb2xlX2ZhY3R1cmFkb3IiLCJyb2xlX3ZlaGljdWxvc19mX3p1cmljaCIsImZyb250X3JvbGVfYWRtaW5pc3RyYXRvciIsInVtYV9hdXRob3JpemF0aW9uIiwicm9sZV9jdXN0b21lciIsImZyb250X3JvbGVfc3VwZXJfdXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInRlbmFudHMiOiJlYyIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiQURSSUFOQSBCRUxFTiBTQUxBWkFSIFZFTkVHQVMiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhc2FsYXphciIsInBhcnR5aWQiOiIyMDQwIiwiZ2l2ZW5fbmFtZSI6IkFEUklBTkEgQkVMRU4iLCJmYW1pbHlfbmFtZSI6IlNBTEFaQVIgVkVORUdBUyIsImVtYWlsIjoiYWRyaWJsbkB5YWhvby5lcyJ9.Uw31DxACYeO2V2oFpvPF1_bAwZCI1UZRychURrAu0N0jTx3WIumw3FZsWbu58CrbHyS-2j9ypR25AX8ctJ3BgzdeT6KMteJyZdNBMLDD8lzqFvMg4xnwjLlvCTQqTwi0Qjmfoi2duFSnD0aJH4GTIkM5o1w6pRL7vY3PfwI4xpDE48ihtsn1HK-_sm44RjTGGPfWBvy4QtiKCKXcqKx1Ru0ywErjx-MTcQ7Inv5FYrvnzJNH3UOdn7r8ZOF9jk73vS3gyW0SjZnkTW2QqTrh-7Vg8qhOlVooBYEmOEz2Cv-z9KxHzKq1oWp6lOIQKBJUzeCNyccVju622StrpY4tYA
+  Content-Length: 654
+  Content-Type: application/json
+  FEIGN_PRESELECTION: PARTY:10.185.0.122:34942;KEYCLOAK:10.189.0.118:32511;REFERRAL:10.187.0.110:33622;TRANSACTION-COORDINATOR:transaction-coordinator-1.ams.cziken.arinet:35865;EUREKA:eureka-1.ams.cziken.arinet:8761;RELEASE:10.189.0.119:33663;USER:10.187.0.111:33181;CLAIM:10.187.0.56:35308;POLICY:10.188.0.102:35266;FOUNDATION:10.187.0.109:34731;REPO:10.188.0.107:34474;ZUUL:10.189.0.121:8080;REINSURANCE:10.185.0.123:33877;DOCUMENT:10.189.0.117:34560;DATA-VIEW:10.189.0.116:33794;RULE:10.188.0.48:35706;ACCOUNTING:10.187.0.60:35133;AUTOMATION:192.168.3.104:42357
+  Link: <http://transaction-coordinator-1.ams.cziken.arinet:35865/tx/transaction-manager/0_ffff0abb0039_-3ef5507d_6257c1e7_18d8>; rel="durable-participant"; title="durable-participant"; type="text/plain"
+  x-tenantid-1: ec
+}
+
+auth:basic {
+  username: zurich
+  password: password2018
+}
+
+body:json {
+  {"userId":"15268637096","appName":"ARIZONA","moduleName":"Pre-emisión","year":2022,"registryId":"","registryNumber":1,"registryDescription":"ListPerson_upt 2022-04-14T13:53:57.414 10002","customerId":"1701164111","customerData":"ALBERTO  MIÑO CHIRIBOGA","policyData":"COT-LFC1024","claimID":"","processId":"","endorsementId":"","fileCreationDate":"2022-04-13T11:31:08.558","fileName":"ListPerson_upt 2022-04-14T13:53:57.414","fileType":"xlsx","beneficiaryId":"","beneficiaryData":"","retentionType":"","vehicleId":"","brokerFullName":" ","customerFullName":"ALBERTO  MIÑO CHIRIBOGA","claimBranch":"","lob":"","workflowOpID":"","fileId":"945186712387"}
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

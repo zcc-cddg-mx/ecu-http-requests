@@ -1,0 +1,67 @@
+meta {
+  name: installment
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/accounting/api/v1/arizona/transaction_entries?=
+  body: json
+  auth: bearer
+}
+
+params:query {
+  : 
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantId-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+      "_type" : "ECTransactionEntryRequest",
+      "accountPartyId" : 1,
+      "transAmt":        150,
+      "exchangeRate": 1,
+      "transCurrencyCode":        "USD",
+      "invoiceStartDate": "2021-01-01",
+      "invoiceEndDate": "2021-06-31",
+      "policyEffectiveYear": "2021-01-01",
+      "policyIssueDate": "2021-01-01",
+      "dueDate": "2021-01-01",
+      "transClass" : "INSTALLMENT",
+      "transSubclass":        "POLICY",
+      "policyNo":    222,
+      "policyNumber" : "N1001",
+      "policyAmountId":    1234,
+      "transactionTypeCode":    "P1",
+      "productType":"LF",
+      "billingNumber":"232443",
+  	  "billingId" : 123,
+      "instalmentPlanId":    333,
+      "yearAdjustmentNo": "1",
+      "operationType": "EC0001",
+      "paymentMethodCode":    "BANK_TRANSFER",
+      "transactionComponents":[
+          {
+          "_type" : "ECTransactionComponent",
+          "componentSource": "POLICY",
+          "componentSourceValue": "GROSS",
+          "lineOfBusiness": "LIFE",
+          "distributionChannel": "DC0104",
+          "basketSegment": "EC_SME_P",    
+      "office": "EC01"
+      }]
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

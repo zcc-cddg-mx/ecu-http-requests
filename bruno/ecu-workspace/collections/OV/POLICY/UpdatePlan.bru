@@ -1,0 +1,873 @@
+meta {
+  name: UpdatePlan
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{server}}/policy/api/v1/arizona/motorGenericos/vehicle/updatePlan
+  body: json
+  auth: inherit
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+body:json {
+  {
+      "_type": "MotorGenericosTarificationRequest",
+      "testMode": false,
+      "policyNo": 459095,
+      "motorGenericosTarification": {
+          "_type": "MotorGenericosTarification",
+          "policyData": {
+              "_type": "PolicyData",
+              "entityProperties": {},
+              "policyNo": 459095,
+              "policyNumber": "COT-VH779238",
+              "productCode": "VH",
+              "variant": "MOTOR",
+              "pointOfSale": "1298",
+              "status": "WORKING",
+              "customStatus": "WORKING",
+              "agentSEId": 1294,
+              "effectiveDate": "2025-02-07T05:00:00Z",
+              "expirationDate": "2026-02-07T05:00:00Z",
+              "nextInsurableObjectAllowed": "YES",
+              "paymentMethod": "1",
+              "ensuranceDocuments": [],
+              "endorsementIds": [],
+              "policyEndorsementIds": [],
+              "paymentMethodAllowed": [
+                  "1",
+                  "2",
+                  "3"
+              ],
+              "downloadInvoice": true,
+              "downloadPolicy": true,
+              "consents": [],
+              "uplaUpdate": "NO",
+              "policyAgencies": []
+          },
+          "car": {
+              "_type": "VehicleData",
+              "entityProperties": {
+                  "extraEquipmentSumInsured": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "MaxValuePct",
+                          "value": 0.15
+                      }
+                  ],
+                  "sumInsured": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "MaxValue",
+                          "value": 80000
+                      }
+                  ]
+              },
+              "objectNo": 475246,
+              "subProduct": "SENIOR",
+              "registrationNumber": "MCD2345",
+              "productionYear": 2022,
+              "typeOfVehicle": "CARGA",
+              "make": "CHEVROLET",
+              "makeId": "5036",
+              "model": "CAPTIVA",
+              "modelId": "0919216230",
+              "colorName": "NEGRO AZUL",
+              "colorId": "0966345272",
+              "sumInsured": 25829,
+              "isNewCar": "NO",
+              "selectedPlan": "SENIOR",
+              "ensuranceVehicleId": "-1",
+              "substituteCarType": "SubstituteCarBasico",
+              "plans": [
+                  {
+                      "_type": "VehiclePlan",
+                      "entityProperties": {
+                          "factor": [
+                              {
+                                  "_type": "FieldProperty",
+                                  "propertyType": "MinValue",
+                                  "value": 6.51
+                              },
+                              {
+                                  "_type": "FieldProperty",
+                                  "propertyType": "MaxValue",
+                                  "value": 10
+                              }
+                          ]
+                      },
+                      "planType": "SENIOR",
+                      "planDescription": "Tailor Made",
+                      "premiumMonthly": 144.3,
+                      "premiumAnnual": 1731.59,
+                      "factor": 6.51,
+                      "isEditable": "YES",
+                      "benefits": [
+                          {
+                              "_type": "VehicleBenefit",
+                              "entityProperties": {
+                                  "408": [
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "Enabled"
+                                      }
+                                  ]
+                              },
+                              "coverageCode": "408",
+                              "coverageName": "Pacto andino",
+                              "selected": "YES",
+                              "coverageOptions": [],
+                              "fullyDiscounted": "NO"
+                          },
+                          {
+                              "_type": "VehicleBenefit",
+                              "entityProperties": {
+                                  "410": [
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "Enabled"
+                                      }
+                                  ]
+                              },
+                              "coverageCode": "410",
+                              "coverageName": "Asistencia zurich",
+                              "selected": "YES",
+                              "coverageOptions": [],
+                              "fullyDiscounted": "NO"
+                          },
+                          {
+                              "_type": "VehicleBenefit",
+                              "entityProperties": {
+                                  "411": [
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "Enabled"
+                                      }
+                                  ]
+                              },
+                              "coverageCode": "411",
+                              "coverageName": "Pago de primas",
+                              "selected": "YES",
+                              "coverageOptions": [
+                                  {
+                                      "_type": "CoverageOption",
+                                      "code": "15",
+                                      "value": "15 dias",
+                                      "entityProperties": {}
+                                  },
+                                  {
+                                      "_type": "CoverageOption",
+                                      "code": "30",
+                                      "value": "30 dias",
+                                      "entityProperties": {}
+                                  }
+                              ],
+                              "selectedOption": "15",
+                              "fullyDiscounted": "NO"
+                          },
+                          {
+                              "_type": "VehicleBenefit",
+                              "entityProperties": {
+                                  "432": [
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "Enabled"
+                                      }
+                                  ]
+                              },
+                              "coverageCode": "432",
+                              "coverageName": "Auto sustituto",
+                              "selected": "YES",
+                              "coverageOptions": [],
+                              "fullyDiscounted": "NO"
+                          }
+                      ],
+                      "otherCoverages": [
+                          {
+                              "_type": "VehicleOtherCoverage",
+                              "coverageCode": "413",
+                              "coverageName": "Muerte accidental titular",
+                              "sumInsured": 15000,
+                              "premium": 0,
+                              "fullyDiscounted": "NO",
+                              "entityProperties": {
+                                  "sumInsured": [
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "MinValue",
+                                          "value": 15000
+                                      },
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "MaxValue",
+                                          "value": 30000
+                                      }
+                                  ]
+                              },
+                              "fieldsInfo": null,
+                              "selected": "NO",
+                              "coverageOptions": []
+                          },
+                          {
+                              "_type": "VehicleOtherCoverage",
+                              "coverageCode": "414",
+                              "coverageName": "Responsabilidad civil luc",
+                              "sumInsured": 40000,
+                              "premium": 0,
+                              "fullyDiscounted": "NO",
+                              "entityProperties": {
+                                  "sumInsured": [
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "MinValue",
+                                          "value": 40000
+                                      },
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "MaxValue",
+                                          "value": 50000
+                                      }
+                                  ]
+                              },
+                              "fieldsInfo": null,
+                              "selected": "NO",
+                              "coverageOptions": []
+                          },
+                          {
+                              "_type": "VehicleOtherCoverage",
+                              "coverageCode": "415",
+                              "coverageName": "Muerte accidental ocupantes",
+                              "sumInsured": 10000,
+                              "premium": 0,
+                              "fullyDiscounted": "NO",
+                              "entityProperties": {
+                                  "sumInsured": [
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "MinValue",
+                                          "value": 10000
+                                      },
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "MaxValue",
+                                          "value": 30000
+                                      }
+                                  ]
+                              },
+                              "fieldsInfo": null,
+                              "selected": "NO",
+                              "coverageOptions": []
+                          },
+                          {
+                              "_type": "VehicleOtherCoverage",
+                              "coverageCode": "416",
+                              "coverageName": "Gastos de remolque",
+                              "sumInsured": 300,
+                              "premium": 0,
+                              "fullyDiscounted": "NO",
+                              "entityProperties": {
+                                  "sumInsured": [
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "MinValue",
+                                          "value": 300
+                                      },
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "MaxValue",
+                                          "value": 500
+                                      }
+                                  ]
+                              },
+                              "fieldsInfo": null,
+                              "selected": "NO",
+                              "coverageOptions": []
+                          },
+                          {
+                              "_type": "VehicleOtherCoverage",
+                              "coverageCode": "417",
+                              "coverageName": "Gastos médicos",
+                              "sumInsured": 4000,
+                              "premium": 0,
+                              "fullyDiscounted": "NO",
+                              "entityProperties": {
+                                  "sumInsured": [
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "MinValue",
+                                          "value": 4000
+                                      },
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "MaxValue",
+                                          "value": 10000
+                                      }
+                                  ]
+                              },
+                              "fieldsInfo": null,
+                              "selected": "NO",
+                              "coverageOptions": []
+                          },
+                          {
+                              "_type": "VehicleOtherCoverage",
+                              "coverageCode": "418",
+                              "coverageName": "Gastos de sepelio",
+                              "sumInsured": 1000,
+                              "premium": 0,
+                              "fullyDiscounted": "NO",
+                              "entityProperties": {
+                                  "sumInsured": [
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "MinValue",
+                                          "value": 1000
+                                      },
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "MaxValue",
+                                          "value": 1000
+                                      }
+                                  ]
+                              },
+                              "fieldsInfo": null,
+                              "selected": "NO",
+                              "coverageOptions": []
+                          },
+                          {
+                              "_type": "VehicleOtherCoverage",
+                              "coverageCode": "401",
+                              "coverageName": "Cobertura Todo Riesgo",
+                              "sumInsured": 0,
+                              "premium": 1681.47,
+                              "fullyDiscounted": "NO",
+                              "entityProperties": {
+                                  "sumInsured": [
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "Hidden"
+                                      }
+                                  ],
+                                  "premium": [
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "Hidden"
+                                      }
+                                  ],
+                                  "fullyDiscounted": [
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "Hidden"
+                                      }
+                                  ]
+                              },
+                              "fieldsInfo": null,
+                              "selected": "NO",
+                              "coverageOptions": []
+                          }
+                      ],
+                      "additionalCoverages": [
+                          {
+                              "_type": "VehicleAdditionalCoverage",
+                              "entityProperties": {
+                                  "value": [
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "Type",
+                                          "message": "MONEY"
+                                      }
+                                  ]
+                              },
+                              "coverageCode": "439",
+                              "coverageName": "Zero Raspones",
+                              "premium": 26.04,
+                              "selected": "NO",
+                              "fullyDiscounted": "NO",
+                              "coverageOptions": [],
+                              "selectedOption": null
+                          }
+                      ],
+                      "deductibles": [
+                          {
+                              "_type": "VehicleDeductible",
+                              "entityProperties": {
+                                  "EcVehPartialLossClaimPct": [
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "MinValue",
+                                          "value": 10
+                                      },
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "MaxValue",
+                                          "value": 20
+                                      }
+                                  ]
+                              },
+                              "type": "EcVehPartialLossClaimPct",
+                              "value": 10
+                          },
+                          {
+                              "_type": "VehicleDeductible",
+                              "entityProperties": {
+                                  "EcVehPartialLossSumI": [
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "MinValue",
+                                          "value": 1
+                                      },
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "MaxValue",
+                                          "value": 3
+                                      }
+                                  ]
+                              },
+                              "type": "EcVehPartialLossSumI",
+                              "value": 1
+                          },
+                          {
+                              "_type": "VehicleDeductible",
+                              "entityProperties": {
+                                  "EcVehPartialLoss": [
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "MinValue",
+                                          "value": 300
+                                      },
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "MaxValue",
+                                          "value": 500
+                                      }
+                                  ]
+                              },
+                              "type": "EcVehPartialLoss",
+                              "value": 300
+                          },
+                          {
+                              "_type": "VehicleDeductible",
+                              "entityProperties": {
+                                  "EcVehTotalLoss": [
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "MinValue",
+                                          "value": 15
+                                      },
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "MaxValue",
+                                          "value": 30
+                                      }
+                                  ]
+                              },
+                              "type": "EcVehTotalLoss",
+                              "value": 15
+                          },
+                          {
+                              "_type": "VehicleDeductible",
+                              "entityProperties": {
+                                  "EcVehTotalLossTheft": [
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "MinValue",
+                                          "value": 25
+                                      },
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "MaxValue",
+                                          "value": 30
+                                      }
+                                  ]
+                              },
+                              "type": "EcVehTotalLossTheft",
+                              "value": 30
+                          }
+                      ],
+                      "generalCoverages": []
+                  }
+              ],
+              "inspections": [],
+              "referrals": [],
+              "vehicleEquipment": [],
+              "renewalInformation": {
+                  "_type": "RenewalInformation",
+                  "entityProperties": {}
+              },
+              "referralsRequired": [],
+              "referralsOptional": [
+                  {
+                      "_type": "ReferralDefinition",
+                      "id": 5953,
+                      "code": "VH_N_CAR_PRODUCT_CONDITIONS",
+                      "name": "Condiciones Producto",
+                      "description": "La póliza anterior adjunta tenía amparo patrimonial",
+                      "processName": "POLICY",
+                      "createAutomatically": "NO",
+                      "clearAutomatically": "NO",
+                      "mandatoryCommentApprove": "NO",
+                      "mandatoryCommentReject": "NO",
+                      "mandatoryCommentAssign": "YES",
+                      "mandatoryCommentReopen": "NO",
+                      "validFrom": "2021-03-01T05:00:00Z",
+                      "versionNo": "1",
+                      "state": "DRAFT",
+                      "canSelfAccept": "NO",
+                      "finalizeProcessName": "bean:EcVHProductConditionsReferral",
+                      "referralConditions": [
+                          {
+                              "_type": "ReferralCondition"
+                          }
+                      ],
+                      "referralLimits": [],
+                      "approvalRules": [
+                          {
+                              "_type": "ApprovalRule",
+                              "id": 4953,
+                              "name": "VH_N_CAR_PRODUCT_CONDITIONS"
+                          }
+                      ]
+                  },
+                  {
+                      "_type": "ReferralDefinition",
+                      "id": 5952,
+                      "code": "VH_N_CAR_ADD_FREE_OF_CHARGE",
+                      "name": "Adicionales sin costo",
+                      "description": "La póliza anterior adjunta tenía amparo patrimonial",
+                      "processName": "POLICY",
+                      "createAutomatically": "NO",
+                      "clearAutomatically": "NO",
+                      "mandatoryCommentApprove": "NO",
+                      "mandatoryCommentReject": "NO",
+                      "mandatoryCommentAssign": "YES",
+                      "mandatoryCommentReopen": "NO",
+                      "validFrom": "2021-03-01T05:00:00Z",
+                      "versionNo": "1",
+                      "state": "DRAFT",
+                      "canSelfAccept": "NO",
+                      "finalizeProcessName": "bean:EcVHAddFreeOfChargeReferral",
+                      "referralConditions": [
+                          {
+                              "_type": "ReferralCondition"
+                          }
+                      ],
+                      "referralLimits": [],
+                      "approvalRules": [
+                          {
+                              "_type": "ApprovalRule",
+                              "id": 4952,
+                              "name": "VH_N_CAR_ADD_FREE_OF_CHARGE"
+                          }
+                      ]
+                  },
+                  {
+                      "_type": "ReferralDefinition",
+                      "id": 5955,
+                      "code": "VH_N_CAR_RETROACTIVE_VALIDITY",
+                      "name": "Vigencia Retroactiva",
+                      "description": "La póliza anterior adjunta tenía amparo patrimonial",
+                      "processName": "POLICY",
+                      "createAutomatically": "NO",
+                      "clearAutomatically": "NO",
+                      "mandatoryCommentApprove": "NO",
+                      "mandatoryCommentReject": "NO",
+                      "mandatoryCommentAssign": "YES",
+                      "mandatoryCommentReopen": "NO",
+                      "validFrom": "2021-03-01T05:00:00Z",
+                      "versionNo": "1",
+                      "state": "DRAFT",
+                      "canSelfAccept": "NO",
+                      "finalizeProcessName": "bean:EcVHRetroactiveValidityReferral",
+                      "referralConditions": [
+                          {
+                              "_type": "ReferralCondition"
+                          }
+                      ],
+                      "referralLimits": [],
+                      "approvalRules": [
+                          {
+                              "_type": "ApprovalRule",
+                              "id": 4955,
+                              "name": "VH_N_CAR_RETROACTIVE_VALIDITY"
+                          }
+                      ]
+                  },
+                  {
+                      "_type": "ReferralDefinition",
+                      "id": 5954,
+                      "code": "VH_N_CAR_RATE_REVIEW",
+                      "name": "Revisión de Tasa",
+                      "description": "La póliza anterior adjunta tenía amparo patrimonial",
+                      "processName": "POLICY",
+                      "createAutomatically": "NO",
+                      "clearAutomatically": "NO",
+                      "mandatoryCommentApprove": "NO",
+                      "mandatoryCommentReject": "NO",
+                      "mandatoryCommentAssign": "YES",
+                      "mandatoryCommentReopen": "NO",
+                      "validFrom": "2021-03-01T05:00:00Z",
+                      "versionNo": "1",
+                      "state": "DRAFT",
+                      "canSelfAccept": "NO",
+                      "finalizeProcessName": "bean:EcVHRateReviewReferral",
+                      "referralConditions": [
+                          {
+                              "_type": "ReferralCondition"
+                          }
+                      ],
+                      "referralLimits": [],
+                      "approvalRules": [
+                          {
+                              "_type": "ApprovalRule",
+                              "id": 4954,
+                              "name": "VH_N_CAR_RATE_REVIEW"
+                          }
+                      ]
+                  }
+              ],
+              "isBeingProcessed": "NO",
+              "isVehicleAddedManually": "NO",
+              "removable": "NO",
+              "fieldsInfo": {
+                  "extraEquipmentSumInsured": [
+                      null
+                  ],
+                  "sumInsured": [
+                      null
+                  ]
+              }
+          },
+          "owner": {
+              "_type": "VehicleOwner",
+              "entityProperties": {
+                  "name": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "Disabled"
+                      }
+                  ],
+                  "identificationNumber": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "Enabled"
+                      }
+                  ],
+                  "age": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "Missing"
+                      }
+                  ],
+                  "civilStatus": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "Missing"
+                      }
+                  ]
+              },
+              "partyType": "PERSON",
+              "name": "Angélica Andrea  Flores Segovia",
+              "identificationNumber": "0706513066",
+              "gender": "M",
+              "civilStatus": "SOLTERO",
+              "age": 31,
+              "fieldsInfo": {
+                  "name": [
+                      {
+                          "_type": "FormProxyFieldConstraint",
+                          "constraintName": "ProxyDisabled",
+                          "constraint": {
+                              "_type": "ProxyFieldDisabled",
+                              "proxyDisabled": true
+                          },
+                          "localId": "24ea49fa-8dbf-4821-a9e4-ec45e3070821"
+                      }
+                  ],
+                  "identificationNumber": [
+                      {
+                          "_type": "FormProxyFieldConstraint",
+                          "constraintName": "ProxyDisabled",
+                          "constraint": {
+                              "_type": "ProxyFieldDisabled",
+                              "proxyDisabled": false
+                          },
+                          "localId": "739b0c82-eed2-4c53-bfff-cd23db8ba14f"
+                      }
+                  ],
+                  "age": [
+                      null
+                  ],
+                  "civilStatus": [
+                      null
+                  ]
+              }
+          },
+          "cars": [
+              {
+                  "_type": "VehicleData",
+                  "objectNo": 475246,
+                  "subProduct": "SENIOR",
+                  "isNewCar": "NO",
+                  "totalSumInsured": 25829,
+                  "vehicleDescription": "CHEVROLET-CAPTIVA-2022",
+                  "netPremium": 1731.59,
+                  "isBeingProcessed": "NO",
+                  "removable": "YES",
+                  "plans": [],
+                  "inspections": [],
+                  "referrals": [],
+                  "vehicleEquipment": [],
+                  "renewalInformation": {
+                      "_type": "RenewalInformation",
+                      "entityProperties": {}
+                  },
+                  "referralsRequired": [],
+                  "referralsOptional": [
+                      {
+                          "_type": "ReferralDefinition",
+                          "id": 5953,
+                          "code": "VH_N_CAR_PRODUCT_CONDITIONS",
+                          "name": "Condiciones Producto",
+                          "description": "La póliza anterior adjunta tenía amparo patrimonial",
+                          "processName": "POLICY",
+                          "createAutomatically": "NO",
+                          "clearAutomatically": "NO",
+                          "mandatoryCommentApprove": "NO",
+                          "mandatoryCommentReject": "NO",
+                          "mandatoryCommentAssign": "YES",
+                          "mandatoryCommentReopen": "NO",
+                          "validFrom": "2021-03-01T05:00:00Z",
+                          "versionNo": "1",
+                          "state": "DRAFT",
+                          "canSelfAccept": "NO",
+                          "finalizeProcessName": "bean:EcVHProductConditionsReferral",
+                          "referralConditions": [
+                              {
+                                  "_type": "ReferralCondition"
+                              }
+                          ],
+                          "referralLimits": [],
+                          "approvalRules": [
+                              {
+                                  "_type": "ApprovalRule",
+                                  "id": 4953,
+                                  "name": "VH_N_CAR_PRODUCT_CONDITIONS"
+                              }
+                          ]
+                      },
+                      {
+                          "_type": "ReferralDefinition",
+                          "id": 5952,
+                          "code": "VH_N_CAR_ADD_FREE_OF_CHARGE",
+                          "name": "Adicionales sin costo",
+                          "description": "La póliza anterior adjunta tenía amparo patrimonial",
+                          "processName": "POLICY",
+                          "createAutomatically": "NO",
+                          "clearAutomatically": "NO",
+                          "mandatoryCommentApprove": "NO",
+                          "mandatoryCommentReject": "NO",
+                          "mandatoryCommentAssign": "YES",
+                          "mandatoryCommentReopen": "NO",
+                          "validFrom": "2021-03-01T05:00:00Z",
+                          "versionNo": "1",
+                          "state": "DRAFT",
+                          "canSelfAccept": "NO",
+                          "finalizeProcessName": "bean:EcVHAddFreeOfChargeReferral",
+                          "referralConditions": [
+                              {
+                                  "_type": "ReferralCondition"
+                              }
+                          ],
+                          "referralLimits": [],
+                          "approvalRules": [
+                              {
+                                  "_type": "ApprovalRule",
+                                  "id": 4952,
+                                  "name": "VH_N_CAR_ADD_FREE_OF_CHARGE"
+                              }
+                          ]
+                      },
+                      {
+                          "_type": "ReferralDefinition",
+                          "id": 5955,
+                          "code": "VH_N_CAR_RETROACTIVE_VALIDITY",
+                          "name": "Vigencia Retroactiva",
+                          "description": "La póliza anterior adjunta tenía amparo patrimonial",
+                          "processName": "POLICY",
+                          "createAutomatically": "NO",
+                          "clearAutomatically": "NO",
+                          "mandatoryCommentApprove": "NO",
+                          "mandatoryCommentReject": "NO",
+                          "mandatoryCommentAssign": "YES",
+                          "mandatoryCommentReopen": "NO",
+                          "validFrom": "2021-03-01T05:00:00Z",
+                          "versionNo": "1",
+                          "state": "DRAFT",
+                          "canSelfAccept": "NO",
+                          "finalizeProcessName": "bean:EcVHRetroactiveValidityReferral",
+                          "referralConditions": [
+                              {
+                                  "_type": "ReferralCondition"
+                              }
+                          ],
+                          "referralLimits": [],
+                          "approvalRules": [
+                              {
+                                  "_type": "ApprovalRule",
+                                  "id": 4955,
+                                  "name": "VH_N_CAR_RETROACTIVE_VALIDITY"
+                              }
+                          ]
+                      },
+                      {
+                          "_type": "ReferralDefinition",
+                          "id": 5954,
+                          "code": "VH_N_CAR_RATE_REVIEW",
+                          "name": "Revisión de Tasa",
+                          "description": "La póliza anterior adjunta tenía amparo patrimonial",
+                          "processName": "POLICY",
+                          "createAutomatically": "NO",
+                          "clearAutomatically": "NO",
+                          "mandatoryCommentApprove": "NO",
+                          "mandatoryCommentReject": "NO",
+                          "mandatoryCommentAssign": "YES",
+                          "mandatoryCommentReopen": "NO",
+                          "validFrom": "2021-03-01T05:00:00Z",
+                          "versionNo": "1",
+                          "state": "DRAFT",
+                          "canSelfAccept": "NO",
+                          "finalizeProcessName": "bean:EcVHRateReviewReferral",
+                          "referralConditions": [
+                              {
+                                  "_type": "ReferralCondition"
+                              }
+                          ],
+                          "referralLimits": [],
+                          "approvalRules": [
+                              {
+                                  "_type": "ApprovalRule",
+                                  "id": 4954,
+                                  "name": "VH_N_CAR_RATE_REVIEW"
+                              }
+                          ]
+                      }
+                  ],
+                  "isVehicleAddedManually": "NO",
+                  "fieldsInfo": {},
+                  "entityProperties": {}
+              }
+          ],
+          "beneficiaries": [],
+          "planInformation": []
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

@@ -1,0 +1,108 @@
+meta {
+  name: written-prem-2
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/accounting/api/v1/arizona/transaction_reserve_entries
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantId-1: ec
+  ~: 
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "ECTransactionReserveEntryRequest",
+  	"policyNo": 102,
+  	"billingId": 102,
+  	"accountPartyId": 1,
+  	"transAmt": 2499,
+  	"exchangeRate": 1,
+  	"transCurrencyCode": "USD",
+  	"reserveStartDate": "2021-04-01",
+  	"reserveEndDate": "2022-03-31",
+  	"policyEffectiveYear": "2021-04-01",
+  	"policyIssueDate": "2021-04-01",
+  	"reserveClass": "WRITTEN_PREMIUM",
+  	"transSubclass": "POLICY",
+  	"policyNumber": "N1001",
+  	"policyAmountId": 1234,
+  	"transactionTypeCode": "P1",
+  	"productType": "LFM",
+  	"instalmentPlanId": 333,
+  	"yearAdjustmentNo": "1",
+  	"operationType": "EC0001",
+  	"transactionComponents": [
+  		{
+  			"_type": "ECTransactionComponent",
+  			"componentSource": "POLICY",
+  			"componentSourceValue": "GROSS",
+  			"componentTransAmt": 2499,
+  			"componentCurrencyCode": "USD",
+  			"lineOfBusiness": "E0201",
+  			"distributionChannel": "DC0104",
+  			"basketSegment": "EC_SME_P",
+  			"office": "EC01"
+  		},
+  		{
+  			"_type": "ECTransactionComponent",
+  			"componentSource": "POLICY",
+  			"componentSourceValue": "NET",
+  			"componentTransAmt": 2400,
+  			"componentCurrencyCode": "USD",
+  			"lineOfBusiness": "E0201",
+  			"distributionChannel": "DC0104",
+  			"basketSegment": "EC_SME_P",
+  			"office": "EC01"
+  		},
+  		{
+  			"_type": "ECTransactionComponent",
+  			"componentSource": "POLICY",
+  			"componentSourceValue": "RIGHTFEES",
+  			"componentTransAmt": 3,
+  			"componentCurrencyCode": "USD",
+  			"lineOfBusiness": "E0201",
+  			"distributionChannel": "DC0104",
+  			"basketSegment": "EC_SME_P",
+  			"office": "EC01"
+  		},
+  		{
+  			"_type": "ECTransactionComponent",
+  			"componentSource": "POLICY",
+  			"componentSourceValue": "SS CONTR",
+  			"componentTransAmt": 12,
+  			"componentCurrencyCode": "USD",
+  			"lineOfBusiness": "E0201",
+  			"distributionChannel": "DC0104",
+  			"basketSegment": "EC_SME_P",
+  			"office": "EC01"
+  		},
+  		{
+  			"_type": "ECTransactionComponent",
+  			"componentSource": "POLICY",
+  			"componentSourceValue": "SCVS CONTR",
+  			"componentTransAmt": 84,
+  			"componentCurrencyCode": "USD",
+  			"lineOfBusiness": "E0201",
+  			"distributionChannel": "DC0104",
+  			"basketSegment": "EC_SME_P",
+  			"office": "EC01"
+  		}
+  	]
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

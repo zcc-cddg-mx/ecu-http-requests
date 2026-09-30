@@ -1,0 +1,54 @@
+meta {
+  name: Create Payment Instruction
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/accounting/api/v1/arizona/payment_instructions?=
+  body: json
+  auth: bearer
+}
+
+params:query {
+  : 
+}
+
+headers {
+  x-tenantId-1: ec
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "TransPaymentInstruction",
+  	"partyId": 8952,
+  	"paymentInstructionType": "BANK_TRANSFER",
+  	"paymentBankAccount": {
+  		"_type": "PaymentBankAccount",
+  		"name": "some_name",
+  		"bankPartyCVR": "123",
+  		"bankPartyId": "4953",
+  		"bankCode": "IBAN",
+  		"bankCodeValue": "bankCodeValue",
+  		"bankAccountNumber": "121234123412341234",
+  		"mobileNumber": "123 123 123",
+  		"bankName": "ING BANK"
+  	},
+  	"memo": "credit note (installment negative value)",
+  	"paymentCurrency": "USD",
+  	"paymentMethodType": "BOTH",
+  	"firstChoice": "YES",
+  	"validFrom": "2020-01-01",
+  	"locked": "NO"
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

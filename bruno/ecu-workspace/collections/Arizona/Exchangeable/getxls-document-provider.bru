@@ -1,0 +1,33 @@
+meta {
+  name: getxls-document-provider
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/document-provider/api/v1/arizona/data/download
+  body: multipartForm
+  auth: bearer
+}
+
+headers {
+  Content-Type: multipart/form-data
+  x-tenantId-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:multipart-form {
+  "{
+  	\"_type\": \"ExportOptions\",
+  	\"outputFileType\": \"xlsx\",
+  	\"outputFileName\": \"DocumentDefinition.xlsx\"
+  }": 
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

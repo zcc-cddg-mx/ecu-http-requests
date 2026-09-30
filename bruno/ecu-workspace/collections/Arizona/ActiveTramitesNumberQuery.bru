@@ -1,0 +1,33 @@
+meta {
+  name: ActiveTramitesNumberQuery
+  type: http
+  seq: 64
+}
+
+get {
+  url: http://larasrv.ncdc:9011/api/v1/voc/query/ActiveTramitesNumberQuery/ActiveTramitesNumberDTO?page=0&pageSize=20&brokerruc=1504525498050&identificacion=2003208190530&sortProperties=tramitesEnCurso
+  body: none
+  auth: basic
+}
+
+params:query {
+  page: 0
+  pageSize: 20
+  brokerruc: 1504525498050
+  identificacion: 2003208190530
+  sortProperties: tramitesEnCurso
+}
+
+headers {
+  User-Agent: insomnia/8.6.1
+}
+
+auth:basic {
+  username: voclient
+  password: 1!Nc@dc#
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

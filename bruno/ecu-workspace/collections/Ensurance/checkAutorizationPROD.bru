@@ -1,0 +1,21 @@
+meta {
+  name: checkAutorizationPROD
+  type: http
+  seq: 33
+}
+
+get {
+  url: https://balanceador.zurichseguros.com.ec/zurich/api/client/clientcontrol/v1.0/authorization/status/490353258
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: zurich
+  password: password2018
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

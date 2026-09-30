@@ -1,0 +1,19 @@
+meta {
+  name: getRreferrals
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{server}}/referral/api/v1/arizona/referral_definitions
+  body: json
+  auth: inherit
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+settings {
+  encodeUrl: true
+}

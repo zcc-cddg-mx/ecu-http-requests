@@ -1,0 +1,122 @@
+meta {
+  name: Parties handling select bank account
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/claim/api/v1/arizona/proxy/handling/parties/save?=
+  body: json
+  auth: bearer
+}
+
+params:query {
+  : 
+}
+
+headers {
+  x-tenantId-1: ec
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'when-expired', 300 %}
+}
+
+body:json {
+  {
+  	"_type": "HandlingInvolvedPartiesProxy",
+  	"claimNumber":"22-87-LFC-150",
+  	"incidentParties": [
+  		{
+  			"_type": "HandlingSingleIncidentPartyProxy",
+  			"fieldsInfo": {},
+  			"partyId": 15087,
+  			"mainRole": "INSURED",
+  			"partyName": "SANDRA ELIZABETH SEGOVIA MOGOLLON",
+  			"identification": "1710462886",
+  			"phoneNumbers": [
+  				"09-87060654",
+  				"99-9999999"
+  			],
+  			"contactEmails": [
+  				"addoppakez-2334@yopmail.com"
+  			],
+  			"orderNumber": 1,
+  			"partyRoles": [
+  				{
+  					"_type": "HandlingPartyRole",
+  					"fieldsInfo": {},
+  					"roleName": "CONTACT_PERSON",
+  					"roleActive": "YES"
+  				},
+  				{
+  					"_type": "HandlingPartyRole",
+  					"fieldsInfo": {},
+  					"roleName": "BENEFICIARY",
+  					"roleActive": "NO"
+  				}
+  			],
+  			"bankAccounts": []
+  		},
+  		{
+  			"_type": "HandlingSingleIncidentPartyProxy",
+  			"isChanged": "YES",
+  			"partyId": 9952,
+  			"mainRole": "",
+  			"partyName": "ADRIANA ROCIO SARAVIA QUISHPE",
+  			"identification": "1720728557",
+  			"phoneNumbers": [
+  				"55-12312312",
+  				"51-2312312"
+  			],
+  			"contactEmails": [
+  				"a@as.pl"
+  			],
+  			"orderNumber": 2,
+  			"partyRoles": [
+  				{
+  					"_type": "HandlingPartyRole",
+  					"fieldsInfo": {},
+  					"roleName": "BENEFICIARY",
+  					"roleActive": "YES"
+  				},
+  				{
+  					"_type": "HandlingPartyRole",
+  					"fieldsInfo": {},
+  					"roleName": "CONTACT_PERSON",
+  					"roleActive": "NO"
+  				}
+  			],
+  			"bankAccounts": [
+  				{
+  					"_type": "BankAccountNumberProxy",
+  					"paymentInstructionId": 2,
+  					"bankNameAndAccountNumber": "BANCO-D-MIRO S.A. - PL123",
+  					"isSelected": "YES",
+  					"id": 2
+  				}
+  			]
+  		}
+  	],
+  	"resolutionParties": [
+  		{
+  			"_type": "HandlingSingleResolutionPartyProxy",
+  			"fieldsInfo": {},
+  			"partyId": 2034,
+  			"mainRole": "CLAIM_HANDLER",
+  			"partyName": "LINO DANIEL RAMPON ROSERO",
+  			"phoneNumbers": [],
+  			"contactEmails": [
+  				"lino.daniel.rampon.rosero@zurich.com"
+  			],
+  			"orderNumber": 1
+  		}
+  	]
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

@@ -1,0 +1,88 @@
+meta {
+  name: Save contract
+  type: http
+  seq: 83
+}
+
+post {
+  url: {{ _.server }}:{{ _.serverPort }}/reinsurance/api/v1/arizona/rei_contract/save
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_525b94c4be87496999dc6053f519009c', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+     "reiContract":{
+        "_type":"ReiContract",
+        "id":1952,
+        "status":"DRAFT",
+        "contractNo":"1",
+        "contractType":"QUOTA",
+        "contractCategory":"FACULTATIVE",
+        "name":"1",
+        "lineOfBusiness":"40",
+        "criteriaGroupId":1,
+        "riskClass":"FIRSRCLASS",
+        "riskType":"FIRSTRISK",
+        "currency":"USD",
+        "effectiveDate":"2023-03-29T05:00:00Z",
+        "expirationDate":"2023-03-31T05:00:00Z",
+        "ecContractCategory":"CESSION_REINSURANCE",
+        "transactionGroupId":1,
+        "subscriptionYear":"2021",
+        "accountPeriod":"ANNAUALLY",
+        "daysToSendAccounts":1,
+        "daysToPayBills":1,
+        "contractLevel":1,
+        "percentRetention":1,
+        "percentCession":1,
+        "insuredLimitType":"CAPACITY",
+        "capacity":1,
+        "contractBrokers":[
+           {
+              "_type":"ReiContractBroker",
+              "reinsurer":{
+                 "_type":"ReiReinsurer",
+                 "id":1,
+                 "reinsurerName":"Zurich Insurance Company Ltd",
+                 "partyId":8974,
+                 "tenantId":"ec",
+                 "effectiveDate":"2019-03-31T22:00:00Z"
+              },
+              "id":1952,
+              "percentParticipation":100,
+              "commission":69,
+              "contractReinsurers":[
+                 {
+                    "_type":"ReiContractReinsurer",
+                    "reinsurer":{
+                       "_type":"ReiReinsurer",
+                       "id":1,
+                       "reinsurerName":"Zurich Insurance Company Ltd",
+                       "partyId":8974,
+                       "tenantId":"ec",
+                       "effectiveDate":"2019-03-31T22:00:00Z"
+                    },
+                    "id":1952,
+                    "percentParticipation":100
+                 }
+              ]
+           }
+        ]
+     }
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

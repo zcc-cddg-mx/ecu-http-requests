@@ -1,0 +1,29 @@
+meta {
+  name: View contract
+  type: http
+  seq: 84
+}
+
+post {
+  url: {{ _.server }}:{{ _.serverPort }}/reinsurance/api/v1/arizona/rei_contract/view
+  body: json
+  auth: bearer
+}
+
+headers {
+  x-tenantid-1: ec
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_525b94c4be87496999dc6053f519009c', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {"reiContract":{"_type":"ReiContract","id":1952,"contractBrokers":[]}}
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

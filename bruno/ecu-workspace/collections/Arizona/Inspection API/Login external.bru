@@ -1,0 +1,27 @@
+meta {
+  name: Login external
+  type: http
+  seq: 11
+}
+
+post {
+  url: {{ _.server }}/user/api/v1/arizona/auth/login
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+  	"username": "test_api_user",
+  	"password": "test123!"
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

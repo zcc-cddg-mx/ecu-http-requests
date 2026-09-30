@@ -1,0 +1,29 @@
+meta {
+  name: Token EC
+  type: http
+  seq: 96
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/user/api/v1/arizona/auth/login
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  ~x-tenantId-1: no
+  ~: 
+}
+
+body:json {
+  {
+  	"username": "cperez",
+  	"password": "arizona2020!"
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

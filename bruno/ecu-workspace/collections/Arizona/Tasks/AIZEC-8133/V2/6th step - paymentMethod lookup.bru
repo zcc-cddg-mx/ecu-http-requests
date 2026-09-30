@@ -1,0 +1,36 @@
+meta {
+  name: 6th step - paymentMethod lookup
+  type: http
+  seq: 19
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/rule/api/v1/arizona/lookup_ratings/list
+  body: json
+  auth: bearer
+}
+
+headers {
+  x-tenantid-1: ec
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "LookupRatingRequest",
+  	"ratingListName": "PRODUCT_PAYMENT_METHOD",
+  	"params": {
+  		"productCode": "LFC",
+  		"identificationType": "ID_CARD"
+  	}
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

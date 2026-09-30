@@ -1,0 +1,122 @@
+meta {
+  name: Vehicle data 3
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{ _.server }}:{{ _.serverPort }}/policy/api/v1/arizona/motorGenericos/vehicle/vehicleData
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  User-Agent: insomnia/9.2.0
+  x-tenantId-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_40b110267b764a8f933a0e14bbd536b1', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "MotorGenericosTarificationRequest",
+  	"testMode": false,
+  	"policyNo": 459,
+  	"motorGenericosTarification": {
+  		"_type": "MotorGenericosTarification",
+  		"policyData": {
+  			"_type": "PolicyData",
+  			"entityProperties": {},
+  			"policyNo": 459,
+  			"policyNumber": "COT-VH1692",
+  			"productCode": "VH",
+  			"variant": "MOTOR",
+  			"pointOfSale": "2582",
+  			"status": "WORKING",
+  			"customStatus": "WORKING",
+  			"agentSEId": 2583,
+  			"effectiveDate": "2024-06-21T21:00:00Z",
+  			"expirationDate": "2025-06-21T21:00:00Z",
+  			"suggestedPolicyStartDate": "2024-06-21T21:00:00Z",
+  			"uplaStatus": "APPROVED",
+  			"nextInsurableObjectAllowed": "YES",
+  			"paymentMethod": "1",
+  			"ensuranceDocuments": [],
+  			"endorsementIds": [],
+  			"policyEndorsementIds": [],
+  			"paymentMethodAllowed": [
+  				"1",
+  				"2",
+  				"3"
+  			],
+  			"downloadInvoice": true,
+  			"downloadPolicy": true,
+  			"consents": [],
+  			"uplaUpdate": "NO",
+  			"policyAgencies": []
+  		},
+  		"car": {
+  			"_type": "VehicleData",
+  			"entityProperties": {
+  				"car": [
+  					{
+  						"_type": "FieldProperty",
+  						"propertyType": "MessageCode",
+  						"message": "El vehículo con placa KEKW420 se encuentra en una póliza vigente"
+  					}
+  				]
+  			},
+  			"registrationNumber": "IBF2727",
+  			"plans": [],
+  			"inspections": [],
+  			"referrals": [],
+  			"vehicleEquipment": [],
+  			"referralsRequired": [],
+  			"referralsOptional": [],
+  			"isBeingProcessed": "NO",
+  			"isNewCar": "NO",
+  			"isVehicleAddedManually": "NO",
+  			"removable": "NO",
+  			"fieldsInfo": {
+  				"car": [
+  					null
+  				]
+  			},
+  			"typeOfVehicle": null,
+  			"makeId": null,
+  			"make": null,
+  			"modelId": null,
+  			"model": null,
+  			"productionYear": null,
+  			"colorId": null,
+  			"colorName": null,
+  			"sumInsured": null,
+  			"extraEquipmentSumInsured": null,
+  			"extraEquipmentSumInsuredMaxPct": null,
+  			"totalInsureMinValue": null,
+  			"totalInsureMaxValue": null
+  		},
+  		"owner": {
+  			"_type": "VehicleOwner",
+  			"fieldsInfo": {},
+  			"entityProperties": {},
+  			"identificationNumber": null,
+  			"name": null,
+  			"gender": null,
+  			"civilStatus": null,
+  			"age": null
+  		},
+  		"cars": [],
+  		"beneficiaries": [],
+  		"planInformation": []
+  	}
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

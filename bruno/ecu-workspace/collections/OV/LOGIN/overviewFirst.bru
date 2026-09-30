@@ -1,0 +1,24 @@
+meta {
+  name: overviewFirst
+  type: http
+  seq: 13
+}
+
+get {
+  url: {{server}}/report/api/v1/arizona/ov/overview?query=createdBy:c9a68ed8-14a5-4672-befd-eb15ca45ebf9%20AND%20status:(APPROVED%20OR%20REJECTED)&index=DB_REFERRAL_VIEW
+  body: json
+  auth: inherit
+}
+
+params:query {
+  query: createdBy:c9a68ed8-14a5-4672-befd-eb15ca45ebf9%20AND%20status:(APPROVED%20OR%20REJECTED)
+  index: DB_REFERRAL_VIEW
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+settings {
+  encodeUrl: true
+}

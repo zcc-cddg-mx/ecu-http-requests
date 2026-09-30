@@ -1,0 +1,48 @@
+meta {
+  name: editAgente
+  type: http
+  seq: 1
+}
+
+put {
+  url: {{server}}/agent/api/v1/arizona/structureElements/679
+  body: json
+  auth: inherit
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+body:json {
+  {
+      "_type": "ECStructureElement",
+      "createdAt": "2020-07-08T04:11:26Z",
+      "updatedBy": "b92d2fdc-53d0-457b-8c16-839d416b95d9",
+      "recordVersion": 0,
+      "createdBy": "b92d2fdc-53d0-457b-8c16-839d416b95d9",
+      "id": 679,
+      "updatedAt": "2025-06-09T16:43:38Z",
+      "tenantId": "ec",
+      "effectiveDate": "1993-03-01T05:00:00Z",
+      "externalId": "104096",
+      "elementType": "AGENCY",
+      "unitCode": "AGENCY",
+      "unitName": "ALIANZA S.A. AGENCIA ASESORA PRODUCTORA DE SEGUROS",
+      "ensuranceId": "5002",
+      "businessUnits": [],
+      "businesUnitsIds": [],
+      "elementRoles": [],
+      "elementCodes": [],
+      "expirationDate": null
+  }
+}
+
+script:pre-request {
+  // //pm.variables.set("token", "demo" + "demooo");
+  console.log(bru.getGlobalEnvVar("token"));
+}
+
+settings {
+  encodeUrl: true
+}

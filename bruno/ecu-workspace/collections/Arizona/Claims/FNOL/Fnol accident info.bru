@@ -1,0 +1,106 @@
+meta {
+  name: Fnol accident info
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://fnol.byku.arinet/claim/api/v1/arizona/fnol_accident_information/enter_step
+  body: json
+  auth: bearer
+}
+
+headers {
+  x-tenantid-1: ec
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_6c9a3a579fa645e78ec2e6f6628c790f', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+      "_type": "Fnol",
+      "fieldsInfo": {},
+      "claimId": 53,
+      "claimNo": 70,
+      "claimNumber": "23-87-LFC-70",
+      "cipheredId": "YOHkabbWIpQ8TFKGWUGHhw0acr%2Fdn2K2UlJbuWieFBd%2BWyJdRSUVXwrkQEjEHwV7%21QeKLeuMZtDhBb42pCLuhKBOEM3wA99v70DiC11K40lzE1fNSryplBE30U1Dp%2BhhR",
+      "policyId": 3016,
+      "insurableObjectId": 2975,
+      "productCode": "LFC",
+      "pendingPayments": [],
+      "fnolAccidentInformation": {
+          "_type": "FnolAccidentInformation",
+          "fieldsInfo": {},
+          "identifier": "1710462886",
+          "policyNo": 91,
+          "policyNumber": "POL-LFC1002",
+          "insured": "SANDRA-ELIZABETH SEGOVIA-MOGOLLON",
+          "broker": "ZURICH SEGUROS ECUADOR S.A.",
+          "affectedPeople": [
+              {
+                  "_type": "FnolParty",
+                  "fieldsInfo": {},
+                  "id": 54,
+                  "partyId": 14174,
+                  "claimPartyNo": 70,
+                  "firstName": "SANDRA-ELIZABETH",
+                  "lastName": "SEGOVIA-MOGOLLON",
+                  "fullName": "SANDRA-ELIZABETH SEGOVIA-MOGOLLON",
+                  "identification": "1710462886",
+                  "claimPartyRoleType": "INSURED",
+                  "isAddedManually": "NO"
+              },
+              {
+                  "_type": "FnolParty",
+                  "fieldsInfo": {},
+                  "id": 53,
+                  "partyId": 8964,
+                  "claimPartyNo": 71,
+                  "fullName": "ZURICH SEGUROS ECUADOR S.A.",
+                  "claimPartyRoleType": "BROKER"
+              }
+          ],
+          "contactPerson": {
+              "_type": "FnolParty",
+              "fieldsInfo": {},
+              "id": 55,
+              "partyId": 14174,
+              "claimPartyNo": 72,
+              "firstName": "SANDRA ELIZABETH",
+              "lastName": "SEGOVIA MOGOLLON",
+              "fullName": "SANDRA ELIZABETH SEGOVIA MOGOLLON",
+              "identification": "1710462886",
+              "claimPartyRoleType": "CONTACT_PERSON",
+              "phoneNumber": "11-1222333",
+              "email": "konrad.byczynski@ncdc.pl",
+              "isAddedManually": "NO"
+          },
+          "privacyTermsAccepted": "YES",
+          "fnolSecurityNotice": "YES",
+          "lineOfBusiness": "LIFE"
+      },
+      "fnolCoverage": {
+          "_type": "FnolCoverage",
+          "fieldsInfo": {},
+          "accidental": "NO",
+          "fnolCoverageGroupList": [
+              {
+                  "coverageGroupName": "Death",
+                  "description": "¿La notificación es por fallecimiento del asegurado?"
+              }
+          ]
+      },
+      "authenticationResponse": {
+          "_type": "AuthenticationResponse",
+          "accessToken": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJDQXRjYkRJcmR4TU9ua0dKTlFnS2dKM25VYUI0SnA2MWpxcnFneHJuYVdVIn0.eyJleHAiOjE2NzM5NjIyMjcsIm5iZiI6MTY3MzM1NzM2NywiaWF0IjoxNjczMzU3NDI3LCJpc3MiOiJodHRwOi8vd3d3LmJ5a3UuYXJpbmV0L2F1dGgvcmVhbG1zL21hc3RlciIsInN1YiI6IjU4NTM5NzI5LWFhODQtNGE5Yi1iM2NmLTY1NDE1YmY1ZjQyMyIsInR5cCI6IkJlYXJlciIsImF1dGhfdGltZSI6MTY3MzM1NzQyNywicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbInJvbGVfYW5vbnltb3VzIiwicm9sZV9hbm9ueW1vdXNfcmVzdG9yZWQiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwicm9sZV9jdXN0b21lciJdfSwidGVuYW50cyI6ImVjIiwidjEiOiJQT0wtTEZDMTAwMiIsInYyIjoiTElGRSIsInYzIjoiMTcxMDQ2Mjg4NiIsInY0IjoiNzAifQ.DsQjEKp1dcjJRVNoehNwjfjot-OJvMlsBUO8P5crDoGp8M6c9tZFEcA1m9bVHXQVSV4uZsRqabyoypywRzK_amVNPXeqJGRqDgzUjYS70XmYLymPStgd5aNRkw-hyQwZfHugcAuhjxEXZu-coRrjTThAh-mKg91tq420sNHty7QgveTqIACo6Fei3BkPw4lehIx50vI71Gc1bagq-zi3yezCRqDGzdB6ExfQV4mzyX3GsnuHUhllXl5IHftIDMb_RkcldH6KK8Zko0n3sdH9KxRZXmyAanvIwxlu1i-ZrN3PBjt3ue4mMtr3IYA9Cz4ZRQxdazXh9W6410IC6AbXwg"
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

@@ -1,0 +1,24 @@
+meta {
+  name: UAT to PREPROD
+  type: http
+  seq: 1
+}
+
+get {
+  url: https://preprod-oficinavirtual.zurichseguros.com.ec/nuevoportal/agent/api/v1/arizona/structureElements
+  body: none
+  auth: bearer
+}
+
+headers {
+  User-Agent: insomnia/2023.5.8
+}
+
+auth:bearer {
+  token: eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJWQ1dzRkVaMHQzMGJxRmpJdmxlblBjWkEwakdHclAtbGNvN2JyMG1KSm5JIn0.eyJleHAiOjE3MDAxMzgzMTIsIm5iZiI6MTY5OTUzMzQ1MiwiaWF0IjoxNjk5NTMzNTEyLCJpc3MiOiJodHRwczovL3VhdC1vZmljaW5hdmlydHVhbC56dXJpY2hzZWd1cm9zLmNvbS5lYy9udWV2b3BvcnRhbC9hdXRoL3JlYWxtcy9tYXN0ZXIiLCJzdWIiOiIyYmZjNDhiOC04OGExLTRiNDEtYjBkYS1iMmFhMjU2ZGM3ZDUiLCJ0eXAiOiJCZWFyZXIiLCJhdXRoX3RpbWUiOjE2OTk1MzM1MTIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJyb2xlX2Fub255bW91cyIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJyb2xlX2N1c3RvbWVyIl19LCJ0ZW5hbnRzIjoiZWMifQ.DbO7fhJFwxNi6bILC9GyqB3pjaBjW26mJqn0imHWura9mQE8WVO-POC3Q6l6zO8l1viWStWSMbjAgsdTF4CQdrW9m8y7OReLXXy46wtMjEQ2ohdAgEFEoNxihU8abXz_Qlk45R0PpQU1ShUN6PybwA-M4byH2EeCJZjPmUW5QfEh2ViD1Yw_FIzfr1EQN8tbicb75Dx8yzBxuaCUfmzKYo7daTaWXMIqCjch6NuJzZXPnKEu0h8U5MLD_rgbVYJtbAeZMzehfY3TcnAmkLsK2qJ1y9jxlP7c4NHOvfzj3Qg8up2Q7VCfwq9iDhPCwqpKKZDWrLPHBCaYZ7tHe1DWHA
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

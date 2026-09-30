@@ -1,0 +1,19 @@
+meta {
+  name: userEffectives
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{server}}/policy/api/v1/arizona/structureElements/allList
+  body: json
+  auth: inherit
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+settings {
+  encodeUrl: true
+}

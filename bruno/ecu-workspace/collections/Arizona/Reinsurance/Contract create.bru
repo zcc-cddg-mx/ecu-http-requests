@@ -1,0 +1,89 @@
+meta {
+  name: Contract create
+  type: http
+  seq: 24
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/reinsurance/api/v1/arizona/rei_contract/save
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {   "reiContract": { "_type": "ReiContract",
+                                          "tenantId": "ec",
+              "contractCategory": "OBLIGATORY",
+              "contractType": "QUOTA",
+              "contractNo": "VIDA204",
+              "ecContractCategory": "CESSION_REINSURANCE" ,
+              "name": "2AZI56104A ",
+              "currency": "USD",
+              "capacity": 2500000,
+              "effectiveDate": "2020-04-01T00:00:00.000-0500",
+              "expirationDate": "2021-03-31T00:00:00.000-0500",
+              "subscriptionYear": "2020",
+              "accountPeriod": "QUARTERLY",
+              "daysToSendAccounts": 30,
+              "daysToPayBills": 30,
+              "insuredValueLimit": 2500000,
+              "insuredLimitType": "CAPACITY",
+              "contractLevel": 1,
+              "percentCession":12,
+              "percentCommission":5,
+              "percentRetention":90,                          
+              "riskType": "FIRSTRISK",
+              "riskClass": "FIRSRCLASS",
+              "criteriaGroupId": 1,
+              "transactionGroupId": 1,
+                                          "contractBrokers": [
+                  {
+                      "_type": "ReiContractBroker",
+                      "tenantId": "ec",
+                      "reinsurer": {
+                          "_type": "ReiReinsurer",
+                          "id": 1,
+                          "tenantId": "ec",
+                          "reinsurerName": "gfhfd",
+                          "partyId": 96,
+                          "effectiveDate": "2019-04-01T00:00:00.000-0500"
+                      },
+                      "participationOnPercentCession": 99,
+                      "percentParticipation": 100,
+                      "contractReinsurers": [
+                          {
+                              "_type": "ReiContractReinsurer",
+                              "tenantId": "ec",
+                              "reinsurer": {
+                                  "_type": "ReiReinsurer",
+                                  "id": 1,
+                                  "tenantId": "ec",
+                                  "reinsurerName": "gfhfd",
+                                  "partyId": 96,
+                                  "effectiveDate": "2019-04-01T00:00:00.000-0500"
+                              },
+                              "participationOnPercentCession": 10,
+                              "percentParticipation": 100,
+                              "commission": 50
+                          }
+                      ],
+                    "commission": 25
+                  }
+                      ]
+          }
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

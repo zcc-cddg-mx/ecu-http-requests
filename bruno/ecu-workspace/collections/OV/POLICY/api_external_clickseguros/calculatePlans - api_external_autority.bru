@@ -1,0 +1,69 @@
+meta {
+  name: calculatePlans - api_external_autority
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{server}}/policy/api/v1/arizona/motor/genericos/calculatePlans
+  body: json
+  auth: inherit
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+body:json {
+  {
+     "_type":"MotorGenericosTarificationRequest",
+     "motorGenericosTarification":{
+        "_type":"MotorGenericosTarification",
+        "policyData":{
+           "_type":"PolicyData",
+           "agentExternalId":"1", 
+           "pointOfSaleName":"QUITO ZURICH SEGUROS ECUADOR S.A."
+        },
+  "car": {
+     "_type": "VehicleData",
+     "sumInsured" : 3000,
+     "extraEquipmentSumInsured" : 0,
+     "ensuranceVehicleId": "null",
+     "registrationNumber" : "KL156C",
+     "chassisNumber": "SIN_VALOR",
+     "engineNumber": "SIN_VALOR",
+     "productionYear": 2025,
+     "make": "DAYTONA",
+     "makeId": "0923213541",
+     "model": "DY200 WING EVO II",
+     "modelId": "14745318331994",
+     "colorName": "NEGRO",
+     "colorId": "12852592650",
+     "typeOfVehicle" : "MOTO",
+     "typeOfVehicleId" : "5899878400",
+     "passengersNumber" : "2",
+     "isNewCar" : "NO" 
+     },
+     
+     
+    "owner": {
+     "_type": "VehicleOwner",
+     "partyType" : "PERSON",
+     "identificationNumber": "1724865280",
+     "name": "Luis Guevara",
+     "age": 41,
+     "civilStatus": "Soltero",
+     "gender": "M"        
+        }
+     
+     
+   },
+   "testMode": false 
+  
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

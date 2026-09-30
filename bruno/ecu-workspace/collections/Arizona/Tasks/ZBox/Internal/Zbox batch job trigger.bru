@@ -1,0 +1,33 @@
+meta {
+  name: Zbox batch job trigger
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/automation/api/v1/arizona/zbox/batch/launch
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantid-1: ec
+  : 
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "ZboxRequest",
+  	"testMode": false
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

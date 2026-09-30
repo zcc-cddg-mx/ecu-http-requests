@@ -1,0 +1,35 @@
+meta {
+  name: Preprod DB_USER_WITH_STATUS_MANAGEMENT_VIEW
+  type: http
+  seq: 2
+}
+
+get {
+  url: https://preprod-oficinavirtual.zurichseguros.com.ec/nuevoportal/report/api/v1/arizona/ov/overview?pageSize=20&page=0&index=DB_USER_WITH_STATUS_MANAGEMENT_VIEW
+  body: none
+  auth: inherit
+}
+
+params:query {
+  pageSize: 20
+  page: 0
+  index: DB_USER_WITH_STATUS_MANAGEMENT_VIEW
+}
+
+headers {
+  Accept: application/json, text/plain, */*
+  Accept-Language: en-GB,en;q=0.9,en-US;q=0.8,pl;q=0.7
+  Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJDQXRjYkRJcmR4TU9ua0dKTlFnS2dKM25VYUI0SnA2MWpxcnFneHJuYVdVIn0.eyJqdGkiOiIyM2FmNzFhMy1iYWJiLTQ1Y2UtYWE5Ny1hOGE1OTViMzMyZGIiLCJleHAiOjE2OTkwMTI1MTksIm5iZiI6MCwiaWF0IjoxNjk5MDExMzE5LCJpc3MiOiJodHRwOi8vd3d3LmVjcHJvZC5hcmluZXQvYXV0aC9yZWFsbXMvbWFzdGVyIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjNhMmQ2ZjZjLWQ0ZjUtNGE3My1iZjg0LTVkZTQwMGRiNDBjMSIsInR5cCI6IkJlYXJlciIsImF6cCI6InBhc3MiLCJhdXRoX3RpbWUiOjAsInNlc3Npb25fc3RhdGUiOiJlMzRlOTc5ZC00MDQ2LTRlMDYtYTc3MC0zNWE2MjJjMDRmNDAiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImZyb250X3JvbGVfdXNlciIsImZyb250X3JvbGVfaW5zcGVjdG9yX2ludGVybmFsIiwiZnJvbnRfcm9sZV90cmVhc3VyeV9leGVjdXRpdmUiLCJmcm9udF9yb2xlX3V3X21vdG9yIiwiZnJvbnRfcm9sZV96dXJpY2hfYXNzb2NpYXRlIiwicm9sZV9yZWZlcnJhbF91dyIsImZyb250X3JvbGVfaW5zcGVjdG9yX2V4dGVybmFsIiwicm9sZV91c2VyIiwicm9sZV9jYXNhX2hhYml0YWNpb25fZl96dXJpY2giLCJmcm9udF9yb2xlX3V3X2xpZmUiLCJyb2xlX2ZhY3R1cmFkb3IiLCJvZmZsaW5lX2FjY2VzcyIsImZyb250X3JvbGVfZmFjdHVyYWRvciIsInJvbGVfdmVoaWN1bG9zX2ZfenVyaWNoIiwiZnJvbnRfcm9sZV9hZG1pbmlzdHJhdG9yIiwidW1hX2F1dGhvcml6YXRpb24iLCJyb2xlX2N1c3RvbWVyIiwiZnJvbnRfcm9sZV9zdXBlcl91c2VyIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwidGVuYW50cyI6ImVjIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiYXNhbGF6YXIiLCJwYXJ0eWlkIjoiMjA0MCJ9.HauC8oqI8HMzr0APT7O8SLFWN5u44c18eq3K5jXg-LmGMlZ3uKMxqd3ETQyyrg3BdCebbkh6HhBCEOeSowK-vSlzI2EXGT5KABeJekt5RXgN7Y93_Whs1aua6Hn60oE-zRuydYMQegefgm64fNmKX3OP9GkSevl23YkIn811kH3LfGSw8Ns_wq1VCAiwPkK-suqgu2muyBz1w0qa4iLnf-IGgllgkpv3xnany3uwFVy3svIojpPxXuj76NyCgiBD3kHl36r6sZf-U80SserSO3j2CpHzjr0VZBndGaPfoDhDsuBFkPBFSe5FmO2ekdOI1nGAjBYWCRr8bQxK5iDA3A
+  Cache-Control: no-cache
+  Connection: keep-alive
+  Cookie: _ga_RKSGMGNLM6=GS1.1.1699011304.4.0.1699011304.0.0.0; _ga=GA1.2.1489295535.1688398977; _gid=GA1.2.1624055259.1699011304; _gat_gtm.click=1; _gat_gtag_UA_203012577_1=1
+  Pragma: no-cache
+  Referer: http://www.ecprod.arinet/back-office/administration/users/user-list
+  User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.76
+  x-tenantid-1: ec
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

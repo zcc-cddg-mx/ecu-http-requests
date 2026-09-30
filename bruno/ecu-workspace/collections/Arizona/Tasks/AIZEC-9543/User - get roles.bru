@@ -1,0 +1,24 @@
+meta {
+  name: User - get roles
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{ server }}:{{ serverPort }}/user/api/v1/arizona/ecroles
+  body: none
+  auth: bearer
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_525b94c4be87496999dc6053f519009c', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

@@ -1,0 +1,328 @@
+meta {
+  name: updateVigencia
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{server}}/policy/api/v1/arizona/motorGenericos/payment/exit
+  body: json
+  auth: inherit
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+body:json {
+  {
+    "_type": "MotorGenericosTarificationRequest",
+    "motorGenericosTarification": {
+      "_type": "MotorGenericosTarification",
+      "beneficiaries": [],
+      "cars": [
+        {
+          "_type": "VehicleData",
+          "entityProperties": {},
+          "fieldsInfo": {},
+          "inspections": [
+            {
+              "_type": "VehicleInspection",
+              "allowedSubType": [
+                "AUTO",
+                "VIDEO",
+                "ONSITE"
+              ],
+              "inspectionId": 738911,
+              "status": "APPROVED",
+              "type": "MOTOR_NEW_CAR"
+            }
+          ],
+          "isBeingProcessed": "NO",
+          "isNewCar": "YES",
+          "isVehicleAddedManually": "NO",
+          "netPremium": 1160.28,
+          "objectNo": 477528,
+          "plans": [],
+          "referrals": [],
+          "referralsOptional": [
+            {
+              "_type": "ReferralDefinition",
+              "approvalRules": [
+                {
+                  "_type": "ApprovalRule",
+                  "id": 4954,
+                  "name": "VH_N_CAR_RATE_REVIEW"
+                }
+              ],
+              "canSelfAccept": "NO",
+              "clearAutomatically": "NO",
+              "code": "VH_N_CAR_RATE_REVIEW",
+              "createAutomatically": "NO",
+              "description": "La póliza anterior adjunta tenía amparo patrimonial",
+              "finalizeProcessName": "bean:EcVHRateReviewReferral",
+              "id": 5954,
+              "mandatoryCommentApprove": "NO",
+              "mandatoryCommentAssign": "YES",
+              "mandatoryCommentReject": "NO",
+              "mandatoryCommentReopen": "NO",
+              "name": "Revisión de Tasa",
+              "processName": "POLICY",
+              "referralConditions": [
+                {
+                  "_type": "ReferralCondition"
+                }
+              ],
+              "referralLimits": [],
+              "state": "DRAFT",
+              "validFrom": "2021-03-01T05:00:00Z",
+              "versionNo": "1"
+            },
+            {
+              "_type": "ReferralDefinition",
+              "approvalRules": [
+                {
+                  "_type": "ApprovalRule",
+                  "id": 4953,
+                  "name": "VH_N_CAR_PRODUCT_CONDITIONS"
+                }
+              ],
+              "canSelfAccept": "NO",
+              "clearAutomatically": "NO",
+              "code": "VH_N_CAR_PRODUCT_CONDITIONS",
+              "createAutomatically": "NO",
+              "description": "La póliza anterior adjunta tenía amparo patrimonial",
+              "finalizeProcessName": "bean:EcVHProductConditionsReferral",
+              "id": 5953,
+              "mandatoryCommentApprove": "NO",
+              "mandatoryCommentAssign": "YES",
+              "mandatoryCommentReject": "NO",
+              "mandatoryCommentReopen": "NO",
+              "name": "Condiciones Producto",
+              "processName": "POLICY",
+              "referralConditions": [
+                {
+                  "_type": "ReferralCondition"
+                }
+              ],
+              "referralLimits": [],
+              "state": "DRAFT",
+              "validFrom": "2021-03-01T05:00:00Z",
+              "versionNo": "1"
+            },
+            {
+              "_type": "ReferralDefinition",
+              "approvalRules": [
+                {
+                  "_type": "ApprovalRule",
+                  "id": 4955,
+                  "name": "VH_N_CAR_RETROACTIVE_VALIDITY"
+                }
+              ],
+              "canSelfAccept": "NO",
+              "clearAutomatically": "NO",
+              "code": "VH_N_CAR_RETROACTIVE_VALIDITY",
+              "createAutomatically": "NO",
+              "description": "La póliza anterior adjunta tenía amparo patrimonial",
+              "finalizeProcessName": "bean:EcVHRetroactiveValidityReferral",
+              "id": 5955,
+              "mandatoryCommentApprove": "NO",
+              "mandatoryCommentAssign": "YES",
+              "mandatoryCommentReject": "NO",
+              "mandatoryCommentReopen": "NO",
+              "name": "Vigencia Retroactiva",
+              "processName": "POLICY",
+              "referralConditions": [
+                {
+                  "_type": "ReferralCondition"
+                }
+              ],
+              "referralLimits": [],
+              "state": "DRAFT",
+              "validFrom": "2021-03-01T05:00:00Z",
+              "versionNo": "1"
+            },
+            {
+              "_type": "ReferralDefinition",
+              "approvalRules": [
+                {
+                  "_type": "ApprovalRule",
+                  "id": 4952,
+                  "name": "VH_N_CAR_ADD_FREE_OF_CHARGE"
+                }
+              ],
+              "canSelfAccept": "NO",
+              "clearAutomatically": "NO",
+              "code": "VH_N_CAR_ADD_FREE_OF_CHARGE",
+              "createAutomatically": "NO",
+              "description": "La póliza anterior adjunta tenía amparo patrimonial",
+              "finalizeProcessName": "bean:EcVHAddFreeOfChargeReferral",
+              "id": 5952,
+              "mandatoryCommentApprove": "NO",
+              "mandatoryCommentAssign": "YES",
+              "mandatoryCommentReject": "NO",
+              "mandatoryCommentReopen": "NO",
+              "name": "Adicionales sin costo",
+              "processName": "POLICY",
+              "referralConditions": [
+                {
+                  "_type": "ReferralCondition"
+                }
+              ],
+              "referralLimits": [],
+              "state": "DRAFT",
+              "validFrom": "2021-03-01T05:00:00Z",
+              "versionNo": "1"
+            }
+          ],
+          "referralsRequired": [],
+          "removable": "YES",
+          "renewalInformation": {
+            "_type": "RenewalInformation",
+            "entityProperties": {}
+          },
+          "subProduct": "SENIOR",
+          "totalSumInsured": 20000,
+          "vehicleDescription": "NISSAN-SENTRA-2020",
+          "vehicleEquipment": []
+        }
+      ],
+      "client": {
+        "_type": "PolicyRole",
+        "email": "cholguin@mail.com",
+        "entityProperties": {},
+        "fieldsInfo": {},
+        "firstName": "CRISTIAN",
+        "id": 481152,
+        "identificationNumber": "1313199067",
+        "identificationType": "ID_CARD",
+        "mainAddress": "CONOCOTO DEAN BAJO",
+        "mainAddressNo": "45",
+        "mobilePhone": "09-99999999",
+        "name": "CRISTIAN HOLGUIN",
+        "nationalityId": "10345",
+        "phone": "02-2222222",
+        "secondaryAddress": "Segunda",
+        "secondName": "HOLGUIN"
+      },
+      "planInformation": [],
+      "policyData": {
+        "_type": "PolicyData",
+        "agentSEId": 1294,
+        "annualEffectiveDate": "2026-02-20T05:00:00.000Z",
+        "annualExpirationDate": "2027-02-20T05:00:00.000Z",
+        "consents": [],
+        "customStatus": "WORKING",
+        "downloadInvoice": true,
+        "downloadPolicy": true,
+        "effectiveDate": "2026-02-20T05:00:00Z",
+        "endorsementIds": [],
+        "ensuranceDocuments": [],
+        "entityProperties": {},
+        "expirationDate": "2027-02-20T05:00:00Z",
+        "firstPaymentDate": "2026-01-28",
+        "installmentDefinitionCode": "12",
+        "nextInsurableObjectAllowed": "YES",
+        "paymentMethod": "1",
+        "paymentMethodAllowed": [
+          "2",
+          "3",
+          "1"
+        ],
+        "pointOfSale": "1298",
+        "policyAgencies": [],
+        "policyAmount": {
+          "_type": "PolicyAmount",
+          "coverPremiumPayment": 15,
+          "emission": 5,
+          "grossPremium": 1393.44,
+          "instalments": [
+            {
+              "_type": "Instalment",
+              "type": "INSTALMENT_COUNT_1",
+              "value": 1393.44
+            },
+            {
+              "_type": "Instalment",
+              "type": "INSTALMENT_COUNT_2",
+              "value": 696.72
+            },
+            {
+              "_type": "Instalment",
+              "type": "INSTALMENT_COUNT_3",
+              "value": 464.48
+            },
+            {
+              "_type": "Instalment",
+              "type": "INSTALMENT_COUNT_4",
+              "value": 348.36
+            },
+            {
+              "_type": "Instalment",
+              "type": "INSTALMENT_COUNT_5",
+              "value": 278.69
+            },
+            {
+              "_type": "Instalment",
+              "type": "INSTALMENT_COUNT_6",
+              "value": 232.24
+            },
+            {
+              "_type": "Instalment",
+              "type": "INSTALMENT_COUNT_7",
+              "value": 199.06
+            },
+            {
+              "_type": "Instalment",
+              "type": "INSTALMENT_COUNT_8",
+              "value": 174.18
+            },
+            {
+              "_type": "Instalment",
+              "type": "INSTALMENT_COUNT_9",
+              "value": 154.83
+            },
+            {
+              "_type": "Instalment",
+              "type": "INSTALMENT_COUNT_10",
+              "value": 139.34
+            },
+            {
+              "_type": "Instalment",
+              "type": "INSTALMENT_COUNT_11",
+              "value": 126.68
+            },
+            {
+              "_type": "Instalment",
+              "type": "INSTALMENT_COUNT_12",
+              "value": 116.12
+            }
+          ],
+          "monthlygrossPremium": 116.12,
+          "monthlyTariffPrice": 96.69,
+          "netPremium": 1211.69,
+          "peasant": 5.8,
+          "superintendency": 40.61,
+          "tariffPrice": 1160.28,
+          "vat": 181.75
+        },
+        "policyEndorsementIds": [],
+        "policyNo": 461161,
+        "policyNumber": "COT-VH780508",
+        "productCode": "VH",
+        "status": "WORKING",
+        "suggestedPolicyStartDate": "2026-01-28T19:09:50Z",
+        "uplaStatus": "APPROVED",
+        "uplaUpdate": "NO",
+        "variant": "MOTOR"
+      }
+    },
+    "policyNo": 461161,
+    "testMode": false
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

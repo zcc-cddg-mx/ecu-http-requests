@@ -1,0 +1,110 @@
+<HTML>
+<HEAD><TITLE>Error occurred in i-net Crystal-Clear</TITLE></HEAD>
+<BODY style='font-family:Arial, Helvetica, Sans-Serif; font-size: 10pt;'><h3>An error occurred:</h3>
+<STYLE  type='text/css'>
+td{
+	font-family:	Arial, Helvetica, Sans-Serif;
+	font-size: 10pt;
+}
+input{
+	width: 700
+}
+textarea{
+	width: 700; height: 250; font-size: 8pt;
+}
+.link{
+	cursor: pointer;color: #0000FF; text-decoration:underline
+}
+</STYLE>
+<script language="JavaScript">
+function toggleDetails(){
+	var details = document.getElementById('details').style;
+	if(details.display=='block'){
+		details.display='none';
+		document.getElementById('plus').style.display='inline';
+		document.getElementById('minus').style.display='none';
+	}else{
+		details.display="block";
+		document.getElementById('plus').style.display='none';
+		document.getElementById('minus').style.display='inline';
+	}
+}
+
+function submitForm(){
+	var send = confirm('Do you agree to send the error details to www.inetsoftware.de?');
+	if(send)
+		document.getElementById('errorform').submit();
+}
+</script>
+Report file not found : file:/usr/local/tomcat8/bin/file%253A%252Fusr%252Freportes%252Fensurance%252Fcom%252Ftandi%252Fcartera%252Freportes%252Frpts%252FESTADOCUENTACLIENTEFINAL.xml.rpt<p>&nbsp;
+
+<form id=errorform action='http://www.inetsoftware.de/external_services/cc_error/' method=post>
+
+<span class=link onclick='submitForm();' title='Submit the details to www.inetsoftware.de to receive more infos.'>Help</span>&nbsp;&nbsp;&nbsp;&nbsp;
+<span class=link onClick='toggleDetails()'>
+	<span style='display: inline' id='plus' title='Show the details of the error.'>Show Details &gt;&gt;</span>
+	<span style='display: none' id='minus' title='Hide the details.'>&lt;&lt; No Details</span></span>
+<p>
+
+<div id='details' style='display: none'>
+<table cellspacing="0" cellpadding="5">
+	<tr><td nowrap valign=top><b>Error number:</b></td><td><input type='text' readonly name=errnumber value='18'></td></tr>
+	<tr><td nowrap valign=top><b>Message:</b></td><td><input type='text' readonly name=message value='Report file not found : file:/usr/local/tomcat8/bin/file%253A%252Fusr%252Freportes%252Fensurance%252Fcom%252Ftandi%252Fcartera%252Freportes%252Frpts%252FESTADOCUENTACLIENTEFINAL.xml.rpt'></td></tr>
+	<tr><td nowrap valign=top><b>Format:</b></td><td><input type='text' readonly name=format value='pdf'></td></tr>
+	<tr><td nowrap valign=top><b>i-net Crystal-Clear:</b></td><td><input type='text' readonly name=cc_version value='9.2.285'></td></tr>
+	<tr><td nowrap valign=top><b>Java Version:</b></td><td><input type='text' readonly name=server_java_version value='1.7.0_80; Java HotSpot(TM) 64-Bit Server VM; Oracle Corporation'></td></tr>
+	<tr><td nowrap valign=top><b>Operating System:</b></td><td><input type='text' readonly name=os value='Linux 4.18.0-553.162.1.el8_10.x86_64'></td></tr>
+	<tr><td nowrap valign=top><b>Cache Type:</b></td><td><input type='text' readonly name=cache value='0'></td></tr>
+	<tr><td nowrap valign=top><b>Stacktrace:</b></td><td><textarea readonly name=stacktrace>Report Error [18] Report file not found : file:/usr/local/tomcat8/bin/file%253A%252Fusr%252Freportes%252Fensurance%252Fcom%252Ftandi%252Fcartera%252Freportes%252Frpts%252FESTADOCUENTACLIENTEFINAL.xml.rpt
+	at com.inet.report.di.a(SourceFile:143)
+	at com.inet.report.di.a(SourceFile:312)
+	at com.inet.report.EngineReportExceptionFactory.createReportExceptionWithCause(SourceFile:135)
+	at com.inet.report.Engine.setReportFile(SourceFile:3527)
+	at com.inet.report.Engine.setReportFile(SourceFile:3457)
+	at com.inet.report.ef.a(SourceFile:409)
+	at com.inet.report.cache.EngineFactoryImpl.createEngine(SourceFile:68)
+	at com.inet.report.cache.Cache.a(SourceFile:880)
+	at com.inet.report.cache.n.getKey(SourceFile:98)
+	at com.inet.report.cache.Cache.getKey(SourceFile:293)
+	at com.inet.report.util.z.a(SourceFile:450)
+	at com.inet.report.ReportServlet.doExecRequest(SourceFile:216)
+	at com.inet.report.ReportServlet.service(SourceFile:660)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:765)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:698)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:367)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:639)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:885)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1688)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.io.FileNotFoundException: /usr/local/tomcat8/bin/file%3A%2Fusr%2Freportes%2Fensurance%2Fcom%2Ftandi%2Fcartera%2Freportes%2Frpts%2FESTADOCUENTACLIENTEFINAL.xml.rpt (No such file or directory)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.&#60;init&#62;(FileInputStream.java:146)
+	at java.io.FileInputStream.&#60;init&#62;(FileInputStream.java:101)
+	at sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:90)
+	at sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:188)
+	at java.net.URL.openStream(URL.java:1041)
+	at com.inet.lib.util.IOFunctions.getFileBuffer(SourceFile:400)
+	at com.inet.report.Engine.setReportFile(SourceFile:3524)
+	... 32 more
+</textarea></td></tr>
+</table>
+</div>
+</form>
+</BODY>
+</HTML>

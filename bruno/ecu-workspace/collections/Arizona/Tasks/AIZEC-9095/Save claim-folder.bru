@@ -1,0 +1,151 @@
+meta {
+  name: Save claim-folder
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/claim/api/v1/arizona/proxy/handling/documents/save?=
+  body: json
+  auth: bearer
+}
+
+params:query {
+  : 
+}
+
+headers {
+  x-tenantId-1: ec
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'when-expired', 300 %}
+}
+
+body:json {
+  {
+  	"_type": "HandlingDocumentsProxy",
+  	"claimNo": 50,
+  	"claimNumber": "22-87-LFC-50",
+  	"isUserExternal": "YES",
+  	"incomingDocuments": [
+  		{
+  			"_type": "HandlingSingleExpectedDocumentProxy",
+  			"id": 19,
+  			"fileId": 18077,
+  			"fileName": "test.pdf",
+  			"isMandatory": "YES",
+  			"documentNo": 50,
+  			"documentStatus": {
+  				"_type": "HandlingStatusProxy",
+  				"fieldsInfo": {},
+  				"isInStatus": "YES",
+  				"status": "Approved",
+  				"color": "green",
+  				"inStatus": "YES"
+  			},
+  			"documentTypeCaption": "ED01",
+  			"documentComment": null,
+  			"dueDate": "2022-09-27T00:00:00.000+0200",
+  			"receivedDate": "2022-09-20T07:10:03.790+0200",
+  			"isVisibleForExternalProviders": "YES",
+  			"description": "Parte Policial (en caso de accidente) no ta",
+  			"typeLabel": "Parte Policial",
+  			"isChanged": false,
+  			"file": {
+  				"_type": "LetterDocument",
+  				"fileId": 18077,
+  				"name": "test.pdf",
+  				"documentContexts": []
+  			}
+  		},
+  		{
+  			"_type": "HandlingSingleExpectedDocumentProxy",
+  			"id": 2004,
+  			"fileId": 18078,
+  			"fileName": "test.pdf",
+  			"isMandatory": "YES",
+  			"documentNo": 51,
+  			"documentStatus": {
+  				"_type": "HandlingStatusProxy",
+  				"fieldsInfo": {},
+  				"isInStatus": "YES",
+  				"status": "Delivered",
+  				"color": "blue",
+  				"inStatus": "YES"
+  			},
+  			"documentTypeCaption": "ED02",
+  			"documentComment": "11",
+  			"dueDate": "2022-09-28T07:00:00.000+0200",
+  			"receivedDate": "2022-09-20T07:10:10.927+0200",
+  			"isVisibleForExternalProviders": "YES",
+  			"description": "Acta de levantamiento del cadáver ",
+  			"typeLabel": "Acta de levantamiento del cadáver ",
+  			"isChanged": false,
+  			"file": {
+  				"_type": "LetterDocument",
+  				"fileId": 18078,
+  				"name": "test.pdf",
+  				"documentContexts": []
+  			}
+  		},
+  		{
+  			"_type": "HandlingSingleExpectedDocumentProxy",
+  			"id": 2003,
+  			"fileId": null,
+  			"fileName": null,
+  			"isMandatory": "YES",
+  			"documentNo": 52,
+  			"documentStatus": {
+  				"_type": "HandlingStatusProxy",
+  				"fieldsInfo": {},
+  				"isInStatus": "YES",
+  				"status": "Await",
+  				"color": "yellow",
+  				"inStatus": "YES"
+  			},
+  			"documentTypeCaption": "ED03",
+  			"documentComment": "zdjecie nogi poprosze1",
+  			"dueDate": "2022-09-27T00:00:00.000+0200",
+  			"receivedDate": null,
+  			"isVisibleForExternalProviders": "YES",
+  			"description": "Certificado médico del fallecido (no aplica para accidente de tránsito)",
+  			"typeLabel": "Certificado médico",
+  			"isChanged": false,
+  			"file": null
+  		},
+  		{
+  			"_type": "HandlingSingleExpectedDocumentProxy",
+  			"id": 2002,
+  			"fileId": null,
+  			"fileName": null,
+  			"isMandatory": "YES",
+  			"documentNo": 54,
+  			"documentStatus": {
+  				"_type": "HandlingStatusProxy",
+  				"fieldsInfo": {},
+  				"isInStatus": "YES",
+  				"status": "Await",
+  				"color": "yellow",
+  				"inStatus": "YES"
+  			},
+  			"documentTypeCaption": "ED05",
+  			"documentComment": "notkaaa1",
+  			"dueDate": "2022-09-27T00:00:00.000+0200",
+  			"receivedDate": null,
+  			"isVisibleForExternalProviders": "YES",
+  			"description": "Original de la Partida de defunción inscrita en el Registro Civil del fallecido",
+  			"typeLabel": "Partida de Defunción",
+  			"isChanged": false,
+  			"file": null
+  		}
+  	],
+  	"defaultValues": []
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

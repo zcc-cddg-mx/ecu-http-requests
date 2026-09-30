@@ -1,0 +1,496 @@
+meta {
+  name: Update plan next
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{ _.server }}:{{ _.serverPort }}/policy/api/v1/arizona/motorGenericos/vehicle/updatePlanNext
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantId-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_525b94c4be87496999dc6053f519009c', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'never', 60 %}
+}
+
+body:json {
+  {
+      "_type": "MotorGenericosTarificationRequest",
+      "testMode": false,
+      "policyNo": 90,
+      "motorGenericosTarification": {
+          "_type": "MotorGenericosTarification",
+          "policyData": {
+              "_type": "PolicyData",
+              "entityProperties": {},
+              "policyNo": 90,
+              "policyNumber": "COT-VH1000",
+              "productCode": "VH",
+              "variant": "MOTOS",
+              "pointOfSale": "10",
+              "status": "WORKING",
+              "customStatus": "WORKING",
+              "agentSEId": 11,
+              "effectiveDate": "2023-01-12T05:00:00Z",
+              "expirationDate": "2024-01-12T05:00:00Z",
+              "nextInsurableObjectAllowed": "YES",
+              "paymentMethod": "1",
+              "ensuranceDocuments": [],
+              "endorsementIds": [],
+              "policyEndorsementIds": [],
+              "paymentMethodAllowed": [
+                  "1",
+                  "2",
+                  "3"
+              ],
+              "downloadInvoice": true,
+              "downloadPolicy": true,
+              "consents": [],
+              "uplaUpdate": "NO",
+              "policyAgencies": []
+          },
+          "client": {
+              "_type": "PolicyRole",
+              "entityProperties": {},
+              "id": 14171,
+              "identificationType": "ID_CARD",
+              "identificationNumber": "1710462886",
+              "firstName": "SANDRA ELIZABETH",
+              "secondName": "SEGOVIA MOGOLLON",
+              "name": "SANDRA ELIZABETH SEGOVIA MOGOLLON",
+              "email": "addoppakez-2334@yopmail.com",
+              "mobilePhone": "99-99999999",
+              "phone": "99-9999999",
+              "mainAddress": "Calle Guanguitagua",
+              "mainAddressNo": "N39-100",
+              "nationalityId": "10345"
+          },
+          "cars": [
+              {
+                  "_type": "VehicleData",
+                  "objectNo": 90,
+                  "isNewCar": "NO",
+                  "totalSumInsured": 9200,
+                  "vehicleDescription": "ACADIAN-CUSTON BEAUMONTE-2023",
+                  "factor": 3.7,
+                  "netPremium": 340.4,
+                  "isBeingProcessed": "NO",
+                  "removable": "YES",
+                  "plans": [],
+                  "inspections": [],
+                  "referrals": [],
+                  "vehicleEquipment": [],
+                  "renewalInformation": {
+                      "_type": "RenewalInformation",
+                      "entityProperties": {}
+                  },
+                  "referralsRequired": [],
+                  "referralsOptional": [],
+                  "isVehicleAddedManually": "NO",
+                  "fieldsInfo": {},
+                  "entityProperties": {}
+              }
+          ],
+          "beneficiaries": [],
+          "car": {
+              "_type": "VehicleData",
+              "entityProperties": {
+                  "extraEquipmentSumInsured": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "MaxValuePct",
+                          "value": 0.15
+                      }
+                  ],
+                  "sumInsured": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "MaxValue",
+                          "value": 50000
+                      },
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "MinValue",
+                          "value": 8000
+                      }
+                  ]
+              },
+              "objectNo": 90,
+              "subProduct": "MOTOS",
+              "registrationNumber": "1710462886",
+              "productionYear": 2023,
+              "typeOfVehicle": "MOTO",
+              "make": "ACADIAN",
+              "makeId": "97325831",
+              "model": "CUSTON BEAUMONTE",
+              "modelId": "97325526",
+              "colorName": "BLANCO / ROJO",
+              "colorId": "7649786087450",
+              "sumInsured": 8000,
+              "extraEquipmentSumInsured": 1200,
+              "isNewCar": "NO",
+              "selectedPlan": "MOTOS",
+              "isVehicleAddedManually": "YES",
+              "ensuranceVehicleId": "-1",
+              "plans": [
+                  {
+                      "_type": "VehiclePlan",
+                      "entityProperties": {
+                          "factor": [
+                              {
+                                  "_type": "FieldProperty",
+                                  "propertyType": "MinValue",
+                                  "value": 3.7
+                              },
+                              {
+                                  "_type": "FieldProperty",
+                                  "propertyType": "MaxValue",
+                                  "value": 3.7
+                              }
+                          ]
+                      },
+                      "planType": "MOTOS",
+                      "planDescription": "MOTOS",
+                      "premiumMonthly": 28.37,
+                      "premiumAnnual": 340.4,
+                      "factor": 3.7,
+                      "isEditable": "NO",
+                      "benefits": [
+                          {
+                              "_type": "VehicleBenefit",
+                              "entityProperties": {
+                                  "411": [
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "Enabled"
+                                      }
+                                  ]
+                              },
+                              "coverageCode": "411",
+                              "coverageName": "Pago de primas",
+                              "selected": "YES",
+                              "coverageOptions": [
+                                  {
+                                      "_type": "CoverageOption",
+                                      "code": "15",
+                                      "value": "15 dias",
+                                      "entityProperties": {}
+                                  },
+                                  {
+                                      "_type": "CoverageOption",
+                                      "code": "30",
+                                      "value": "30 dias",
+                                      "entityProperties": {}
+                                  }
+                              ],
+                              "selectedOption": "15",
+                              "fullyDiscounted": "NO"
+                          },
+                          {
+                              "_type": "VehicleBenefit",
+                              "entityProperties": {
+                                  "428": [
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "Enabled"
+                                      }
+                                  ]
+                              },
+                              "coverageCode": "428",
+                              "coverageName": "Equipo motociclista",
+                              "selected": "YES",
+                              "coverageOptions": [],
+                              "fullyDiscounted": "NO"
+                          },
+                          {
+                              "_type": "VehicleBenefit",
+                              "entityProperties": {
+                                  "430": [
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "Enabled"
+                                      }
+                                  ]
+                              },
+                              "coverageCode": "430",
+                              "coverageName": "Pacto andino",
+                              "selected": "YES",
+                              "coverageOptions": [],
+                              "fullyDiscounted": "NO"
+                          },
+                          {
+                              "_type": "VehicleBenefit",
+                              "entityProperties": {
+                                  "431": [
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "Enabled"
+                                      }
+                                  ]
+                              },
+                              "coverageCode": "431",
+                              "coverageName": "Asistencia motos",
+                              "selected": "YES",
+                              "coverageOptions": [],
+                              "fullyDiscounted": "NO"
+                          }
+                      ],
+                      "otherCoverages": [
+                          {
+                              "_type": "VehicleOtherCoverage",
+                              "coverageCode": "414",
+                              "coverageName": "Responsabilidad civil luc",
+                              "sumInsured": 15000,
+                              "premium": 0,
+                              "fullyDiscounted": "NO",
+                              "entityProperties": {
+                                  "sumInsured": [
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "MinValue",
+                                          "value": 15000
+                                      },
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "MaxValue",
+                                          "value": 50000
+                                      }
+                                  ]
+                              },
+                              "selected": "NO",
+                              "coverageOptions": []
+                          },
+                          {
+                              "_type": "VehicleOtherCoverage",
+                              "coverageCode": "415",
+                              "coverageName": "Muerte accidental ocupantes\n(Sólo conductor)",
+                              "sumInsured": 3000,
+                              "premium": 0,
+                              "fullyDiscounted": "NO",
+                              "entityProperties": {
+                                  "sumInsured": [
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "MinValue",
+                                          "value": 3000
+                                      },
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "MaxValue",
+                                          "value": 30000
+                                      }
+                                  ]
+                              },
+                              "selected": "NO",
+                              "coverageOptions": []
+                          },
+                          {
+                              "_type": "VehicleOtherCoverage",
+                              "coverageCode": "417",
+                              "coverageName": "Gastos médicos\n(Sólo conductor)",
+                              "sumInsured": 1500,
+                              "premium": 0,
+                              "fullyDiscounted": "NO",
+                              "entityProperties": {
+                                  "sumInsured": [
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "MinValue",
+                                          "value": 1500
+                                      },
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "MaxValue",
+                                          "value": 10000
+                                      }
+                                  ]
+                              },
+                              "selected": "NO",
+                              "coverageOptions": []
+                          }
+                      ],
+                      "additionalCoverages": [
+                          {
+                              "_type": "VehicleAdditionalCoverage",
+                              "entityProperties": {
+                                  "value": [
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "Type",
+                                          "message": "MONEY"
+                                      }
+                                  ]
+                              },
+                              "coverageCode": "419",
+                              "coverageName": "Exequial",
+                              "premium": 3,
+                              "selected": "NO",
+                              "fullyDiscounted": "NO",
+                              "coverageOptions": [],
+                              "selectedOption": null
+                          },
+                          {
+                              "_type": "VehicleAdditionalCoverage",
+                              "entityProperties": {
+                                  "value": [
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "Type",
+                                          "message": "PCT"
+                                      }
+                                  ]
+                              },
+                              "coverageCode": "420",
+                              "coverageName": "Amparo patrimonial",
+                              "factor": 0.3,
+                              "selected": "NO",
+                              "fullyDiscounted": "NO",
+                              "coverageOptions": [],
+                              "selectedOption": null
+                          }
+                      ],
+                      "deductibles": [
+                          {
+                              "_type": "VehicleDeductible",
+                              "entityProperties": {
+                                  "EcVehPartialLossClaimPct": [
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "MinValue",
+                                          "value": 10
+                                      },
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "MaxValue",
+                                          "value": 10
+                                      }
+                                  ]
+                              },
+                              "type": "EcVehPartialLossClaimPct",
+                              "value": 10
+                          },
+                          {
+                              "_type": "VehicleDeductible",
+                              "entityProperties": {
+                                  "EcVehPartialLoss": [
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "MinValue",
+                                          "value": 500
+                                      },
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "MaxValue",
+                                          "value": 500
+                                      }
+                                  ]
+                              },
+                              "type": "EcVehPartialLoss",
+                              "value": 500
+                          },
+                          {
+                              "_type": "VehicleDeductible",
+                              "entityProperties": {
+                                  "EcVehTotalLoss": [
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "MinValue",
+                                          "value": 20
+                                      },
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "MaxValue",
+                                          "value": 20
+                                      }
+                                  ]
+                              },
+                              "type": "EcVehTotalLoss",
+                              "value": 20
+                          },
+                          {
+                              "_type": "VehicleDeductible",
+                              "entityProperties": {
+                                  "EcVehPartialLossEquipClaimPct": [
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "MinValue",
+                                          "value": 10
+                                      },
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "MaxValue",
+                                          "value": 10
+                                      }
+                                  ]
+                              },
+                              "type": "EcVehPartialLossEquipClaimPct",
+                              "value": 10
+                          },
+                          {
+                              "_type": "VehicleDeductible",
+                              "entityProperties": {
+                                  "EcVehPartialLossEquipmentMin": [
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "MinValue",
+                                          "value": 50
+                                      },
+                                      {
+                                          "_type": "FieldProperty",
+                                          "propertyType": "MaxValue",
+                                          "value": 50
+                                      }
+                                  ]
+                              },
+                              "type": "EcVehPartialLossEquipmentMin",
+                              "value": 50
+                          }
+                      ],
+                      "generalCoverages": []
+                  }
+              ],
+              "inspections": [],
+              "referrals": [],
+              "vehicleEquipment": [],
+              "renewalInformation": {
+                  "_type": "RenewalInformation",
+                  "entityProperties": {}
+              },
+              "referralsRequired": [],
+              "referralsOptional": [],
+              "isBeingProcessed": "NO",
+              "removable": "NO",
+              "fieldsInfo": {
+                  "extraEquipmentSumInsured": [
+                      null
+                  ],
+                  "sumInsured": [
+                      null,
+                      null
+                  ]
+              }
+          },
+          "owner": {
+              "_type": "VehicleOwner",
+              "entityProperties": {},
+              "partyType": "PERSON",
+              "name": "Konrad Byczynski",
+              "identificationNumber": "1710462886",
+              "gender": "F",
+              "civilStatus": "CASADO",
+              "age": 53
+          }
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

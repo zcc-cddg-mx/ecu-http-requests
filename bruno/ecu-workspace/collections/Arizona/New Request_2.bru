@@ -1,0 +1,33 @@
+meta {
+  name: New Request_2
+  type: http
+  seq: 36
+}
+
+post {
+  url: https://integracionpagoenlinea.zurichseguros.com.ec/zurich/api/enginedirect/validation/1.0.0/vehicle
+  body: json
+  auth: basic
+}
+
+headers {
+  Content-Type: application/json
+  User-Agent: insomnia/10.0.0
+}
+
+auth:basic {
+  username: zurich
+  password: password2018
+}
+
+body:json {
+  {
+  	"plate": "FEBUBSW341",
+  	"identification": "1704506052"
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

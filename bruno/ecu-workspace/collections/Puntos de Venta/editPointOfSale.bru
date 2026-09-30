@@ -1,0 +1,85 @@
+meta {
+  name: editPointOfSale
+  type: http
+  seq: 8
+}
+
+put {
+  url: {{server}}/agent/api/v1/arizona/structures/operation/302456
+  body: json
+  auth: bearer
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+      "_type": "Structure",
+      "id": 302456,
+      "effectiveDate": "2025-05-19T19:44:54Z",
+      "parentId": 7,
+      "structureElement": {
+          "_type": "ECStructureElement",
+          "id": 229604,
+          "externalId": "99952103658",
+          "elementType": "POINT",
+          "unitCode": "POINT",
+          "effectiveDate": "2025-05-19T19:44:54Z",
+          "unitName": "QUITO AGENCIA COLOCADORA DE SEGUROS COLNEXOS CIA. LTDA",
+          "description": "COLNEXOS",
+          "businessUnits": [
+              {
+                  "_type": "BusinessUnit",
+                  "createdAt": "2021-07-17T09:33:06Z",
+                  "recordVersion": 1,
+                  "id": 3201,
+                  "updatedAt": "2021-07-17T09:33:06Z",
+                  "businessUnit": "CORPORATIVO",
+                  "businessUnitId": "2723086336",
+                  "productionUnit": "TRADITIONAL CHANNELS",
+                  "productionUnitId": "27516076033",
+                  "productId": 1061,
+                  "productCode": "CH"
+              },
+              {
+                  "_type": "BusinessUnit",
+                  "createdAt": "2021-09-04T21:32:24Z",
+                  "recordVersion": 0,
+                  "id": 4201,
+                  "updatedAt": "2021-09-04T21:32:24Z",
+                  "businessUnit": "MASIVOS",
+                  "businessUnitId": "65537",
+                  "productionUnit": "AUTOS MASSIVE BUSINESS",
+                  "productionUnitId": "27516076036",
+                  "productId": 1081,
+                  "productCode": "VH"
+              },
+              {
+                  "_type": "BusinessUnit",
+                  "createdAt": "2020-07-31T07:54:48Z",
+                  "updatedBy": "b92d2fdc-53d0-457b-8c16-839d416b95d9",
+                  "recordVersion": 0,
+                  "createdBy": "b92d2fdc-53d0-457b-8c16-839d416b95d9",
+                  "id": 5,
+                  "updatedAt": "2020-07-31T07:54:48Z",
+                  "businessUnit": "CORPORATIVO",
+                  "businessUnitId": "2723086336",
+                  "productionUnit": "TRADITIONAL CHANNELS",
+                  "productionUnitId": "27516076033",
+                  "productId": 1000,
+                  "productCode": "PY"
+              }
+          ]
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

@@ -1,0 +1,218 @@
+meta {
+  name: vehicleData
+  type: http
+  seq: 10
+}
+
+post {
+  url: {{server}}/policy/api/v1/arizona/motorGenericos/vehicle/vehicleData
+  body: json
+  auth: inherit
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+body:json {
+  {
+      "_type": "MotorGenericosTarificationRequest",
+      "testMode": false,
+      "policyNo": 459178,
+      "motorGenericosTarification": {
+          "_type": "MotorGenericosTarification",
+          "policyData": {
+              "_type": "PolicyData",
+              "entityProperties": {},
+              "policyNo": 459178,
+              "policyNumber": "COT-VH779250",
+              "productCode": "VH",
+              "variant": "MOTOR",
+              "pointOfSale": "64",
+              "status": "WORKING",
+              "customStatus": "WORKING",
+              "agentSEId": 65,
+              "effectiveDate": "2025-05-01T05:00:00Z",
+              "expirationDate": "2026-05-01T05:00:00Z",
+              "nextInsurableObjectAllowed": "YES",
+              "paymentMethod": "1",
+              "ensuranceDocuments": [],
+              "endorsementIds": [],
+              "policyEndorsementIds": [],
+              "paymentMethodAllowed": [
+                  "1",
+                  "2",
+                  "3"
+              ],
+              "downloadInvoice": true,
+              "downloadPolicy": true,
+              "consents": [],
+              "uplaUpdate": "NO",
+              "policyAgencies": []
+          },
+          "car": {
+              "_type": "VehicleData",
+              "entityProperties": {
+                  "extraEquipmentSumInsured": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "MaxValuePct",
+                          "value": 0.15
+                      }
+                  ],
+                  "sumInsured": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "MaxValue",
+                          "value": 80000
+                      }
+                  ]
+              },
+              "objectNo": 475329,
+              "registrationNumber": "E94945",
+              "productionYear": 2025,
+              "typeOfVehicle": "AUTOMOVIL",
+              "make": "TOYOTA",
+              "makeId": "5179",
+              "model": "RUNNER",
+              "modelId": "85631317196",
+              "colorName": "ROJO IMPERIAL",
+              "colorId": "11773393838832",
+              "isNewCar": "YES",
+              "isVehicleAddedManually": "YES",
+              "ensuranceVehicleId": "-1",
+              "plans": [],
+              "inspections": [],
+              "referrals": [],
+              "vehicleEquipment": [],
+              "renewalInformation": {
+                  "_type": "RenewalInformation",
+                  "entityProperties": {}
+              },
+              "referralsRequired": [],
+              "referralsOptional": [],
+              "isBeingProcessed": "NO",
+              "removable": "NO",
+              "fieldsInfo": {
+                  "extraEquipmentSumInsured": [
+                      null
+                  ],
+                  "sumInsured": [
+                      null
+                  ]
+              },
+              "sumInsured": 50000,
+              "extraEquipmentSumInsured": null,
+              "extraEquipmentSumInsuredMaxPct": 0.15,
+              "totalInsureMinValue": null,
+              "totalInsureMaxValue": 80000
+          },
+          "owner": {
+              "_type": "VehicleOwner",
+              "entityProperties": {
+                  "gender": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "Missing"
+                      }
+                  ],
+                  "name": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "Disabled"
+                      }
+                  ],
+                  "identificationNumber": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "Enabled"
+                      }
+                  ],
+                  "age": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "Missing"
+                      }
+                  ],
+                  "civilStatus": [
+                      {
+                          "_type": "FieldProperty",
+                          "propertyType": "Missing"
+                      }
+                  ]
+              },
+              "partyType": "PERSON",
+              "name": "CRISTHIAN VICENTE HOLGUIN",
+              "identificationNumber": "1313199067",
+              "gender": "M",
+              "civilStatus": "CASADO",
+              "age": 33,
+              "fieldsInfo": {
+                  "gender": [
+                      null
+                  ],
+                  "name": [
+                      {
+                          "_type": "FormProxyFieldConstraint",
+                          "constraintName": "ProxyDisabled",
+                          "constraint": {
+                              "_type": "ProxyFieldDisabled",
+                              "proxyDisabled": true
+                          },
+                          "localId": "70572819-3249-493a-9ca0-2a6ab64c8ac3"
+                      }
+                  ],
+                  "identificationNumber": [
+                      {
+                          "_type": "FormProxyFieldConstraint",
+                          "constraintName": "ProxyDisabled",
+                          "constraint": {
+                              "_type": "ProxyFieldDisabled",
+                              "proxyDisabled": false
+                          },
+                          "localId": "139b70ff-d2db-4209-a6de-ef2f9fdd56b1"
+                      }
+                  ],
+                  "age": [
+                      null
+                  ],
+                  "civilStatus": [
+                      null
+                  ]
+              }
+          },
+          "cars": [
+              {
+                  "_type": "VehicleData",
+                  "objectNo": 475329,
+                  "isNewCar": "YES",
+                  "totalSumInsured": 0,
+                  "factor": 0,
+                  "netPremium": 0,
+                  "isBeingProcessed": "NO",
+                  "removable": "YES",
+                  "plans": [],
+                  "inspections": [],
+                  "referrals": [],
+                  "vehicleEquipment": [],
+                  "renewalInformation": {
+                      "_type": "RenewalInformation",
+                      "entityProperties": {}
+                  },
+                  "referralsRequired": [],
+                  "referralsOptional": [],
+                  "isVehicleAddedManually": "NO",
+                  "fieldsInfo": {},
+                  "entityProperties": {}
+              }
+          ],
+          "beneficiaries": [],
+          "planInformation": []
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

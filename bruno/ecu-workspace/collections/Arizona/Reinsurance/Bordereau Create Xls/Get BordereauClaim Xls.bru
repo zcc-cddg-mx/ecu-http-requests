@@ -1,0 +1,37 @@
+meta {
+  name: Get BordereauClaim Xls
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/reinsurance/api/v1/arizona/ec-bordereau-claims/export-search?=
+  body: json
+  auth: bearer
+}
+
+params:query {
+  : 
+}
+
+headers {
+  x-tenantId-1: ec
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"bordereauId": "1",
+  	"currency": "USD",
+  	"_type": "BordereauClaimSearch"
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

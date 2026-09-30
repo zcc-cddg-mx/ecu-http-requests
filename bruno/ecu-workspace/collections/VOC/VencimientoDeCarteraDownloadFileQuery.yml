@@ -1,0 +1,31 @@
+info:
+  name: VencimientoDeCarteraDownloadFileQuery
+  type: http
+  seq: 20
+
+http:
+  method: get
+  url: http://localhost:9050/api/v1/voc/query/VencimientoDeCarteraDownloadFileQuery/VencimientoDeCarteraDownloadFileDTO?page=0&pageSize=5&emPolizaNumero_eq=1007534
+  headers:
+    - name: Authorization
+      value: Basic dm9jbGllbnQ6MSFOY0BkYyM=
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: page
+      value: "0"
+      type: query
+    - name: pageSize
+      value: "5"
+      type: query
+    - name: emPolizaNumero_eq
+      value: "1007534"
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: false
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

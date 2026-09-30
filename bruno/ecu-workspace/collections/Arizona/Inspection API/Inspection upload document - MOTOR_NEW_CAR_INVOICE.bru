@@ -1,0 +1,56 @@
+meta {
+  name: Inspection upload document - MOTOR_NEW_CAR_INVOICE
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{ _.server }}/document/api/v1/arizona/documents/upload
+  body: multipartForm
+  auth: bearer
+}
+
+headers {
+  Content-Type: multipart/form-data
+  User-Agent: insomnia/9.3.3
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_94527b5ca89c4b419bcf800d776c24ea', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:multipart-form {
+  options: '''
+    {
+        "_type": "File",
+        "fileType": "OWNER"
+    }
+  '''
+  document: '''
+    {
+        "_type": "IODocument",
+        "fileName": "testLight.pdf",
+        "document": {
+            "_type": "LetterDocument",
+            "name": "testLight.pdf",
+            "documentCategory": "MOTOR_NEW_CAR_INVOICE",
+            "documentSource": "ADMIN",
+            "status": "ACTIVE",
+            "documentContexts": [
+                {
+                    "_type": "DocumentContext",
+                    "parameterName": "objectNo",
+                    "parameterValue": "{{ _.objectNo }}"
+                }
+            ]
+        }
+    }
+  '''
+  file: @file(C:\Users\Konrad.Byczynski\Downloads\testLight.pdf)
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

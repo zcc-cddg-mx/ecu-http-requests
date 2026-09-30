@@ -1,0 +1,25 @@
+meta {
+  name: getComisionUnique
+  type: http
+  seq: 9
+}
+
+get {
+  url: {{server}}/rule/api/v1/arizona/rating_lists/87052/ratings/VHAgentCommission/201745
+  body: json
+  auth: inherit
+}
+
+headers {
+  x-tenantid-1: ec
+}
+
+body:json {
+  {
+      "page": 2
+  }
+}
+
+settings {
+  encodeUrl: true
+}

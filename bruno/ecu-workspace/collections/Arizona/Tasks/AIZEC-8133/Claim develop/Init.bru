@@ -1,0 +1,70 @@
+meta {
+  name: Init
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/policy/api/v1/arizona/policy_transactions/init
+  body: json
+  auth: bearer
+}
+
+headers {
+  x-tenantid-1: ec
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_495458d277de45a59e708c935a15d271', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "PolicyInitTransactionRequest",
+  	"transactionType": "Update",
+  	"savePolicyVersion": false,
+  	"policy": {
+  		"_type": "ECPolicy",
+  		"paymentMethod": "1",
+  		"currency": "USD",
+  		"productCode": "LFC",
+  		"insurableObjects": [
+  			{
+  				"_type": "LifeGeneralData",
+  				"requestComChange": "NO",
+  				"temporaryCoverRequired": "NO",
+  				"percentageOfParticipationYN": "NO",
+  				"previousInsurance": "NO",
+  				"childrenYn": "NO",
+  				"spouseYn": "NO",
+  				"titularYn": "NO",
+  				"individualCertificatesYn": "NO",
+  				"policyCoverageDetails": [],
+  				"policyAmounts": [],
+  				"policyLimits": [],
+  				"policyPendings": [],
+  				"policyDeductibles": []
+  			}
+  		],
+  		"variantCode": "CORPORATIVO_VIDA",
+  		"isRenewal": "NO",
+  		"commissionSplits": [],
+  		"endorsements": [],
+  		"ensuranceInvoices": [],
+  		"partyRoles": [],
+  		"policyAmounts": [],
+  		"policyLimits": [],
+  		"policyPendings": [],
+  		"clauses": [],
+  		"previousClaimYears": "NO",
+  		"groupPlans": [],
+  		"notes": "{}"
+  	}
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}

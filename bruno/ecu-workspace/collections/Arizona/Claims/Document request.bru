@@ -1,0 +1,48 @@
+meta {
+  name: Document request
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{ server }}:{{ serverPort }}/document/api/v1/arizona/document_requests
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  x-tenantid-1: ec
+}
+
+auth:bearer {
+  token: {% response 'body', 'req_6c9a3a579fa645e78ec2e6f6628c790f', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}
+}
+
+body:json {
+  {
+  	"_type": "DocumentEntryRequest",
+  	"documentCode": "CLA_LF_REQUESTED_DOC_STATUS",
+  	"documentVersion": "1",
+  	"requestType": "DIRECT",
+  	"documentContextParameters": {
+  		"claimNo": "70",
+  		"claimId": "1"
+  	},
+  	"parameters": [
+  		{
+  			"_type": "DocumentEntryParameterObjectVariable",
+  			"name": "claim",
+  			"value": {
+  				"id": 1,
+  				"someClaimProperty": "someProp"
+  			}
+  		}
+  	]
+  }
+}
+
+settings {
+  encodeUrl: true
+  followRedirects: true
+}
