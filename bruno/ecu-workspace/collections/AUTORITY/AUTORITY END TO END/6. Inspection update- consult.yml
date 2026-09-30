@@ -1,0 +1,45 @@
+info:
+  name: 6. Inspection update- consult
+  type: http
+  seq: 12
+
+http:
+  method: POST
+  url: https://preprod-oficinavirtual.zurichseguros.com.ec/nuevoportal/policy/api/v1/arizona/motor/inspection/update
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: User-Agent
+      value: insomnia/9.3.3
+    - name: x-tenantid-1
+      value: ec
+  body:
+    type: json
+    data: |-
+      {
+      	"_type": "MotorGenericosTarificationRequest",
+      	"testMode": false,
+      	"policyNo": 460384,
+      	"motorGenericosTarification": {
+      		"_type": "MotorGenericosTarification",
+      		"car": {
+      			"_type": "VehicleData",
+      			"objectNo": 476597,
+      			"inspection": {
+      				"_type": "VehicleInspection",
+      				"inspectionId": 732753,
+      				"type": "MOTOR_INSPECTION"
+      			}
+      		}
+      	}
+      }
+  auth:
+    type: bearer
+    token: "{% response 'body', 'req_fb87bca133364cb4a88cdbd8b63ce80a', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

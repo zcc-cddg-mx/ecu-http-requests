@@ -1,0 +1,72 @@
+info:
+  name: Calculate Plan Motor PERSONA NATURAL
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: https://preprodoficinavirtual.zurichseguros.com.ec/nuevoportal/policy/api/v1/arizona/motor/genericos/calculatePlans
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: x-tenantId-1
+      value: ec
+  body:
+    type: json
+    data: |
+      {
+         "_type":"MotorGenericosTarificationRequest",
+         "motorGenericosTarification":{
+            "_type":"MotorGenericosTarification",
+            "policyData":{
+               "_type":"PolicyData",
+               "agentExternalId":"1", 
+               "pointOfSaleName":"AUTORITY"
+            },
+            "car": {
+      			"_type": "VehicleData",
+      			"sumInsured" : 12700,
+      			"extraEquipmentSumInsured" : 0,
+      			"ensuranceVehicleId": "null",
+      			"registrationNumber" : "IX558X",
+      			"chassisNumber": "LXYPCNL06L0203881",
+      			"engineNumber": "169FMMLA014061",
+      			"productionYear": 2020,
+      			"make": "NISSAN",
+      			"makeId": "5134",
+      			"model": "PATHFINDER ADVANCE AC 3.5 5P 4X4 TA",
+      			"modelId": "11606677980985",
+      			"colorName": "NEGRO",
+      			"colorId": "12852592650",
+      			"typeOfVehicle" : "JEEP",
+      			"typeOfVehicleId" : "73502",
+      			"passengersNumber" : "5",
+      			"isNewCar" : "NO"	
+        	},
+      		 
+      		 
+      		"owner": {
+      			"_type": "VehicleOwner",
+      			"partyType" : "PERSON",
+      			"identificationNumber": "1706943766",
+      			"name": "CORONEL NAJAS MARGARITA",
+      			"age": 51,
+      			"civilStatus": "Divorciado",
+      			"gender": "F"								
+            }
+      		 
+      		 
+      	},
+      	"testMode": false	
+
+      }
+  auth:
+    type: bearer
+    token: eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJWQ1dzRkVaMHQzMGJxRmpJdmxlblBjWkEwakdHclAtbGNvN2JyMG1KSm5JIn0.eyJqdGkiOiJhMzc5Zjg4Ny1lNjRiLTQzYzktYjAwYy03ZDE0ZDY3YWY2MjkiLCJleHAiOjE3NTE5MjQ3ODMsIm5iZiI6MCwiaWF0IjoxNzUxOTIzNTgzLCJpc3MiOiJodHRwczovL3ByZXByb2Qtb2ZpY2luYXZpcnR1YWwuenVyaWNoc2VndXJvcy5jb20uZWMvbnVldm9wb3J0YWwvYXV0aC9yZWFsbXMvbWFzdGVyIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImUzZTY3OTMyLTc3MWEtNDA0Zi1hOGVmLTRlYTJhYWM5MDU4ZiIsInR5cCI6IkJlYXJlciIsImF6cCI6InBhc3MiLCJhdXRoX3RpbWUiOjAsInNlc3Npb25fc3RhdGUiOiI4NjZhNjY2Ni1mM2NiLTRlMjEtYmM5Zi00ZWFmNjdlYTYyNzgiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImZyb250X3JvbGVfdXNlciIsImZyb250X3JvbGVfYnJva2VyIiwicm9sZV9tb3Rvcl9mX2Jyb2tlciIsImZyb250X3JvbGVfZmFjdHVyYWRvcl9leHRlcm5hbCIsInJvbGVfdXNlciIsInJvbGVfY2FzYV9oYWJpdGFjaW9uX2ZfYnJva2VyIiwicm9sZV9tb3Rvcl9xX2Jyb2tlciIsIm9mZmxpbmVfYWNjZXNzIiwiZXh0YXBpX3RhcmlmaWNhdGlvbl9nZW5lcmljb3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsInJvbGVfY3VzdG9tZXIiLCJyb2xlX3F1b3RhZG9yX2V4dGVybmFsIiwicm9sZV92ZWhpY3Vsb3NfZl9icm9rZXIiXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJ0ZW5hbnRzIjoiZWMiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhcGlfZXh0ZXJuYWxfYXV0b3JpdHkiLCJwYXJ0eWlkIjoiMzYxMjczIn0.XiFj-f5_bRO8TlKc01TjVcPGCL4Ki2854bbF5Ef2KQ7TYITr2i1h-8mmNEFEIt15rfXcxajrNvIBiG_S_gfybOF1R0F3XIJ5TAhzq2edvdYcSq1m2EjdW73Yceyjl1XDRJXpINryjXcFWGyKLbILgfVCPBQvfgIJ0GsBup8GVvuxTOaBq9ypy9RQ7v91eg29GtiYOfJpwMxUYV6bT9jNk144ngIsEHL2IVsiQwskKA8UNeaxYkAnHrwMaPEoczlxTcenHIvygicAszKAk3LyqPAGLKzBC-MwSDIXH1LtE5UkgX8dnBwGGTFDbwhFjPVVlorYKkrgaKP39PoWktzBAw
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

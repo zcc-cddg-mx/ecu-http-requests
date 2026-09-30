@@ -1,0 +1,60 @@
+info:
+  name: Inspection upload document - MOTOR_NEW_CAR_INVOICE
+  type: http
+  seq: 15
+
+http:
+  method: POST
+  url: https://preprod-oficinavirtual.zurichseguros.com.ec/nuevoportal/document/api/v1/arizona/documents/upload
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: User-Agent
+      value: insomnia/9.3.3
+    - name: x-tenantid-1
+      value: ec
+  body:
+    type: multipart-form
+    data:
+      - name: options
+        type: text
+        value: |-
+          {
+              "_type": "File",
+              "fileType": "OWNER"
+          }
+      - name: document
+        type: text
+        value: |-
+          {
+              "_type": "IODocument",
+              "fileName": "COTIZACION_VEHICULOS_COT-VH829794_27-08-2024.pdf",
+              "document": {
+                  "_type": "LetterDocument",
+                  "name": "COTIZACION_VEHICULOS_COT-VH829794_27-08-2024.pdf",
+                  "documentCategory": "MOTOR_NEW_CAR_INVOICE",
+                  "documentSource": "ADMIN",
+                  "status": "ACTIVE",
+                  "documentContexts": [
+                      {
+                          "_type": "DocumentContext",
+                          "parameterName": "objectNo",
+                          "parameterValue": "476597"
+                      }
+                  ]
+              }
+          }
+      - name: file
+        type: file
+        value:
+          - /C:/Datos/Downloads/quotation_2025-07-22T14_31_02.pdf
+  auth:
+    type: bearer
+    token: "{% response 'body', 'req_fb87bca133364cb4a88cdbd8b63ce80a', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

@@ -1,0 +1,33 @@
+info:
+  name: 5. Inspection init - consult status
+  type: http
+  seq: 11
+
+http:
+  method: POST
+  url: https://preprodoficinavirtual.zurichseguros.com.ec/nuevoportal/policy/api/v1/arizona/motor/inspection/init
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: User-Agent
+      value: insomnia/9.3.3
+    - name: x-tenantid-1
+      value: ec
+  body:
+    type: json
+    data: |-
+      {
+          "_type": "MotorGenericosTarificationRequest",
+          "policyNo": 460384,
+          "noValid": false
+      }
+  auth:
+    type: bearer
+    token: "{{token-autority}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

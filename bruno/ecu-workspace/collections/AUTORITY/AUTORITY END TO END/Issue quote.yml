@@ -1,58 +1,57 @@
-meta {
+info:
   name: Issue quote
   type: http
   seq: 17
-}
 
-post {
+http:
+  method: POST
   url: https://preprod-oficinavirtual.zurichseguros.com.ec/nuevoportal/policy/api/v1/arizona/motor/payment-billing-issue
-  body: json
-  auth: bearer
-}
-
-headers {
-  Content-Type: application/json
-  User-Agent: insomnia/9.3.3
-  x-tenantid-1: ec
-}
-
-auth:bearer {
-  token: {{token-autority}}
-}
-
-body:json {
-  {
-      "_type": "MotorGenericosTarificationRequest",
-      "testMode": false,
-      "policyNo": 460384,
-      "motorGenericosTarification": {
-          "_type": "MotorGenericosTarification",
-          "policyData": {
-              "_type": "PolicyData",
-              "pointOfSale": "35207",
-              "agentSEId": 482,
-              "paymentMethod": "1"
-          },
-          "cars": [
-              {
-                  "_type": "VehicleData"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: User-Agent
+      value: insomnia/9.3.3
+    - name: x-tenantid-1
+      value: ec
+  body:
+    type: json
+    data: |-
+      {
+          "_type": "MotorGenericosTarificationRequest",
+          "testMode": false,
+          "policyNo": 460384,
+          "motorGenericosTarification": {
+              "_type": "MotorGenericosTarification",
+              "policyData": {
+                  "_type": "PolicyData",
+                  "pointOfSale": "35207",
+                  "agentSEId": 482,
+                  "paymentMethod": "1"
+              },
+              "cars": [
+                  {
+                      "_type": "VehicleData"
+                  }
+              ],
+              "client": {
+                  "_type": "PolicyRole",
+                  "identificationType": "ID_CARD",
+                  "identificationNumber": "1751639970"
               }
-          ],
-          "client": {
-              "_type": "PolicyRole",
-              "identificationType": "ID_CARD",
-              "identificationNumber": "1751639970"
           }
-      }
-  } 
-}
+      } 
+  auth:
+    type: bearer
+    token: "{{token-autority}}"
 
-settings {
+settings:
   encodeUrl: true
+  timeout: 0
   followRedirects: true
-}
+  maxRedirects: 5
+  forwardAuthorizationHeader: true
 
-docs {
+docs: |-
   {
   "_type": "MotorGenericosTarificationRequest",
   "testMode": false,
@@ -118,7 +117,7 @@ docs {
   "substituteCarType": "SubstituteCarBasico",
   "plans": [],
   "inspections": [
-  
+
   { "_type": "VehicleInspection", "inspectionId": 715606, "type": "MOTOR_NEW_CAR", "status": "APPROVED", "allowedSubType": [ "AUTO", "VIDEO", "ONSITE" ] }
   ],
   "referrals": [],
@@ -153,4 +152,3 @@ docs {
   "entityProperties": {}
   }
   }}
-}

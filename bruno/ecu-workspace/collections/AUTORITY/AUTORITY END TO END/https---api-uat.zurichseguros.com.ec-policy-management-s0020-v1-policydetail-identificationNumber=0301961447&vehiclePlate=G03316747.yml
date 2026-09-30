@@ -1,0 +1,32 @@
+info:
+  name: https://api-uat.zurichseguros.com.ec/policy-management-s0020/v1/policydetail?identificationNumber=0301961447&vehiclePlate=G03316747
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: https://api-uat.zurichseguros.com.ec/policy-management-s0020/v1/policydetail?identificationNumber=1313199067&vehiclePlate=IX558X
+  headers:
+    - name: x-api-key
+      value: df7vYXqzZG1UCjygCsQOb7KSmYIqEGaF3Q23D39u
+    - name: originator
+      value: prueba
+    - name: x-tenantid-1
+      value: ec
+  params:
+    - name: identificationNumber
+      value: "1313199067"
+      type: query
+    - name: vehiclePlate
+      value: IX558X
+      type: query
+  auth:
+    type: bearer
+    token: "{{token-autority}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

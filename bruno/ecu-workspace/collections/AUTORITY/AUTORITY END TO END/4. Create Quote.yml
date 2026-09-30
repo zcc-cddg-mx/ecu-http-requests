@@ -1,0 +1,85 @@
+info:
+  name: 4. Create Quote
+  type: http
+  seq: 10
+
+http:
+  method: POST
+  url: https://preprodoficinavirtual.zurichseguros.com.ec/nuevoportal/policy/api/v1/arizona/motor/genericos/createQuote
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: x-tenantid-1
+      value: ec
+  body:
+    type: json
+    data: |-
+      {
+      	"_type": "MotorGenericosTarificationRequest",
+      	"motorGenericosTarification": {
+      		"_type": "MotorGenericosTarification",
+      		"policyData": {
+      			"_type": "PolicyData",
+      			 "agentExternalId":"11130682230956", 
+                  "pointOfSaleName":"GUAYAQUIL GILBERT & BOLOÑA S. A. AGENCIA ASESORA PRODUCTORA DE SEGUROS SEGUGILBO"
+      		},
+      		"car": {
+      			"_type": "VehicleData",
+      			"sumInsured" : 15000,
+      			"extraEquipmentSumInsured" : 0,
+      			"ensuranceVehicleId": "null",
+      			"registrationNumber" : "VVCC34455",
+      			"chassisNumber": "LXYPCNL06L0203881",
+      			"engineNumber": "169FMMLA014061",
+      			"productionYear": 2023,
+      			"make": "NISSAN",
+      			"makeId": "5134",
+      			"model": "PATHFINDER ADVANCE AC 3.5 5P 4X4 TA",
+      			"modelId": "11606677980985",
+      			"colorName": "NEGRO",
+      			"colorId": "12852592650",
+      			"typeOfVehicle" : "JEEP",
+      			"typeOfVehicleId" : "73502",
+      			"passengersNumber" : "5",
+      			"isNewCar" : "NO"	
+      		},
+      		"owner": {
+      			"_type": "VehicleOwner",
+      			"partyType" : "PERSON",
+      			"identificationNumber": "1313199067",
+      			"name": "Cristian Holguin",
+      			"age": 40,
+      			"civilStatus": "Casado",
+      			"gender": "M"	
+      		},
+      		"clientExternal": {
+      			"_type": "ClientExternal",
+      			"clientId": "352690061",
+      			"entityId": "352690060",
+      			"identificationType": "c",
+      			"identificationNumber": "1751639970",
+      			"name": "SEBASTIAN",
+      			"lastName": "RODRIGUEZ",
+      			"fullName": "RODRIGUEZ SEBASTIAN",
+      			"companyName": null,
+      			"phoneNumber": "099999999",
+      			"cellphoneNumber": "0999999999",
+      			"email": "sebastian.rodriguez2@zurich.com",
+      			"nationality": "ECUADOR",
+      			"nationalityId": "10345",
+      			"mainStreet": "CALLE PRINCIPAL TEST 4",
+      			"number": "N42-115",
+      			"secondaryStreet": "CALLE SECUNDARAI TEST 5"
+      		}
+      	}
+      }
+  auth:
+    type: bearer
+    token: "{{token-autority}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

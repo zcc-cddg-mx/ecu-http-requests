@@ -1,0 +1,26 @@
+info:
+  name: https://api-uat.zurichseguros.com.ec/token-validation-management-s0135/v1/token/validplate
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: https://api-uat.zurichseguros.com.ec/token-validation-management-s0135/v1/token/validplate
+  body:
+    type: json
+    data: |-
+      {
+          "identification":"1313199067",
+          "key":"tPSaug15",
+          "plate":"IX558X"
+      }
+  auth:
+    type: bearer
+    token: "{{token-autority}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

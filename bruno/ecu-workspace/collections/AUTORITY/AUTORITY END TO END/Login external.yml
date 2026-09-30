@@ -1,0 +1,33 @@
+info:
+  name: Login external
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: https://preprod-oficinavirtual.zurichseguros.com.ec/nuevoportal/user/api/v1/arizona/auth/login
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+      	"username": "api_external_autority",
+      	"password": "arizona2022?"
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        var json = res.getBody();
+        bru.setGlobalEnvVar("token-autority", json.body.accessToken);
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true
