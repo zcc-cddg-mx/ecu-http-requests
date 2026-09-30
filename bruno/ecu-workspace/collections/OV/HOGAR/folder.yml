@@ -1,0 +1,7 @@
+info:
+  name: HOGAR
+  type: folder
+  seq: 15
+
+request:
+  auth: inherit

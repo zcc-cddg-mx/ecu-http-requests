@@ -1,0 +1,30 @@
+info:
+  name: getListadoComisiones
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: "{{server}}/rule/api/v1/arizona/rating_lists/143052/ratings?agentId=484855129"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+    - name: agentId
+      value: "104146"
+      disabled: true
+  params:
+    - name: agentId
+      value: "484855129"
+      type: query
+    - name: pageSize
+      value: "1"
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

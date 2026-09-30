@@ -1,0 +1,21 @@
+info:
+  name: /policy/api/v1/arizona/ov/renewal/infobip/downloadfile/{fileDate} Copy
+  type: http
+  seq: 16
+
+http:
+  method: POST
+  url: "{{server}}/policy/api/v1/arizona/ov/renewal/infobip/downloadfile/644103"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

@@ -1,0 +1,36 @@
+info:
+  name: getOVNews
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{server}}/dictionary/graphql"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  body:
+    type: json
+    data: |-
+      {
+        "query": "query document_list($params: Map_String_ObjectScalar) { document_list(params: $params) { ...MessageResponseEntityFragment } }  fragment MessageResponseEntityFragment on MessageResponseEntity_Page_Document { _type body { ...PageFragment } } fragment PageFragment on Page_Document { totalElements content { ...C } } fragment C on Document { _type id createdAt ... on LetterMessageDocument { subject body documentCategory status fileId } ... on TextMessageDocument { subject body documentCategory status } }\n",
+        "variables": {
+          "params": {
+            "class": "LetterMessageDocument",
+            "documentCategory": "OV_NEWS",
+            "page": "0",
+            "pageSize": "3",
+            "sortDirection": "desc",
+            "sortProperties": "createdAt",
+            "status": "ACTIVE"
+          }
+        }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

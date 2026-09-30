@@ -1,0 +1,78 @@
+info:
+  name: createQuote - api_external_patrimonial
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{server}}/policy/api/v1/arizona/motor/genericos/createQuote"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  body:
+    type: json
+    data: |-
+      {
+        "_type": "MotorGenericosTarificationRequest",
+        "motorGenericosTarification": {
+          "_type": "MotorGenericosTarification",
+          "policyData":{
+               "_type":"PolicyData",
+               "agentExternalId":"11387618600319", 
+               "pointOfSaleName":"QUITO PATRIMONIAL AGENCIA ASESORA PRODUCTORA DE SEGUROS S.A"
+          },
+          "car": {
+            "makeId": "5099",
+            "typeOfVehicle": "JEEP",
+            "sumInsured": 15000,
+            "colorName": "NEGRO",
+            "registrationNumber": "IX558XASD",
+            "colorId": "12852592650",
+            "productionYear": 2019,
+            "typeOfVehicleId": "73502",
+            "make": "AS",
+            "modelId": "11606677980985",
+            "_type": "VehicleData",
+            "model": "SPORTAGE R 2.0 L 4X2 GSL MT",
+            "selectedPlan": "SENIOR",
+            "isNewCar": "NO"
+          },
+          "owner": {
+            "_type": "VehicleOwner",
+            "partyType": "PERSON",
+            "identificationNumber": "1751639970",
+            "name": "SEBASTIAN",
+            "age": 23,
+            "civilStatus": "Soltero",
+            "gender": "M"
+          },
+          "clientExternal": {
+            "_type": "ClientExternal",
+            "clientId": "352690061",
+            "entityId": "352690060",
+            "identificationType": "c",
+            "identificationNumber": "1751639970",
+            "name": "SEBASTIAN",
+            "lastName": "RODRIGUEZ",
+            "fullName": "RODRIGUEZ SEBASTIAN",
+            "companyName": null,
+            "phoneNumber": "099999999",
+            "cellphoneNumber": "0999999999",
+            "email": "sebastian.rodriguez2@zurich.com",
+            "nationality": "ECUADOR",
+            "nationalityId": "10345",
+            "mainStreet": "CALLE PRINCIPAL TEST 4",
+            "number": "N42-115",
+            "secondaryStreet": "CALLE SECUNDARAI TEST 5"
+          }
+        },
+        "testMode": false
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

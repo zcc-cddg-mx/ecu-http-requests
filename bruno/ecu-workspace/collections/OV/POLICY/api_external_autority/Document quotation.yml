@@ -1,0 +1,36 @@
+info:
+  name: Document quotation
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{server}}/policy/api/v1/arizona/motor/genericos/document/quotation"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: x-tenantId-1
+      value: ec
+  body:
+    type: json
+    data: |-
+      {
+       "_type": "MotorGenericosTarificationRequest",
+      "motorGenericosTarification": {
+       "_type": "MotorGenericosTarification",
+      "policyData": {
+       "_type": "PolicyData",
+        "agentExternalId":"11387618600319", 
+        "pointOfSaleName":"QUITO PATRIMONIAL AGENCIA ASESORA PRODUCTORA DE SEGUROS S.A",
+       "policyNumber": "COT-VH783594"
+       }
+       } 
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

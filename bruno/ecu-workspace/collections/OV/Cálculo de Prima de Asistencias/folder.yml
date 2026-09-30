@@ -1,0 +1,7 @@
+info:
+  name: Cálculo de Prima de Asistencias
+  type: folder
+  seq: 4
+
+request:
+  auth: inherit

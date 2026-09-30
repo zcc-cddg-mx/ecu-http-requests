@@ -1,0 +1,22 @@
+info:
+  name: activarUSer
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{server}}/user/api/v1/arizona/userStatus/operation/enable/3db7e76b-eef4-4447-b7a9-3b330cdd9804"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

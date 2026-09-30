@@ -1,0 +1,7 @@
+info:
+  name: api_external_clickseguros
+  type: folder
+  seq: 8
+
+request:
+  auth: inherit

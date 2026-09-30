@@ -1,0 +1,38 @@
+info:
+  name: reminder_query Copy
+  type: http
+  seq: 11
+
+http:
+  method: GET
+  url: "{{server}}/policy/api/v1/arizona/ov/overview?query=DAYS_BETWEEN in (45,30,15,5,-1,28)&pageSize=20&page=0&index=DB_RENEWAL_REMINDER_VIEW"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: x-tenantid-1
+      value: ec
+    - name: x-create-tx
+      value: "true"
+  params:
+    - name: query
+      value: DAYS_BETWEEN in (45,30,15,5,-1,28)
+      type: query
+    - name: pageSize
+      value: "20"
+      type: query
+    - name: page
+      value: "0"
+      type: query
+    - name: index
+      value: DB_RENEWAL_REMINDER_VIEW
+      type: query
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

@@ -1,0 +1,45 @@
+info:
+  name: initCotizacion
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{server}}/policy/api/v1/arizona/motorGenericos/step/client/init"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  body:
+    type: json
+    data: |-
+      {
+          "_type": "MotorGenericosTarificationRequest",
+          "testMode": false,
+          "motorGenericosTarification": {
+              "_type": "MotorGenericosTarification",
+              "policyData": {
+                  "_type": "PolicyData",
+                  "variant": "MOTOR",
+                  "consents": [],
+                  "ensuranceDocuments": [],
+                  "endorsementIds": [],
+                  "uplaUpdate": "NO",
+                  "paymentMethodAllowed": [],
+                  "policyEndorsementIds": [],
+                  "policyAgencies": [],
+                  "nextInsurableObjectAllowed": "NO",
+                  "entityProperties": {}
+              },
+              "beneficiaries": [],
+              "cars": [],
+              "planInformation": []
+          }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

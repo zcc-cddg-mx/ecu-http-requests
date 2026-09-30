@@ -1,0 +1,7 @@
+info:
+  name: Batch Copy
+  type: folder
+  seq: 1
+
+request:
+  auth: inherit

@@ -1,0 +1,38 @@
+info:
+  name: 2-vehicleData
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: https://uat-oficinavirtual.zurichseguros.com.ec/nuevoportal/policy/api/v1/arizona/motor/genericos/vehicleData
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  body:
+    type: json
+    data: |-
+      {
+        "_type": "MotorGenericosTarificationRequest",
+        "motorGenericosTarification": {
+          "_type": "MotorGenericosTarification",
+          "policyData": {
+            "_type": "PolicyData",
+            "agentExternalId": "1",
+            "pointOfSaleName": "QUITO ZURICH SEGUROS ECUADOR S.A."
+          },
+          "car": {
+            "_type": "VehicleData",
+            "registrationNumber": "GTF2294"
+          }
+        },
+        "testMode": false
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

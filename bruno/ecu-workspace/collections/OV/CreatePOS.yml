@@ -1,0 +1,527 @@
+info:
+  name: CreatePOS
+  type: http
+  seq: 26
+
+http:
+  method: PUT
+  url: "{{server}}/policy/api/v1/arizona/operations/pointOfSale/addOne"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  body:
+    type: json
+    data: |-
+      {
+          "_type": "PointOfSaleRegistrationRequest",
+          "effectiveDate": "2025-04-22T14:49:00Z",
+          "expirationDate": null,
+          "unitName": "GUAYAQUIL CENTRALIS BROKERS AGENCIA ASESORA PRODUCTORA DE SEGUROS CENTRALISA S.A.",
+          "unitCode": "POINT",
+          "externalId": null,
+          "branchElementId": 7,
+          "excludedProductTypes": [],
+          "businessUnitIds": [
+              3251,4201
+          ],
+          "posElementId": null,
+          "agenciesElementsIds": [
+              219460
+          ],
+          "elementRoles": [],
+          "office": null
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true
+
+examples:
+  - name: OKCreate
+    request:
+      url: "{{server}}/policy/api/v1/arizona/operations/pointOfSale/addOne"
+      method: POST
+      headers:
+        - name: x-tenantid-1
+          value: ec
+      body:
+        type: json
+        data: |-
+          {
+              "_type": "PointOfSaleRegistrationRequest",
+              "effectiveDate": "2025-03-14T14:49:00Z",
+              "expirationDate": null,
+              "unitName": "QUITO BODNIZA LUJANO MAURICIO ENRIQUE",
+              "unitCode": "POINT",
+              "externalId": null,
+              "branchElementId": 7,
+              "excludedProductTypes": [],
+              "businessUnitIds": [
+                  3251,4201
+              ],
+              "posElementId": null,
+              "agenciesElementsIds": [
+                  219460
+              ],
+              "elementRoles": [],
+              "office": null
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Server
+          value: nginx/1.23.1
+        - name: Date
+          value: Fri, 14 Mar 2025 19:49:18 GMT
+        - name: Content-Type
+          value: application/json;charset=UTF-8
+        - name: Transfer-Encoding
+          value: chunked
+        - name: Connection
+          value: keep-alive
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: Strict-Transport-Security
+          value: max-age=63072000; includeSubDomains, preload
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: Access-Control-Allow-Origin
+          value: "*"
+        - name: Access-Control-Allow-Methods
+          value: POST, GET, PUT, OPTIONS, DELETE
+        - name: Access-Control-Max-Age
+          value: "3600"
+        - name: Access-Control-Allow-Credentials
+          value: "true"
+        - name: Access-Control-Allow-Headers
+          value: Origin, X-Requested-With, Content-Type, Accept, Authorization, x-tenantId-1
+        - name: TxID
+          value: 0_ffffac120012_1176ecc9_67d4604e_7eb
+        - name: X-XSS-Protection
+          value: 1; mode=block
+        - name: Cache-Control
+          value: no-cache, no-store, max-age=0, must-revalidate
+        - name: Pragma
+          value: no-cache
+        - name: Expires
+          value: "0"
+      body:
+        type: json
+        data: |-
+          {
+              "_type": "MessageResponseSingleEntity",
+              "status": "OK",
+              "body": {
+                  "_type": "PointOfSaleRegistrationResponse",
+                  "structure": {
+                      "_type": "Structure",
+                      "createdAt": "2025-03-14T14:49:17.373-05:00",
+                      "updatedBy": "31fed7f0-3062-43c3-8d1d-f4926aff4ff5",
+                      "recordVersion": 1,
+                      "createdBy": "668e8bf0-e699-4207-a174-57e622928872",
+                      "id": 279254,
+                      "updatedAt": "2025-03-14T14:49:17.424-05:00",
+                      "tenantId": "ec",
+                      "effectiveDate": "2025-03-14T14:49:17.339-05:00",
+                      "structureElement": {
+                          "_type": "ECStructureElement",
+                          "createdAt": "2025-03-14T14:49:17.262-05:00",
+                          "updatedBy": "668e8bf0-e699-4207-a174-57e622928872",
+                          "recordVersion": 0,
+                          "createdBy": "668e8bf0-e699-4207-a174-57e622928872",
+                          "id": 208253,
+                          "updatedAt": "2025-03-14T14:49:17.262-05:00",
+                          "tenantId": "ec",
+                          "effectiveDate": "2025-03-14T09:49:00.000-05:00",
+                          "externalId": "99952103658",
+                          "elementType": "POINT",
+                          "unitCode": "POINT",
+                          "unitName": "QUITO BODNIZA LUJANO MAURICIO ENRIQUE",
+                          "businessUnits": [
+                              {
+                                  "_type": "BusinessUnit",
+                                  "createdAt": "2021-07-17T04:33:06.000-05:00",
+                                  "recordVersion": 1,
+                                  "id": 3251,
+                                  "updatedAt": "2021-07-17T04:33:06.000-05:00",
+                                  "businessUnit": "MASIVOS",
+                                  "businessUnitId": "65537",
+                                  "productionUnit": "QUITO PC COMERCIAL INSURANCE",
+                                  "productionUnitId": "8092161081436",
+                                  "productId": 1061,
+                                  "productCode": "CH"
+                              },
+                              {
+                                  "_type": "BusinessUnit",
+                                  "createdAt": "2021-09-04T16:32:24.000-05:00",
+                                  "recordVersion": 0,
+                                  "id": 4201,
+                                  "updatedAt": "2021-09-04T16:32:24.000-05:00",
+                                  "businessUnit": "MASIVOS",
+                                  "businessUnitId": "65537",
+                                  "productionUnit": "AUTOS MASSIVE BUSINESS",
+                                  "productionUnitId": "27516076036",
+                                  "productId": 1081,
+                                  "productCode": "VH"
+                              }
+                          ],
+                          "businesUnitsIds": [],
+                          "elementRoles": [],
+                          "elementCodes": []
+                      },
+                      "parentId": 7
+                  },
+                  "parentStructure": {
+                      "_type": "Structure",
+                      "createdAt": "2020-07-07T23:11:04.641-05:00",
+                      "updatedBy": "b92d2fdc-53d0-457b-8c16-839d416b95d9",
+                      "recordVersion": 0,
+                      "createdBy": "b92d2fdc-53d0-457b-8c16-839d416b95d9",
+                      "id": 7,
+                      "updatedAt": "2020-07-07T23:11:04.641-05:00",
+                      "tenantId": "ec",
+                      "effectiveDate": "2020-07-07T23:11:04.499-05:00",
+                      "structureElement": {
+                          "_type": "ECStructureElement",
+                          "createdAt": "2020-07-07T23:11:04.518-05:00",
+                          "updatedBy": "b92d2fdc-53d0-457b-8c16-839d416b95d9",
+                          "recordVersion": 0,
+                          "createdBy": "b92d2fdc-53d0-457b-8c16-839d416b95d9",
+                          "id": 7,
+                          "updatedAt": "2020-07-07T23:11:04.518-05:00",
+                          "tenantId": "ec",
+                          "effectiveDate": "2020-07-07T23:11:04.499-05:00",
+                          "externalId": "87",
+                          "elementType": "BRANCH",
+                          "unitCode": "BRANCH",
+                          "unitName": "QUITO",
+                          "partyId": 75310,
+                          "businessUnit": "2723086336",
+                          "productionUnit": "27516076033",
+                          "businessUnits": [
+                              {
+                                  "_type": "BusinessUnit",
+                                  "createdAt": "2021-09-04T16:32:24.000-05:00",
+                                  "recordVersion": 0,
+                                  "id": 4051,
+                                  "updatedAt": "2021-09-04T16:32:24.000-05:00",
+                                  "businessUnit": "CORPORATIVO",
+                                  "businessUnitId": "2723086336",
+                                  "productionUnit": "TRADITIONAL CHANNELS",
+                                  "productionUnitId": "27516076033",
+                                  "productId": 1081,
+                                  "productCode": "VH"
+                              },
+                              {
+                                  "_type": "BusinessUnit",
+                                  "createdAt": "2021-09-04T16:32:24.000-05:00",
+                                  "recordVersion": 0,
+                                  "id": 4201,
+                                  "updatedAt": "2021-09-04T16:32:24.000-05:00",
+                                  "businessUnit": "MASIVOS",
+                                  "businessUnitId": "65537",
+                                  "productionUnit": "AUTOS MASSIVE BUSINESS",
+                                  "productionUnitId": "27516076036",
+                                  "productId": 1081,
+                                  "productCode": "VH"
+                              },
+                              {
+                                  "_type": "BusinessUnit",
+                                  "createdAt": "2021-09-04T16:32:24.000-05:00",
+                                  "recordVersion": 0,
+                                  "id": 4351,
+                                  "updatedAt": "2021-09-04T16:32:24.000-05:00",
+                                  "businessUnit": "MASIVOS",
+                                  "businessUnitId": "65537",
+                                  "productionUnit": "MARKETING DIGITAL VENTAS DIRECTAS",
+                                  "productionUnitId": "12658287322547",
+                                  "productId": 1081,
+                                  "productCode": "VH"
+                              },
+                              {
+                                  "_type": "BusinessUnit",
+                                  "createdAt": "2020-07-31T02:54:48.367-05:00",
+                                  "updatedBy": "b92d2fdc-53d0-457b-8c16-839d416b95d9",
+                                  "recordVersion": 0,
+                                  "createdBy": "b92d2fdc-53d0-457b-8c16-839d416b95d9",
+                                  "id": 5,
+                                  "updatedAt": "2020-07-31T02:54:48.367-05:00",
+                                  "businessUnit": "CORPORATIVO",
+                                  "businessUnitId": "2723086336",
+                                  "productionUnit": "TRADITIONAL CHANNELS",
+                                  "productionUnitId": "27516076033",
+                                  "productId": 1000,
+                                  "productCode": "PY"
+                              },
+                              {
+                                  "_type": "BusinessUnit",
+                                  "createdAt": "2020-07-31T02:54:48.367-05:00",
+                                  "updatedBy": "b92d2fdc-53d0-457b-8c16-839d416b95d9",
+                                  "recordVersion": 0,
+                                  "createdBy": "b92d2fdc-53d0-457b-8c16-839d416b95d9",
+                                  "id": 6,
+                                  "updatedAt": "2020-07-31T02:54:48.367-05:00",
+                                  "businessUnit": "MASIVOS",
+                                  "businessUnitId": "65537",
+                                  "productionUnit": "QUITO PC COMERCIAL INSURANCE",
+                                  "productionUnitId": "8092161081436",
+                                  "productId": 1000,
+                                  "productCode": "PY"
+                              },
+                              {
+                                  "_type": "BusinessUnit",
+                                  "createdAt": "2020-12-17T05:40:48.662-05:00",
+                                  "updatedBy": "b92d2fdc-53d0-457b-8c16-839d416b95d9",
+                                  "recordVersion": 0,
+                                  "createdBy": "b92d2fdc-53d0-457b-8c16-839d416b95d9",
+                                  "id": 953,
+                                  "updatedAt": "2020-12-17T05:40:48.662-05:00",
+                                  "businessUnit": "CORPORATIVO",
+                                  "businessUnitId": "2723086336",
+                                  "productionUnit": "TRADITIONAL CHANNELS",
+                                  "productionUnitId": "27516076033",
+                                  "productId": 1020,
+                                  "productCode": "MO"
+                              },
+                              {
+                                  "_type": "BusinessUnit",
+                                  "createdAt": "2020-12-17T05:40:48.769-05:00",
+                                  "updatedBy": "b92d2fdc-53d0-457b-8c16-839d416b95d9",
+                                  "recordVersion": 0,
+                                  "createdBy": "b92d2fdc-53d0-457b-8c16-839d416b95d9",
+                                  "id": 956,
+                                  "updatedAt": "2020-12-17T05:40:48.769-05:00",
+                                  "businessUnit": "MASIVOS",
+                                  "businessUnitId": "65537",
+                                  "productionUnit": "AUTOS MASSIVE BUSINESS",
+                                  "productionUnitId": "27516076036",
+                                  "productId": 1020,
+                                  "productCode": "MO"
+                              },
+                              {
+                                  "_type": "BusinessUnit",
+                                  "createdAt": "2020-12-17T05:40:48.864-05:00",
+                                  "updatedBy": "b92d2fdc-53d0-457b-8c16-839d416b95d9",
+                                  "recordVersion": 0,
+                                  "createdBy": "b92d2fdc-53d0-457b-8c16-839d416b95d9",
+                                  "id": 959,
+                                  "updatedAt": "2020-12-17T05:40:48.864-05:00",
+                                  "businessUnit": "MASIVOS",
+                                  "businessUnitId": "65537",
+                                  "productionUnit": "MARKETING DIGITAL VENTAS DIRECTAS",
+                                  "productionUnitId": "12658287322547",
+                                  "productId": 1020,
+                                  "productCode": "MO"
+                              },
+                              {
+                                  "_type": "BusinessUnit",
+                                  "createdAt": "2021-07-17T04:33:06.000-05:00",
+                                  "recordVersion": 1,
+                                  "id": 3201,
+                                  "updatedAt": "2021-07-17T04:33:06.000-05:00",
+                                  "businessUnit": "CORPORATIVO",
+                                  "businessUnitId": "2723086336",
+                                  "productionUnit": "TRADITIONAL CHANNELS",
+                                  "productionUnitId": "27516076033",
+                                  "productId": 1061,
+                                  "productCode": "CH"
+                              },
+                              {
+                                  "_type": "BusinessUnit",
+                                  "createdAt": "2021-07-17T04:33:06.000-05:00",
+                                  "recordVersion": 1,
+                                  "id": 3251,
+                                  "updatedAt": "2021-07-17T04:33:06.000-05:00",
+                                  "businessUnit": "MASIVOS",
+                                  "businessUnitId": "65537",
+                                  "productionUnit": "QUITO PC COMERCIAL INSURANCE",
+                                  "productionUnitId": "8092161081436",
+                                  "productId": 1061,
+                                  "productCode": "CH"
+                              },
+                              {
+                                  "_type": "BusinessUnit",
+                                  "createdAt": "2021-07-17T04:33:06.000-05:00",
+                                  "recordVersion": 1,
+                                  "id": 3551,
+                                  "updatedAt": "2021-07-17T04:33:06.000-05:00",
+                                  "businessUnit": "MASIVOS",
+                                  "businessUnitId": "65537",
+                                  "productionUnit": "MARKETING DIGITAL VENTAS DIRECTAS",
+                                  "productionUnitId": "12658287322547",
+                                  "productId": 1061,
+                                  "productCode": "CH"
+                              },
+                              {
+                                  "_type": "BusinessUnit",
+                                  "createdAt": "2021-06-12T03:21:17.875-05:00",
+                                  "updatedBy": "b92d2fdc-53d0-457b-8c16-839d416b95d9",
+                                  "recordVersion": 0,
+                                  "createdBy": "b92d2fdc-53d0-457b-8c16-839d416b95d9",
+                                  "id": 1952,
+                                  "updatedAt": "2021-06-12T03:21:17.875-05:00",
+                                  "businessUnit": "COLECTIVE LIFE",
+                                  "businessUnitId": "13266183061773",
+                                  "productionUnit": "COLECTIVE LIFE - QUITO",
+                                  "productionUnitId": "13266183061918",
+                                  "productId": 1042,
+                                  "productCode": "LFP"
+                              },
+                              {
+                                  "_type": "BusinessUnit",
+                                  "createdAt": "2021-06-12T03:21:17.997-05:00",
+                                  "updatedBy": "b92d2fdc-53d0-457b-8c16-839d416b95d9",
+                                  "recordVersion": 0,
+                                  "createdBy": "b92d2fdc-53d0-457b-8c16-839d416b95d9",
+                                  "id": 1953,
+                                  "updatedAt": "2021-06-12T03:21:17.997-05:00",
+                                  "businessUnit": "COLECTIVE LIFE",
+                                  "businessUnitId": "13266183061773",
+                                  "productionUnit": "COLECTIVE LIFE - QUITO",
+                                  "productionUnitId": "13266183061918",
+                                  "productId": 1041,
+                                  "productCode": "LFC"
+                              },
+                              {
+                                  "_type": "BusinessUnit",
+                                  "createdAt": "2021-06-12T03:21:18.015-05:00",
+                                  "updatedBy": "b92d2fdc-53d0-457b-8c16-839d416b95d9",
+                                  "recordVersion": 0,
+                                  "createdBy": "b92d2fdc-53d0-457b-8c16-839d416b95d9",
+                                  "id": 1954,
+                                  "updatedAt": "2021-06-12T03:21:18.015-05:00",
+                                  "businessUnit": "COLECTIVE LIFE",
+                                  "businessUnitId": "13266183061773",
+                                  "productionUnit": "COLECTIVE LIFE - QUITO",
+                                  "productionUnitId": "13266183061918",
+                                  "productId": 1043,
+                                  "productCode": "LFM"
+                              },
+                              {
+                                  "_type": "BusinessUnit",
+                                  "createdAt": "2021-06-12T03:22:07.383-05:00",
+                                  "updatedBy": "b92d2fdc-53d0-457b-8c16-839d416b95d9",
+                                  "recordVersion": 0,
+                                  "createdBy": "b92d2fdc-53d0-457b-8c16-839d416b95d9",
+                                  "id": 1955,
+                                  "updatedAt": "2021-06-12T03:22:07.383-05:00",
+                                  "businessUnit": "MASIVOS",
+                                  "businessUnitId": "65537",
+                                  "productionUnit": "MARKETING DIGITAL VENTAS DIRECTAS",
+                                  "productionUnitId": "12658287322547",
+                                  "productId": 1000,
+                                  "productCode": "PY"
+                              }
+                          ],
+                          "businesUnitsIds": [],
+                          "elementRoles": [],
+                          "elementCodes": [
+                              {
+                                  "_type": "ElementCode",
+                                  "id": 1,
+                                  "codeCategory": "ACCOUNTING",
+                                  "codeName": "ESTABLISHMENT",
+                                  "codeValue": "001",
+                                  "effectiveDate": "2020-01-01T00:00:00.000-05:00"
+                              },
+                              {
+                                  "_type": "ElementCode",
+                                  "id": 10,
+                                  "codeCategory": "ACCOUNTING",
+                                  "codeName": "EP_GI",
+                                  "codeValue": "003",
+                                  "effectiveDate": "2020-01-01T00:00:00.000-05:00"
+                              },
+                              {
+                                  "_type": "ElementCode",
+                                  "id": 11,
+                                  "codeCategory": "ACCOUNTING",
+                                  "codeName": "EP_LIFE",
+                                  "codeValue": "005",
+                                  "effectiveDate": "2020-01-01T00:00:00.000-05:00"
+                              }
+                          ]
+                      }
+                  },
+                  "agencies": [
+                      {
+                          "_type": "ECStructureElement",
+                          "createdAt": "2025-01-21T01:00:09.000-05:00",
+                          "updatedBy": "31fed7f0-3062-43c3-8d1d-f4926aff4ff5",
+                          "recordVersion": 0,
+                          "createdBy": "31fed7f0-3062-43c3-8d1d-f4926aff4ff5",
+                          "id": 219460,
+                          "updatedAt": "2025-03-10T14:44:37.437-05:00",
+                          "tenantId": "ec",
+                          "effectiveDate": "2025-01-16T00:00:00.000-05:00",
+                          "externalId": "26651661186495",
+                          "elementType": "AGENCY",
+                          "unitCode": "AGENCY",
+                          "unitName": "BODNIZA LUJANO MAURICIO ENRIQUE",
+                          "ensuranceId": "23293198663705",
+                          "businessUnits": [],
+                          "businesUnitsIds": [],
+                          "elementRoles": [],
+                          "elementCodes": []
+                      }
+                  ],
+                  "agentEntitlements": [
+                      {
+                          "_type": "ECAgentEntitlement",
+                          "createdAt": "2025-03-14T14:49:18.232-05:00",
+                          "updatedBy": "668e8bf0-e699-4207-a174-57e622928872",
+                          "recordVersion": 1,
+                          "createdBy": "668e8bf0-e699-4207-a174-57e622928872",
+                          "id": 99461,
+                          "updatedAt": "2025-03-14T14:49:18.234-05:00",
+                          "tenantId": "ec",
+                          "effectiveDate": "2025-03-14T09:49:00.000-05:00",
+                          "productId": 1061,
+                          "structureElementId": 208253,
+                          "insuranceType": "CH",
+                          "productType": "Content"
+                      },
+                      {
+                          "_type": "ECAgentEntitlement",
+                          "createdAt": "2025-03-14T14:49:18.268-05:00",
+                          "updatedBy": "668e8bf0-e699-4207-a174-57e622928872",
+                          "recordVersion": 1,
+                          "createdBy": "668e8bf0-e699-4207-a174-57e622928872",
+                          "id": 99462,
+                          "updatedAt": "2025-03-14T14:49:18.269-05:00",
+                          "tenantId": "ec",
+                          "effectiveDate": "2025-03-14T09:49:00.000-05:00",
+                          "productId": 1061,
+                          "structureElementId": 208253,
+                          "insuranceType": "CH",
+                          "productType": "Property"
+                      },
+                      {
+                          "_type": "ECAgentEntitlement",
+                          "createdAt": "2025-03-14T14:49:18.296-05:00",
+                          "updatedBy": "668e8bf0-e699-4207-a174-57e622928872",
+                          "recordVersion": 1,
+                          "createdBy": "668e8bf0-e699-4207-a174-57e622928872",
+                          "id": 99463,
+                          "updatedAt": "2025-03-14T14:49:18.298-05:00",
+                          "tenantId": "ec",
+                          "effectiveDate": "2025-03-14T09:49:00.000-05:00",
+                          "productId": 1061,
+                          "structureElementId": 208253,
+                          "insuranceType": "CH",
+                          "productType": "PropertyContent"
+                      }
+                  ]
+              }
+          }

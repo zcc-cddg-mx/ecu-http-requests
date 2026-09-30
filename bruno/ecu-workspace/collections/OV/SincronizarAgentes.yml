@@ -1,0 +1,29 @@
+info:
+  name: SincronizarAgentes
+  type: http
+  seq: 21
+
+http:
+  method: POST
+  url: "{{server}}/policy/api/v1/arizona/operations/agency/voc/sync"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: before-request
+      code: |-
+        // //pm.variables.set("token", "demo" + "demooo");
+        console.log(bru.getGlobalEnvVar("token"));
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

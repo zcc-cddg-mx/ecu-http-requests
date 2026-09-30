@@ -1,0 +1,5 @@
+variables:
+  - name: server
+    value: https://10.113.84.8/nuevoportal/
+  - name: serverPort
+    value: "80"

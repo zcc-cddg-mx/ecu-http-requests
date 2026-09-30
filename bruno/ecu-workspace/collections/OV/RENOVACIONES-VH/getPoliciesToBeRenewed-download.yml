@@ -1,0 +1,31 @@
+info:
+  name: getPoliciesToBeRenewed-download
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{server}}/report/api/v1/arizona/ov/policyrenewals/download"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  body:
+    type: json
+    data: |-
+      {
+          "_type": "PolicyRenwalSearchVODTO",
+          "ano": "2025",
+          "mes": "01",
+          "idAgente": [],
+          "ensurancePolicyId": "",
+          "page": 0,
+          "pageSize": 1000
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

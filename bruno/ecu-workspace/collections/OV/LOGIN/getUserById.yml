@@ -1,0 +1,22 @@
+info:
+  name: getUserById
+  type: http
+  seq: 9
+
+http:
+  method: GET
+  url: "{{server}}/user/api/v1/arizona/ecusers/b92d2fdc-53d0-457b-8c16-839d416b95d9"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

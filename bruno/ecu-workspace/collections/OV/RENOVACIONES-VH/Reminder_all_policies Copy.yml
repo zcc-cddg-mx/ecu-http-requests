@@ -1,0 +1,21 @@
+info:
+  name: Reminder_all_policies Copy
+  type: http
+  seq: 12
+
+http:
+  method: POST
+  url: "{{server}}/policy/api/v1/arizona/ov/inspection/orchestration/motorAutomaticRenewalReminder"
+  headers:
+    - name: x-create-tx
+      value: "true"
+  auth:
+    type: bearer
+    token: "{% response 'body', 'req_ab2323d7c3044161b98c8bc5400757e4', 'b64::JC5ib2R5LmFjY2Vzc1Rva2Vu::46b', 'always', 60 %}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

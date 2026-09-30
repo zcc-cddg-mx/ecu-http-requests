@@ -1,0 +1,5 @@
+variables:
+  - name: server
+    value: https://oficinavirtual.zurichseguros.com.ec/nuevoportal/
+  - name: serverPort
+    value: "80"

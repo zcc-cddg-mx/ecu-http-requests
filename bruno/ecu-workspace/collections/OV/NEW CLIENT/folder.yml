@@ -1,0 +1,7 @@
+info:
+  name: NEW CLIENT
+  type: folder
+  seq: 17
+
+request:
+  auth: inherit

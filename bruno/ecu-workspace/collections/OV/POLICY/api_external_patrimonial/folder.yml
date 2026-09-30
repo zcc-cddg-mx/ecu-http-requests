@@ -1,0 +1,6 @@
+info:
+  name: api_external_patrimonial
+  type: folder
+
+request:
+  auth: inherit

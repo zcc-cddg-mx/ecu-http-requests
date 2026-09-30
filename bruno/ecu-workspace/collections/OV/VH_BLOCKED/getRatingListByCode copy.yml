@@ -1,0 +1,32 @@
+info:
+  name: getRatingListByCode copy
+  type: http
+  seq: 7
+
+http:
+  method: GET
+  url: "{{server}}/referral/api/v1/arizona/rating_lists"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+    - name: size
+      value: "25"
+  params:
+    - name: validTo
+      value: ""
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: |-
+      {
+          "page": 2
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

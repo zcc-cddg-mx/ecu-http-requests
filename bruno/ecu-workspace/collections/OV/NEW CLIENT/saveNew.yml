@@ -1,0 +1,132 @@
+info:
+  name: saveNew
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{server}}/policy/api/v1/arizona/motorGenericos/step/client/save"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  body:
+    type: json
+    data: |-
+      {
+      	"_type": "MotorGenericosTarificationRequest",
+      	"motorGenericosTarification": {
+      		"_type": "MotorGenericosTarification",
+      		"beneficiaries": [],
+      		"cars": [
+      			{
+      				"_type": "VehicleData",
+      				"entityProperties": {},
+      				"fieldsInfo": {},
+      				"inspections": [],
+      				"isBeingProcessed": "NO",
+      				"isNewCar": "NO",
+      				"isVehicleAddedManually": "NO",
+      				"netPremium": 450,
+      				"objectNo": 477521,
+      				"plans": [],
+      				"referrals": [],
+      				"referralsOptional": [],
+      				"referralsRequired": [],
+      				"removable": "YES",
+      				"renewalInformation": {
+      					"_type": "RenewalInformation",
+      					"claimsInformation": {
+      						"_type": "ClaimsInformation",
+      						"annualLossRatio": 0,
+      						"entityProperties": {},
+      						"level": "GREEN",
+      						"message": "Puedes mantener o bajar la tasa hasta el 3.984%"
+      					},
+      					"collectionInformation": {
+      						"_type": "CollectionInformation",
+      						"entityProperties": {}
+      					},
+      					"entityProperties": {},
+      					"previousInformation": {
+      						"_type": "PreviousAndCurrentInformation",
+      						"entityProperties": {},
+      						"previousCommission": 73.67,
+      						"previousInsuredValue": 10350,
+      						"previousPremiumValue": 403.65,
+      						"previousRate": 3.9
+      					}
+      				},
+      				"subProduct": "SENIOR",
+      				"totalSumInsured": 10100,
+      				"vehicleDescription": "SKODA-FABIA AMBITION GT AC 1.6 5P 4X2 TM-2016",
+      				"vehicleEquipment": []
+      			}
+      		],
+      		"client": {
+      			"_type": "PolicyRole",
+      			"email": "squimi@mail.com",
+      			"entityProperties": {
+      				"ComplianceStatus": [
+      					{
+      						"_type": "FieldProperty",
+      						"message": "ENS-CLIENT-NOT-FOUND",
+      						"propertyType": "MessageCode"
+      					}
+      				]
+      			},
+      			"fieldsInfo": {
+      				"ComplianceStatus": [
+      					null
+      				]
+      			},
+      			"firstName": "Stalin",
+      			"identificationNumber": "0907385579",
+      			"identificationType": "ID_CARD",
+      			"mobilePhone": "22-22222222",
+      			"name": null,
+      			"nationalityId": "10345",
+      			"phone": "22-2222222",
+      			"secondName": "Quimi"
+      		},
+      		"planInformation": [],
+      		"policyData": {
+      			"_type": "PolicyData",
+      			"agentSEId": 1294,
+      			"consents": [],
+      			"customStatus": "WORKING",
+      			"downloadInvoice": true,
+      			"downloadPolicy": true,
+      			"effectiveDate": "2025-12-18T05:00:00Z",
+      			"endorsementIds": [],
+      			"ensuranceDocuments": [],
+      			"entityProperties": {},
+      			"expirationDate": "2026-12-18T05:00:00Z",
+      			"nextInsurableObjectAllowed": "NO",
+      			"paymentMethod": "1",
+      			"paymentMethodAllowed": [
+      				"1",
+      				"2",
+      				"3"
+      			],
+      			"pointOfSale": "1293",
+      			"policyAgencies": [],
+      			"policyEndorsementIds": [],
+      			"policyNo": 461236,
+      			"policyNumber": "COT-VH779864",
+      			"productCode": "VH",
+      			"status": "WORKING",
+      			"uplaUpdate": "NO",
+      			"variant": "MOTOR"
+      		}
+      	},
+      	"policyNo": 461236,
+      	"testMode": false
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

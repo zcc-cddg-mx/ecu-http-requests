@@ -1,0 +1,40 @@
+info:
+  name: getLimitesDescuentos
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{server}}/referral/api/v1/arizona/referral_definitions?code=DISCOUNT"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+    - name: Authorization
+      value: eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJWQ1dzRkVaMHQzMGJxRmpJdmxlblBjWkEwakdHclAtbGNvN2JyMG1KSm5JIn0.eyJqdGkiOiIwNTcyYmJiMy00MWZjLTQ2MTUtYWNjZi01ZjllMzFmM2JmZmMiLCJleHAiOjE3NTE0OTMyNDUsIm5iZiI6MCwiaWF0IjoxNzUxNDkyMDQ1LCJpc3MiOiJodHRwczovL3ByZXByb2Qtb2ZpY2luYXZpcnR1YWwuenVyaWNoc2VndXJvcy5jb20uZWMvbnVldm9wb3J0YWwvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiYzlhNjhlZDgtMTRhNS00NjcyLWJlZmQtZWIxNWNhNDVlYmY5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic2VjdXJpdHktYWRtaW4tY29uc29sZSIsIm5vbmNlIjoiNmUzOTZiZDUtZjU0ZC00NDRmLWEwNjItODlkNmFhZDk0N2Q1IiwiYXV0aF90aW1lIjoxNzUxNDkyMDM5LCJzZXNzaW9uX3N0YXRlIjoiMmNlZGMzY2ItNGM2Ni00N2EzLWI5MmItNGIzY2UyYjQ4ZmQxIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJmcm9udF9yb2xlX3VzZXIiLCJyb2xlX3VzZXIiLCJyb2xlX2Nhc2FfaGFiaXRhY2lvbl9mX3p1cmljaCIsIm9mZmxpbmVfYWNjZXNzIiwiZnJvbnRfcm9sZV9mYWN0dXJhZG9yIiwiYWRtaW4iLCJyb2xlX3ZlaGljdWxvc19mX3p1cmljaCIsInVtYV9hdXRob3JpemF0aW9uIiwiZnJvbnRfcm9sZV96dXJpY2hfYXNzb2NpYXRlIiwicm9sZV9jdXN0b21lciIsImZyb250X3JvbGVfc3VwZXJfdXNlciJdfSwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCIsInByZWZlcnJlZF91c2VybmFtZSI6ImNkdWFydGUifQ.KAefVVzW2vfdOChNmCt3MvOilLnMOesw_iHc-djMPz45jYtnCPF43heVnfwPEwIL3Gju3jUP8j28rYwwrpiHZHUYl4X-EU2qPatoMf5mGiDC3U8HZCtA8hyeeqIlXRXxG7MLAjdur1jPDPMu0XAa0icDZCIYKwROEwvdWcn8LSHMq-joH8RJoHLColTLR7fYpN-mEKQ8r9pjNO6ua3kFA7MipNG7xjZ9riDKKlMkX3kNy8MO3PjCBNvXJ3PfxI4DObs5QH_w0oQ7PEUKPljq1iEVrhI8OGC-wETLqmAh_oerrSb_eweVYMkfFzhurFY_uAw84BP9ED1bsjSW29e_EA
+  params:
+    - name: code
+      value: DISCOUNT
+      type: query
+    - name: validTo
+      value: 00/00/0000
+      type: query
+      disabled: true
+    - name: versionNo
+      value: "2"
+      type: query
+      disabled: true
+    - name: params
+      value: validTo  IS NULL
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

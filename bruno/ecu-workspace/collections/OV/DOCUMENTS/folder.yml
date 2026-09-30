@@ -1,0 +1,7 @@
+info:
+  name: DOCUMENTS
+  type: folder
+  seq: 35
+
+request:
+  auth: inherit

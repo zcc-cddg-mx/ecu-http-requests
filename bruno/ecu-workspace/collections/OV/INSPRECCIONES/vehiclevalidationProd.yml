@@ -1,0 +1,27 @@
+info:
+  name: vehiclevalidationProd
+  type: http
+  seq: 9
+
+http:
+  method: POST
+  url: https://balanceador.zurichseguros.com.ec/zurich/api/inspection/orchestration/v2.0/vehiclevalidation
+  body:
+    type: json
+    data: |-
+      {
+        "chassis": [
+          "2FMPK3J83JBC29461"
+        ]
+      }
+  auth:
+    type: basic
+    username: zurich
+    password: password2018
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

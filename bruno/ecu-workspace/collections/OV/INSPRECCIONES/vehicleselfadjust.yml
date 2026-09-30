@@ -1,0 +1,33 @@
+info:
+  name: vehicleselfadjust
+  type: http
+  seq: 8
+
+http:
+  method: POST
+  url: https://serviciosias.zurichseguros.com.ec/zurich/api/inspection/orchestration/v2.0/vehicleintervention
+  body:
+    type: json
+    data: |-
+      {
+        "plate": "FDGTR45",
+        "quotationNumber": "COT-VH1060",
+        "identificationNumber": "1241500295",
+        "insuredName": "radion",
+        "insuredEmail": "radion@ncdc.pl",
+        "template": "Flujo Auto",
+        "phone": "+593548526874",
+        "vehicleType": "car",
+        "agentId": "4cb2b3cf0ecb9970d9d144aace99ae418a89fc8b"
+      }
+  auth:
+    type: basic
+    username: zurich
+    password: password2018
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

@@ -1,0 +1,25 @@
+info:
+  name: lookup_ratingsCommissions
+  type: http
+  seq: 10
+
+http:
+  method: POST
+  url: "{{server}}/rule/api/v1/arizona/lookup_ratings/list"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  body:
+    type: json
+    data: |-
+      {
+          "ratingListName": "VH_AGENT_COMMISSION"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

@@ -1,0 +1,35 @@
+info:
+  name: LOGIN - api_meridiano
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{server}}/user/api/v1/arizona/auth/ec/login"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: x-tenantid-1
+      value: ec
+  body:
+    type: json
+    data: |-
+      /* LOGIN */
+      {
+          "username": "nzambrano",
+          "password": "arizona2022?"
+      }
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        var json = res.getBody();
+        bru.setGlobalEnvVar("token", json.body.accessToken);
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

@@ -1,0 +1,25 @@
+info:
+  name: getBloqueadoUnique
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{server}}/policy/api/v1/arizona/rating_lists/165602/ratings/VHBlockedVehicleForSale/109852"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  body:
+    type: json
+    data: |-
+      {
+          "page": 2
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

@@ -1,0 +1,28 @@
+info:
+  name: getCarModel
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{server}}/policy/api/v1/arizona/ensurance/policies/motor/getCarModel"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  body:
+    type: json
+    data: |-
+      {
+          "_type": "CarMakeModelRequest",
+          "carMakeId": "5179",
+          "carModel": "run",
+          "testMode": false
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

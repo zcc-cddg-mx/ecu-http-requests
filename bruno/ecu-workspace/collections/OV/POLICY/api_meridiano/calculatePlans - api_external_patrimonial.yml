@@ -1,0 +1,68 @@
+info:
+  name: calculatePlans - api_external_patrimonial
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{server}}/policy/api/v1/arizona/motor/genericos/calculatePlans"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  body:
+    type: json
+    data: |-
+      {
+         "_type":"MotorGenericosTarificationRequest",
+         "motorGenericosTarification":{
+            "_type":"MotorGenericosTarification",
+            "policyData":{
+               "_type":"PolicyData",
+               "agentExternalId":"11387618600319", 
+               "pointOfSaleName":"QUITO PATRIMONIAL AGENCIA ASESORA PRODUCTORA DE SEGUROS S.A"
+            },
+      "car": {
+         "_type": "VehicleData",
+         "sumInsured" : 15000,
+         "extraEquipmentSumInsured" : 0,
+         "ensuranceVehicleId": "null",
+         "registrationNumber" : "IX558XASD",
+         "chassisNumber": "SIN_VALOR",
+         "engineNumber": "SIN_VALOR",
+         "productionYear": 2019,
+         "make": "AS",
+         "makeId": "5099",
+         "model": "SPORTAGE R 2.0 L 4X2 GSL MT",
+         "modelId": "11606677980985",
+         "colorName": "NEGRO",
+         "colorId": "12852592650",
+         "typeOfVehicle" : "JEEP",
+         "typeOfVehicleId" : "73502",
+         "passengersNumber" : "5",
+         "isNewCar" : "NO" 
+         },
+         
+         
+        "owner": {
+         "_type": "VehicleOwner",
+         "partyType" : "PERSON",
+         "identificationNumber": "1724865280",
+         "name": "Luis Guevara",
+         "age": 41,
+         "civilStatus": "Soltero",
+         "gender": "M"        
+            }
+         
+         
+       },
+       "testMode": false 
+
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

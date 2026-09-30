@@ -1,0 +1,21 @@
+info:
+  name: Motor automatic renewal batch Copy
+  type: http
+  seq: 13
+
+http:
+  method: POST
+  url: "{{server}}/scheduler/api/v1/arizona/schedulers/motorAutomaticRenewal/launch"
+  headers:
+    - name: User-Agent
+      value: insomnia/9.2.0
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

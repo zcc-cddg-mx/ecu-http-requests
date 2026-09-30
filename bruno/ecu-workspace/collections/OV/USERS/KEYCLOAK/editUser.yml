@@ -1,0 +1,78 @@
+info:
+  name: editUser
+  type: http
+  seq: 3
+
+http:
+  method: PUT
+  url: "{{server}}/auth/admin/realms/master/users/d9ee18df-f83f-46bc-87fa-25fc87815ccd"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  body:
+    type: json
+    data: |-
+      {
+          "id": "d9ee18df-f83f-46bc-87fa-25fc87815ccd",
+          "createdTimestamp": 1744821515699,
+          "username": "jcepeda",
+          "enabled": true,
+          "totp": false,
+          "emailVerified": true,
+          "firstName": "JOSE BENJAMIN",
+          "lastName": "CEPEDA AMBIT",
+          "email": "jose.cepeda2@zurich.com",
+          "attributes": {
+              "tenants": [
+                  "ec"
+              ],
+              "LAST_MAIL_RESET_PASSWORD_date": [
+                  "1751485913010"
+              ],
+              "identification": [
+                  ""
+              ],
+              "LAST_MAIL_ACCOUNT_REGISTRATION_date": [
+                  "1744821521111"
+              ],
+              "effective_date": [
+                  "1751483922384"
+              ],
+              "externalId": [
+                  ""
+              ],
+              "external_id": [
+                  ""
+              ],
+              "expiration_date": [
+                  "1751485913107"
+              ],
+              "last_login_date": [
+                  "1751485738425"
+              ],
+              "partyid": [
+                  "475652"
+              ]
+          },
+          "disableableCredentialTypes": [
+              "password"
+          ],
+          "requiredActions": [],
+          "federatedIdentities": [],
+          "notBefore": 0,
+          "access": {
+              "manageGroupMembership": true,
+              "view": true,
+              "mapRoles": true,
+              "impersonate": true,
+              "manage": true
+          }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

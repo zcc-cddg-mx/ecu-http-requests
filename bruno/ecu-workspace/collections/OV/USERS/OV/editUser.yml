@@ -1,0 +1,45 @@
+info:
+  name: editUser
+  type: http
+  seq: 2
+
+http:
+  method: PUT
+  url: "{{server}}/agent/api/v1/arizona/operations/agent/addOne"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  body:
+    type: json
+    data: |-
+      {
+        "_type": "AgentRegistrationRequest",
+        "effectiveDate": "2020-12-16T14:27:06Z",
+        "elementId": null,
+        "email": "correo2@zurich.com",
+        "expirationDate": null,
+        "externalId": "INTERNAL",
+        "firstName": "LISBETH NATALY",
+        "idCard": "1710319995",
+        "identificationType": "ID_CARD",
+        "landlinePhone": "22-2222200",
+        "lastName": "FELIX MATAMORO",
+        "mobilePhone": "09-99999999",
+        "myAccess": "8E3E468B6C9062C78EFA006DA8A844B1129C07BFD5D2065E4F0F1766FFF8ADE8",
+        "name": null,
+        "nationality": "10345",
+        "partyId": 31999,
+        "password": "arizona2022?123",
+        "userId": "6eae49bc-9331-46cb-9d1b-0a67553b0a36",
+        "username": "lfelix",
+        "userService": false,
+        "userType": "INTERNAL"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

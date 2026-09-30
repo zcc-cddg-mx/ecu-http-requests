@@ -1,0 +1,27 @@
+info:
+  name: getListadoComisionesFiltro
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{server}}/rule/api/v1/arizona/rating_lists/137404/ratings?agentId=22841810164810"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  params:
+    - name: agentId
+      value: "22841810164810"
+      type: query
+    - name: pointOfSale
+      value: MANTA VELEZ VEGA CRISTHIAN FERNANDO
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

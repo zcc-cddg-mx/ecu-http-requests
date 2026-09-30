@@ -1,0 +1,57 @@
+info:
+  name: updateRatingList Copy
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{server}}/rule/api/v1/arizona/rating_lists/7952"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  body:
+    type: json
+    data: |2-
+          {
+              "_type": "GlobalRatingList",
+              "code": "CH_GENERAL_SETUP",
+              "name": "Ch General setup",
+              "description": "Ch General setup",
+              "selector": "None",
+              "selectorType": "None",
+              "version": "2",
+              "validFrom": "2021-08-26T00:00:00.000-05:00",
+              "validTo": "2021-09-29T00:00:00.000-05:00",
+              "state": "DRAFT",
+              "children": []
+          }
+          
+          /*
+          {
+                      "_type": "GlobalRatingList",
+                      "id": 7952,
+                      "createdAt": "2021-08-26T00:00:00.000-05:00",
+                      "updatedBy": "",
+                      "recordVersion": 1,
+                      "createdBy": "carlos",
+                      "updatedAt": "2021-08-26T00:00:00.000-05:00",
+                      "code": "CH_GENERAL_SETUP",
+                      "name": "Ch General setup",
+                      "description": "Ch General setup",
+                      "selector": "None",
+                      "selectorType": "None",
+                      "version": "3",
+                      "state": "DRAFT",
+                      "validFrom": "2021-08-26T00:00:00.000-05:00",
+                      "validTo": "2021-09-29T00:00:00.000-05:00"
+                      
+                  }
+                  */
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

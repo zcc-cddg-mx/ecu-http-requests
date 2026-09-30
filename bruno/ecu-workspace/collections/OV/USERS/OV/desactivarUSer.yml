@@ -1,0 +1,22 @@
+info:
+  name: desactivarUSer
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{server}}/user/api/v1/arizona/userStatus/operation/disable/d9ee18df-f83f-46bc-87fa-25fc87815ccd"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

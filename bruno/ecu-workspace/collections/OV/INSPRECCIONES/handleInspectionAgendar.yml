@@ -1,0 +1,181 @@
+info:
+  name: handleInspectionAgendar
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{server}}/policy/api/v1/arizona/business/inspection/handle"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  body:
+    type: json
+    data: |-
+      {
+      	"_type": "MotorGenericosTarificationRequest",
+      	"motorGenericosTarification": {
+      		"_type": "MotorGenericosTarification",
+      		"beneficiaries": [],
+      		"car": {
+      			"_type": "VehicleData",
+      			"entityProperties": {},{
+      	"_type": "InspectionHandleRequest",
+      	"inspection": {
+      		"_type": "Inspection",
+      		"assignedRole": "FRONT_ROLE_INSPECTOR_EXTERNAL",
+      		"comments": [],
+      		"contact": "99-99999999",
+      		"createdAt": "2026-01-16T22:59:41Z",
+      		"createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+      		"description": null,
+      		"id": 293755,
+      		"inspectionContext": {
+      			"_type": "ECInspectionContextPolicy",
+      			"createdAt": "2026-01-16T17:59:41.347-05:00",
+      			"createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+      			"id": 284105,
+      			"objectId": 3010717,
+      			"objectNo": 477400,
+      			"plateNumber": "TEST0101G",
+      			"policyHolderId": 481152,
+      			"policyId": 3056916,
+      			"policyNo": 461040,
+      			"policyNumber": "COT-VH780394",
+      			"policyPendingType": "MOTOR_INSPECTION",
+      			"recordVersion": 1,
+      			"tenantId": "ec",
+      			"updatedAt": "2026-01-16T17:59:41.390-05:00",
+      			"updatedBy": "31fed7f0-3062-43c3-8d1d-f4926aff4ff5",
+      			"vehicleMake": "NISSAN",
+      			"vehicleModel": "SENTRA",
+      			"vehicleYear": 2020
+      		},
+      		"inspectionNo": 38891,
+      		"inspectionNumber": "38891",
+      		"note": null,
+      		"recordVersion": 0,
+      		"referralDefinitionId": 2,
+      		"requestByUserId": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+      		"requestDate": "2026-01-16T22:59:41Z",
+      		"scheduledDate": "2026-01-17T00:59:00Z",
+      		"status": "CREATED",
+      		"tenantId": "ec",
+      		"type": "MOTOR_ONSITE",
+      		"updatedAt": "2026-01-16T22:59:41Z",
+      		"updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9"
+      	},
+      	"status": "ASSIGNED"
+      }
+      			"fieldsInfo": {},
+      			"inspection": {
+      				"_type": "VehicleInspection",
+      				"allowedSubType": [
+      					"VIDEO",
+      					"ONSITE"
+      				],
+      				"contactTelephone": "99-99999999",
+      				"date": "2026-01-17T00:59:00.000Z",
+      				"inspectionId": 738714,
+      				"status": "CREATED",
+      				"subType": "ONSITE",
+      				"type": "MOTOR_INSPECTION"
+      			},
+      			"inspections": [],
+      			"isBeingProcessed": "NO",
+      			"isNewCar": "NO",
+      			"isVehicleAddedManually": "NO",
+      			"objectNo": 477400,
+      			"plans": [],
+      			"referrals": [],
+      			"removable": "NO",
+      			"vehicleEquipment": []
+      		},
+      		"cars": [
+      			{
+      				"_type": "VehicleData",
+      				"colorId": "11773393838832",
+      				"colorName": "ROJO IMPERIAL",
+      				"ensuranceVehicleId": "-1",
+      				"entityProperties": {},
+      				"fieldsInfo": {},
+      				"inspections": [
+      					{
+      						"_type": "VehicleInspection",
+      						"allowedSubType": [
+      							"VIDEO",
+      							"ONSITE"
+      						],
+      						"inspectionId": 738714,
+      						"status": "CREATED",
+      						"type": "MOTOR_INSPECTION"
+      					}
+      				],
+      				"isBeingProcessed": "NO",
+      				"isNewCar": "NO",
+      				"isVehicleAddedManually": "NO",
+      				"make": "NISSAN",
+      				"makeId": "5134",
+      				"model": "SENTRA",
+      				"modelId": "27753394547",
+      				"objectNo": 477400,
+      				"plans": [],
+      				"productionYear": 2020,
+      				"referrals": [],
+      				"referralsOptional": [],
+      				"referralsRequired": [],
+      				"registrationNumber": "TEST0101G",
+      				"removable": "NO",
+      				"selectedPlan": "SENIOR",
+      				"subProduct": "SENIOR",
+      				"substituteCarType": "SubstituteCarBasico",
+      				"sumInsured": 15000,
+      				"typeOfVehicle": "AUTOMOVIL",
+      				"vehicleDescription": "NISSAN-SENTRA-2020",
+      				"vehicleEquipment": []
+      			}
+      		],
+      		"planInformation": [],
+      		"policyData": {
+      			"_type": "PolicyData",
+      			"agentSEId": 1294,
+      			"consents": [],
+      			"customStatus": "PENDING_MANY",
+      			"downloadInvoice": true,
+      			"downloadPolicy": true,
+      			"effectiveDate": "2025-11-11T05:00:00Z",
+      			"endorsementIds": [],
+      			"ensuranceDocuments": [],
+      			"entityProperties": {},
+      			"expirationDate": "2026-11-11T05:00:00Z",
+      			"nextInsurableObjectAllowed": "YES",
+      			"paymentMethod": "1",
+      			"paymentMethodAllowed": [
+      				"1",
+      				"2",
+      				"3"
+      			],
+      			"pointOfSale": "1296",
+      			"policyAgencies": [],
+      			"policyEndorsementIds": [],
+      			"policyNo": 461040,
+      			"policyNumber": "COT-VH780394",
+      			"productCode": "VH",
+      			"status": "AWAITING",
+      			"suggestedPolicyStartDate": "2025-11-11T05:00:00Z",
+      			"uplaStatus": "NOT_APPROVED",
+      			"uplaUpdate": "NO",
+      			"variant": "MOTOR"
+      		}
+      	},
+      	"policyNo": 461040,
+      	"testMode": false
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

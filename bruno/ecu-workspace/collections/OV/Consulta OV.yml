@@ -1,0 +1,38 @@
+info:
+  name: Consulta OV
+  type: http
+  seq: 27
+
+http:
+  method: GET
+  url: "{{server}}/report/api/v1/arizona/ov/overview?query=policyNumber:*COT-PY41164*%20AND%20(%20(customStatus:*EMITTED*%20AND%20createdAt:%5B1694926800886%20TO%20*%5D)%20OR%20(NOT%20customStatus:(ACCEPTED%20OR%20AWAITING%20OR%20EXPIRED%20OR%20PENDING_FORM_AUTH%20OR%20TERMINATED%20OR%20DECLINED%20OR%20EMITTED)%20AND%20createdAt:%5B1734411600886%20TO%20*%5D%20)%20OR%20(NOT%20customStatus:(ACCEPTED%20OR%20AWAITING%20OR%20EXPIRED%20OR%20PENDING_FORM_AUTH%20OR%20TERMINATED%20OR%20DECLINED%20OR%20EMITTED)%20AND%20createdAt:%5B1733115600886%20TO%20*%5D%20AND%20productCode:%20*CH*%20AND%20renewalType:%20*AUTOMATIC*%20))&pageSize=20&page=0&index=DB_POLICY_VIEW&sortProperties=createdAt&sortDirection=desc"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  params:
+    - name: query
+      value: policyNumber:*COT-PY41164*%20AND%20(%20(customStatus:*EMITTED*%20AND%20createdAt:%5B1694926800886%20TO%20*%5D)%20OR%20(NOT%20customStatus:(ACCEPTED%20OR%20AWAITING%20OR%20EXPIRED%20OR%20PENDING_FORM_AUTH%20OR%20TERMINATED%20OR%20DECLINED%20OR%20EMITTED)%20AND%20createdAt:%5B1734411600886%20TO%20*%5D%20)%20OR%20(NOT%20customStatus:(ACCEPTED%20OR%20AWAITING%20OR%20EXPIRED%20OR%20PENDING_FORM_AUTH%20OR%20TERMINATED%20OR%20DECLINED%20OR%20EMITTED)%20AND%20createdAt:%5B1733115600886%20TO%20*%5D%20AND%20productCode:%20*CH*%20AND%20renewalType:%20*AUTOMATIC*%20))
+      type: query
+    - name: pageSize
+      value: "20"
+      type: query
+    - name: page
+      value: "0"
+      type: query
+    - name: index
+      value: DB_POLICY_VIEW
+      type: query
+    - name: sortProperties
+      value: createdAt
+      type: query
+    - name: sortDirection
+      value: desc
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

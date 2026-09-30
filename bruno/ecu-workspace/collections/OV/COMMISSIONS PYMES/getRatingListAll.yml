@@ -1,0 +1,23 @@
+info:
+  name: getRatingListAll
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{server}}/rule/api/v1/arizona/rating_lists?code=PY_AGENT_COMMISSION"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  params:
+    - name: code
+      value: PY_AGENT_COMMISSION
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

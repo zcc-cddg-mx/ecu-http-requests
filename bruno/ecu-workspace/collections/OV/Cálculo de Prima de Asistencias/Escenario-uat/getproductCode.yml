@@ -1,0 +1,26 @@
+info:
+  name: getproductCode
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{server}}/agent/api/v1/arizona/ecstructureelements/getParents/1294?productCode=VH"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  params:
+    - name: productCode
+      value: VH
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

@@ -1,0 +1,31 @@
+info:
+  name: vehicleinspectionstatus
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: https://serviciosias.zurichseguros.com.ec/zurich/api/inspection/orchestration/v2.0/vehicleinspectionstatus
+  body:
+    type: json
+    data: |-
+      {
+        "vehicleInspectionStatus": [
+          {
+            "inspectionType": 1,
+            "id": "99178315-b52f-5c46-beb2-d6d39e0a5fa8",
+            "brand": null
+          }
+        ]
+      }
+  auth:
+    type: basic
+    username: zurich
+    password: password2018
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

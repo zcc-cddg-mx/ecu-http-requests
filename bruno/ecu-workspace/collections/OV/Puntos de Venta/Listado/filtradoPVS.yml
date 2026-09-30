@@ -1,0 +1,34 @@
+info:
+  name: filtradoPVS
+  type: http
+  seq: 8
+
+http:
+  method: GET
+  url: "{{server}}/agent/api/v1/arizona/structureElements?pageSize=20&page=0&unitName_li=VENTA DIRECTA ZURICH&elementType=POINT"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  params:
+    - name: pageSize
+      value: "20"
+      type: query
+    - name: page
+      value: "0"
+      type: query
+    - name: unitName_li
+      value: VENTA DIRECTA ZURICH
+      type: query
+    - name: elementType
+      value: POINT
+      type: query
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

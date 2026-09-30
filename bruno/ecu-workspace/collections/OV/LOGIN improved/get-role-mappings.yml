@@ -1,0 +1,22 @@
+info:
+  name: get-role-mappings
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{server}}/user/api/v1/arizona/user_entity/62e24096-63c8-4ea8-b0c0-5778052666ca/role-mappings/composite"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

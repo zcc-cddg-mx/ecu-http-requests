@@ -1,0 +1,32 @@
+info:
+  name: getPoliciesToBeRenewed-CH-VOC
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{server}}/voc/api/v1/voc/query//ReporteDeRenovacionChQuery/ReporteDeRenovacionChDTO"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  body:
+    type: json
+    data: |-
+      {
+          "_type": "OvChRenewalReportSearchDTO",
+          "quoteNumber": null,
+          "customerId": null,
+          "agent": null,
+          "policyStartDate": null,
+          "policyEndDate": null,
+          "page": 0,
+          "pageSize": 1000
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

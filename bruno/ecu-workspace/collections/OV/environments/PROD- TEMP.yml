@@ -1,0 +1,3 @@
+variables:
+  - name: server
+    value: https://temp2.zurichseguros.com.ec/nuevoportal/

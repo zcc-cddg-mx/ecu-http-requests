@@ -1,0 +1,26 @@
+info:
+  name: getEntityOne
+  type: http
+  seq: 10
+
+http:
+  method: GET
+  url: "{{server}}/user/api/v1/arizona/ecusers?id=830454b6-ae3b-4005-9e53-e4c1d7675aa9"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  params:
+    - name: id
+      value: 830454b6-ae3b-4005-9e53-e4c1d7675aa9
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

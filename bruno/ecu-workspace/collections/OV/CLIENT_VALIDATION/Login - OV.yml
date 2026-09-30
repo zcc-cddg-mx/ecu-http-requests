@@ -1,0 +1,115 @@
+info:
+  name: Login - OV
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{server}}/user/api/v1/arizona/auth/ec/login"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: x-tenantid-1
+      value: ec
+  body:
+    type: json
+    data: |+
+      /**********************************************************************
+      DEV
+      /**********************************************************************
+      */
+
+      {
+          "username": "admin",
+        "password": "arizona2022?"
+      }
+
+
+      /*
+      {
+          "username": "batch_user",
+        "password": "arizona2022?"
+      }
+      */
+
+      /*
+      {
+          "username": "cduarte",
+        "password": "arizona2022?11"
+      }
+
+      */
+      /*
+      {
+          "username": "api_external_autority",
+          "password": "arizonA2022??1"
+      }
+      */
+
+
+
+      /*
+
+      {
+          "username": "api_external_quintanaypacheco",
+          "password": "arizona2022?"
+       
+      }
+      */
+
+
+      /**********************************************************************
+      TEST
+      /**********************************************************************
+      */
+
+      /*
+      {
+          "username": "batch_user",
+        "password": "arizona2022?"
+      }
+
+      */
+      /*
+
+      {
+          "username": "admin",
+        "password": "arizona2022?"
+      }
+      */
+
+      /*
+      {
+          "username": "api_external_quintanaypacheco",
+          "password": "arizona2022?"
+       
+      }
+
+      */
+      /*
+      {
+          "username": "api_external_autority",
+          "password": "arizonA2022?"
+      }
+      */
+      /*
+      {
+          "username": "cduarte",
+          "password": "arizonA2022?123"
+      }
+
+      */
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        var json = res.getBody();
+        bru.setGlobalEnvVar("token", json.body.accessToken);
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

@@ -1,0 +1,29 @@
+info:
+  name: overview2
+  type: http
+  seq: 14
+
+http:
+  method: GET
+  url: "{{server}}/report/api/v1/arizona/overview?query=requestByUserId:c9a68ed8-14a5-4672-befd-eb15ca45ebf9%20AND%20status:%20(APPROVED%20OR%20REJECTED)&index=DB_INSPECTION_NOTIFICATION_VIEW"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  params:
+    - name: query
+      value: requestByUserId:c9a68ed8-14a5-4672-befd-eb15ca45ebf9%20AND%20status:%20(APPROVED%20OR%20REJECTED)
+      type: query
+    - name: index
+      value: DB_INSPECTION_NOTIFICATION_VIEW
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

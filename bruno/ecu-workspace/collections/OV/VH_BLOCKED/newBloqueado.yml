@@ -1,0 +1,33 @@
+info:
+  name: newBloqueado
+  type: http
+  seq: 6
+
+http:
+  method: PUT
+  url: "{{server}}/policy/api/v1/arizona/rating_lists/111602/ratings"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  body:
+    type: json
+    data: |-
+      [
+      {
+          "_type": "Rating",
+          "createdAt": "2026-02-23T18:19:27.807-05:00",
+          "recordVersion": 1,
+          "updatedAt": "2026-02-27T12:00:00.808-05:00",
+          "transactionType": "NEWBUSINESS",
+          "vehicleMake": "MG",
+          "modelStartWithName": "MG CYBERSTER"
+      }
+      ]
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

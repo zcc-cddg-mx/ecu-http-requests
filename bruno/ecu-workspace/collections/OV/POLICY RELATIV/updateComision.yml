@@ -1,0 +1,51 @@
+info:
+  name: updateComision
+  type: http
+  seq: 13
+
+http:
+  method: GET
+  url: "{{server}}/rule/api/v1/arizona/rating_lists/87052/ratings/VHAgentCommission/201745"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  body:
+    type: json
+    data: |-
+      
+      {
+              "_type": "VHAgentCommission",
+              "id": 201745,
+              "agentId": "6445125866918",
+              "commissionBaseValue": 15.5,
+              "newCarOrInspectionNeeded": "NO",
+        "sumInsured": 0,
+        "pointOfSale": "Quito-Center",
+        "isInRenewalProcess": "NO",
+        "productionUnit": "",
+        "commissionValue2": 15.6,
+        "commissionValue3": 15.7
+
+      }
+
+      {
+          "_type": "VHAgentCommission",
+          "agentId": "6445125866918",
+          "commissionBaseValue": 15.5,
+          "sumInsured": 0,
+          "pointOfSale": "Quito-Center",
+          "newCarOrInspectionNeeded": "NO",
+          "isInRenewalProcess": "NO",
+          "productionUnit": "0",
+          "commissionValue2": 15.6,
+          "commissionValue3": 15.7
+          
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

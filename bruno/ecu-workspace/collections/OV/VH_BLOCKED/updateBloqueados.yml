@@ -1,0 +1,36 @@
+info:
+  name: updateBloqueados
+  type: http
+  seq: 5
+
+http:
+  method: PUT
+  url: "{{server}}/policy/api/v1/arizona/rating_lists/111452/ratings"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  body:
+    type: json
+    data: |-
+      [
+      {
+          "_type": "Rating",
+          "createdAt": "2026-02-11T17:06:40.807-05:00",
+          "recordVersion": 2,
+          "id": 109852,
+          "updatedAt": "2026-02-11T17:06:40.808-05:00",
+          "excludeSubProduct": "PRODUBANCO,MOTOS,SEGURO_PLANETA",
+          "transactionType": "NEWBUSINESS",
+          "vehicleMake": "CHEVROLET",
+          "modelStartWithName": "LUV",
+          "excludeProductionUnit": "1646696470403,1646696470410"
+      }
+      ]
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

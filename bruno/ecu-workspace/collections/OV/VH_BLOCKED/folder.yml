@@ -1,0 +1,7 @@
+info:
+  name: VH_BLOCKED
+  type: folder
+  seq: 32
+
+request:
+  auth: inherit

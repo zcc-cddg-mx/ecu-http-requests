@@ -1,0 +1,22 @@
+info:
+  name: version
+  type: http
+  seq: 8
+
+http:
+  method: GET
+  url: "{{server}}/release/api/v1/arizona/version"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

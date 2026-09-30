@@ -1,0 +1,61 @@
+info:
+  name: validationCliente
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{server}}/policy/api/v1/arizona/motorGenericos/step/client/validation"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  body:
+    type: json
+    data: |-
+      {
+          "_type": "MotorGenericosTarificationRequest",
+          "testMode": false,
+          "motorGenericosTarification": {
+              "_type": "MotorGenericosTarification",
+              "policyData": {
+                  "_type": "PolicyData",
+                  "entityProperties": {},
+                  "variant": "MOTOR",
+                  "uplaUpdate": "NO",
+                  "nextInsurableObjectAllowed": "NO",
+                  "ensuranceDocuments": [],
+                  "endorsementIds": [],
+                  "policyEndorsementIds": [],
+                  "policyAgencies": [],
+                  "consents": [],
+                  "paymentMethodAllowed": [],
+                  "pointOfSale": "64",
+                  "agentSEId": 65
+              },
+              "client": {
+                  "_type": "PolicyRole",
+                  "identificationNumber": "1726534207",
+                  "fieldsInfo": {},
+                  "entityProperties": {},
+                  "identificationType": "ID_CARD",
+                  "name": null,
+                  "firstName": null,
+                  "secondName": null,
+                  "phone": null,
+                  "mobilePhone": null,
+                  "email": null,
+                  "nationalityId": null
+              },
+              "beneficiaries": [],
+              "cars": [],
+              "planInformation": []
+          }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

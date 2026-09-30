@@ -1,0 +1,31 @@
+info:
+  name: getPuntosDeVentaPaginado
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{server}}/agent/api/v1/arizona/structureElements?pageSize=20&page=0&elementType=POINT"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  params:
+    - name: pageSize
+      value: "20"
+      type: query
+    - name: page
+      value: "0"
+      type: query
+    - name: elementType
+      value: POINT
+      type: query
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

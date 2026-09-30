@@ -1,0 +1,26 @@
+info:
+  name: GetPolicy
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{server}}/document/api/v1/arizona/files?originalFileName=OV_CUSTOMER_CERTIFICATE.odt"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  params:
+    - name: originalFileName
+      value: OV_CUSTOMER_CERTIFICATE.odt
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

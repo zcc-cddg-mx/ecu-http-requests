@@ -1,0 +1,42 @@
+info:
+  name: updateComisiones
+  type: http
+  seq: 7
+
+http:
+  method: PUT
+  url: "{{server}}/rule/api/v1/arizona/rating_lists/87052/ratings"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  body:
+    type: json
+    data: |-
+      [
+          {
+                      "_type": "VHAgentCommission",
+                      "createdAt": "2025-09-15T18:14:47.972-05:00",
+                      "updatedBy": "carlos",
+                      "recordVersion": 2,
+                      "createdBy": "carlos david",
+                      "id": 201745,
+                      "updatedAt": "2025-09-15T18:14:47.974-05:00",
+                      "agentId": "6445125866918",
+                      "commissionBaseValue": 15.1,
+                      "sumInsured": 0,
+                      "pointOfSale": "QUITO",
+                      "newCarOrInspectionNeeded": "NO",
+                      "isInRenewalProcess": "NO",
+                      "productionUnit": "a",
+                      "commissionValue2": 15.2,
+                      "commissionValue3": 15.3
+                  }
+      ]
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

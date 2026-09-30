@@ -1,0 +1,40 @@
+info:
+  name: updateComisiones
+  type: http
+  seq: 5
+
+http:
+  method: PUT
+  url: "{{server}}/rule/api/v1/arizona/rating_lists/94910/ratings"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  body:
+    type: json
+    data: |-
+      [
+            {
+            "id": 218202,
+            "_type": "PYAgentCommission",
+            "recordVersion": 3,
+            "agentId": "104047",
+            "createdBy": "c0fa4993-3222-4304-ae2e-20c0244c49ea",
+            "createdAt": "2026-04-17T13:39:01.558-05:00",
+            "commissionAccidentes": 10,
+            "commissionDinero": 10,
+            "commissionEquipoElect": 10,
+            "commissionFidelidad": 10,
+            "commissionIncendio": 10,
+            "commissionRespCivil": 20,
+            "commissionRobo": 10,
+            "commissionRotMaq": 10
+            }
+      ]
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

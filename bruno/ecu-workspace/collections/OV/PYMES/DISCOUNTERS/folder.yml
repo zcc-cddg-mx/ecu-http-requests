@@ -1,0 +1,7 @@
+info:
+  name: DISCOUNTERS
+  type: folder
+  seq: 37
+
+request:
+  auth: inherit
