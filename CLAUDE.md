@@ -4,11 +4,20 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Purpose
 
-This is a **Bruno API client workspace** containing HTTP request collections for Zurich Seguros Ecuador's internal systems. It serves as a centralized API testing and documentation tool for multiple backend services.
+This is a **Bruno API client workspace** containing HTTP request collections for Zurich Seguros LATAM (Ecuador and Mexico). It serves as a centralized API testing and documentation tool for multiple backend services.
+
+## Workspaces
+
+| Workspace | Path | Notes |
+|-----------|------|-------|
+| Ecuador | `bruno/ecu-workspace/` | Active — 897 requests across 12 collections |
+| Mexico | `bruno/mx-workspace/` | In progress — no collections yet |
 
 ## Bruno Workspace Structure
 
-The workspace lives under `bruno/ecu-workspace/` and is opened directly in the Bruno desktop app (or via the Bruno CLI `bru`).
+### Ecuador (`bruno/ecu-workspace/`)
+
+Opened directly in the Bruno desktop app (or via the Bruno CLI `bru`).
 
 ```
 bruno/ecu-workspace/
