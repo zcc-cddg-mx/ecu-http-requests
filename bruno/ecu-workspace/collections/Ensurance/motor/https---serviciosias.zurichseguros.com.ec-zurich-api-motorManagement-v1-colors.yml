@@ -1,0 +1,15 @@
+info:
+  name: https://serviciosias.zurichseguros.com.ec/zurich/api/motorManagement/v1/colors
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: https://serviciosias.zurichseguros.com.ec/zurich/api/motorManagement/v1/colors
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

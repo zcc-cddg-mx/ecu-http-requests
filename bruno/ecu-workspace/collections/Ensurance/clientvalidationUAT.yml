@@ -1,0 +1,24 @@
+info:
+  name: clientvalidationUAT
+  type: http
+  seq: 9
+
+http:
+  method: POST
+  url: https://serviciosias.zurichseguros.com.ec/zurich/api/client/clientcontrol/v1.0/clientvalidation
+  body:
+    type: json
+    data: |
+      {
+          "identificationNumber":"1713978318",
+          "productType":"Pymes",
+          "createAuthorization":false
+          }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

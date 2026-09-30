@@ -1,0 +1,38 @@
+info:
+  name: clientValidation
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: https://api-int-uat.zurichseguros.com.ec/entity-orchestration-s0027/v1/clientvalidation
+  headers:
+    - name: x-api-key
+      value: df7vYXqzZG1UCjygCsQOb7KSmYIqEGaF3Q23D39u
+    - name: usuario
+      value: eqc5im7cv5pf2ftc067bdoqh8
+      disabled: true
+    - name: clave
+      value: u0n4p6uurdkth9m8fp1g00qnuqqroundrcmv5g3jfau7rqhjq80
+      disabled: true
+  body:
+    type: json
+    data: |-
+      {
+          "identificationNumber":"0601631708",
+          "productType":"Motor",
+          "createAuthorization":false
+      }
+      /* 1719426346 */
+
+      /* -- */
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

@@ -1,0 +1,26 @@
+info:
+  name: clientValidation - Local
+  type: http
+  seq: 30
+
+http:
+  method: POST
+  url: http://localhost:3030/zurich/api/client/clientcontrol/v1.0/clientvalidation
+  headers:
+    - name: x-api-key
+      value: df7vYXqzZG1UCjygCsQOb7KSmYIqEGaF3Q23D39u
+  body:
+    type: json
+    data: |-
+      {
+          "identificationNumber":"1710437789",
+          "productType":"Motor",
+          "createAuthorization":false
+      }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

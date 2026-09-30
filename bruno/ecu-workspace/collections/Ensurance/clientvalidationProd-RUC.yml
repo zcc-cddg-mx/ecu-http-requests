@@ -1,0 +1,34 @@
+info:
+  name: clientvalidationProd-RUC
+  type: http
+  seq: 22
+
+http:
+  method: POST
+  url: https://balanceador.zurichseguros.com.ec/zurich/api/client/clientcontrol/v1.0/clientvalidation
+  body:
+    type: json
+    data: |-
+      {
+          "identificationNumber": "0190316025001",
+          "productType":"Motor",
+          "createAuthorization":false
+      }
+
+      /* 
+          "identificationNumber":"1751639970",
+          1801525732
+          1313199067
+          lista negra: 1703719672001
+      */
+  auth:
+    type: basic
+    username: zurich
+    password: password2018
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

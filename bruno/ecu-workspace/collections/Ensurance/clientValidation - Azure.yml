@@ -1,0 +1,26 @@
+info:
+  name: clientValidation - Azure
+  type: http
+  seq: 16
+
+http:
+  method: POST
+  url: https://10.225.196.9/zurich/api/client/clientcontrol/v1.0/clientvalidation
+  headers:
+    - name: x-api-key
+      value: df7vYXqzZG1UCjygCsQOb7KSmYIqEGaF3Q23D39u
+  body:
+    type: json
+    data: |-
+      {
+          "identificationNumber":"1313199067",
+          "productType":"Motor",
+          "createAuthorization":false
+      }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

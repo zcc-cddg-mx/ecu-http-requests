@@ -1,0 +1,19 @@
+info:
+  name: getCarModel copy
+  type: http
+  seq: 9
+
+http:
+  method: GET
+  url: https://serviciosias.zurichseguros.com.ec/zurich/api/motorManagement/v1/tipos
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

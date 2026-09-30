@@ -1,0 +1,25 @@
+info:
+  name: cierreMes
+  type: http
+  seq: 11
+
+http:
+  method: GET
+  url: https://serviciosias.zurichseguros.com.ec/zurich/api/common/commonconfiguration/v1.0/monthlyclosing
+  body:
+    type: json
+    data: |-
+      {
+          "identificationNumber": "1726534207",
+          "productType": "Motor",
+          "entityId": "352690060",
+          "createAuthorization": false
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

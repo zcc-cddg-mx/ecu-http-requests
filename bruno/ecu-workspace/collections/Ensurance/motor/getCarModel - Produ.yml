@@ -1,0 +1,32 @@
+info:
+  name: getCarModel - Produ
+  type: http
+  seq: 7
+
+http:
+  method: GET
+  url: http://balanceador.zurichseguros.com.ec/zurich/api/motorManagement/v1/model?brandId=5134&name=SENTRA&classId=2,4
+  params:
+    - name: brandId
+      value: "5134"
+      type: query
+    - name: name
+      value: SENTRA
+      type: query
+    - name: classId
+      value: 2,4
+      type: query
+  body:
+    type: json
+    data: ""
+  auth:
+    type: basic
+    username: zurich
+    password: password2018
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

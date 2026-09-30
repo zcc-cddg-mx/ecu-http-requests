@@ -1,0 +1,7 @@
+info:
+  name: listas-negras
+  type: folder
+  seq: 21
+
+request:
+  auth: inherit

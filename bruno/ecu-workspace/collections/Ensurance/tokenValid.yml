@@ -1,0 +1,26 @@
+info:
+  name: tokenValid
+  type: http
+  seq: 24
+
+http:
+  method: POST
+  url: https://balanceador.zurichseguros.com.ec/zurich/api/tokenvalidation/1.0.0/token/validuser
+  body:
+    type: json
+    data: |-
+      {
+        "identification": "1313199067",
+        "key": "DAJuAuJu3HtWbP28b3TJspTOQqVvC20FT6W0zAfzp7JtKUe%2Bjckl%2BL6Y3yajwrDJ%21FsLm8VfHF3TlLpt2jH6FlGyf%2Bw6oFrg7CaleH3GNg0gVsCHO185vkejgsD7EBAvj"
+      }
+  auth:
+    type: basic
+    username: zurich
+    password: password2018
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

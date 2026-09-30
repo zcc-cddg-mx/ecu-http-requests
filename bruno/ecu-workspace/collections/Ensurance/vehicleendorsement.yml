@@ -1,0 +1,21 @@
+info:
+  name: vehicleendorsement
+  type: http
+  seq: 13
+
+http:
+  method: POST
+  url: https://balanceador.zurichseguros.com.ec/zurich/api/policy/generalbusinessline/v1.0/vehicleendorsement
+  body:
+    type: json
+    data: |-
+      {
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

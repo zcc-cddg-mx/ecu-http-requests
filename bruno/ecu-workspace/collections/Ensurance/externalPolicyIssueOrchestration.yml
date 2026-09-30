@@ -1,0 +1,125 @@
+info:
+  name: externalPolicyIssueOrchestration
+  type: http
+  seq: 10
+
+http:
+  method: POST
+  url: https://api-uat.zurichseguros.com.ec/external-policy-issue-orchestration-s0044/v1/motor
+  body:
+    type: json
+    data: |-
+      {
+        "user": {
+          "brokerId": "10627974369596",
+          "issuanceUser": {
+            "userName": "CHEVY",
+            "application": "CHEVYSEGUROS"
+          }
+        },
+        "client": {
+          "identificationType": "C",
+          "identificationNumber": "0602326787",
+          "name": "LILIANA ELIZABETH",
+          "lastName": "RUEDA AYALA",
+          "phoneNumber": "022260879",
+          "cellphoneNumber": "0998032308",
+          "email": "prueba@prueba.com",
+          "nationalityId": "10345",
+          "mainStreet": "CALLE F MONTALVO MZ 41 OE1135 CALLE LA ROMERIA COCHAPAMBA",
+          "secondaryStreet": "CALLE LA ROMERIA COCHAPAMBA",
+          "cityName": "QUITO",
+          "number": "MZ 41 OE1135"
+        },
+        "container": {
+          "creationDate": "2025-05-27T00:00:00.000Z",
+          "businessUnitId": "65537",
+          "pointOfSaleId": "99952103658",
+          "branchOfficeId": "87",
+          "productionUnitId": "27516076036",
+          "validSince": "2025-05-21T00:00:00.000Z",
+          "validUntil": "2026-05-21T00:00:00.000Z",
+          "quotationNumber": "160603",
+          "businessAreaId": "3",
+          "distributionChannelId": "3",
+          "marketSegmentId": "5",
+          "containerId": "11433553760762",
+          "applyProductId": true,
+          "paymentType": {
+            "creditCardPayment": false,
+            "bankTransfer": true,
+            "bankDebit": false,
+            "directCredit": false
+          },
+          "insured": {
+            "identificationType": "C",
+            "identificationNumber": "1717994519",
+            "name": "LILIANA ELIZABETH",
+            "lastName": "RUEDA AYALA",
+            "phoneNumber": "022260879",
+            "cellphoneNumber": "0998032308",
+            "email": "prueba@prueba.com",
+            "nationalityId": "10345",
+            "mainStreet": "CALLE F MONTALVO MZ 41 OE1135 CALLE LA ROMERIA COCHAPAMBA",
+            "secondaryStreet": "CALLE LA ROMERIA COCHAPAMBA",
+            "cityName": "QUITO",
+            "number": "MZ 41 OE1135"
+          },
+          "agents": [
+            {
+              "agentsId": "10627974369597",
+              "isLeader": true,
+              "percent": 100,
+              "commission": 25.00,
+              "applyCommissionByChannel": true
+            }
+          ],
+          "product": [
+            {
+              "productId": "11441117740328",
+              "planId": "1",
+              "colorId": "12852592653",
+              "owner": "RUEDA AYALA LILIANA ELIZABETH",
+              "ownerCard": "1717994519",
+              "insuredValue": 28750,
+              "rateValue": 0.0305,
+              "netPremium": 876.88,
+              "extrasInsuredValue": 0,
+              "creditorBeneficiaryAmount": 0,
+              "vehicle": {
+                "plate": "T032880162",
+                "chassis": "LZWADAGA3SB0100162",
+                "motorSku": "LJO18R705201812",
+                "modelId": "21540323525418",
+                "vehicleTypeId": "73502",
+                "useTypeId": "14942208",
+                "year": 2025,
+                "passengersNumber": 5,
+                "ownerIdentification": "1717994519",
+                "owner": "RUEDA AYALA LILIANA ELIZABETH",
+                "colorId": "12852592653"
+              },
+              "extras": [],
+              "coverages": [
+                {
+                  "coverageId": "40010",
+                  "rate": 0.0305,
+                  "premium": 876.88,
+                  "cost": 28750
+                }
+              ],
+              "deductibles": []
+            }
+          ]
+        }
+      }
+  auth:
+    type: bearer
+    token: "{{token-autority-2}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

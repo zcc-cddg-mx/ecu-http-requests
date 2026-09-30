@@ -1,0 +1,30 @@
+info:
+  name: clientValidation Copy
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: https://serviciosias.zurichseguros.com.ec/entity-orchestration-s0027/v1/clientvalidation
+  headers:
+    - name: x-api-key
+      value: df7vYXqzZG1UCjygCsQOb7KSmYIqEGaF3Q23D39u
+  body:
+    type: json
+    data: |-
+      {
+          "identificationNumber":"1710437789",
+          "productType":"Motor",
+          "createAuthorization":true
+      }
+      /* 1719426346 */
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

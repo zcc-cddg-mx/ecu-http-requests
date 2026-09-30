@@ -1,0 +1,24 @@
+info:
+  name: clientValidationLocalAzure copy
+  type: http
+  seq: 20
+
+http:
+  method: POST
+  url: https://preprod-oficinavirtual.zurichseguros.com.ec:3000/zurich/api/client/clientcontrol/v1.0/clientvalidation
+  body:
+    type: json
+    data: |-
+      {
+          "identificationNumber": "1313199067",
+          "productType":"Motor",
+          "createAuthorization":false
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

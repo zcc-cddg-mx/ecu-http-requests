@@ -1,0 +1,18 @@
+info:
+  name: getPerson
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: https://api-int-uat.zurichseguros.com.ec/entity-orchestration-s0027/v1/person/1313199067
+  headers:
+    - name: x-api-key
+      value: df7vYXqzZG1UCjygCsQOb7KSmYIqEGaF3Q23D39u
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true
