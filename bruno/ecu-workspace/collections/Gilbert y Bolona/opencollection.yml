@@ -1,0 +1,17 @@
+opencollection: 1.0.0
+
+info:
+  name: Gilbert y Bolona
+
+request:
+  variables:
+    - name: token_security_service
+      value: ""
+    - name: token_login_external
+      value: ""
+bundled: false
+extensions:
+  bruno:
+    ignore:
+      - node_modules
+      - .git

@@ -1,0 +1,21 @@
+info:
+  name: 4. CORE COLORES - MOTOR MANAGEMENT SERVICE
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: https://api-uat.zurichseguros.com.ec/motor-management-s0056/v1/colors
+  headers:
+    - name: x-api-key
+      value: DmwGBfgWng9HoLs7CNMyD8Lb1Aj1o1Y9SbKnJ59h
+  auth:
+    type: bearer
+    token: "{{token_security_service}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true
