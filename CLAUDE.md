@@ -55,7 +55,9 @@ bru run "bruno/ecu-workspace/collections/Arizona" --env GLOBAL --recursive
 bru run "bruno/ecu-workspace/collections/OV" --env GLOBAL --recursive --reporter json
 ```
 
-**Bruno Desktop App**: Open the `bruno/ecu-workspace/` folder as a workspace, select the `GLOBAL` environment, then run requests individually or as a collection.
+**Bruno VS Code Extension**: El workspace está preconfigurado en `.vscode/settings.json` apuntando a `bruno/ecu-workspace/`. Instalar la extensión Bruno en VS Code carga el workspace automáticamente.
+
+**Bruno Desktop App**: Abrir la carpeta `bruno/ecu-workspace/` como workspace, seleccionar el entorno `GLOBAL` y ejecutar requests individualmente o por colección.
 
 ## .bru File Format
 
