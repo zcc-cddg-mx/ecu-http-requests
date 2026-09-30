@@ -1,0 +1,87 @@
+info:
+  name: editPointOfSaleProduccion
+  type: http
+  seq: 9
+
+http:
+  method: PUT
+  url: "{{server}}/agent/api/v1/arizona/structures/operation/296405"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  body:
+    type: json
+    data: |-
+      {
+          "_type": "Structure",
+          "id": 296405,
+          "effectiveDate": "2025-03-13T12:19:06Z",
+          "parentId": 10,
+          "structureElement": {
+              "_type": "ECStructureElement",
+              "id": 223553,
+              "externalId": "100049551360",
+              "elementType": "POINT",
+              "unitCode": "POINT",
+              "effectiveDate": "2025-03-13T12:19:06Z",
+              "unitName": "GUAYAQUIL CENTRALIS BROKERS AGENCIA ASESORA PRODUCTORA DE SEGUROS CENTRALISA S.A.",
+              "description": "Centralis",
+              "businessUnits": [
+                  {
+                      "_type": "BusinessUnit",
+                      "createdAt": "2021-09-04T21:32:24Z",
+                      "updatedBy": "186faf18-ccba-42a2-a2d0-bde4753ff185",
+                      "createdBy": "186faf18-ccba-42a2-a2d0-bde4753ff185",
+                      "recordVersion": 0,
+                      "id": 4501,
+                      "updatedAt": "2021-09-04T21:32:24Z",
+                      "businessUnit": "MASIVOS",
+                      "businessUnitId": "65537",
+                      "productionUnit": "GUAYAQUIL",
+                      "productionUnitId": "16466964704220",
+                      "productId": 1081,
+                      "productCode": "VH"
+                  },
+                  {
+                      "_type": "BusinessUnit",
+                      "createdAt": "2021-07-17T09:33:06Z",
+                      "updatedBy": "186faf18-ccba-42a2-a2d0-bde4753ff185",
+                      "createdBy": "186faf18-ccba-42a2-a2d0-bde4753ff185",
+                      "recordVersion": 1,
+                      "id": 3301,
+                      "updatedAt": "2021-07-17T09:33:06Z",
+                      "businessUnit": "CORPORATIVO",
+                      "businessUnitId": "2723086336",
+                      "productionUnit": "GUAYAQUIL",
+                      "productionUnitId": "16466964704200",
+                      "productId": 1061,
+                      "productCode": "CH"
+                  },
+                  {
+                      "_type": "BusinessUnit",
+                      "createdAt": "2020-07-31T07:54:48Z",
+                      "updatedBy": "b92d2fdc-53d0-457b-8c16-839d416b95d9",
+                      "recordVersion": 0,
+                      "createdBy": "b92d2fdc-53d0-457b-8c16-839d416b95d9",
+                      "id": 7,
+                      "updatedAt": "2020-07-31T07:54:48Z",
+                      "businessUnit": "CORPORATIVO",
+                      "businessUnitId": "2723086336",
+                      "productionUnit": "GUAYAQUIL",
+                      "productionUnitId": "16466964704200",
+                      "productId": 1000,
+                      "productCode": "PY"
+                  }
+              ]
+          }
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

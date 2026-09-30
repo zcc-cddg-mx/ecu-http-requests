@@ -1,0 +1,28 @@
+info:
+  name: getUnidadesByBranch
+  type: http
+  seq: 13
+
+http:
+  method: GET
+  url: "{{server}}/agent/api/v1/arizona/structureElements?structures.id=17&elementType_eq=BRANCH"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  params:
+    - name: structures.id
+      value: "17"
+      type: query
+    - name: elementType_eq
+      value: BRANCH
+      type: query
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

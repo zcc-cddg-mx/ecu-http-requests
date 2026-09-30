@@ -1,0 +1,25 @@
+info:
+  name: getAgentes
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: "{{server}}/agent/api/v1/arizona/structures?structureElement.id=65"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  params:
+    - name: structureElement.id
+      value: "65"
+      type: query
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

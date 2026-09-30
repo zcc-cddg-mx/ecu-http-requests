@@ -1,9 +1,0 @@
-{
-  "version": "1",
-  "name": "Puntos de Venta",
-  "type": "collection",
-  "ignore": [
-    "node_modules",
-    ".git"
-  ]
-}

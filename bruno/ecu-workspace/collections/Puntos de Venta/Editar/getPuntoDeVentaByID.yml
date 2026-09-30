@@ -1,0 +1,28 @@
+info:
+  name: getPuntoDeVentaByID
+  type: http
+  seq: 10
+
+http:
+  method: GET
+  url: "{{server}}/agent/api/v1/arizona/structures?useFilter=activeFilter&structureElement__id=209502"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  params:
+    - name: useFilter
+      value: activeFilter
+      type: query
+    - name: structureElement__id
+      value: "209502"
+      type: query
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

@@ -1,0 +1,27 @@
+info:
+  name: bulkCreateUpdate
+  type: http
+  seq: 10
+
+http:
+  method: POST
+  url: "{{server}}/agent/api/v1/arizona/agentEntitlements/agent/bulkCreateUpdate"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  body:
+    type: json
+    data: |-
+      [
+        100602
+      ]
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

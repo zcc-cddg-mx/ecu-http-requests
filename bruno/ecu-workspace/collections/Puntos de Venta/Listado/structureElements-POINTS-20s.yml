@@ -1,0 +1,28 @@
+info:
+  name: structureElements-POINTS-20s
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: "{{server}}/agent/api/v1/arizona/structures?structureElement__id_in=64,67,69,71,74,76,82,84,86,88,93,160,101,103,105,108,113,115,117,120&structureElement__elementType=POINT"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  params:
+    - name: structureElement__id_in
+      value: 64,67,69,71,74,76,82,84,86,88,93,160,101,103,105,108,113,115,117,120
+      type: query
+    - name: structureElement__elementType
+      value: POINT
+      type: query
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true
