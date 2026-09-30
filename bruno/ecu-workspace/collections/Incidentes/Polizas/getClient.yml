@@ -1,0 +1,32 @@
+info:
+  name: getClient
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{server}}/policy/api/v1/arizona/ensurance/clients/validation"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  body:
+    type: json
+    data: |-
+      {
+          "_type": "ClientValidationRequest",
+          "identificationNumber": "1313199067",
+          "identificationType": "ID_CARD",
+          "productCode": "PY",
+          "checkCompliance": true,
+          "testMode": false
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

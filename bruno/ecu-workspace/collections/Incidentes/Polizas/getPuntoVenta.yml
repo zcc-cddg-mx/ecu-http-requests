@@ -1,0 +1,28 @@
+info:
+  name: getPuntoVenta
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{server}}/agent/api/v1/arizona/ecstructureelements/getParents/188359?referenceDate=Tue,%2015%20Apr%202025%2018:41:39%20GMT&productCode=PY"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  params:
+    - name: referenceDate
+      value: Tue,%2015%20Apr%202025%2018:41:39%20GMT
+      type: query
+    - name: productCode
+      value: PY
+      type: query
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

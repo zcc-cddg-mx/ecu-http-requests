@@ -1,27 +1,18 @@
-meta {
-  name: updateAfterAllValues
+info:
+  name: calculateAfterAllValues
   type: http
-  seq: 20
-}
+  seq: 19
 
-post {
-  url: {{server}}/policy/api/v1/arizona/policy_transactions/update
-  body: json
-  auth: bearer
-}
-
-headers {
-  x-tenantid-1: ec
-}
-
-auth:bearer {
-  token: {{token}}
-}
-
-body:json {
-  {
-      "_type": "PolicyUpdateTransactionRequest",
-      "policy": {
+http:
+  method: POST
+  url: "{{server}}/policy/api/v1/arizona/policies/calculate"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  body:
+    type: json
+    data: |-
+      {
           "_type": "ECPolicy",
           "createdAt": "2025-04-15T18:50:28Z",
           "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
@@ -100,7 +91,8 @@ body:json {
               "transactionMode": "INTERACTIVE",
               "transactionUniqueId": "PaFVtyRWfRjyGnq",
               "contextName": "COVERAGES",
-              "policyId": 3028210
+              "policyId": 3028210,
+              "contextInsurableObjectIdx": 0
           },
           "transactionReason": "FORCE_REFERRAL_CHECK",
           "billingType": "STANDARD",
@@ -134,46 +126,109 @@ body:json {
                   "policyAmounts": [
                       {
                           "_type": "PolicyAmount",
+                          "createdAt": "2025-04-15T18:55:04Z",
+                          "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                          "recordVersion": 1,
+                          "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                          "id": 354197642,
+                          "updatedAt": "2025-04-15T18:55:05Z",
+                          "tenantId": "ec",
                           "amount": 100,
                           "amountType": "TP"
                       },
                       {
                           "_type": "PolicyAmount",
+                          "createdAt": "2025-04-15T18:55:04Z",
+                          "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                          "recordVersion": 1,
+                          "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                          "id": 354197643,
+                          "updatedAt": "2025-04-15T18:55:05Z",
+                          "tenantId": "ec",
                           "amount": 0,
                           "amountType": "DISCOUNT"
                       },
                       {
                           "_type": "PolicyAmount",
+                          "createdAt": "2025-04-15T18:55:04Z",
+                          "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                          "recordVersion": 1,
+                          "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                          "id": 354197644,
+                          "updatedAt": "2025-04-15T18:55:05Z",
+                          "tenantId": "ec",
                           "amount": 0.14,
                           "amountType": "ASSET_PREMIUM_1"
                       },
                       {
                           "_type": "PolicyAmount",
+                          "createdAt": "2025-04-15T18:55:04Z",
+                          "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                          "recordVersion": 1,
+                          "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                          "id": 354197645,
+                          "updatedAt": "2025-04-15T18:55:05Z",
+                          "tenantId": "ec",
                           "amount": 0.14,
                           "amountType": "ASSET_PREMIUM_4"
                       },
                       {
                           "_type": "PolicyAmount",
+                          "createdAt": "2025-04-15T18:55:04Z",
+                          "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                          "recordVersion": 1,
+                          "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                          "id": 354197646,
+                          "updatedAt": "2025-04-15T18:55:05Z",
+                          "tenantId": "ec",
                           "amount": 0.14,
                           "amountType": "ASSET_PREMIUM_3"
                       },
                       {
                           "_type": "PolicyAmount",
+                          "createdAt": "2025-04-15T18:55:04Z",
+                          "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                          "recordVersion": 1,
+                          "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                          "id": 354197647,
+                          "updatedAt": "2025-04-15T18:55:05Z",
+                          "tenantId": "ec",
                           "amount": 0.03,
                           "amountType": "ASSET_PREMIUM_6"
                       },
                       {
                           "_type": "PolicyAmount",
+                          "createdAt": "2025-04-15T18:55:04Z",
+                          "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                          "recordVersion": 1,
+                          "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                          "id": 354197648,
+                          "updatedAt": "2025-04-15T18:55:05Z",
+                          "tenantId": "ec",
                           "amount": 0.03,
                           "amountType": "ASSET_PREMIUM_8"
                       },
                       {
                           "_type": "PolicyAmount",
+                          "createdAt": "2025-04-15T18:55:04Z",
+                          "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                          "recordVersion": 1,
+                          "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                          "id": 354197649,
+                          "updatedAt": "2025-04-15T18:55:05Z",
+                          "tenantId": "ec",
                           "amount": 0.03,
                           "amountType": "ASSET_PREMIUM_7"
                       },
                       {
                           "_type": "PolicyAmount",
+                          "createdAt": "2025-04-15T18:55:04Z",
+                          "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                          "recordVersion": 1,
+                          "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                          "id": 354197650,
+                          "updatedAt": "2025-04-15T18:55:05Z",
+                          "tenantId": "ec",
                           "amount": 100,
                           "amountType": "AP",
                           "factor": 1
@@ -213,34 +268,76 @@ body:json {
                           "policyAmounts": [
                               {
                                   "_type": "PolicyAmount",
+                                  "createdAt": "2025-04-15T18:55:04Z",
+                                  "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "recordVersion": 1,
+                                  "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "id": 354197651,
+                                  "updatedAt": "2025-04-15T18:55:05Z",
+                                  "tenantId": "ec",
                                   "amount": 100,
                                   "amountType": "TP",
                                   "factor": 0.14
                               },
                               {
                                   "_type": "PolicyAmount",
+                                  "createdAt": "2025-04-15T18:55:04Z",
+                                  "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "recordVersion": 1,
+                                  "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "id": 354197652,
+                                  "updatedAt": "2025-04-15T18:55:05Z",
+                                  "tenantId": "ec",
                                   "amount": 0.5,
                                   "amountType": "SURCHARGE"
                               },
                               {
                                   "_type": "PolicyAmount",
+                                  "createdAt": "2025-04-15T18:55:04Z",
+                                  "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "recordVersion": 1,
+                                  "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "id": 354197653,
+                                  "updatedAt": "2025-04-15T18:55:05Z",
+                                  "tenantId": "ec",
                                   "amount": 0,
                                   "amountType": "DISCOUNT"
                               },
                               {
                                   "_type": "PolicyAmount",
+                                  "createdAt": "2025-04-15T18:55:04Z",
+                                  "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "recordVersion": 1,
+                                  "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "id": 354197654,
+                                  "updatedAt": "2025-04-15T18:55:05Z",
+                                  "tenantId": "ec",
                                   "amount": 0.5,
                                   "amountType": "MAX_ALLOWED_TP",
                                   "factor": 1
                               },
                               {
                                   "_type": "PolicyAmount",
+                                  "createdAt": "2025-04-15T18:55:04Z",
+                                  "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "recordVersion": 1,
+                                  "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "id": 354197655,
+                                  "updatedAt": "2025-04-15T18:55:05Z",
+                                  "tenantId": "ec",
                                   "amount": 0.5,
                                   "amountType": "MIN_ALLOWED_TP",
                                   "factor": 0.14
                               },
                               {
                                   "_type": "PolicyAmount",
+                                  "createdAt": "2025-04-15T18:55:04Z",
+                                  "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "recordVersion": 1,
+                                  "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "id": 354197656,
+                                  "updatedAt": "2025-04-15T18:55:05Z",
+                                  "tenantId": "ec",
                                   "amount": 100,
                                   "amountType": "AP",
                                   "factor": 0.14
@@ -295,22 +392,50 @@ body:json {
                           "policyAmounts": [
                               {
                                   "_type": "PolicyAmount",
+                                  "createdAt": "2025-04-15T18:55:04Z",
+                                  "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "recordVersion": 1,
+                                  "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "id": 354197657,
+                                  "updatedAt": "2025-04-15T18:55:05Z",
+                                  "tenantId": "ec",
                                   "amount": 0,
                                   "amountType": "TP",
                                   "factor": 0
                               },
                               {
                                   "_type": "PolicyAmount",
+                                  "createdAt": "2025-04-15T18:55:04Z",
+                                  "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "recordVersion": 1,
+                                  "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "id": 354197658,
+                                  "updatedAt": "2025-04-15T18:55:05Z",
+                                  "tenantId": "ec",
                                   "amount": 0,
                                   "amountType": "SURCHARGE"
                               },
                               {
                                   "_type": "PolicyAmount",
+                                  "createdAt": "2025-04-15T18:55:04Z",
+                                  "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "recordVersion": 1,
+                                  "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "id": 354197659,
+                                  "updatedAt": "2025-04-15T18:55:05Z",
+                                  "tenantId": "ec",
                                   "amount": 0,
                                   "amountType": "DISCOUNT"
                               },
                               {
                                   "_type": "PolicyAmount",
+                                  "createdAt": "2025-04-15T18:55:04Z",
+                                  "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "recordVersion": 1,
+                                  "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "id": 354197660,
+                                  "updatedAt": "2025-04-15T18:55:05Z",
+                                  "tenantId": "ec",
                                   "amount": 0,
                                   "amountType": "AP",
                                   "factor": 0
@@ -364,22 +489,50 @@ body:json {
                           "policyAmounts": [
                               {
                                   "_type": "PolicyAmount",
+                                  "createdAt": "2025-04-15T18:55:04Z",
+                                  "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "recordVersion": 1,
+                                  "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "id": 354197661,
+                                  "updatedAt": "2025-04-15T18:55:05Z",
+                                  "tenantId": "ec",
                                   "amount": 30,
                                   "amountType": "TP",
                                   "factor": 0.042
                               },
                               {
                                   "_type": "PolicyAmount",
+                                  "createdAt": "2025-04-15T18:55:04Z",
+                                  "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "recordVersion": 1,
+                                  "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "id": 354197662,
+                                  "updatedAt": "2025-04-15T18:55:05Z",
+                                  "tenantId": "ec",
                                   "amount": 0.15,
                                   "amountType": "SURCHARGE"
                               },
                               {
                                   "_type": "PolicyAmount",
+                                  "createdAt": "2025-04-15T18:55:04Z",
+                                  "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "recordVersion": 1,
+                                  "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "id": 354197663,
+                                  "updatedAt": "2025-04-15T18:55:05Z",
+                                  "tenantId": "ec",
                                   "amount": 0,
                                   "amountType": "DISCOUNT"
                               },
                               {
                                   "_type": "PolicyAmount",
+                                  "createdAt": "2025-04-15T18:55:04Z",
+                                  "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "recordVersion": 1,
+                                  "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "id": 354197664,
+                                  "updatedAt": "2025-04-15T18:55:05Z",
+                                  "tenantId": "ec",
                                   "amount": 30,
                                   "amountType": "AP",
                                   "factor": 0.042
@@ -434,22 +587,50 @@ body:json {
                           "policyAmounts": [
                               {
                                   "_type": "PolicyAmount",
+                                  "createdAt": "2025-04-15T18:55:04Z",
+                                  "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "recordVersion": 1,
+                                  "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "id": 354197665,
+                                  "updatedAt": "2025-04-15T18:55:05Z",
+                                  "tenantId": "ec",
                                   "amount": 70,
                                   "amountType": "TP",
                                   "factor": 0.098
                               },
                               {
                                   "_type": "PolicyAmount",
+                                  "createdAt": "2025-04-15T18:55:04Z",
+                                  "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "recordVersion": 1,
+                                  "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "id": 354197666,
+                                  "updatedAt": "2025-04-15T18:55:05Z",
+                                  "tenantId": "ec",
                                   "amount": 0.35,
                                   "amountType": "SURCHARGE"
                               },
                               {
                                   "_type": "PolicyAmount",
+                                  "createdAt": "2025-04-15T18:55:04Z",
+                                  "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "recordVersion": 1,
+                                  "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "id": 354197667,
+                                  "updatedAt": "2025-04-15T18:55:05Z",
+                                  "tenantId": "ec",
                                   "amount": 0,
                                   "amountType": "DISCOUNT"
                               },
                               {
                                   "_type": "PolicyAmount",
+                                  "createdAt": "2025-04-15T18:55:04Z",
+                                  "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "recordVersion": 1,
+                                  "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "id": 354197668,
+                                  "updatedAt": "2025-04-15T18:55:05Z",
+                                  "tenantId": "ec",
                                   "amount": 70,
                                   "amountType": "AP",
                                   "factor": 0.098
@@ -514,7 +695,8 @@ body:json {
                                   "updatedAt": "2025-04-15T18:55:05Z",
                                   "tenantId": "ec",
                                   "limitType": "Annual",
-                                  "limitBasis": "Amount"
+                                  "limitBasis": "Amount",
+                                  "limitValue": null
                               },
                               {
                                   "_type": "PolicyLimit",
@@ -559,7 +741,8 @@ body:json {
                                   "updatedAt": "2025-04-15T18:55:05Z",
                                   "tenantId": "ec",
                                   "limitType": "Annual",
-                                  "limitBasis": "Amount"
+                                  "limitBasis": "Amount",
+                                  "limitValue": null
                               },
                               {
                                   "_type": "PolicyLimit",
@@ -604,7 +787,8 @@ body:json {
                                   "updatedAt": "2025-04-15T18:55:05Z",
                                   "tenantId": "ec",
                                   "limitType": "Annual",
-                                  "limitBasis": "Amount"
+                                  "limitBasis": "Amount",
+                                  "limitValue": null
                               },
                               {
                                   "_type": "PolicyLimit",
@@ -649,7 +833,8 @@ body:json {
                                   "updatedAt": "2025-04-15T18:55:05Z",
                                   "tenantId": "ec",
                                   "limitType": "Annual",
-                                  "limitBasis": "Amount"
+                                  "limitBasis": "Amount",
+                                  "limitValue": null
                               },
                               {
                                   "_type": "PolicyLimit",
@@ -694,7 +879,8 @@ body:json {
                                   "updatedAt": "2025-04-15T18:55:05Z",
                                   "tenantId": "ec",
                                   "limitType": "Annual",
-                                  "limitBasis": "Amount"
+                                  "limitBasis": "Amount",
+                                  "limitValue": null
                               },
                               {
                                   "_type": "PolicyLimit",
@@ -739,7 +925,8 @@ body:json {
                                   "updatedAt": "2025-04-15T18:55:05Z",
                                   "tenantId": "ec",
                                   "limitType": "Annual",
-                                  "limitBasis": "Amount"
+                                  "limitBasis": "Amount",
+                                  "limitValue": null
                               },
                               {
                                   "_type": "PolicyLimit",
@@ -784,7 +971,8 @@ body:json {
                                   "updatedAt": "2025-04-15T18:55:05Z",
                                   "tenantId": "ec",
                                   "limitType": "Annual",
-                                  "limitBasis": "Amount"
+                                  "limitBasis": "Amount",
+                                  "limitValue": null
                               },
                               {
                                   "_type": "PolicyLimit",
@@ -829,7 +1017,8 @@ body:json {
                                   "updatedAt": "2025-04-15T18:55:05Z",
                                   "tenantId": "ec",
                                   "limitType": "Annual",
-                                  "limitBasis": "Amount"
+                                  "limitBasis": "Amount",
+                                  "limitValue": null
                               },
                               {
                                   "_type": "PolicyLimit",
@@ -902,22 +1091,50 @@ body:json {
                           "policyAmounts": [
                               {
                                   "_type": "PolicyAmount",
+                                  "createdAt": "2025-04-15T18:55:04Z",
+                                  "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "recordVersion": 1,
+                                  "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "id": 354197674,
+                                  "updatedAt": "2025-04-15T18:55:05Z",
+                                  "tenantId": "ec",
                                   "amount": 0,
                                   "amountType": "TP",
                                   "factor": 0
                               },
                               {
                                   "_type": "PolicyAmount",
+                                  "createdAt": "2025-04-15T18:55:04Z",
+                                  "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "recordVersion": 1,
+                                  "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "id": 354197675,
+                                  "updatedAt": "2025-04-15T18:55:05Z",
+                                  "tenantId": "ec",
                                   "amount": 0,
                                   "amountType": "SURCHARGE"
                               },
                               {
                                   "_type": "PolicyAmount",
+                                  "createdAt": "2025-04-15T18:55:04Z",
+                                  "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "recordVersion": 1,
+                                  "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "id": 354197676,
+                                  "updatedAt": "2025-04-15T18:55:05Z",
+                                  "tenantId": "ec",
                                   "amount": 0,
                                   "amountType": "DISCOUNT"
                               },
                               {
                                   "_type": "PolicyAmount",
+                                  "createdAt": "2025-04-15T18:55:04Z",
+                                  "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "recordVersion": 1,
+                                  "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "id": 354197677,
+                                  "updatedAt": "2025-04-15T18:55:05Z",
+                                  "tenantId": "ec",
                                   "amount": 0,
                                   "amountType": "AP",
                                   "factor": 0
@@ -984,27 +1201,61 @@ body:json {
                           "policyAmounts": [
                               {
                                   "_type": "PolicyAmount",
+                                  "createdAt": "2025-04-15T18:55:04Z",
+                                  "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "recordVersion": 1,
+                                  "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "id": 354197669,
+                                  "updatedAt": "2025-04-15T18:55:05Z",
+                                  "tenantId": "ec",
                                   "amount": 0,
-                                  "amountType": "TP",
-                                  "factor": 0
+                                  "amountType": "TP"
                               },
                               {
                                   "_type": "PolicyAmount",
+                                  "createdAt": "2025-04-15T18:55:04Z",
+                                  "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "recordVersion": 1,
+                                  "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "id": 354197670,
+                                  "updatedAt": "2025-04-15T18:55:05Z",
+                                  "tenantId": "ec",
                                   "amount": 0,
                                   "amountType": "SURCHARGE"
                               },
                               {
                                   "_type": "PolicyAmount",
+                                  "createdAt": "2025-04-15T18:55:04Z",
+                                  "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "recordVersion": 1,
+                                  "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "id": 354197671,
+                                  "updatedAt": "2025-04-15T18:55:05Z",
+                                  "tenantId": "ec",
                                   "amount": 0,
                                   "amountType": "DISCOUNT"
                               },
                               {
                                   "_type": "PolicyAmount",
+                                  "createdAt": "2025-04-15T18:55:04Z",
+                                  "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "recordVersion": 1,
+                                  "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "id": 354197672,
+                                  "updatedAt": "2025-04-15T18:55:05Z",
+                                  "tenantId": "ec",
                                   "amount": 0,
                                   "amountType": "TAX_OTHERS"
                               },
                               {
                                   "_type": "PolicyAmount",
+                                  "createdAt": "2025-04-15T18:55:04Z",
+                                  "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "recordVersion": 1,
+                                  "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                                  "id": 354197673,
+                                  "updatedAt": "2025-04-15T18:55:05Z",
+                                  "tenantId": "ec",
                                   "amount": 0,
                                   "amountType": "AP",
                                   "factor": 0
@@ -1041,7 +1292,8 @@ body:json {
                                   "updatedAt": "2025-04-15T18:55:05Z",
                                   "tenantId": "ec",
                                   "limitType": "Annual",
-                                  "limitBasis": "Amount"
+                                  "limitBasis": "Amount",
+                                  "limitValue": null
                               },
                               {
                                   "_type": "PolicyLimit",
@@ -1086,7 +1338,8 @@ body:json {
                                   "updatedAt": "2025-04-15T18:55:05Z",
                                   "tenantId": "ec",
                                   "limitType": "Annual",
-                                  "limitBasis": "Amount"
+                                  "limitBasis": "Amount",
+                                  "limitValue": null
                               },
                               {
                                   "_type": "PolicyLimit",
@@ -1131,7 +1384,8 @@ body:json {
                                   "updatedAt": "2025-04-15T18:55:05Z",
                                   "tenantId": "ec",
                                   "limitType": "Annual",
-                                  "limitBasis": "Amount"
+                                  "limitBasis": "Amount",
+                                  "limitValue": null
                               },
                               {
                                   "_type": "PolicyLimit",
@@ -1176,7 +1430,8 @@ body:json {
                                   "updatedAt": "2025-04-15T18:55:05Z",
                                   "tenantId": "ec",
                                   "limitType": "Annual",
-                                  "limitBasis": "Amount"
+                                  "limitBasis": "Amount",
+                                  "limitValue": ""
                               },
                               {
                                   "_type": "PolicyLimit",
@@ -1221,7 +1476,8 @@ body:json {
                                   "updatedAt": "2025-04-15T18:55:05Z",
                                   "tenantId": "ec",
                                   "limitType": "Annual",
-                                  "limitBasis": "Amount"
+                                  "limitBasis": "Amount",
+                                  "limitValue": ""
                               },
                               {
                                   "_type": "PolicyLimit",
@@ -1266,7 +1522,8 @@ body:json {
                                   "updatedAt": "2025-04-15T18:55:05Z",
                                   "tenantId": "ec",
                                   "limitType": "Annual",
-                                  "limitBasis": "Amount"
+                                  "limitBasis": "Amount",
+                                  "limitValue": ""
                               },
                               {
                                   "_type": "PolicyLimit",
@@ -1311,7 +1568,8 @@ body:json {
                                   "updatedAt": "2025-04-15T18:55:05Z",
                                   "tenantId": "ec",
                                   "limitType": "Annual",
-                                  "limitBasis": "Amount"
+                                  "limitBasis": "Amount",
+                                  "limitValue": null
                               },
                               {
                                   "_type": "PolicyLimit",
@@ -1356,7 +1614,8 @@ body:json {
                                   "updatedAt": "2025-04-15T18:55:05Z",
                                   "tenantId": "ec",
                                   "limitType": "Annual",
-                                  "limitBasis": "Amount"
+                                  "limitBasis": "Amount",
+                                  "limitValue": null
                               },
                               {
                                   "_type": "PolicyLimit",
@@ -1401,7 +1660,8 @@ body:json {
                                   "updatedAt": "2025-04-15T18:55:05Z",
                                   "tenantId": "ec",
                                   "limitType": "Annual",
-                                  "limitBasis": "Amount"
+                                  "limitBasis": "Amount",
+                                  "limitValue": null
                               },
                               {
                                   "_type": "PolicyLimit",
@@ -1446,7 +1706,8 @@ body:json {
                                   "updatedAt": "2025-04-15T18:55:05Z",
                                   "tenantId": "ec",
                                   "limitType": "Annual",
-                                  "limitBasis": "Amount"
+                                  "limitBasis": "Amount",
+                                  "limitValue": ""
                               },
                               {
                                   "_type": "PolicyLimit",
@@ -1491,7 +1752,8 @@ body:json {
                                   "updatedAt": "2025-04-15T18:55:05Z",
                                   "tenantId": "ec",
                                   "limitType": "Annual",
-                                  "limitBasis": "Amount"
+                                  "limitBasis": "Amount",
+                                  "limitValue": ""
                               },
                               {
                                   "_type": "PolicyLimit",
@@ -1536,7 +1798,8 @@ body:json {
                                   "updatedAt": "2025-04-15T18:55:05Z",
                                   "tenantId": "ec",
                                   "limitType": "Annual",
-                                  "limitBasis": "Amount"
+                                  "limitBasis": "Amount",
+                                  "limitValue": ""
                               },
                               {
                                   "_type": "PolicyLimit",
@@ -1581,7 +1844,8 @@ body:json {
                                   "updatedAt": "2025-04-15T18:55:05Z",
                                   "tenantId": "ec",
                                   "limitType": "Annual",
-                                  "limitBasis": "Amount"
+                                  "limitBasis": "Amount",
+                                  "limitValue": ""
                               },
                               {
                                   "_type": "PolicyLimit",
@@ -1626,7 +1890,8 @@ body:json {
                                   "updatedAt": "2025-04-15T18:55:05Z",
                                   "tenantId": "ec",
                                   "limitType": "Annual",
-                                  "limitBasis": "Amount"
+                                  "limitBasis": "Amount",
+                                  "limitValue": null
                               },
                               {
                                   "_type": "PolicyLimit",
@@ -1671,7 +1936,8 @@ body:json {
                                   "updatedAt": "2025-04-15T18:55:05Z",
                                   "tenantId": "ec",
                                   "limitType": "Annual",
-                                  "limitBasis": "Amount"
+                                  "limitBasis": "Amount",
+                                  "limitValue": ""
                               },
                               {
                                   "_type": "PolicyLimit",
@@ -1716,7 +1982,8 @@ body:json {
                                   "updatedAt": "2025-04-15T18:55:05Z",
                                   "tenantId": "ec",
                                   "limitType": "Annual",
-                                  "limitBasis": "Amount"
+                                  "limitBasis": "Amount",
+                                  "limitValue": null
                               },
                               {
                                   "_type": "PolicyLimit",
@@ -1761,7 +2028,8 @@ body:json {
                                   "updatedAt": "2025-04-15T18:55:05Z",
                                   "tenantId": "ec",
                                   "limitType": "Annual",
-                                  "limitBasis": "Amount"
+                                  "limitBasis": "Amount",
+                                  "limitValue": null
                               },
                               {
                                   "_type": "PolicyLimit",
@@ -1861,7 +2129,9 @@ body:json {
                   "assetMerchandiseSupplies": 20,
                   "noOfPersonMax": 15,
                   "earthquakeZone": "2",
-                  "boardingLimitMax": 3000
+                  "boardingLimitMax": 3000,
+                  "noOfPerson": null,
+                  "boardingLimit": null
               }
           ],
           "policyAmounts": [
@@ -2297,30 +2567,14 @@ body:json {
           "policyEnsuranceEndorsements": [],
           "isRenewal": "NO",
           "integrationsExcluded": "NO"
-      },
-      "transaction": {
-          "_type": "PolicyTransaction",
-          "createdAt": "2025-04-15T18:48:26Z",
-          "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
-          "recordVersion": 5,
-          "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
-          "id": 788853,
-          "updatedAt": "2025-04-15T18:48:27Z",
-          "tenantId": "ec",
-          "policyNo": 459380,
-          "policyNumber": "COT-PY42924",
-          "transactionType": "Update",
-          "transactionDate": "2025-04-15T18:48:26Z",
-          "transactionStatus": "PENDING",
-          "transactionMode": "INTERACTIVE",
-          "transactionUniqueId": "PaFVtyRWfRjyGnq",
-          "contextName": "COVERAGES",
-          "policyId": 3028210
-      },
-      "transactionType": "Update"
-  }
-}
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
 
-settings {
+settings:
   encodeUrl: true
-}
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

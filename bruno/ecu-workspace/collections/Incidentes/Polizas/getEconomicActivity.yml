@@ -1,0 +1,25 @@
+info:
+  name: getEconomicActivity
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: "{{server}}/dictionary/api/v1/arizona/translations/en/EconomicActivity?date=Tue,%2015%20Apr%202025%2005:00:00%20GMT"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  params:
+    - name: date
+      value: Tue,%2015%20Apr%202025%2005:00:00%20GMT
+      type: query
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

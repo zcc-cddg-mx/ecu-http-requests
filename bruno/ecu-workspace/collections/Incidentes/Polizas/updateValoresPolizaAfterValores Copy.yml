@@ -1,0 +1,1601 @@
+info:
+  name: updateValoresPolizaAfterValores Copy
+  type: http
+  seq: 15
+
+http:
+  method: POST
+  url: "{{server}}/policy/api/v1/arizona/policy_transactions/update"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  body:
+    type: json
+    data: |-
+      {
+          "_type": "PolicyUpdateTransactionRequest",
+          "policy": {
+              "_type": "ECPolicy",
+              "createdAt": "2025-04-15T18:50:28Z",
+              "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+              "recordVersion": 0,
+              "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+              "id": 3028209,
+              "updatedAt": "2025-04-15T18:50:28Z",
+              "tenantId": "ec",
+              "notes": "{}",
+              "originalInceptionDate": "2025-04-15T05:00:00Z",
+              "productId": 1000,
+              "productCode": "PY",
+              "partyRoles": [
+                  {
+                      "_type": "AgreementPartyRole",
+                      "createdAt": "2025-04-15T13:50:28.803-05:00",
+                      "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "recordVersion": 1,
+                      "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "id": 72341368,
+                      "updatedAt": "2025-04-15T13:50:29.613-05:00",
+                      "tenantId": "ec",
+                      "partyId": 481152,
+                      "partyRole": "POLICY_HOLDER",
+                      "isLeader": "NO",
+                      "agreementId": 3028209
+                  },
+                  {
+                      "_type": "AgreementPartyRole",
+                      "createdAt": "2025-04-15T13:50:28.804-05:00",
+                      "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "recordVersion": 1,
+                      "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "id": 72341369,
+                      "updatedAt": "2025-04-15T13:50:29.613-05:00",
+                      "tenantId": "ec",
+                      "partyId": 188359,
+                      "partyRole": "POLICY_AGENT",
+                      "share": 100,
+                      "isLeader": "YES",
+                      "agreementId": 3028209
+                  }
+              ],
+              "commissionSplits": [],
+              "displayName": "Pymes - Hoteles y Restaurantes",
+              "policyNo": 459380,
+              "policyNumber": "COT-PY42924",
+              "effectiveDate": "2025-04-15T05:00:00Z",
+              "expirationDate": "2026-04-15T05:00:00Z",
+              "annualEffectiveDate": "2025-04-15T05:00:00Z",
+              "annualExpirationDate": "2026-04-15T05:00:00Z",
+              "status": "WORKING",
+              "customStatus": "WORKING",
+              "productClass": "SIMPLE",
+              "paymentTerms": "PREMIUM_30",
+              "paymentMethod": "1",
+              "currency": "USD",
+              "yearOfPolicy": 1,
+              "proRataMethod": "PR360E",
+              "policyPeriod": "ANNUAL",
+              "renewalMode": "NONE",
+              "policyTransaction": {
+                  "_type": "PolicyTransaction",
+                  "createdAt": "2025-04-15T18:48:26Z",
+                  "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                  "recordVersion": 5,
+                  "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                  "id": 788853,
+                  "updatedAt": "2025-04-15T18:48:27Z",
+                  "tenantId": "ec",
+                  "policyNo": 459380,
+                  "policyNumber": "COT-PY42924",
+                  "transactionType": "Update",
+                  "transactionDate": "2025-04-15T18:48:26Z",
+                  "transactionStatus": "PENDING",
+                  "transactionMode": "INTERACTIVE",
+                  "transactionUniqueId": "PaFVtyRWfRjyGnq",
+                  "contextName": "INSURED-VALUES",
+                  "policyId": 3028209
+              },
+              "transactionReason": "FORCE_REFERRAL_CHECK",
+              "billingType": "STANDARD",
+              "billingBindingEntity": "POLICY",
+              "accountingLevel": "NONE",
+              "nextBillingDate": "2026-04-15T00:00:00.000-05:00",
+              "nextBillingBeginDate": "2026-04-15T00:00:00.000-05:00",
+              "insurableObjects": [
+                  {
+                      "_type": "Pymes",
+                      "createdAt": "2025-04-15T18:50:28Z",
+                      "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "recordVersion": 0,
+                      "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "id": 2982660,
+                      "updatedAt": "2025-04-15T18:50:28Z",
+                      "tenantId": "ec",
+                      "objectNo": 475541,
+                      "insurableObjectTypeId": 1001,
+                      "insurableObjectClass": "SIMPLE",
+                      "policyNo": 459380,
+                      "effectiveDate": "2025-04-15T05:00:00Z",
+                      "expirationDate": "2026-04-15T05:00:00Z",
+                      "annualEffectiveDate": "2025-04-15T05:00:00Z",
+                      "annualExpirationDate": "2026-04-15T05:00:00Z",
+                      "originalInceptionDate": "2025-04-15T00:00:00.000-05:00",
+                      "yearOfObject": 1,
+                      "orderNo": 1,
+                      "informationOnly": "NO",
+                      "groupPlans": [],
+                      "policyAmounts": [
+                          {
+                              "_type": "PolicyAmount",
+                              "amount": 100,
+                              "amountType": "TP"
+                          },
+                          {
+                              "_type": "PolicyAmount",
+                              "amount": 0,
+                              "amountType": "DISCOUNT"
+                          },
+                          {
+                              "_type": "PolicyAmount",
+                              "amount": 0.14,
+                              "amountType": "ASSET_PREMIUM_1"
+                          },
+                          {
+                              "_type": "PolicyAmount",
+                              "amount": 0.14,
+                              "amountType": "ASSET_PREMIUM_4"
+                          },
+                          {
+                              "_type": "PolicyAmount",
+                              "amount": 0.14,
+                              "amountType": "ASSET_PREMIUM_3"
+                          },
+                          {
+                              "_type": "PolicyAmount",
+                              "amount": 0.03,
+                              "amountType": "ASSET_PREMIUM_6"
+                          },
+                          {
+                              "_type": "PolicyAmount",
+                              "amount": 0.03,
+                              "amountType": "ASSET_PREMIUM_8"
+                          },
+                          {
+                              "_type": "PolicyAmount",
+                              "amount": 0.03,
+                              "amountType": "ASSET_PREMIUM_7"
+                          },
+                          {
+                              "_type": "PolicyAmount",
+                              "amount": 100,
+                              "amountType": "AP",
+                              "factor": 1
+                          }
+                      ],
+                      "policyDeductibles": [],
+                      "policyLimits": [
+                          {
+                              "_type": "PolicyLimit",
+                              "limitType": "Annual",
+                              "limitBasis": "Amount",
+                              "limitValue": 360
+                          }
+                      ],
+                      "policyCoverageDetails": [
+                          {
+                              "_type": "PolicyCoverageDetail",
+                              "coverageId": 1053,
+                              "coverageCode": "54",
+                              "coverageRule": "MANDATORY",
+                              "inclusionExclusion": "YES",
+                              "informationOnly": "NO",
+                              "policyAmounts": [
+                                  {
+                                      "_type": "PolicyAmount",
+                                      "amount": 100,
+                                      "amountType": "TP",
+                                      "factor": 0.14
+                                  },
+                                  {
+                                      "_type": "PolicyAmount",
+                                      "amount": 0.5,
+                                      "amountType": "SURCHARGE"
+                                  },
+                                  {
+                                      "_type": "PolicyAmount",
+                                      "amount": 0,
+                                      "amountType": "DISCOUNT"
+                                  },
+                                  {
+                                      "_type": "PolicyAmount",
+                                      "amount": 0.5,
+                                      "amountType": "MAX_ALLOWED_TP",
+                                      "factor": 1
+                                  },
+                                  {
+                                      "_type": "PolicyAmount",
+                                      "amount": 0.5,
+                                      "amountType": "MIN_ALLOWED_TP",
+                                      "factor": 0.14
+                                  },
+                                  {
+                                      "_type": "PolicyAmount",
+                                      "amount": 100,
+                                      "amountType": "AP",
+                                      "factor": 0.14
+                                  }
+                              ],
+                              "policyDeductibles": [],
+                              "policyLimits": [
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "Amount",
+                                      "limitValue": 360
+                                  },
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "MaxAmount",
+                                      "limitValue": 4000000
+                                  }
+                              ],
+                              "coverGroup": "1",
+                              "premiumRatio": 1
+                          },
+                          {
+                              "_type": "PolicyCoverageDetail",
+                              "coverageId": 1000,
+                              "coverageCode": "1",
+                              "coverageRule": "HIDDEN",
+                              "inclusionExclusion": "YES",
+                              "informationOnly": "YES",
+                              "policyAmounts": [
+                                  {
+                                      "_type": "PolicyAmount",
+                                      "amount": 0,
+                                      "amountType": "TP",
+                                      "factor": 0
+                                  },
+                                  {
+                                      "_type": "PolicyAmount",
+                                      "amount": 0,
+                                      "amountType": "SURCHARGE"
+                                  },
+                                  {
+                                      "_type": "PolicyAmount",
+                                      "amount": 0,
+                                      "amountType": "DISCOUNT"
+                                  },
+                                  {
+                                      "_type": "PolicyAmount",
+                                      "amount": 0,
+                                      "amountType": "AP",
+                                      "factor": 0
+                                  }
+                              ],
+                              "policyDeductibles": [],
+                              "policyLimits": [
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "Amount",
+                                      "limitValue": 360
+                                  },
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "MaxAmount",
+                                      "limitValue": 4000000
+                                  }
+                              ],
+                              "coverGroup": "1"
+                          },
+                          {
+                              "_type": "PolicyCoverageDetail",
+                              "coverageId": 1001,
+                              "coverageCode": "2",
+                              "coverageRule": "HIDDEN",
+                              "inclusionExclusion": "YES",
+                              "informationOnly": "YES",
+                              "policyAmounts": [
+                                  {
+                                      "_type": "PolicyAmount",
+                                      "amount": 30,
+                                      "amountType": "TP",
+                                      "factor": 0.042
+                                  },
+                                  {
+                                      "_type": "PolicyAmount",
+                                      "amount": 0.15,
+                                      "amountType": "SURCHARGE"
+                                  },
+                                  {
+                                      "_type": "PolicyAmount",
+                                      "amount": 0,
+                                      "amountType": "DISCOUNT"
+                                  },
+                                  {
+                                      "_type": "PolicyAmount",
+                                      "amount": 30,
+                                      "amountType": "AP",
+                                      "factor": 0.042
+                                  }
+                              ],
+                              "policyDeductibles": [],
+                              "policyLimits": [
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "Amount",
+                                      "limitValue": 360
+                                  },
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "MaxAmount",
+                                      "limitValue": 4000000
+                                  }
+                              ],
+                              "coverGroup": "1",
+                              "premiumRatio": 0.3
+                          },
+                          {
+                              "_type": "PolicyCoverageDetail",
+                              "coverageId": 1002,
+                              "coverageCode": "3",
+                              "coverageRule": "HIDDEN",
+                              "inclusionExclusion": "YES",
+                              "informationOnly": "YES",
+                              "policyAmounts": [
+                                  {
+                                      "_type": "PolicyAmount",
+                                      "amount": 70,
+                                      "amountType": "TP",
+                                      "factor": 0.098
+                                  },
+                                  {
+                                      "_type": "PolicyAmount",
+                                      "amount": 0.35,
+                                      "amountType": "SURCHARGE"
+                                  },
+                                  {
+                                      "_type": "PolicyAmount",
+                                      "amount": 0,
+                                      "amountType": "DISCOUNT"
+                                  },
+                                  {
+                                      "_type": "PolicyAmount",
+                                      "amount": 70,
+                                      "amountType": "AP",
+                                      "factor": 0.098
+                                  }
+                              ],
+                              "policyDeductibles": [],
+                              "policyLimits": [
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "Amount",
+                                      "limitValue": 360
+                                  },
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "MaxAmount",
+                                      "limitValue": 4000000
+                                  }
+                              ],
+                              "coverGroup": "1",
+                              "premiumRatio": 0.7
+                          },
+                          {
+                              "_type": "PolicyCoverageDetail",
+                              "coverageId": 1004,
+                              "coverageCode": "5",
+                              "coverageRule": "OPTIONAL",
+                              "inclusionExclusion": "NO",
+                              "informationOnly": "NO",
+                              "policyAmounts": [],
+                              "policyDeductibles": [],
+                              "policyLimits": [
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "Amount"
+                                  },
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "MaxAmount",
+                                      "limitValue": 20000
+                                  }
+                              ],
+                              "coverGroup": "1"
+                          },
+                          {
+                              "_type": "PolicyCoverageDetail",
+                              "coverageId": 1005,
+                              "coverageCode": "6",
+                              "coverageRule": "OPTIONAL",
+                              "inclusionExclusion": "NO",
+                              "informationOnly": "NO",
+                              "policyAmounts": [],
+                              "policyDeductibles": [],
+                              "policyLimits": [
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "Amount"
+                                  },
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "MaxAmount",
+                                      "limitValue": 10000
+                                  }
+                              ],
+                              "coverGroup": "1"
+                          },
+                          {
+                              "_type": "PolicyCoverageDetail",
+                              "coverageId": 1006,
+                              "coverageCode": "7",
+                              "coverageRule": "OPTIONAL",
+                              "inclusionExclusion": "NO",
+                              "informationOnly": "NO",
+                              "policyAmounts": [],
+                              "policyDeductibles": [],
+                              "policyLimits": [
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "Amount"
+                                  },
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "MaxAmount",
+                                      "limitValue": 2000
+                                  }
+                              ],
+                              "coverGroup": "1"
+                          },
+                          {
+                              "_type": "PolicyCoverageDetail",
+                              "coverageId": 1007,
+                              "coverageCode": "8",
+                              "coverageRule": "OPTIONAL",
+                              "inclusionExclusion": "NO",
+                              "informationOnly": "NO",
+                              "policyAmounts": [],
+                              "policyDeductibles": [],
+                              "policyLimits": [
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "Amount"
+                                  },
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "MaxAmount",
+                                      "limitValue": 10000
+                                  }
+                              ],
+                              "coverGroup": "1"
+                          },
+                          {
+                              "_type": "PolicyCoverageDetail",
+                              "coverageId": 1008,
+                              "coverageCode": "9",
+                              "coverageRule": "OPTIONAL",
+                              "inclusionExclusion": "NO",
+                              "informationOnly": "NO",
+                              "policyAmounts": [],
+                              "policyDeductibles": [],
+                              "policyLimits": [
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "Amount"
+                                  },
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "MaxAmount",
+                                      "limitValue": 50000
+                                  }
+                              ],
+                              "coverGroup": "1"
+                          },
+                          {
+                              "_type": "PolicyCoverageDetail",
+                              "coverageId": 1009,
+                              "coverageCode": "10",
+                              "coverageRule": "OPTIONAL",
+                              "inclusionExclusion": "NO",
+                              "informationOnly": "NO",
+                              "policyAmounts": [],
+                              "policyDeductibles": [],
+                              "policyLimits": [
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "Amount"
+                                  },
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "MaxAmount",
+                                      "limitValue": 20000
+                                  }
+                              ],
+                              "coverGroup": "1"
+                          },
+                          {
+                              "_type": "PolicyCoverageDetail",
+                              "coverageId": 1010,
+                              "coverageCode": "11",
+                              "coverageRule": "OPTIONAL",
+                              "inclusionExclusion": "NO",
+                              "informationOnly": "NO",
+                              "policyAmounts": [],
+                              "policyDeductibles": [],
+                              "policyLimits": [
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "Amount"
+                                  },
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "MaxAmount",
+                                      "limitValue": 10000
+                                  }
+                              ],
+                              "coverGroup": "1"
+                          },
+                          {
+                              "_type": "PolicyCoverageDetail",
+                              "coverageId": 1012,
+                              "coverageCode": "13",
+                              "coverageRule": "OPTIONAL",
+                              "inclusionExclusion": "NO",
+                              "informationOnly": "NO",
+                              "policyAmounts": [],
+                              "policyDeductibles": [],
+                              "policyLimits": [
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "Amount"
+                                  },
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "MaxAmount",
+                                      "limitValue": 8000
+                                  }
+                              ],
+                              "coverGroup": "1"
+                          },
+                          {
+                              "_type": "PolicyCoverageDetail",
+                              "coverageId": 1013,
+                              "coverageCode": "14",
+                              "coverageRule": "OPTIONAL",
+                              "inclusionExclusion": "NO",
+                              "informationOnly": "NO",
+                              "policyAmounts": [],
+                              "policyDeductibles": [],
+                              "policyLimits": [
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "Amount"
+                                  },
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "MaxAmount",
+                                      "limitValue": 200000
+                                  }
+                              ],
+                              "coverGroup": "3"
+                          },
+                          {
+                              "_type": "PolicyCoverageDetail",
+                              "coverageId": 1014,
+                              "coverageCode": "15",
+                              "coverageRule": "OPTIONAL",
+                              "inclusionExclusion": "NO",
+                              "informationOnly": "NO",
+                              "policyAmounts": [],
+                              "policyDeductibles": [],
+                              "policyLimits": [
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "Amount"
+                                  },
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "MaxAmount",
+                                      "limitValue": 50000
+                                  }
+                              ],
+                              "coverGroup": "3"
+                          },
+                          {
+                              "_type": "PolicyCoverageDetail",
+                              "coverageId": 1016,
+                              "coverageCode": "17",
+                              "coverageRule": "OPTIONAL",
+                              "inclusionExclusion": "NO",
+                              "informationOnly": "NO",
+                              "policyAmounts": [],
+                              "policyDeductibles": [],
+                              "policyLimits": [
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "Amount"
+                                  },
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "MaxAmount",
+                                      "limitValue": 5000
+                                  }
+                              ],
+                              "coverGroup": "3"
+                          },
+                          {
+                              "_type": "PolicyCoverageDetail",
+                              "coverageId": 1017,
+                              "coverageCode": "18",
+                              "coverageRule": "OPTIONAL",
+                              "inclusionExclusion": "NO",
+                              "informationOnly": "NO",
+                              "policyAmounts": [],
+                              "policyDeductibles": [],
+                              "policyLimits": [
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "Amount"
+                                  },
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "MaxAmount",
+                                      "limitValue": 5000
+                                  }
+                              ],
+                              "coverGroup": "3"
+                          },
+                          {
+                              "_type": "PolicyCoverageDetail",
+                              "coverageId": 1018,
+                              "coverageCode": "19",
+                              "coverageRule": "OPTIONAL",
+                              "inclusionExclusion": "NO",
+                              "informationOnly": "NO",
+                              "policyAmounts": [],
+                              "policyDeductibles": [],
+                              "policyLimits": [
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "Amount"
+                                  },
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "MaxAmount",
+                                      "limitValue": 2000
+                                  }
+                              ],
+                              "coverGroup": "3"
+                          },
+                          {
+                              "_type": "PolicyCoverageDetail",
+                              "coverageId": 1019,
+                              "coverageCode": "20",
+                              "coverageRule": "OPTIONAL",
+                              "inclusionExclusion": "NO",
+                              "informationOnly": "NO",
+                              "policyAmounts": [],
+                              "policyDeductibles": [],
+                              "policyLimits": [
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "Amount"
+                                  },
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "MaxAmount",
+                                      "limitValue": 100000
+                                  }
+                              ],
+                              "coverGroup": "6"
+                          },
+                          {
+                              "_type": "PolicyCoverageDetail",
+                              "coverageId": 1020,
+                              "coverageCode": "21",
+                              "coverageRule": "OPTIONAL",
+                              "inclusionExclusion": "NO",
+                              "informationOnly": "NO",
+                              "policyAmounts": [],
+                              "policyDeductibles": [],
+                              "policyLimits": [
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "Amount"
+                                  },
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "MaxAmount",
+                                      "limitValue": 10000
+                                  }
+                              ],
+                              "coverGroup": "6"
+                          },
+                          {
+                              "_type": "PolicyCoverageDetail",
+                              "coverageId": 1022,
+                              "coverageCode": "23",
+                              "coverageRule": "OPTIONAL",
+                              "inclusionExclusion": "NO",
+                              "informationOnly": "NO",
+                              "policyAmounts": [],
+                              "policyDeductibles": [],
+                              "policyLimits": [
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "Amount"
+                                  },
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "MaxAmount",
+                                      "limitValue": 5000
+                                  }
+                              ],
+                              "coverGroup": "6"
+                          },
+                          {
+                              "_type": "PolicyCoverageDetail",
+                              "coverageId": 1023,
+                              "coverageCode": "24",
+                              "coverageRule": "OPTIONAL",
+                              "inclusionExclusion": "NO",
+                              "informationOnly": "NO",
+                              "policyAmounts": [],
+                              "policyDeductibles": [],
+                              "policyLimits": [
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "Amount"
+                                  },
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "MaxAmount",
+                                      "limitValue": 5000
+                                  }
+                              ],
+                              "coverGroup": "6"
+                          },
+                          {
+                              "_type": "PolicyCoverageDetail",
+                              "coverageId": 1024,
+                              "coverageCode": "25",
+                              "coverageRule": "OPTIONAL",
+                              "inclusionExclusion": "NO",
+                              "informationOnly": "NO",
+                              "policyAmounts": [],
+                              "policyDeductibles": [],
+                              "policyLimits": [
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "Amount"
+                                  },
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "MaxAmount",
+                                      "limitValue": 10000
+                                  }
+                              ],
+                              "coverGroup": "6"
+                          },
+                          {
+                              "_type": "PolicyCoverageDetail",
+                              "coverageId": 1026,
+                              "coverageCode": "27",
+                              "coverageRule": "OPTIONAL",
+                              "inclusionExclusion": "NO",
+                              "informationOnly": "NO",
+                              "policyAmounts": [],
+                              "policyDeductibles": [],
+                              "policyLimits": [
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "Amount"
+                                  },
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "MaxAmount",
+                                      "limitValue": 5000
+                                  }
+                              ],
+                              "coverGroup": "7"
+                          },
+                          {
+                              "_type": "PolicyCoverageDetail",
+                              "coverageId": 1401,
+                              "coverageCode": "527",
+                              "coverageRule": "HIDDEN",
+                              "inclusionExclusion": "NO",
+                              "informationOnly": "NO",
+                              "policyAmounts": [],
+                              "policyDeductibles": [],
+                              "policyLimits": [],
+                              "coverGroup": "1"
+                          },
+                          {
+                              "_type": "PolicyCoverageDetail",
+                              "coverageId": 1027,
+                              "coverageCode": "28",
+                              "coverageRule": "OPTIONAL",
+                              "inclusionExclusion": "NO",
+                              "informationOnly": "NO",
+                              "policyAmounts": [],
+                              "policyDeductibles": [],
+                              "policyLimits": [
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "Amount"
+                                  },
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "MaxAmount",
+                                      "limitValue": 1000
+                                  }
+                              ],
+                              "coverGroup": "7"
+                          },
+                          {
+                              "_type": "PolicyCoverageDetail",
+                              "coverageId": 1402,
+                              "coverageCode": "528",
+                              "coverageRule": "HIDDEN",
+                              "inclusionExclusion": "NO",
+                              "informationOnly": "NO",
+                              "policyAmounts": [],
+                              "policyDeductibles": [],
+                              "policyLimits": [],
+                              "coverGroup": "1"
+                          },
+                          {
+                              "_type": "PolicyCoverageDetail",
+                              "coverageId": 1028,
+                              "coverageCode": "29",
+                              "coverageRule": "OPTIONAL",
+                              "inclusionExclusion": "NO",
+                              "informationOnly": "NO",
+                              "policyAmounts": [],
+                              "policyDeductibles": [],
+                              "policyLimits": [
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "Amount"
+                                  },
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "MaxAmount",
+                                      "limitValue": 100
+                                  }
+                              ],
+                              "coverGroup": "4"
+                          },
+                          {
+                              "_type": "PolicyCoverageDetail",
+                              "coverageId": 1029,
+                              "coverageCode": "30",
+                              "coverageRule": "OPTIONAL",
+                              "inclusionExclusion": "NO",
+                              "informationOnly": "NO",
+                              "policyAmounts": [],
+                              "policyDeductibles": [],
+                              "policyLimits": [
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "Amount"
+                                  },
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "MaxAmount",
+                                      "limitValue": 10000
+                                  }
+                              ],
+                              "coverGroup": "5"
+                          },
+                          {
+                              "_type": "PolicyCoverageDetail",
+                              "coverageId": 1030,
+                              "coverageCode": "31",
+                              "coverageRule": "OPTIONAL",
+                              "inclusionExclusion": "NO",
+                              "informationOnly": "NO",
+                              "policyAmounts": [],
+                              "policyDeductibles": [],
+                              "policyLimits": [
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "Amount"
+                                  },
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "MaxAmount",
+                                      "limitValue": 6000
+                                  }
+                              ],
+                              "coverGroup": "8"
+                          },
+                          {
+                              "_type": "PolicyCoverageDetail",
+                              "coverageId": 1031,
+                              "coverageCode": "32",
+                              "coverageRule": "OPTIONAL",
+                              "inclusionExclusion": "NO",
+                              "informationOnly": "NO",
+                              "policyAmounts": [],
+                              "policyDeductibles": [],
+                              "policyLimits": [
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "Amount"
+                                  },
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "MaxAmount",
+                                      "limitValue": 9000
+                                  }
+                              ],
+                              "coverGroup": "8"
+                          },
+                          {
+                              "_type": "PolicyCoverageDetail",
+                              "coverageId": 1032,
+                              "coverageCode": "33",
+                              "coverageRule": "OPTIONAL",
+                              "inclusionExclusion": "NO",
+                              "informationOnly": "NO",
+                              "policyAmounts": [],
+                              "policyDeductibles": [],
+                              "policyLimits": [
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "Amount"
+                                  },
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "MaxAmount",
+                                      "limitValue": 104
+                                  }
+                              ],
+                              "coverGroup": "2"
+                          },
+                          {
+                              "_type": "PolicyCoverageDetail",
+                              "coverageId": 1039,
+                              "coverageCode": "40",
+                              "coverageRule": "MANDATORY",
+                              "inclusionExclusion": "YES",
+                              "informationOnly": "NO",
+                              "policyAmounts": [
+                                  {
+                                      "_type": "PolicyAmount",
+                                      "amount": 0,
+                                      "amountType": "TP",
+                                      "factor": 0
+                                  },
+                                  {
+                                      "_type": "PolicyAmount",
+                                      "amount": 0,
+                                      "amountType": "SURCHARGE"
+                                  },
+                                  {
+                                      "_type": "PolicyAmount",
+                                      "amount": 0,
+                                      "amountType": "DISCOUNT"
+                                  },
+                                  {
+                                      "_type": "PolicyAmount",
+                                      "amount": 0,
+                                      "amountType": "TAX_OTHERS"
+                                  },
+                                  {
+                                      "_type": "PolicyAmount",
+                                      "amount": 0,
+                                      "amountType": "AP",
+                                      "factor": 0
+                                  }
+                              ],
+                              "policyDeductibles": [],
+                              "policyLimits": [],
+                              "coverGroup": "1"
+                          },
+                          {
+                              "_type": "PolicyCoverageDetail",
+                              "coverageId": 1054,
+                              "coverageCode": "55",
+                              "coverageRule": "HIDDEN",
+                              "inclusionExclusion": "NO",
+                              "informationOnly": "NO",
+                              "policyAmounts": [],
+                              "policyDeductibles": [],
+                              "policyLimits": [
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "Amount",
+                                      "limitValue": 3000
+                                  },
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "MaxAmount",
+                                      "limitValue": 3000
+                                  }
+                              ],
+                              "coverGroup": "8"
+                          },
+                          {
+                              "_type": "PolicyCoverageDetail",
+                              "coverageId": 1056,
+                              "coverageCode": "57",
+                              "coverageRule": "HIDDEN",
+                              "inclusionExclusion": "YES",
+                              "informationOnly": "YES",
+                              "policyAmounts": [
+                                  {
+                                      "_type": "PolicyAmount",
+                                      "amount": 0,
+                                      "amountType": "TP",
+                                      "factor": 0
+                                  },
+                                  {
+                                      "_type": "PolicyAmount",
+                                      "amount": 0,
+                                      "amountType": "SURCHARGE"
+                                  },
+                                  {
+                                      "_type": "PolicyAmount",
+                                      "amount": 0,
+                                      "amountType": "DISCOUNT"
+                                  },
+                                  {
+                                      "_type": "PolicyAmount",
+                                      "amount": 0,
+                                      "amountType": "AP",
+                                      "factor": 0
+                                  }
+                              ],
+                              "policyDeductibles": [],
+                              "policyLimits": [
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "Amount",
+                                      "limitValue": 0
+                                  },
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "MaxAmount",
+                                      "limitValue": 1
+                                  },
+                                  {
+                                      "_type": "PolicyLimit",
+                                      "limitType": "Annual",
+                                      "limitBasis": "MinAmount",
+                                      "limitValue": 0
+                                  }
+                              ],
+                              "coverGroup": "1"
+                          }
+                      ],
+                      "partyRoles": [],
+                      "hasActiveCoverages": "YES",
+                      "clauses": [],
+                      "policyPendings": [],
+                      "status": "ACTIVE",
+                      "policyId": 3028209,
+                      "productType": "7",
+                      "economicActivity": "13",
+                      "subEconomicActivity": "13_722330",
+                      "province": "2",
+                      "city": "16",
+                      "address": "Calle 2",
+                      "locationDescription": "Bolívar-Chillanes-Calle 2",
+                      "latitude": "-1.9436802",
+                      "longitude": "-79.065917",
+                      "constructionYear": 2020,
+                      "constructionType": "1",
+                      "floors": 1,
+                      "fireExtinguishers": "YES",
+                      "fireSmokeDetector": "NO",
+                      "fireCabinetsFire": "NO",
+                      "fireSprinklers": "NO",
+                      "theftAlarmMonitored": "NO",
+                      "theftEnclosure": "NO",
+                      "theftArmedGuardRobbery": "NO",
+                      "theftSecurityCameras": "NO",
+                      "electrEquipmentVoltageRegulators": "NO",
+                      "assetKitchenEquipment": 20,
+                      "assetRefrigerationEquipment": 20,
+                      "assetStructures": 100,
+                      "assetMachinery": 100,
+                      "assetFurnitureFixturesOfficeEquipment": 100,
+                      "assetMerchandiseSupplies": 20,
+                      "noOfPersonMax": 15,
+                      "earthquakeZone": "2",
+                      "boardingLimitMax": 3000
+                  }
+              ],
+              "policyAmounts": [
+                  {
+                      "_type": "PolicyAmount",
+                      "createdAt": "2025-04-15T18:50:28Z",
+                      "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "recordVersion": 1,
+                      "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "id": 354197622,
+                      "updatedAt": "2025-04-15T18:50:29Z",
+                      "tenantId": "ec",
+                      "amount": 0,
+                      "amountType": "TP"
+                  },
+                  {
+                      "_type": "PolicyAmount",
+                      "createdAt": "2025-04-15T18:50:28Z",
+                      "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "recordVersion": 1,
+                      "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "id": 354197623,
+                      "updatedAt": "2025-04-15T18:50:29Z",
+                      "tenantId": "ec",
+                      "amount": 0,
+                      "amountType": "TAX_EMISSION"
+                  },
+                  {
+                      "_type": "PolicyAmount",
+                      "createdAt": "2025-04-15T18:50:28Z",
+                      "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "recordVersion": 1,
+                      "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "id": 354197624,
+                      "updatedAt": "2025-04-15T18:50:29Z",
+                      "tenantId": "ec",
+                      "amount": 0,
+                      "amountType": "TAX_SUPERINTENDENCY"
+                  },
+                  {
+                      "_type": "PolicyAmount",
+                      "createdAt": "2025-04-15T18:50:28Z",
+                      "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "recordVersion": 1,
+                      "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "id": 354197625,
+                      "updatedAt": "2025-04-15T18:50:29Z",
+                      "tenantId": "ec",
+                      "amount": 0,
+                      "amountType": "TAX_PEASANT"
+                  },
+                  {
+                      "_type": "PolicyAmount",
+                      "createdAt": "2025-04-15T18:50:28Z",
+                      "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "recordVersion": 1,
+                      "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "id": 354197626,
+                      "updatedAt": "2025-04-15T18:50:29Z",
+                      "tenantId": "ec",
+                      "amount": 0,
+                      "amountType": "NET"
+                  },
+                  {
+                      "_type": "PolicyAmount",
+                      "createdAt": "2025-04-15T18:50:28Z",
+                      "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "recordVersion": 1,
+                      "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "id": 354197627,
+                      "updatedAt": "2025-04-15T18:50:29Z",
+                      "tenantId": "ec",
+                      "amount": 0,
+                      "amountType": "TAX_VAT"
+                  },
+                  {
+                      "_type": "PolicyAmount",
+                      "createdAt": "2025-04-15T18:50:28Z",
+                      "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "recordVersion": 1,
+                      "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "id": 354197628,
+                      "updatedAt": "2025-04-15T18:50:29Z",
+                      "tenantId": "ec",
+                      "amount": 0,
+                      "amountType": "GROSS"
+                  },
+                  {
+                      "_type": "PolicyAmount",
+                      "createdAt": "2025-04-15T18:50:28Z",
+                      "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "recordVersion": 1,
+                      "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "id": 354197629,
+                      "updatedAt": "2025-04-15T18:50:29Z",
+                      "tenantId": "ec",
+                      "amount": 0,
+                      "amountType": "AP",
+                      "factor": 1
+                  },
+                  {
+                      "_type": "PolicyAmount",
+                      "createdAt": "2025-04-15T18:50:28Z",
+                      "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "recordVersion": 1,
+                      "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "id": 354197630,
+                      "updatedAt": "2025-04-15T18:50:29Z",
+                      "tenantId": "ec",
+                      "amount": 0,
+                      "amountType": "INSTALMENT_COUNT_1"
+                  },
+                  {
+                      "_type": "PolicyAmount",
+                      "createdAt": "2025-04-15T18:50:28Z",
+                      "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "recordVersion": 1,
+                      "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "id": 354197631,
+                      "updatedAt": "2025-04-15T18:50:29Z",
+                      "tenantId": "ec",
+                      "amount": 0,
+                      "amountType": "INSTALMENT_COUNT_2"
+                  },
+                  {
+                      "_type": "PolicyAmount",
+                      "createdAt": "2025-04-15T18:50:28Z",
+                      "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "recordVersion": 1,
+                      "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "id": 354197632,
+                      "updatedAt": "2025-04-15T18:50:29Z",
+                      "tenantId": "ec",
+                      "amount": 0,
+                      "amountType": "INSTALMENT_COUNT_3"
+                  },
+                  {
+                      "_type": "PolicyAmount",
+                      "createdAt": "2025-04-15T18:50:28Z",
+                      "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "recordVersion": 1,
+                      "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "id": 354197633,
+                      "updatedAt": "2025-04-15T18:50:29Z",
+                      "tenantId": "ec",
+                      "amount": 0,
+                      "amountType": "INSTALMENT_COUNT_4"
+                  },
+                  {
+                      "_type": "PolicyAmount",
+                      "createdAt": "2025-04-15T18:50:28Z",
+                      "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "recordVersion": 1,
+                      "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "id": 354197634,
+                      "updatedAt": "2025-04-15T18:50:29Z",
+                      "tenantId": "ec",
+                      "amount": 0,
+                      "amountType": "INSTALMENT_COUNT_5"
+                  },
+                  {
+                      "_type": "PolicyAmount",
+                      "createdAt": "2025-04-15T18:50:28Z",
+                      "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "recordVersion": 1,
+                      "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "id": 354197635,
+                      "updatedAt": "2025-04-15T18:50:29Z",
+                      "tenantId": "ec",
+                      "amount": 0,
+                      "amountType": "INSTALMENT_COUNT_6"
+                  },
+                  {
+                      "_type": "PolicyAmount",
+                      "createdAt": "2025-04-15T18:50:28Z",
+                      "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "recordVersion": 1,
+                      "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "id": 354197636,
+                      "updatedAt": "2025-04-15T18:50:29Z",
+                      "tenantId": "ec",
+                      "amount": 0,
+                      "amountType": "INSTALMENT_COUNT_7"
+                  },
+                  {
+                      "_type": "PolicyAmount",
+                      "createdAt": "2025-04-15T18:50:28Z",
+                      "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "recordVersion": 1,
+                      "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "id": 354197637,
+                      "updatedAt": "2025-04-15T18:50:29Z",
+                      "tenantId": "ec",
+                      "amount": 0,
+                      "amountType": "INSTALMENT_COUNT_8"
+                  },
+                  {
+                      "_type": "PolicyAmount",
+                      "createdAt": "2025-04-15T18:50:28Z",
+                      "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "recordVersion": 1,
+                      "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "id": 354197638,
+                      "updatedAt": "2025-04-15T18:50:29Z",
+                      "tenantId": "ec",
+                      "amount": 0,
+                      "amountType": "INSTALMENT_COUNT_9"
+                  },
+                  {
+                      "_type": "PolicyAmount",
+                      "createdAt": "2025-04-15T18:50:28Z",
+                      "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "recordVersion": 1,
+                      "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "id": 354197639,
+                      "updatedAt": "2025-04-15T18:50:29Z",
+                      "tenantId": "ec",
+                      "amount": 0,
+                      "amountType": "INSTALMENT_COUNT_10"
+                  },
+                  {
+                      "_type": "PolicyAmount",
+                      "createdAt": "2025-04-15T18:50:28Z",
+                      "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "recordVersion": 1,
+                      "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "id": 354197640,
+                      "updatedAt": "2025-04-15T18:50:29Z",
+                      "tenantId": "ec",
+                      "amount": 0,
+                      "amountType": "INSTALMENT_COUNT_11"
+                  },
+                  {
+                      "_type": "PolicyAmount",
+                      "createdAt": "2025-04-15T18:50:28Z",
+                      "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "recordVersion": 1,
+                      "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                      "id": 354197641,
+                      "updatedAt": "2025-04-15T18:50:29Z",
+                      "tenantId": "ec",
+                      "amount": 0,
+                      "amountType": "INSTALMENT_COUNT_12"
+                  }
+              ],
+              "policyDeductibles": [],
+              "policyLimits": [],
+              "policyCoverageParts": [],
+              "policyCoverageDetails": [],
+              "masterPolicies": [],
+              "groupPlans": [],
+              "clauses": [],
+              "policyPendings": [],
+              "policyHolderId": 481152,
+              "agentId": 188359,
+              "billing": {
+                  "_type": "Billing",
+                  "createdAt": "2025-04-15T13:50:28.801-05:00",
+                  "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                  "recordVersion": 0,
+                  "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                  "id": 2987209,
+                  "updatedAt": "2025-04-15T13:50:28.801-05:00",
+                  "tenantId": "ec",
+                  "status": "CREATED",
+                  "billingType": "STANDARD",
+                  "policyTransactionId": 788853,
+                  "payerId": 481152,
+                  "accountPartyId": 481152,
+                  "billingBeginDate": "2025-04-15T00:00:00.000-05:00",
+                  "billingEndDate": "2026-04-14T00:00:00.000-05:00",
+                  "proRataFactor": 1,
+                  "accountingLevel": "NONE",
+                  "reversed": "NO",
+                  "billingItems": [],
+                  "billingAmounts": [
+                      {
+                          "_type": "BillingAmount",
+                          "createdAt": "2025-04-15T13:50:28.801-05:00",
+                          "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                          "recordVersion": 1,
+                          "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                          "id": 20987765,
+                          "updatedAt": "2025-04-15T13:50:29.613-05:00",
+                          "tenantId": "ec",
+                          "earningBeginDate": "2025-04-15T00:00:00.000-05:00",
+                          "earningEndDate": "2026-04-14T00:00:00.000-05:00",
+                          "amount": 0,
+                          "amountType": "TP",
+                          "billingId": 2987209
+                      },
+                      {
+                          "_type": "BillingAmount",
+                          "createdAt": "2025-04-15T13:50:28.801-05:00",
+                          "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                          "recordVersion": 1,
+                          "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                          "id": 20987766,
+                          "updatedAt": "2025-04-15T13:50:29.613-05:00",
+                          "tenantId": "ec",
+                          "earningBeginDate": "2025-04-15T00:00:00.000-05:00",
+                          "earningEndDate": "2026-04-14T00:00:00.000-05:00",
+                          "amount": 0,
+                          "amountType": "TAX_EMISSION",
+                          "billingId": 2987209
+                      },
+                      {
+                          "_type": "BillingAmount",
+                          "createdAt": "2025-04-15T13:50:28.802-05:00",
+                          "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                          "recordVersion": 1,
+                          "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                          "id": 20987767,
+                          "updatedAt": "2025-04-15T13:50:29.613-05:00",
+                          "tenantId": "ec",
+                          "earningBeginDate": "2025-04-15T00:00:00.000-05:00",
+                          "earningEndDate": "2026-04-14T00:00:00.000-05:00",
+                          "amount": 0,
+                          "amountType": "TAX_SUPERINTENDENCY",
+                          "billingId": 2987209
+                      },
+                      {
+                          "_type": "BillingAmount",
+                          "createdAt": "2025-04-15T13:50:28.802-05:00",
+                          "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                          "recordVersion": 1,
+                          "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                          "id": 20987768,
+                          "updatedAt": "2025-04-15T13:50:29.613-05:00",
+                          "tenantId": "ec",
+                          "earningBeginDate": "2025-04-15T00:00:00.000-05:00",
+                          "earningEndDate": "2026-04-14T00:00:00.000-05:00",
+                          "amount": 0,
+                          "amountType": "TAX_PEASANT",
+                          "billingId": 2987209
+                      },
+                      {
+                          "_type": "BillingAmount",
+                          "createdAt": "2025-04-15T13:50:28.802-05:00",
+                          "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                          "recordVersion": 1,
+                          "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                          "id": 20987769,
+                          "updatedAt": "2025-04-15T13:50:29.613-05:00",
+                          "tenantId": "ec",
+                          "earningBeginDate": "2025-04-15T00:00:00.000-05:00",
+                          "earningEndDate": "2026-04-14T00:00:00.000-05:00",
+                          "amount": 0,
+                          "amountType": "NET",
+                          "billingId": 2987209
+                      },
+                      {
+                          "_type": "BillingAmount",
+                          "createdAt": "2025-04-15T13:50:28.803-05:00",
+                          "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                          "recordVersion": 1,
+                          "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                          "id": 20987770,
+                          "updatedAt": "2025-04-15T13:50:29.613-05:00",
+                          "tenantId": "ec",
+                          "earningBeginDate": "2025-04-15T00:00:00.000-05:00",
+                          "earningEndDate": "2026-04-14T00:00:00.000-05:00",
+                          "amount": 0,
+                          "amountType": "TAX_VAT",
+                          "billingId": 2987209
+                      },
+                      {
+                          "_type": "BillingAmount",
+                          "createdAt": "2025-04-15T13:50:28.803-05:00",
+                          "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                          "recordVersion": 1,
+                          "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+                          "id": 20987771,
+                          "updatedAt": "2025-04-15T13:50:29.613-05:00",
+                          "tenantId": "ec",
+                          "earningBeginDate": "2025-04-15T00:00:00.000-05:00",
+                          "earningEndDate": "2026-04-14T00:00:00.000-05:00",
+                          "amount": 0,
+                          "amountType": "GROSS",
+                          "billingId": 2987209
+                      }
+                  ],
+                  "policyId": 3028209
+              },
+              "previousClaimYears": "NO",
+              "pointOfSale": "188362",
+              "ensurancePolicyIds": [],
+              "ensuranceInvoices": [],
+              "endorsements": [],
+              "lineOfBusiness": [],
+              "complianceStatus": "APPROVED",
+              "complianceIdentification": "1313199067",
+              "agentSEId": 188359,
+              "branchSEId": 4,
+              "distributionChannel": "8",
+              "policyEnsuranceEndorsements": [],
+              "isRenewal": "NO",
+              "integrationsExcluded": "NO"
+          },
+          "transaction": {
+              "_type": "PolicyTransaction",
+              "createdAt": "2025-04-15T18:48:26Z",
+              "updatedBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+              "recordVersion": 5,
+              "createdBy": "c9a68ed8-14a5-4672-befd-eb15ca45ebf9",
+              "id": 788853,
+              "updatedAt": "2025-04-15T18:48:27Z",
+              "tenantId": "ec",
+              "policyNo": 459380,
+              "policyNumber": "COT-PY42924",
+              "transactionType": "Update",
+              "transactionDate": "2025-04-15T18:48:26Z",
+              "transactionStatus": "PENDING",
+              "transactionMode": "INTERACTIVE",
+              "transactionUniqueId": "PaFVtyRWfRjyGnq",
+              "contextName": "INSURED-VALUES",
+              "policyId": 3028209
+          },
+          "transactionType": "Update"
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

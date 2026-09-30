@@ -1,0 +1,25 @@
+info:
+  name: documentRequestId
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{server}}/document/api/v1/arizona/documents?documentRequestId=994854"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  params:
+    - name: documentRequestId
+      value: "994854"
+      type: query
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

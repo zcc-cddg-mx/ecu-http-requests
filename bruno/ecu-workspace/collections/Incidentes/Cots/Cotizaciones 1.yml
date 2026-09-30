@@ -1,0 +1,38 @@
+info:
+  name: Cotizaciones 1
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{server}}/report/api/v1/arizona/ov/overview?query=agentSeId:9%20AND%20(%20(customStatus:*EMITTED*%20AND%20createdAt:%5B1695193200642%20TO%20*%5D)%20OR%20(NOT%20customStatus:(ACCEPTED%20OR%20AWAITING%20OR%20EXPIRED%20OR%20PENDING_FORM_AUTH%20OR%20TERMINATED%20OR%20DECLINED%20OR%20EMITTED)%20AND%20createdAt:%5B1734678000642%20TO%20*%5D%20)%20OR%20(NOT%20customStatus:(ACCEPTED%20OR%20AWAITING%20OR%20EXPIRED%20OR%20PENDING_FORM_AUTH%20OR%20TERMINATED%20OR%20DECLINED%20OR%20EMITTED)%20AND%20createdAt:%5B1733382000642%20TO%20*%5D%20AND%20productCode:%20*CH*%20AND%20renewalType:%20*AUTOMATIC*%20))&pageSize=20&page=0&index=DB_POLICY_VIEW&sortProperties=createdAt&sortDirection=desc"
+  headers:
+    - name: x-tenantid-1
+      value: ec
+  params:
+    - name: query
+      value: agentSeId:9%20AND%20(%20(customStatus:*EMITTED*%20AND%20createdAt:%5B1695193200642%20TO%20*%5D)%20OR%20(NOT%20customStatus:(ACCEPTED%20OR%20AWAITING%20OR%20EXPIRED%20OR%20PENDING_FORM_AUTH%20OR%20TERMINATED%20OR%20DECLINED%20OR%20EMITTED)%20AND%20createdAt:%5B1734678000642%20TO%20*%5D%20)%20OR%20(NOT%20customStatus:(ACCEPTED%20OR%20AWAITING%20OR%20EXPIRED%20OR%20PENDING_FORM_AUTH%20OR%20TERMINATED%20OR%20DECLINED%20OR%20EMITTED)%20AND%20createdAt:%5B1733382000642%20TO%20*%5D%20AND%20productCode:%20*CH*%20AND%20renewalType:%20*AUTOMATIC*%20))
+      type: query
+    - name: pageSize
+      value: "20"
+      type: query
+    - name: page
+      value: "0"
+      type: query
+    - name: index
+      value: DB_POLICY_VIEW
+      type: query
+    - name: sortProperties
+      value: createdAt
+      type: query
+    - name: sortDirection
+      value: desc
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true
