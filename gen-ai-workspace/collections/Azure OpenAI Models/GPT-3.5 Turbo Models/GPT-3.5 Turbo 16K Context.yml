@@ -1,0 +1,58 @@
+info:
+  name: GPT-3.5 Turbo 16K Context
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{static_base_url}}/chat/completions"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{generated_api_key}}
+  body:
+    type: json
+    data: |-
+      {
+          "model": "gpt-35-turbo-16k",
+          "messages": [
+              {
+                  "role": "system",
+                  "content": "You are analyzing insurance policy documents. The following is a sample policy document: [Policy Document] Terms and Conditions: 1. Coverage begins on the effective date specified in the declarations page. 2. Premium payments must be made according to the payment schedule. 3. Claims must be reported within 30 days of occurrence. 4. The insured must cooperate fully with claim investigations. 5. This policy covers property damage, liability, and personal injury protection. 6. Exclusions include: intentional acts, war, nuclear hazards, wear and tear, mechanical breakdown. 7. Deductibles apply as specified in the declarations. 8. Policy limits are as stated in the coverage sections. 9. Cancellation may occur for non-payment or material misrepresentation. 10. This policy is subject to the laws of the state where issued."
+              },
+              {
+                  "role": "user",
+                  "content": "Based on the policy document provided, summarize the key coverage areas, exclusions, and policyholder obligations in bullet points."
+              }
+          ],
+          "max_tokens": 600
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: "test(\"Status code is 200\", function () {\r
+
+        \    expect(res.getStatus()).to.equal(200);\r
+
+        });\r
+
+        \r
+
+        test(\"Handles large context\", function () {\r
+
+        \    const responseData = res.getBody();\r
+
+        \    expect(responseData.usage.prompt_tokens).to.be.above(500);\r
+
+        });"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Test GPT-3.5 Turbo 16K for document analysis with larger context

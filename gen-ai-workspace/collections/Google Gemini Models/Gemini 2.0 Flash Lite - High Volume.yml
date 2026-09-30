@@ -1,0 +1,52 @@
+info:
+  name: Gemini 2.0 Flash Lite - High Volume
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{static_base_url}}/chat/completions"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{generated_api_key}}
+  body:
+    type: json
+    data: |-
+      {
+          "model": "gemini-2.0-flash-lite",
+          "messages": [
+              {
+                  "role": "user",
+                  "content": "What is the purpose of an insurance deductible?"
+              }
+          ],
+          "max_tokens": 200
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: "test(\"Status code is 200\", function () {\r
+
+        \    expect(res.getStatus()).to.equal(200);\r
+
+        });\r
+
+        \r
+
+        test(\"Fast response for lite model\", function () {\r
+
+        \    expect(res.getResponseTime()).to.be.below(4000);\r
+
+        });"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Test Gemini 2.0 Flash Lite for high-volume, cost-efficient scenarios

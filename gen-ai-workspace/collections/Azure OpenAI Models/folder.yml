@@ -1,0 +1,11 @@
+info:
+  name: Azure OpenAI Models
+  type: folder
+  seq: 1
+
+request:
+  auth: inherit
+
+docs:
+  content: Test Azure OpenAI models across different regions and capabilities
+  type: text/markdown

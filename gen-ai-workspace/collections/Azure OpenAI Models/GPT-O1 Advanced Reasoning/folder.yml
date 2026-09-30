@@ -1,0 +1,11 @@
+info:
+  name: GPT-O1 Advanced Reasoning
+  type: folder
+  seq: 1
+
+request:
+  auth: inherit
+
+docs:
+  content: Test GPT-O1 models for advanced reasoning and analysis tasks
+  type: text/markdown

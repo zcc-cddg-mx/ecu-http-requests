@@ -1,0 +1,69 @@
+info:
+  name: Gemini 2.0 Flash - Latest
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{static_base_url}}/chat/completions"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{generated_api_key}}
+  body:
+    type: json
+    data: |-
+      {
+          "model": "gemini-2.0-flash-001",
+          "messages": [
+              {
+                  "role": "system",
+                  "content": "You are an AI assistant specializing in insurance technology and digital transformation."
+              },
+              {
+                  "role": "user",
+                  "content": "How can AI and machine learning be leveraged to improve claims processing efficiency in the insurance industry? Include specific use cases and potential challenges."
+              }
+          ],
+          "max_tokens": 1000,
+          "temperature": 0.4
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: "test(\"Status code is 200\", function () {\r
+
+        \    expect(res.getStatus()).to.equal(200);\r
+
+        });\r
+
+        \r
+
+        test(\"Gemini response structure\", function () {\r
+
+        \    const responseData = res.getBody();\r
+
+        \    expect(responseData).to.have.property('choices');\r
+
+        \    expect(responseData.choices[0]).to.have.property('message');\r
+
+        });\r
+
+        \r
+
+        test(\"Performance check\", function () {\r
+
+        \    expect(res.getResponseTime()).to.be.below(8000);\r
+
+        });"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Test latest Gemini 2.0 Flash model for AI and technology discussions

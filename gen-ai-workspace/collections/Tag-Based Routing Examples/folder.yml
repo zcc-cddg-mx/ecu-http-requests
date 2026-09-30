@@ -1,0 +1,11 @@
+info:
+  name: Tag-Based Routing Examples
+  type: folder
+  seq: 7
+
+request:
+  auth: inherit
+
+docs:
+  content: Examples demonstrating tag-based routing across regions and providers
+  type: text/markdown

@@ -1,0 +1,11 @@
+info:
+  name: Image Generation & Vision
+  type: folder
+  seq: 6
+
+request:
+  auth: inherit
+
+docs:
+  content: Test image generation capabilities for marketing and documentation
+  type: text/markdown

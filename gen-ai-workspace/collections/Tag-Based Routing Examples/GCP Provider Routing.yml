@@ -1,0 +1,57 @@
+info:
+  name: GCP Provider Routing
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{static_base_url}}/chat/completions"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{generated_api_key}}
+    - name: x-litellm-tags
+      value: EMEA,europe-west,gcp
+  body:
+    type: json
+    data: |-
+      {
+          "model": "gemini-2.0-flash-001",
+          "messages": [
+              {
+                  "role": "user",
+                  "content": "How can Google Cloud's AI and analytics services benefit insurance companies?"
+              }
+          ],
+          "tags": ["EMEA", "europe-west", "gcp"],
+          "max_tokens": 600
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: "test(\"Status code is 200\", function () {\r
+
+        \    expect(res.getStatus()).to.equal(200);\r
+
+        });\r
+
+        \r
+
+        test(\"GCP provider routing\", function () {\r
+
+        \    const headers = res.getHeaders();\r
+
+        \    console.log('GCP routing headers:', headers);\r
+
+        });"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Route request to Google Gemini in Europe-West using provider tags

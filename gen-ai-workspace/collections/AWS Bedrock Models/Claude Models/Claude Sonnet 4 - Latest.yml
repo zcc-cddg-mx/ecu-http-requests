@@ -1,0 +1,73 @@
+info:
+  name: Claude Sonnet 4 - Latest
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{static_base_url}}/chat/completions"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{generated_api_key}}
+  body:
+    type: json
+    data: |-
+      {
+          "model": "claude-sonnet-4-20250514-v1:0",
+          "messages": [
+              {
+                  "role": "system",
+                  "content": "You are an expert insurance analyst with deep knowledge of European insurance regulations and market dynamics."
+              },
+              {
+                  "role": "user",
+                  "content": "Analyze the impact of GDPR on insurance data processing practices in the EU. How should insurance companies adapt their data collection and processing procedures?"
+              }
+          ],
+          "max_tokens": 1200,
+          "temperature": 0.3
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: "test(\"Status code is 200\", function () {\r
+
+        \    expect(res.getStatus()).to.equal(200);\r
+
+        });\r
+
+        \r
+
+        test(\"Response has expected structure\", function () {\r
+
+        \    const responseData = res.getBody();\r
+
+        \    expect(responseData).to.have.property('choices');\r
+
+        \    expect(responseData.choices[0].message).to.have.property('content');\r
+
+        });\r
+
+        \r
+
+        test(\"Claude quality response\", function () {\r
+
+        \    const responseData = res.getBody();\r
+
+        \    const content = responseData.choices[0].message.content;\r
+
+        \    expect(content.length).to.be.above(100);\r
+
+        });"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Test latest Claude Sonnet 4 model for complex regulatory analysis

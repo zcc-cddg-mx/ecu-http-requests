@@ -1,0 +1,58 @@
+info:
+  name: Mixed Provider Comparison
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{static_base_url}}/chat/completions"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{generated_api_key}}
+  body:
+    type: json
+    data: |-
+      {
+          "model": "gpt-4o-global-balanced",
+          "messages": [
+              {
+                  "role": "user",
+                  "content": "Compare the advantages of Azure, AWS, and Google Cloud for running insurance applications. Consider factors like compliance, security, cost, and AI capabilities."
+              }
+          ],
+          "max_tokens": 1200
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: "test(\"Status code is 200\", function () {\r
+
+        \    expect(res.getStatus()).to.equal(200);\r
+
+        });\r
+
+        \r
+
+        test(\"Response quality check\", function () {\r
+
+        \    const responseData = res.getBody();\r
+
+        \    const content = responseData.choices[0].message.content;\r
+
+        \    expect(content.length).to.be.above(200);\r
+
+        \    console.log('Provider comparison response length:', content.length);\r
+
+        });"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Test load-balanced routing without specific tags - should distribute across available models

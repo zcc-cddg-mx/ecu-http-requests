@@ -1,0 +1,56 @@
+info:
+  name: Claude 3.5 Sonnet - Streaming
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{static_base_url}}/chat/completions"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{generated_api_key}}
+  body:
+    type: json
+    data: |-
+      {
+          "model": "claude-3-5-sonnet-20240620-v1:0",
+          "messages": [
+              {
+                  "role": "user",
+                  "content": "Create a detailed claims processing workflow for a property insurance claim from initial report to final settlement. Include decision points, required documentation, timelines, and quality assurance steps."
+              }
+          ],
+          "max_tokens": 2000,
+          "stream": true,
+          "temperature": 0.3
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: "test(\"Status code is 200\", function () {\r
+
+        \    expect(res.getStatus()).to.equal(200);\r
+
+        });\r
+
+        \r
+
+        test(\"Streaming response format\", function () {\r
+
+        \    const responseText = JSON.stringify(res.getBody());\r
+
+        \    expect(responseText).to.include('data:');\r
+
+        });"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Test Claude 3.5 Sonnet with streaming for real-time content generation

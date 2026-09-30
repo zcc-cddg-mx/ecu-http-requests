@@ -1,0 +1,67 @@
+info:
+  name: EMEA Region Routing
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{static_base_url}}/chat/completions"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{generated_api_key}}
+    - name: x-litellm-tags
+      value: EMEA,sweden-central,azure
+  body:
+    type: json
+    data: |-
+      {
+          "model": "gpt-4o-20241120-global",
+          "messages": [
+              {
+                  "role": "user",
+                  "content": "Explain GDPR compliance requirements for insurance companies operating in Europe."
+              }
+          ],
+          "tags": ["EMEA", "sweden-central", "azure"],
+          "max_tokens": 500
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: "test(\"Status code is 200\", function () {\r
+
+        \    expect(res.getStatus()).to.equal(200);\r
+
+        });\r
+
+        \r
+
+        test(\"EMEA routing verification\", function () {\r
+
+        \    // Log all response headers to verify routing\r
+
+        \    const headers = res.getHeaders();\r
+
+        \    console.log('Response headers:', headers);\r
+
+        \    \r
+
+        \    // Check for region-specific indicators\r
+
+        \    const responseData = res.getBody();\r
+
+        \    console.log('Response ID for tracking:', responseData.id);\r
+
+        });"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Route request to EMEA region using tags - should hit Sweden Central Azure

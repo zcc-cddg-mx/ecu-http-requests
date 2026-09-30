@@ -1,0 +1,55 @@
+info:
+  name: Whisper Transcription
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{static_base_url}}/audio/transcriptions"
+  headers:
+    - name: Authorization
+      value: Bearer {{generated_api_key}}
+  body:
+    type: multipart-form
+    data:
+      - name: file
+        type: file
+        value:
+          - path/to/audio/file.wav
+        description: Replace with actual audio file path
+      - name: model
+        type: text
+        value: whisper-1
+      - name: language
+        type: text
+        value: en
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: "test(\"Status code is 200\", function () {\r
+
+        \    expect(res.getStatus()).to.equal(200);\r
+
+        });\r
+
+        \r
+
+        test(\"Transcription response structure\", function () {\r
+
+        \    const responseData = res.getBody();\r
+
+        \    expect(responseData).to.have.property('text');\r
+
+        \    expect(responseData.text).to.be.a('string');\r
+
+        });"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Transcribe audio to text using Whisper model

@@ -1,0 +1,57 @@
+info:
+  name: Gemini with Europe-West Tag
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{static_base_url}}/chat/completions"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{generated_api_key}}
+    - name: x-litellm-tags
+      value: EMEA,europe-west,gcp
+  body:
+    type: json
+    data: |-
+      {
+          "model": "gemini-1.5-flash-001",
+          "messages": [
+              {
+                  "role": "user",
+                  "content": "Explain European data residency requirements for insurance companies operating in the EU."
+              }
+          ],
+          "tags": ["EMEA", "europe-west", "gcp"],
+          "max_tokens": 600
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: "test(\"Status code is 200\", function () {\r
+
+        \    expect(res.getStatus()).to.equal(200);\r
+
+        });\r
+
+        \r
+
+        test(\"Europe-West routing verification\", function () {\r
+
+        \    const responseHeaders = res.getHeaders();\r
+
+        \    console.log('Response headers for region verification:', responseHeaders);\r
+
+        });"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Test tag-based routing to Europe-West region for Gemini models

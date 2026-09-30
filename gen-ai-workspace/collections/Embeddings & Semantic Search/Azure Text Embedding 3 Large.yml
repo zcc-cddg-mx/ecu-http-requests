@@ -1,0 +1,64 @@
+info:
+  name: Azure Text Embedding 3 Large
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{static_base_url}}/embeddings"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{generated_api_key}}
+  body:
+    type: json
+    data: |-
+      {
+          "model": "text-embedding-3-large",
+          "input": "Commercial property insurance provides coverage for businesses against property damage, theft, and various perils that could impact their physical assets and operations."
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: "test(\"Status code is 200\", function () {\r
+
+        \    expect(res.getStatus()).to.equal(200);\r
+
+        });\r
+
+        \r
+
+        test(\"Embedding response structure\", function () {\r
+
+        \    const responseData = res.getBody();\r
+
+        \    expect(responseData).to.have.property('data');\r
+
+        \    expect(responseData.data).to.be.an('array');\r
+
+        \    expect(responseData.data[0]).to.have.property('embedding');\r
+
+        \    expect(responseData.data[0].embedding).to.be.an('array');\r
+
+        });\r
+
+        \r
+
+        test(\"Embedding dimensions\", function () {\r
+
+        \    const responseData = res.getBody();\r
+
+        \    expect(responseData.data[0].embedding.length).to.equal(3072);\r
+
+        });"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Test Azure OpenAI text embedding generation for insurance content

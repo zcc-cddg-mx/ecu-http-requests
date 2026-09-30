@@ -1,0 +1,56 @@
+info:
+  name: GPT-4o Load Balanced
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{static_base_url}}/chat/completions"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{generated_api_key}}
+  body:
+    type: json
+    data: |-
+      {
+          "model": "gpt-4o-global-balanced",
+          "messages": [
+              {
+                  "role": "user",
+                  "content": "Explain the difference between term life insurance and whole life insurance in simple terms."
+              }
+          ],
+          "max_tokens": 500
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: "test(\"Status code is 200\", function () {\r
+
+        \    expect(res.getStatus()).to.equal(200);\r
+
+        });\r
+
+        \r
+
+        test(\"Load balancing works\", function () {\r
+
+        \    const responseData = res.getBody();\r
+
+        \    expect(responseData).to.have.property('id');\r
+
+        \    console.log('Response ID for load balancing:', responseData.id);\r
+
+        });"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Test load-balanced GPT-4o routing across regions

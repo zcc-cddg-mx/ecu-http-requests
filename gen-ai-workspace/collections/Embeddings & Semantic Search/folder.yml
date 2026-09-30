@@ -1,0 +1,11 @@
+info:
+  name: Embeddings & Semantic Search
+  type: folder
+  seq: 4
+
+request:
+  auth: inherit
+
+docs:
+  content: Test embedding generation endpoints for semantic search and RAG applications
+  type: text/markdown

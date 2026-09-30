@@ -1,0 +1,54 @@
+info:
+  name: Titan Text Generation
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{static_base_url}}/chat/completions"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{generated_api_key}}
+  body:
+    type: json
+    data: |-
+      {
+          "model": "titan-text-v1",
+          "messages": [
+              {
+                  "role": "user",
+                  "content": "Write a brief summary of key factors to consider when choosing health insurance."
+              }
+          ],
+          "max_tokens": 400
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: "test(\"Status code is 200\", function () {\r
+
+        \    expect(res.getStatus()).to.equal(200);\r
+
+        });\r
+
+        \r
+
+        test(\"Titan response quality\", function () {\r
+
+        \    const responseData = res.getBody();\r
+
+        \    expect(responseData.choices[0].message.content).to.be.a('string');\r
+
+        });"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Test Amazon Titan text generation capabilities

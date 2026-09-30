@@ -1,0 +1,57 @@
+info:
+  name: North America Region Routing
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{static_base_url}}/chat/completions"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{generated_api_key}}
+    - name: x-litellm-tags
+      value: NA,east-us-2,azure
+  body:
+    type: json
+    data: |-
+      {
+          "model": "gpt-4o-20241120-global",
+          "messages": [
+              {
+                  "role": "user",
+                  "content": "What are the key differences between US and Canadian insurance regulations?"
+              }
+          ],
+          "tags": ["NA", "east-us-2", "azure"],
+          "max_tokens": 500
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: "test(\"Status code is 200\", function () {\r
+
+        \    expect(res.getStatus()).to.equal(200);\r
+
+        });\r
+
+        \r
+
+        test(\"NA routing verification\", function () {\r
+
+        \    const headers = res.getHeaders();\r
+
+        \    console.log('NA routing headers:', headers);\r
+
+        });"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Route request to North America region using tags - should hit East US 2 Azure

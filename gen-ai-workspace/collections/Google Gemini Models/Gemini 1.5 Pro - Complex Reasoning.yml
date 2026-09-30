@@ -1,0 +1,57 @@
+info:
+  name: Gemini 1.5 Pro - Complex Reasoning
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{static_base_url}}/chat/completions"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{generated_api_key}}
+  body:
+    type: json
+    data: |-
+      {
+          "model": "gemini-1.5-pro-001",
+          "messages": [
+              {
+                  "role": "user",
+                  "content": "Compare and contrast the insurance regulatory frameworks of Germany, France, and the UK. Analyze how Brexit has affected cross-border insurance operations and what opportunities this creates for insurers."
+              }
+          ],
+          "max_tokens": 1500,
+          "temperature": 0.3
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: "test(\"Status code is 200\", function () {\r
+
+        \    expect(res.getStatus()).to.equal(200);\r
+
+        });\r
+
+        \r
+
+        test(\"Complex reasoning response\", function () {\r
+
+        \    const responseData = res.getBody();\r
+
+        \    const content = responseData.choices[0].message.content;\r
+
+        \    expect(content.length).to.be.above(500);\r
+
+        });"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Test Gemini 1.5 Pro for complex regulatory and business analysis

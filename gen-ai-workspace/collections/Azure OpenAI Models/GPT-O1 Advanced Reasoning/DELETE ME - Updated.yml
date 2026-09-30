@@ -1,0 +1,80 @@
+info:
+  name: DELETE ME - Updated
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{static_base_url}}/chat/completions"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{generated_api_key}}
+  body:
+    type: json
+    data: |-
+      {
+          "model": "o1-20241217",
+          "messages": [
+              {
+                  "role": "user",
+                  "content": "Analyze the potential risks and mitigation strategies for a multinational insurance company expanding into emerging markets during climate change. Consider regulatory, operational, and financial aspects in your analysis."
+              }
+          ],
+          "max_tokens": 2000
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: "test(\"Status code is 200\", function () {\r
+
+        \    expect(res.getStatus()).to.equal(200);\r
+
+        });\r
+
+        \r
+
+        test(\"Response has expected structure\", function () {\r
+
+        \    const responseData = res.getBody();\r
+
+        \    expect(responseData).to.have.property('id');\r
+
+        \    expect(responseData).to.have.property('choices');\r
+
+        \    expect(responseData.choices).to.be.an('array');\r
+
+        \    expect(responseData.choices[0]).to.have.property('message');\r
+
+        \    expect(responseData).to.have.property('usage');\r
+
+        });\r
+
+        \r
+
+        test(\"Response time is acceptable\", function () {\r
+
+        \    expect(res.getResponseTime()).to.be.below(15000); // O1 can be slower\r
+
+        });\r
+
+        \r
+
+        test(\"Check region tag in response\", function () {\r
+
+        \    const regionHeader = res.getHeader('x-litellm-model-region');\r
+
+        \    console.log('Region:', regionHeader);\r
+
+        });"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Test GPT-O1 advanced reasoning with complex insurance analysis scenario

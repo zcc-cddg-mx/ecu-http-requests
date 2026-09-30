@@ -1,0 +1,60 @@
+info:
+  name: AWS Titan Embeddings
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{static_base_url}}/embeddings"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{generated_api_key}}
+  body:
+    type: json
+    data: |-
+      {
+          "model": "titan-embed-text-v1",
+          "input": "Liability insurance protects businesses and individuals against claims resulting from injuries and damage to people or property caused by their actions or negligence."
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: "test(\"Status code is 200\", function () {\r
+
+        \    expect(res.getStatus()).to.equal(200);\r
+
+        });\r
+
+        \r
+
+        test(\"Titan embedding structure\", function () {\r
+
+        \    const responseData = res.getBody();\r
+
+        \    expect(responseData).to.have.property('data');\r
+
+        \    expect(responseData.data[0]).to.have.property('embedding');\r
+
+        });\r
+
+        \r
+
+        test(\"Titan embedding dimensions\", function () {\r
+
+        \    const responseData = res.getBody();\r
+
+        \    expect(responseData.data[0].embedding.length).to.equal(1536);\r
+
+        });"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Test AWS Titan embeddings for semantic search applications

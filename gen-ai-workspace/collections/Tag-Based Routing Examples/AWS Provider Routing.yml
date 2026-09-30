@@ -1,0 +1,57 @@
+info:
+  name: AWS Provider Routing
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{static_base_url}}/chat/completions"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{generated_api_key}}
+    - name: x-litellm-tags
+      value: EMEA,frankfurt,aws
+  body:
+    type: json
+    data: |-
+      {
+          "model": "claude-sonnet-4-20250514-v1:0",
+          "messages": [
+              {
+                  "role": "user",
+                  "content": "Analyze the benefits of using AWS cloud services for insurance data processing and compliance."
+              }
+          ],
+          "tags": ["EMEA", "frankfurt", "aws"],
+          "max_tokens": 800
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: "test(\"Status code is 200\", function () {\r
+
+        \    expect(res.getStatus()).to.equal(200);\r
+
+        });\r
+
+        \r
+
+        test(\"AWS provider routing\", function () {\r
+
+        \    const headers = res.getHeaders();\r
+
+        \    console.log('AWS routing headers:', headers);\r
+
+        });"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Route request to AWS Bedrock in Frankfurt using provider tags
